@@ -10,7 +10,7 @@ spring.jpa.properties.hibernate.hbm2ddl.auto=update
 server.error.include-message=always
 
 #Security
-jwt.authorizationHeader=Authorisation
+jwt.authorizationHeader=Authorization
 jwt.authorizationBearer=Bearer
 jwt.authorizationDomain=http://localhost/application-service-authentication
 jwt.authorizationEndpoint=/authenticate/authorise.do
