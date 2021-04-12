@@ -3,7 +3,6 @@ package com.hongwei.constants
 import org.springframework.http.HttpStatus
 import org.springframework.web.bind.annotation.ResponseStatus
 
-
 @ResponseStatus(value = HttpStatus.BAD_REQUEST)
 object BadRequest : RuntimeException()
 
@@ -16,11 +15,16 @@ object NotFound : RuntimeException()
 @ResponseStatus(value = HttpStatus.UNAUTHORIZED)
 object Unauthorized : RuntimeException()
 
+object AppTokenExpiredException : RuntimeException()
+
 @ResponseStatus(value = HttpStatus.NON_AUTHORITATIVE_INFORMATION)
 object NonAuthoritative : RuntimeException()
 
 @ResponseStatus(value = HttpStatus.NO_CONTENT)
 object NoContent : RuntimeException()
+
+@ResponseStatus(value = HttpStatus.RESET_CONTENT)
+object ResetContent : RuntimeException()
 
 @ResponseStatus(value = HttpStatus.NOT_MODIFIED)
 object NotModified : RuntimeException()
@@ -48,3 +52,6 @@ object NotImplemented : RuntimeException()
 
 @ResponseStatus(value = HttpStatus.SERVICE_UNAVAILABLE)
 object ServiceUnavailable : RuntimeException()
+
+@ResponseStatus(value = HttpStatus.NETWORK_AUTHENTICATION_REQUIRED)
+object NetworkAuthenticationRequired : RuntimeException()
