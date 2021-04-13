@@ -4,7 +4,6 @@ import com.fasterxml.jackson.databind.DeserializationFeature
 import com.fasterxml.jackson.databind.ObjectMapper
 import com.fasterxml.jackson.module.kotlin.KotlinModule
 import com.hongwei.constants.Constants.AppDataPath.TEAM_SCHEDULE_JSON_PATH
-import com.hongwei.model.nba.NbaScheduleRequest
 import com.hongwei.model.nba.NbaScheduleResponse
 import com.hongwei.model.nba.TeamScheduleMapper
 import com.hongwei.model.nba.TeamScheduleSource
@@ -19,7 +18,7 @@ import java.io.IOException
 class NbaService {
     private val logger: Logger = LogManager.getLogger(NbaService::class.java)
 
-    @Value("\${nba.appdata.path}")
+    @Value("\${appdata.nbaPath}")
     private lateinit var nbaAppDataPath: String
 
     @Throws(IOException::class)

@@ -18,12 +18,12 @@ jwt.secretPublic=Public2021
 
 #Debug
 #jwt.corsAllowDomain=http://localhost:3944
-#nba.json.path=D:/code/backend/testdata/nba-schedule-{team}.json
+#appdata.nbaPath=D:/test/app/nba_v1/
 
 #Debug with Tomcat Authentication application
-jwt.corsAllowDomain=http://localhost:3944
-nba.json.path=D:/code/backend/testdata/nba-schedule-{team}.json
+#jwt.corsAllowDomain=http://localhost:3944
+#appdata.nbaPath=D:/test/app/nba_v1/
 
 #Deployment
-#jwt.corsAllowDomain=https://{domain name}
-#nba.json.path=/usr/share/appdata/nba_v1/nba-schedule-{team}.json
+jwt.corsAllowDomain=https://{domain name}
+appdata.nbaPath=/usr/share/app/nba_v1/
