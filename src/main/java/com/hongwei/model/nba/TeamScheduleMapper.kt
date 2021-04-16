@@ -10,7 +10,7 @@ import java.util.*
 import java.util.Date
 
 object TeamScheduleMapper {
-    private const val WEEK_TS = 3600 * 24 * 7L
+    private const val WEEK_TS = 1000 * 3600 * 24 * 7L
 
     fun map(teamScheduleSource: TeamScheduleSource): TeamSchedule = TeamSchedule(
             teamScheduleSource.dataVersion ?: 0,
