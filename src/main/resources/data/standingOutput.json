@@ -1,0 +1,672 @@
+{
+  "easternConference": {
+    "title": "Eastern Conference",
+    "teams": [
+      {
+        "rank": "1",
+        "displayName": "Brooklyn Nets",
+        "abbr": "BKN",
+        "detail": [
+          "40",
+          "20",
+          ".667",
+          "-",
+          "24-7",
+          "16-13",
+          "7-4",
+          "21-14",
+          "118.6",
+          "114.2",
+          "+4.4",
+          "W1",
+          "6-4"
+        ]
+      },
+      {
+        "rank": "2",
+        "displayName": "Philadelphia 76ers",
+        "abbr": "PHI",
+        "detail": [
+          "39",
+          "20",
+          ".661",
+          "0.5",
+          "22-7",
+          "17-13",
+          "10-2",
+          "25-8",
+          "113.5",
+          "108.8",
+          "+4.7",
+          "L3",
+          "5-5"
+        ]
+      },
+      {
+        "rank": "3",
+        "displayName": "Milwaukee Bucks",
+        "abbr": "MIL",
+        "detail": [
+          "36",
+          "22",
+          ".621",
+          "3",
+          "19-10",
+          "17-12",
+          "9-0",
+          "21-10",
+          "119.4",
+          "113.3",
+          "+6.1",
+          "W1",
+          "5-5"
+        ]
+      },
+      {
+        "rank": "4",
+        "displayName": "New York Knicks",
+        "abbr": "NY",
+        "detail": [
+          "33",
+          "27",
+          ".550",
+          "7",
+          "20-10",
+          "13-17",
+          "2-8",
+          "21-17",
+          "106.7",
+          "104.7",
+          "+2.0",
+          "W8",
+          "8-2"
+        ]
+      },
+      {
+        "rank": "5",
+        "displayName": "Atlanta Hawks",
+        "abbr": "ATL",
+        "detail": [
+          "33",
+          "27",
+          ".550",
+          "7",
+          "17-11",
+          "16-16",
+          "6-3",
+          "19-14",
+          "113.8",
+          "111.5",
+          "+2.4",
+          "W1",
+          "7-3"
+        ]
+      },
+      {
+        "rank": "6",
+        "displayName": "Boston Celtics",
+        "abbr": "BOS",
+        "detail": [
+          "32",
+          "28",
+          ".533",
+          "8",
+          "19-11",
+          "13-17",
+          "4-7",
+          "18-16",
+          "112.0",
+          "110.0",
+          "+2.0",
+          "L1",
+          "7-3"
+        ]
+      },
+      {
+        "rank": "7",
+        "displayName": "Miami Heat",
+        "abbr": "MIA",
+        "detail": [
+          "31",
+          "29",
+          ".517",
+          "9",
+          "17-13",
+          "14-16",
+          "5-6",
+          "17-16",
+          "106.4",
+          "107.2",
+          "-0.8",
+          "L1",
+          "5-5"
+        ]
+      },
+      {
+        "rank": "8",
+        "displayName": "Charlotte Hornets",
+        "abbr": "CHA",
+        "detail": [
+          "29",
+          "30",
+          ".492",
+          "10.5",
+          "15-12",
+          "14-18",
+          "7-2",
+          "16-16",
+          "109.6",
+          "111.2",
+          "-1.6",
+          "W1",
+          "4-6"
+        ]
+      },
+      {
+        "rank": "9",
+        "displayName": "Indiana Pacers",
+        "abbr": "IND",
+        "detail": [
+          "27",
+          "31",
+          ".466",
+          "12",
+          "10-17",
+          "17-14",
+          "5-4",
+          "14-18",
+          "113.7",
+          "114.4",
+          "-0.7",
+          "W1",
+          "5-5"
+        ]
+      },
+      {
+        "rank": "10",
+        "displayName": "Washington Wizards",
+        "abbr": "WSH",
+        "detail": [
+          "26",
+          "33",
+          ".441",
+          "13.5",
+          "14-16",
+          "12-17",
+          "2-7",
+          "9-23",
+          "114.4",
+          "117.8",
+          "-3.4",
+          "W7",
+          "9-1"
+        ]
+      },
+      {
+        "rank": "",
+        "displayName": "Chicago Bulls",
+        "abbr": "CHI",
+        "detail": [
+          "25",
+          "34",
+          ".424",
+          "14.5",
+          "12-18",
+          "13-16",
+          "5-4",
+          "15-14",
+          "111.8",
+          "112.9",
+          "-1.1",
+          "W1",
+          "4-6"
+        ]
+      },
+      {
+        "rank": "",
+        "displayName": "Toronto Raptors",
+        "abbr": "TOR",
+        "detail": [
+          "25",
+          "34",
+          ".424",
+          "14.5",
+          "15-15",
+          "10-19",
+          "4-6",
+          "16-20",
+          "112.0",
+          "111.2",
+          "+0.8",
+          "W4",
+          "6-4"
+        ]
+      },
+      {
+        "rank": "",
+        "displayName": "Cleveland Cavaliers",
+        "abbr": "CLE",
+        "detail": [
+          "21",
+          "38",
+          ".356",
+          "18.5",
+          "12-16",
+          "9-22",
+          "4-7",
+          "15-18",
+          "104.0",
+          "110.9",
+          "-6.9",
+          "L1",
+          "4-6"
+        ]
+      },
+      {
+        "rank": "",
+        "displayName": "Orlando Magic",
+        "abbr": "ORL",
+        "detail": [
+          "18",
+          "41",
+          ".305",
+          "21.5",
+          "10-21",
+          "8-20",
+          "4-6",
+          "11-22",
+          "104.2",
+          "112.4",
+          "-8.2",
+          "L4",
+          "1-9"
+        ]
+      },
+      {
+        "rank": "",
+        "displayName": "Detroit Pistons",
+        "abbr": "DET",
+        "detail": [
+          "18",
+          "42",
+          ".300",
+          "22",
+          "11-16",
+          "7-26",
+          "1-9",
+          "11-23",
+          "107.5",
+          "111.5",
+          "-4.0",
+          "L2",
+          "3-7"
+        ]
+      }
+    ],
+    "headers": [
+      "Wins",
+      "Losses",
+      "Winning Percentage",
+      "Games Back",
+      "Home Record",
+      "Away Record",
+      "Division Record",
+      "Conference Record",
+      "Points Per Game",
+      "Opponent Points Per Game",
+      "Average Point Differential",
+      "Current Streak",
+      "Record last 10 games"
+    ],
+    "headerAbbrs": [
+      "W",
+      "L",
+      "PCT",
+      "GB",
+      "HOME",
+      "AWAY",
+      "DIV",
+      "CONF",
+      "PPG",
+      "OPP PPG",
+      "DIFF",
+      "STRK",
+      "L10"
+    ]
+  },
+  "westernConference": {
+    "title": "Western Conference",
+    "teams": [
+      {
+        "rank": "1",
+        "displayName": "Utah Jazz",
+        "abbr": "UTAH",
+        "detail": [
+          "44",
+          "15",
+          ".746",
+          "-",
+          "26-3",
+          "18-12",
+          "5-2",
+          "21-9",
+          "116.8",
+          "107.4",
+          "+9.4",
+          "W2",
+          "6-4"
+        ]
+      },
+      {
+        "rank": "2",
+        "displayName": "Phoenix Suns",
+        "abbr": "PHX",
+        "detail": [
+          "42",
+          "17",
+          ".712",
+          "2",
+          "23-9",
+          "19-8",
+          "6-3",
+          "24-10",
+          "114.2",
+          "108.1",
+          "+6.1",
+          "L1",
+          "7-3"
+        ]
+      },
+      {
+        "rank": "3",
+        "displayName": "LA Clippers",
+        "abbr": "LAC",
+        "detail": [
+          "43",
+          "19",
+          ".694",
+          "2.5",
+          "24-8",
+          "19-11",
+          "8-2",
+          "26-10",
+          "114.9",
+          "108.1",
+          "+6.8",
+          "W4",
+          "9-1"
+        ]
+      },
+      {
+        "rank": "4",
+        "displayName": "Denver Nuggets",
+        "abbr": "DEN",
+        "detail": [
+          "38",
+          "21",
+          ".644",
+          "6",
+          "20-10",
+          "18-11",
+          "8-1",
+          "21-13",
+          "115.2",
+          "110.3",
+          "+4.9",
+          "L1",
+          "7-3"
+        ]
+      },
+      {
+        "rank": "5",
+        "displayName": "Los Angeles Lakers",
+        "abbr": "LAL",
+        "detail": [
+          "35",
+          "24",
+          ".593",
+          "9",
+          "17-13",
+          "18-11",
+          "3-6",
+          "21-13",
+          "109.9",
+          "106.3",
+          "+3.6",
+          "L2",
+          "4-6"
+        ]
+      },
+      {
+        "rank": "6",
+        "displayName": "Dallas Mavericks",
+        "abbr": "DAL",
+        "detail": [
+          "32",
+          "26",
+          ".552",
+          "11.5",
+          "15-14",
+          "17-12",
+          "6-4",
+          "18-17",
+          "111.6",
+          "110.2",
+          "+1.4",
+          "W2",
+          "5-5"
+        ]
+      },
+      {
+        "rank": "7",
+        "displayName": "Portland Trail Blazers",
+        "abbr": "POR",
+        "detail": [
+          "32",
+          "27",
+          ".542",
+          "12",
+          "16-15",
+          "16-12",
+          "4-6",
+          "17-17",
+          "114.4",
+          "114.7",
+          "-0.3",
+          "L4",
+          "2-8"
+        ]
+      },
+      {
+        "rank": "8",
+        "displayName": "Memphis Grizzlies",
+        "abbr": "MEM",
+        "detail": [
+          "30",
+          "28",
+          ".517",
+          "13.5",
+          "13-16",
+          "17-12",
+          "4-6",
+          "13-20",
+          "113.9",
+          "112.5",
+          "+1.4",
+          "W1",
+          "5-5"
+        ]
+      },
+      {
+        "rank": "9",
+        "displayName": "Golden State Warriors",
+        "abbr": "GS",
+        "detail": [
+          "30",
+          "30",
+          ".500",
+          "14.5",
+          "18-10",
+          "12-20",
+          "3-7",
+          "16-14",
+          "113.0",
+          "113.1",
+          "-0.1",
+          "W1",
+          "7-3"
+        ]
+      },
+      {
+        "rank": "10",
+        "displayName": "San Antonio Spurs",
+        "abbr": "SA",
+        "detail": [
+          "29",
+          "29",
+          ".500",
+          "14.5",
+          "13-19",
+          "16-10",
+          "5-6",
+          "15-20",
+          "110.1",
+          "110.7",
+          "-0.6",
+          "W1",
+          "5-5"
+        ]
+      },
+      {
+        "rank": "",
+        "displayName": "New Orleans Pelicans",
+        "abbr": "NO",
+        "detail": [
+          "26",
+          "33",
+          ".441",
+          "18",
+          "16-15",
+          "10-18",
+          "6-3",
+          "14-17",
+          "115.1",
+          "115.2",
+          "-0.1",
+          "W1",
+          "4-6"
+        ]
+      },
+      {
+        "rank": "",
+        "displayName": "Sacramento Kings",
+        "abbr": "SAC",
+        "detail": [
+          "24",
+          "35",
+          ".407",
+          "20",
+          "13-17",
+          "11-18",
+          "4-6",
+          "12-18",
+          "114.6",
+          "119.0",
+          "-4.4",
+          "W1",
+          "2-8"
+        ]
+      },
+      {
+        "rank": "",
+        "displayName": "Oklahoma City Thunder",
+        "abbr": "OKC",
+        "detail": [
+          "20",
+          "40",
+          ".333",
+          "24.5",
+          "9-21",
+          "11-19",
+          "3-8",
+          "11-22",
+          "105.6",
+          "114.7",
+          "-9.1",
+          "L13",
+          "0-10"
+        ]
+      },
+      {
+        "rank": "e --",
+        "displayName": "Minnesota Timberwolves",
+        "abbr": "MIN",
+        "detail": [
+          "16",
+          "44",
+          ".267",
+          "28.5",
+          "10-19",
+          "6-25",
+          "3-6",
+          "10-24",
+          "110.8",
+          "118.3",
+          "-7.5",
+          "L1",
+          "4-6"
+        ]
+      },
+      {
+        "rank": "e --",
+        "displayName": "Houston Rockets",
+        "abbr": "HOU",
+        "detail": [
+          "15",
+          "45",
+          ".250",
+          "29.5",
+          "7-23",
+          "8-22",
+          "5-7",
+          "10-25",
+          "107.5",
+          "114.8",
+          "-7.3",
+          "L3",
+          "2-8"
+        ]
+      }
+    ],
+    "headers": [
+      "Wins",
+      "Losses",
+      "Winning Percentage",
+      "Games Back",
+      "Home Record",
+      "Away Record",
+      "Division Record",
+      "Conference Record",
+      "Points Per Game",
+      "Opponent Points Per Game",
+      "Average Point Differential",
+      "Current Streak",
+      "Record last 10 games"
+    ],
+    "headerAbbrs": [
+      "W",
+      "L",
+      "PCT",
+      "GB",
+      "HOME",
+      "AWAY",
+      "DIV",
+      "CONF",
+      "PPG",
+      "OPP PPG",
+      "DIFF",
+      "STRK",
+      "L10"
+    ]
+  }
+}

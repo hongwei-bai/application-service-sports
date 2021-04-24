@@ -4,12 +4,14 @@ import com.hongwei.curl.CUrlWrapper
 import org.apache.log4j.LogManager
 import org.apache.log4j.Logger
 import org.springframework.stereotype.Service
-import java.util.*
 import java.util.Calendar.*
+import org.jsoup.nodes.Document
 
 @Service
 class EspnCurlService {
     private val logger: Logger = LogManager.getLogger(EspnCurlService::class.java)
+
+    fun test(url: String): Document? = CUrlWrapper.curl(url)
 
     fun getTeamList(): List<String> = TEAMS.toList()
 
