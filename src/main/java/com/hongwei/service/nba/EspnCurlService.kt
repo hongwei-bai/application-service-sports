@@ -1,6 +1,8 @@
 package com.hongwei.service.nba
 
+import com.hongwei.constants.Endpoints
 import com.hongwei.curl.CUrlWrapper
+import com.hongwei.util.TimeStampUtil
 import org.apache.log4j.LogManager
 import org.apache.log4j.Logger
 import org.springframework.stereotype.Service
@@ -11,21 +13,19 @@ import org.jsoup.nodes.Document
 class EspnCurlService {
     private val logger: Logger = LogManager.getLogger(EspnCurlService::class.java)
 
-    fun test(url: String): Document? = CUrlWrapper.curl(url)
+    fun curl(url: String): Document? = CUrlWrapper.curl(url)
+
+    fun getStanding(): Document? = CUrlWrapper.curl(Endpoints.Espn.STANDING)
 
     fun getTeamList(): List<String> = TEAMS.toList()
 
     fun getTeamScheduleJson(teamShort: String, dataVersionBase: Int): String? {
-        val url = "https://www.espn.com/nba/team/schedule/_/name/$teamShort"
+        val url = Endpoints.Espn.TEAM_SCHEDULE.replace("{team}", teamShort)
         val doc = CUrlWrapper.curl(url).toString()
         val index0 = doc.indexOf(START)
         val index1 = doc.indexOf(END)
         val mid = doc.substring(index0, index1 + END.length)
-        val date = getInstance()
-        val dataVersion = "${date.get(YEAR)}" +
-                (date.get(MONTH) + 1).toString().padStart(2, '0') +
-                (date.get(DAY_OF_MONTH)).toString().padStart(2, '0') +
-                dataVersionBase.toString().padStart(2, '0')
+        val dataVersion = TimeStampUtil.getTimeVersionWithDayAndDataVersion(dataVersion = dataVersionBase)
         return "{\"dataVersion\": $dataVersion, $mid}"
     }
 

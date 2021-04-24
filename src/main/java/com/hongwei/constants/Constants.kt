@@ -6,6 +6,13 @@ object Constants {
     }
 
     object AppDataPath {
-        const val TEAM_SCHEDULE_JSON_PATH = "/nba-schedule-{team}.json"
+        const val TEAM_SCHEDULE_JSON_PATH = "/schedule_{team}.json"
+
+        const val STANDING_JSON_PATH = "/standing.json"
+    }
+
+    object TimeZone {
+        const val UTC = "UTC"
+        const val SYDNEY = "Australia/Sydney"
     }
 }

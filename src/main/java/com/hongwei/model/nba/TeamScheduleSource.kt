@@ -5,7 +5,24 @@ import com.fasterxml.jackson.annotation.JsonIgnoreProperties
 @JsonIgnoreProperties
 data class TeamScheduleSource(
         val dataVersion: Long?,
+        val teamSchedule: List<TeamScheduleElement>
+)
+
+@JsonIgnoreProperties
+data class TeamScheduleElement(
+        val season: Int,
+        val seasonType: SeasonType,
+        val title: String,
+        val notes: String,
         val events: Events
+)
+
+@JsonIgnoreProperties
+data class SeasonType(
+        val id: String,
+        val type: Int,
+        val name: String,
+        val abbreviation: String
 )
 
 @JsonIgnoreProperties

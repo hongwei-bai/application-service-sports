@@ -17,8 +17,15 @@ class NbaController {
 
     @GetMapping(path = ["/teamSchedule.do"])
     @ResponseBody
-    fun testGetTeamSchedule(team: String, dataVersion: Long): ResponseEntity<*> =
+    fun getTeamSchedule(team: String, dataVersion: Long): ResponseEntity<*> =
             nbaService.getScheduleByTeam(team, dataVersion)?.let {
+                ResponseEntity.ok(it)
+            } ?: throw ResetContent
+
+    @GetMapping(path = ["/standing.do"])
+    @ResponseBody
+    fun getStanding(dataVersion: Long): ResponseEntity<*> =
+            nbaService.getStanding(dataVersion)?.let {
                 ResponseEntity.ok(it)
             } ?: throw ResetContent
 }
