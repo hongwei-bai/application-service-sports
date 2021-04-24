@@ -1,10 +1,8 @@
-package com.hongwei.service.nba
+package com.hongwei.model.nba
 
-import org.springframework.stereotype.Service
 import java.util.*
 
-@Service
-class EspnTeamMapper {
+object EspnTeamMapper {
     fun teamShortMapToLegacy(teamShort: String): String = when (teamShort.toUpperCase(Locale.ROOT)) {
         "BKN" -> "njn"
         "NY" -> "nyk"

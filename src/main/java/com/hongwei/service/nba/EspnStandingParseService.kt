@@ -1,6 +1,7 @@
 package com.hongwei.service.nba
 
 import com.hongwei.model.nba.ConferenceStandingSource
+import com.hongwei.model.nba.EspnTeamMapper
 import com.hongwei.model.nba.StandingSource
 import com.hongwei.model.nba.TeamStandingSource
 import com.hongwei.util.TimeStampUtil
@@ -8,15 +9,11 @@ import org.apache.log4j.LogManager
 import org.apache.log4j.Logger
 import org.jsoup.nodes.Document
 import org.jsoup.nodes.Element
-import org.springframework.beans.factory.annotation.Autowired
 import org.springframework.stereotype.Service
 
 @Service
 class EspnStandingParseService {
     private val logger: Logger = LogManager.getLogger(EspnStandingParseService::class.java)
-
-    @Autowired
-    private lateinit var espnTeamMapper: EspnTeamMapper
 
     fun parseStanding(document: Document): StandingSource? {
         // For: <div class="standings__table InnerLayout__child--dividers standings__table--nba-play-in-tournament">
@@ -55,7 +52,7 @@ class EspnStandingParseService {
                 val teamDisplayName = teamAbbr[0].select("abbr").attr("title")
                 val abbr = teamAbbr[0].select("abbr").text()
                 if (!teamDisplayName.isNullOrEmpty() && !abbr.isNullOrEmpty()) {
-                    resultTeams.add(TeamStandingSource(rank, teamDisplayName, abbr, espnTeamMapper.teamShortMapToLegacy(abbr), mutableListOf()))
+                    resultTeams.add(TeamStandingSource(rank, teamDisplayName, abbr, EspnTeamMapper.teamShortMapToLegacy(abbr), mutableListOf()))
                 }
             }
         }

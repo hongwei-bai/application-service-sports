@@ -25,7 +25,7 @@ object TeamScheduleMapper {
                                 unixTimeStamp = date.time,
                                 localDisplayTime = toLocalDisplayDateAndTime(date),
                                 opponent = Team(
-                                        abbrev = it.opponent.abbrev,
+                                        abbrev = EspnTeamMapper.mapLegacyTeamShort(it.opponent.abbrev),
                                         displayName = it.opponent.displayName,
                                         logo = it.opponent.logo,
                                         location = it.opponent.location,
