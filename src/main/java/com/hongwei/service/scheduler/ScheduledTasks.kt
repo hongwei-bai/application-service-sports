@@ -23,6 +23,11 @@ class ScheduledTasks {
         val hour = sydTime.get(Calendar.HOUR_OF_DAY)
         if (HoursUpdate.contains(hour)) {
             statHubController.generateEspnStanding()
+
+            Thread {
+                Thread.sleep(1000 * 30)
+                statHubController.generateEspnAllTeamSchedule()
+            }.start()
         }
     }
 
