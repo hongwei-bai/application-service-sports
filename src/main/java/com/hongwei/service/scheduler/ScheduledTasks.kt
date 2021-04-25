@@ -21,12 +21,12 @@ class ScheduledTasks {
     fun reportCurrentTime() {
         val sydTime = Calendar.getInstance(TimeZone.getTimeZone(SYDNEY))
         val hour = sydTime.get(Calendar.HOUR_OF_DAY)
-        if (HoursUpdateStanding.contains(hour)) {
+        if (HoursUpdate.contains(hour)) {
             statHubController.generateEspnStanding()
         }
     }
 
     companion object {
-        val HoursUpdateStanding = listOf(4, 16)
+        val HoursUpdate = listOf(4, 16)
     }
 }

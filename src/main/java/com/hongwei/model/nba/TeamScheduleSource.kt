@@ -27,11 +27,12 @@ data class SeasonType(
 
 @JsonIgnoreProperties
 data class Events(
-        val pre: List<Pre>
+        val pre: List<EventsSection>,
+        val post: List<EventsSection>
 )
 
 @JsonIgnoreProperties
-data class Pre(
+data class EventsSection(
         val title: String,
         val group: List<EventSource>
 )
@@ -41,7 +42,7 @@ data class EventSource(
         val date: Date,
         val opponent: Opponent,
         val time: Time,
-        val result: Result
+        val result: ResultSource
 )
 
 @JsonIgnoreProperties
@@ -77,9 +78,16 @@ data class Time(
 )
 
 @JsonIgnoreProperties
-data class Result(
+data class ResultSource(
+        val winner: Boolean,
         val isTie: Boolean,
         val winLossSymbol: String,
+        val currentTeamScore: Int,
+        val opponentTeamScore: Int,
         val link: String,
         val statusId: String
 )
+
+enum class ResultStatus(val value: Int) {
+    NotStart(1), Finished(3)
+}

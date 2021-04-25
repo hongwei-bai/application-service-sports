@@ -14,25 +14,34 @@ object TeamScheduleMapper {
 
     fun map(teamScheduleSource: TeamScheduleSource): TeamSchedule = TeamSchedule(
             teamScheduleSource.dataVersion ?: 0,
-            teamScheduleSource.teamSchedule.first().events.pre.first().group
-                    .filter {
-                        val lastWeekTs = Date.from(now()).time - WEEK_TS
-                        parseDate(it.date.date)?.after(Date(lastWeekTs)) == true
-                    }
-                    .map {
-                        val date = parseDate(it.date.date)!!
-                        Event(
-                                unixTimeStamp = date.time,
-                                localDisplayTime = toLocalDisplayDateAndTime(date),
-                                opponent = Team(
-                                        abbrev = EspnTeamMapper.mapLegacyTeamShort(it.opponent.abbrev),
-                                        displayName = it.opponent.displayName,
-                                        logo = it.opponent.logo,
-                                        location = it.opponent.location,
-                                        isHome = it.opponent.homeAwaySymbol != "@"
-                                )
-                        )
-                    }
+            listOf(
+                    teamScheduleSource.teamSchedule.first().events.post.first().group,
+                    teamScheduleSource.teamSchedule.first().events.pre.first().group
+            ).flatten().filter {
+                val lastWeekTs = Date.from(now()).time - WEEK_TS
+                parseDate(it.date.date)?.after(Date(lastWeekTs)) == true
+            }.map {
+                val date = parseDate(it.date.date)!!
+                Event(
+                        unixTimeStamp = date.time,
+                        localDisplayTime = toLocalDisplayDateAndTime(date),
+                        opponent = Team(
+                                abbrev = EspnTeamMapper.mapLegacyTeamShort(it.opponent.abbrev),
+                                displayName = it.opponent.displayName,
+                                logo = it.opponent.logo,
+                                location = it.opponent.location,
+                                isHome = it.opponent.homeAwaySymbol != "@"
+                        ),
+                        result = when (it.result.statusId.toIntOrNull()) {
+                            ResultStatus.Finished.value -> Result(
+                                    winLossSymbol = it.result.winLossSymbol,
+                                    currentTeamScore = it.result.currentTeamScore,
+                                    opponentTeamScore = it.result.opponentTeamScore
+                            )
+                            else -> null
+                        }
+                )
+            }
     )
 
     //2021-04-07T02:00Z
