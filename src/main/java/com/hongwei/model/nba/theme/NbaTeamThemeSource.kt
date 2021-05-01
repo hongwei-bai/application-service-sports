@@ -11,7 +11,7 @@ data class NbaTeamThemeJson(
 @JsonIgnoreProperties
 data class NbaTeamThemeSource(
         val team: String,
-        val colorLight: String,
-        val colorHome: String,
-        val colorGuest: String
+        val colorLight: String?,
+        val colorHome: String?,
+        val colorGuest: String?
 )
