@@ -1,10 +1,16 @@
 package com.hongwei.model.nba
 
 enum class NbaTeams(val short: String) {
-    GS("gs"),
+    ATL("atl"),
+    BKN("bkn"),
+    BOS("bos"),
+    CHA("cha"),
+    CHI("chi"),
+    CLE("cle"),
     DAL("dal"),
     DEN("den"),
     DET("det"),
+    GS("gs"),
     HOU("hou"),
     IND("ind"),
     LAC("lac"),

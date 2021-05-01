@@ -6,7 +6,6 @@ import com.hongwei.util.TimeStampUtil
 import org.apache.log4j.LogManager
 import org.apache.log4j.Logger
 import org.springframework.stereotype.Service
-import java.util.Calendar.*
 import org.jsoup.nodes.Document
 
 @Service
@@ -34,10 +33,16 @@ class EspnCurlService {
         private val END = "\"No Data Available\""
 
         val TEAMS = arrayOf(
-                "gs",
+                "atl",
+                "bkn",
+                "bos",
+                "cha",
+                "chi",
+                "cle",
                 "dal",
                 "den",
                 "det",
+                "gs",
                 "hou",
                 "ind",
                 "lac",
