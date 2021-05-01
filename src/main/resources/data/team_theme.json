@@ -1,0 +1,23 @@
+{
+  "dataVersion": 1,
+  "data": [
+    {
+      "team": "gs",
+      "colorLight": "0xFFFFFF",
+      "colorHome": "0x1C4189",
+      "colorGuest": "0xFCB826"
+    },
+    {
+      "team": "lal",
+      "colorLight": "0xFFFFFFFF",
+      "colorHome": "0xFFFDB827",
+      "colorGuest": "0xFF542583"
+    },
+    {
+      "team": "lac",
+      "colorLight": "0xFFFFFFFF",
+      "colorHome": "0xFF23438B",
+      "colorGuest": "0xFFBF0E2D"
+    }
+  ]
+}

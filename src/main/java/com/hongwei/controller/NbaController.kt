@@ -2,6 +2,7 @@ package com.hongwei.controller
 
 import com.hongwei.constants.ResetContent
 import com.hongwei.service.nba.NbaService
+import com.hongwei.service.nba.NbaThemeService
 import org.springframework.beans.factory.annotation.Autowired
 import org.springframework.http.ResponseEntity
 import org.springframework.web.bind.annotation.GetMapping
@@ -15,6 +16,9 @@ class NbaController {
     @Autowired
     private lateinit var nbaService: NbaService
 
+    @Autowired
+    private lateinit var nbaThemeService: NbaThemeService
+
     @GetMapping(path = ["/teamSchedule.do"])
     @ResponseBody
     fun getTeamSchedule(team: String, dataVersion: Long): ResponseEntity<*> =
@@ -26,6 +30,13 @@ class NbaController {
     @ResponseBody
     fun getStanding(dataVersion: Long): ResponseEntity<*> =
             nbaService.getStanding(dataVersion)?.let {
+                ResponseEntity.ok(it)
+            } ?: throw ResetContent
+
+    @GetMapping(path = ["/teamTheme.do"])
+    @ResponseBody
+    fun getTeamTheme(team: String, dataVersion: Long): ResponseEntity<*> =
+            nbaThemeService.getTeamTheme(team, dataVersion)?.let {
                 ResponseEntity.ok(it)
             } ?: throw ResetContent
 }

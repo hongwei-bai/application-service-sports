@@ -9,6 +9,10 @@ object Constants {
         const val TEAM_SCHEDULE_JSON_PATH = "/schedule_{team}.json"
 
         const val STANDING_JSON_PATH = "/standing.json"
+
+        const val TEAM_THEME_JSON_PATH = "/team_theme.json"
+
+        const val TEAM_BANNER_URL = "https://hongwei-test1.top/resize/1080/nba_v1/banner/{team}.jpg"
     }
 
     object TimeZone {
