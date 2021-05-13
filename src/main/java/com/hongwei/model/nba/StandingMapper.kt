@@ -9,7 +9,7 @@ object StandingMapper {
                 }
             }),
             eastern = ConferenceStandingData(mutableListOf<TeamStandingData>().apply {
-                standingSource.westernConference.teams.forEachIndexed { i, teamStandingSource ->
+                standingSource.easternConference.teams.forEachIndexed { i, teamStandingSource ->
                     add(mapTeamStandingData(i, teamStandingSource))
                 }
             })

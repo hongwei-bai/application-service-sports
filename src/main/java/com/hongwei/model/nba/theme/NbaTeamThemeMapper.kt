@@ -1,5 +1,6 @@
 package com.hongwei.model.nba.theme
 
+import com.hongwei.constants.Constants.AppDataPath.TEAM_BACKGROUND_URL
 import com.hongwei.constants.Constants.AppDataPath.TEAM_BANNER_URL
 
 object NbaTeamThemeMapper {
@@ -11,6 +12,7 @@ object NbaTeamThemeMapper {
                         dataVersion = teamThemeJson.dataVersion ?: 0,
                         team = team,
                         bannerUrl = TEAM_BANNER_URL.replace("{team}", team),
+                        backgroundUrl = TEAM_BACKGROUND_URL.replace("{team}", team),
                         colorLight = it.colorLight?.mapToLong(),
                         colorHome = it.colorHome?.mapToLong(),
                         colorGuest = it.colorGuest?.mapToLong()
