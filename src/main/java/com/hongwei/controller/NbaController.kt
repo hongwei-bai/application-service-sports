@@ -1,6 +1,7 @@
 package com.hongwei.controller
 
 import com.hongwei.constants.ResetContent
+import com.hongwei.service.nba.NbaPlayOffService
 import com.hongwei.service.nba.NbaService
 import com.hongwei.service.nba.NbaThemeService
 import org.springframework.beans.factory.annotation.Autowired
@@ -19,6 +20,9 @@ class NbaController {
     @Autowired
     private lateinit var nbaThemeService: NbaThemeService
 
+    @Autowired
+    private lateinit var nbaPlayOffService: NbaPlayOffService
+
     @GetMapping(path = ["/teamSchedule.do"])
     @ResponseBody
     fun getTeamSchedule(team: String, dataVersion: Long): ResponseEntity<*> =
@@ -30,6 +34,13 @@ class NbaController {
     @ResponseBody
     fun getStanding(dataVersion: Long): ResponseEntity<*> =
             nbaService.getStanding(dataVersion)?.let {
+                ResponseEntity.ok(it)
+            } ?: throw ResetContent
+
+    @GetMapping(path = ["/playOff.do"])
+    @ResponseBody
+    fun getPlayOff(dataVersion: Long): ResponseEntity<*> =
+            nbaPlayOffService.getPlayOff(dataVersion)?.let {
                 ResponseEntity.ok(it)
             } ?: throw ResetContent
 

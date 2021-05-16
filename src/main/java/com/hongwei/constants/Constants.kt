@@ -12,6 +12,8 @@ object Constants {
 
         const val TEAM_THEME_JSON_PATH = "/team_theme.json"
 
+        const val PLAYOFF_SOURCE_JSON_PATH = "/source_playoff.json"
+
         const val TEAM_BANNER_URL = "https://hongwei-test1.top/resize/1080/nba_v1/banner/{team}.jpg"
 
         const val TEAM_BACKGROUND_URL = "https://hongwei-test1.top/resize/1080/nba_v1/background/{team}.jpg"

@@ -1,20 +1,121 @@
 {
   "dataVersion": 2021042500,
-  "western": {
-    "teams": [
-      "uath",
-      "phx",
-      "lac",
-      "den",
-      "dal",
-      "por",
-      "lal",
-      "gs",
-      "mem",
-      "sa"
-    ],
-    "round": [
-
-    ]
+  "seasonOngoing": "true",
+  "playInOngoing": "false",
+  "playOffOngoing": "false",
+  "playIn": {
+    "western": {
+      "winnerOf78": "lal",
+      "winnerOf910": "mem",
+      "lastWinner": "gs"
+    },
+    "eastern": {
+      "winnerOf78": "bos",
+      "winnerOf910": "wsh",
+      "lastWinner": "wsh"
+    }
+  },
+  "playOff": {
+    "western": {
+      "round1": {
+        "series18": {
+          "scoreHighRank": "0",
+          "scoreLowRank": "0",
+          "winner": "TBD"
+        },
+        "series45": {
+          "scoreHighRank": "0",
+          "scoreLowRank": "0",
+          "winner": "TBD"
+        },
+        "series36": {
+          "scoreHighRank": "0",
+          "scoreLowRank": "0",
+          "winner": "TBD"
+        },
+        "series27": {
+          "scoreHighRank": "0",
+          "scoreLowRank": "0",
+          "winner": "TBD"
+        }
+      },
+      "round2": {
+        "seriesUpper": {
+          "teamFromUpper": "TBD",
+          "teamFromLower": "TBD",
+          "scoreUpperWinner": "0",
+          "scoreLowerWinner": "0",
+          "winner": "TBD"
+        },
+        "seriesLower": {
+          "teamFromUpper": "TBD",
+          "teamFromLower": "TBD",
+          "scoreUpperWinner": "0",
+          "scoreLowerWinner": "0",
+          "winner": "TBD"
+        }
+      },
+      "conferenceFinal": {
+        "teamFromUpper": "TBD",
+        "teamFromLower": "TBD",
+        "scoreUpperWinner": "0",
+        "scoreLowerWinner": "0",
+        "winner": "TBD"
+      }
+    },
+    "eastern": {
+      "round1": {
+        "series18": {
+          "scoreHighRank": "0",
+          "scoreLowRank": "0",
+          "winner": "TBD"
+        },
+        "series45": {
+          "scoreHighRank": "0",
+          "scoreLowRank": "0",
+          "winner": "TBD"
+        },
+        "series36": {
+          "scoreHighRank": "0",
+          "scoreLowRank": "0",
+          "winner": "TBD"
+        },
+        "series27": {
+          "scoreHighRank": "0",
+          "scoreLowRank": "0",
+          "winner": "TBD"
+        }
+      },
+      "round2": {
+        "seriesUpper": {
+          "teamFromUpper": "TBD",
+          "teamFromLower": "TBD",
+          "scoreUpperWinner": "0",
+          "scoreLowerWinner": "0",
+          "winner": "TBD"
+        },
+        "seriesLower": {
+          "teamFromUpper": "TBD",
+          "teamFromLower": "TBD",
+          "scoreUpperWinner": "0",
+          "scoreLowerWinner": "0",
+          "winner": "TBD"
+        }
+      },
+      "conferenceFinal": {
+        "teamFromUpper": "TBD",
+        "teamFromLower": "TBD",
+        "scoreUpperWinner": "0",
+        "scoreLowerWinner": "0",
+        "winner": "TBD"
+      }
+    },
+    "grandFinal": {
+      "teamFromWestern": "TBD",
+      "teamFromEastern": "TBD",
+      "scoreWesternWinner": "0",
+      "scoreEasternWinner": "0",
+      "winner": "TBD"
+    }
   }
 }

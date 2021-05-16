@@ -2,6 +2,7 @@ package com.hongwei.service.scheduler
 
 import com.hongwei.constants.Constants.TimeZone.SYDNEY
 import com.hongwei.controller.StatHubController
+import com.hongwei.service.nba.NbaPlayOffService
 import org.apache.log4j.LogManager
 import org.apache.log4j.Logger
 import org.springframework.beans.factory.annotation.Autowired
@@ -16,13 +17,18 @@ class ScheduledTasks {
     @Autowired
     private lateinit var statHubController: StatHubController
 
+    @Autowired
+    private lateinit var nbaPlayOffService: NbaPlayOffService
+
     // 60 mins : 60 min x 60 s x 1000 ms = 1,800,000, For copy:3600000
     @Scheduled(fixedRate = 3600000)
     fun reportCurrentTime() {
         val sydTime = Calendar.getInstance(TimeZone.getTimeZone(SYDNEY))
         val hour = sydTime.get(Calendar.HOUR_OF_DAY)
         if (HoursUpdate.contains(hour)) {
-            statHubController.generateEspnStanding()
+            if (nbaPlayOffService.isSeasonOngoing()) {
+                statHubController.generateEspnStanding()
+            }
 
             Thread {
                 Thread.sleep(1000 * 30)
