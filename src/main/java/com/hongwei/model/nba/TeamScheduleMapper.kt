@@ -15,8 +15,8 @@ object TeamScheduleMapper {
     fun map(teamScheduleSource: TeamScheduleSource): TeamSchedule = TeamSchedule(
             teamScheduleSource.dataVersion ?: 0,
             listOf(
-                    teamScheduleSource.teamSchedule.first().events.post.first().group,
-                    teamScheduleSource.teamSchedule.first().events.pre.first().group
+                    teamScheduleSource.teamSchedule.first().events.post.firstOrNull()?.group ?: emptyList(),
+                    teamScheduleSource.teamSchedule.first().events.pre.firstOrNull()?.group ?: emptyList()
             ).flatten().filter {
                 val lastWeekTs = Date.from(now()).time - WEEK_TS
                 parseDate(it.date.date)?.after(Date(lastWeekTs)) == true
