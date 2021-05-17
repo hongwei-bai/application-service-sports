@@ -42,12 +42,16 @@ data class PlayOffSource(
 
 data class PlayInConferenceSource(
         val winnerOf78: String,
+        val loserOf78: String,
         val winnerOf910: String,
+        val loserOf910: String,
         val lastWinner: String
 ) {
     fun map() = PlayInConference(
             winnerOf78 = winnerOf78,
+            loserOf78 = loserOf78,
             winnerOf910 = winnerOf910,
+            loserOf910 = loserOf910,
             lastWinner = lastWinner
     )
 }

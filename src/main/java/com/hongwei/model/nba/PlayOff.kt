@@ -22,7 +22,9 @@ data class PlayOff(
 
 data class PlayInConference(
         val winnerOf78: String,
+        val loserOf78: String,
         val winnerOf910: String,
+        val loserOf910: String,
         val lastWinner: String
 )
 

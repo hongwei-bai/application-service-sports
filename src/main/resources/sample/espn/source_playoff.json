@@ -6,12 +6,16 @@
   "playIn": {
     "western": {
       "winnerOf78": "lal",
+      "loserOf78": "gs",
       "winnerOf910": "mem",
+      "loserOf910": "sa",
       "lastWinner": "gs"
     },
     "eastern": {
       "winnerOf78": "bos",
+      "loserOf78": "gs",
       "winnerOf910": "wsh",
+      "loserOf910": "sa",
       "lastWinner": "wsh"
     }
   },
