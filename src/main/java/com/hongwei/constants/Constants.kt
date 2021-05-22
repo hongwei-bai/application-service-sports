@@ -6,6 +6,10 @@ object Constants {
     }
 
     object AppDataPath {
+        const val NBA_DATA_PATH = "nba_v1"
+
+        const val SOCCER_DATA_PATH = "soccer_v1"
+
         const val TEAM_SCHEDULE_JSON_PATH = "/schedule_{team}.json"
 
         const val STANDING_JSON_PATH = "/standing.json"

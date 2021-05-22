@@ -12,7 +12,7 @@ import java.util.*
 
 @RestController
 @RequestMapping("/hub")
-class StatHubController {
+class StatHubNbaController {
     @Autowired
     private lateinit var statCurlService: EspnCurlService
 
