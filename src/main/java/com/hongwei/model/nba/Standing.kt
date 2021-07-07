@@ -7,7 +7,7 @@ data class StandingData(
 )
 
 data class ConferenceStandingData(
-        val teams: MutableList<TeamStandingData>
+        val teams: List<TeamStandingData>
 )
 
 data class TeamStandingData(

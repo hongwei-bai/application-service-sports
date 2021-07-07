@@ -1,10 +1,11 @@
 package com.hongwei.controller
 
-import com.google.gson.Gson
 import com.hongwei.constants.BadRequest
 import com.hongwei.constants.ResetContent
 import com.hongwei.service.nba.*
 import com.hongwei.service.nba.EspnCurlService.Companion.TEAMS
+import org.apache.log4j.LogManager
+import org.apache.log4j.Logger
 import org.springframework.beans.factory.annotation.Autowired
 import org.springframework.http.ResponseEntity
 import org.springframework.web.bind.annotation.*
@@ -12,15 +13,17 @@ import java.util.*
 
 @RestController
 @RequestMapping("/hub")
-class StatHubNbaController {
+class StatHubNbaScheduleController {
+    private val logger: Logger = LogManager.getLogger(StatHubNbaScheduleController::class.java)
+
     @Autowired
     private lateinit var statCurlService: EspnCurlService
 
     @Autowired
-    private lateinit var espnStandingParseService: EspnStandingParseService
+    private lateinit var jsonWriterService: JsonWriterService
 
     @Autowired
-    private lateinit var jsonWriterService: JsonWriterService
+    private lateinit var dbWriterService: DbWriterService
 
     @Autowired
     private lateinit var nbaService: NbaService
@@ -34,25 +37,6 @@ class StatHubNbaController {
         ResponseEntity.ok(it.toString())
     } ?: throw BadRequest
 
-    @GetMapping(path = ["/espnStanding.do"])
-    @ResponseBody
-    fun getEspnStanding(): ResponseEntity<*> {
-        val standingData = espnStandingParseService.parseStanding(
-                statCurlService.getStanding()!!)
-        return ResponseEntity.ok(Gson().toJson(standingData))
-    }
-
-    @PutMapping(path = ["/espnStanding.do"])
-    @ResponseBody
-    fun generateEspnStanding(): ResponseEntity<*> {
-        val standingData = espnStandingParseService.parseStanding(
-                statCurlService.getStanding()!!)
-        standingData?.let {
-            jsonWriterService.writeStanding(it)
-        }
-        return ResponseEntity.ok(null)
-    }
-
     @GetMapping(path = ["/espnTeams.do"])
     @ResponseBody
     fun getEspnTeamShorts(): ResponseEntity<*> = ResponseEntity.ok(statCurlService.getTeamList())
@@ -63,16 +47,6 @@ class StatHubNbaController {
             statCurlService.getTeamScheduleJson(team, dataVersionBase ?: 0)?.let {
                 ResponseEntity.ok(it)
             } ?: throw ResetContent
-
-    @PutMapping(path = ["/espnTeamSchedule.do"])
-    @ResponseBody
-    fun generateEspnTeamSchedule(team: String, dataVersionBase: Int? = null): ResponseEntity<*> {
-        val scheduleJsonString = statCurlService.getTeamScheduleJson(team, dataVersionBase ?: 0)
-        scheduleJsonString?.let {
-            jsonWriterService.writeTeamSchedule(team, scheduleJsonString)
-        }
-        return ResponseEntity.ok(null)
-    }
 
     @PutMapping(path = ["/espnAllTeamsSchedule.do"])
     @ResponseBody
@@ -102,8 +76,8 @@ class StatHubNbaController {
             if (standing != null && westernSeed7 != "TBD" && westernSeed8 != "TBD" && easternSeed7 != "TBD" && easternSeed8 != "TBD") {
                 val playOffTeams = (standing.western.teams + standing.eastern.teams)
                         .filter { it.rank in 1..6 }
-                        .map { it.teamAbbr } + listOf(westernSeed7, westernSeed8, easternSeed7, easternSeed8)
-                        .map { it.toLowerCase(Locale.US) }
+                        .map { it.teamAbbr }.map { it.toLowerCase(Locale.US) } +
+                        listOf(westernSeed7, westernSeed8, easternSeed7, easternSeed8).map { it.toLowerCase(Locale.US) }
                 playOffTeams.forEach { team ->
                     generateScheduleForEachTeam(team, dataVersionBase)
                 }
@@ -120,10 +94,26 @@ class StatHubNbaController {
         return ResponseEntity.ok(message)
     }
 
-    private fun generateScheduleForEachTeam(team: String, dataVersionBase: Int?) {
-        val scheduleJsonString = statCurlService.getTeamScheduleJson(team, dataVersionBase ?: 0)
-        scheduleJsonString?.let {
-            jsonWriterService.writeTeamSchedule(team, scheduleJsonString)
+    @PutMapping(path = ["/espnTeamSchedule.do"])
+    @ResponseBody
+    fun generateEspnTeamSchedule(team: String, dataVersionBase: Int? = null): ResponseEntity<*> {
+        generateScheduleForEachTeam(team, dataVersionBase)
+        return ResponseEntity.ok(null)
+    }
+
+    private fun generateScheduleForEachTeam(team: String, dataVersionBase: Int?, storageType: StorageType? = StorageType.Db) {
+        val curlDoc = statCurlService.getTeamScheduleCurlDoc(team)
+        val teamDetailJson = statCurlService.getTeamDetailJson(curlDoc)
+        val scheduleJsonString = statCurlService.getTeamScheduleJson(curlDoc, dataVersionBase ?: 0)
+        if (teamDetailJson != null && scheduleJsonString != null) {
+            when (storageType) {
+                StorageType.Db -> dbWriterService.writeTeamSchedule(teamDetailJson, scheduleJsonString)
+                StorageType.Json -> jsonWriterService.writeTeamSchedule(teamDetailJson, scheduleJsonString)
+            }
         }
+    }
+
+    enum class StorageType {
+        Json, Db
     }
 }

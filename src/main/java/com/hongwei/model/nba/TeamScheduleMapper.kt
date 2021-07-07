@@ -12,9 +12,18 @@ import java.util.Date
 object TeamScheduleMapper {
     private const val WEEK_TS = 1000 * 3600 * 24 * 7L
 
-    fun map(teamScheduleSource: TeamScheduleSource): TeamSchedule = TeamSchedule(
-            teamScheduleSource.dataVersion ?: 0,
-            listOf(
+    fun map(teamDetailSource: TeamDetailSource, teamScheduleSource: TeamScheduleSource): TeamSchedule = TeamSchedule(
+            dataVersion = teamScheduleSource.dataVersion ?: 0,
+            teamDetail = TeamDetail(
+                    abbrev = teamDetailSource.abbrev!!,
+                    displayName = teamDetailSource.displayName!!,
+                    logo = teamDetailSource.logo!!,
+                    teamColor = teamDetailSource.teamColor!!,
+                    altColor = teamDetailSource.altColor!!,
+                    recordSummary = teamDetailSource.recordSummary!!,
+                    location = teamDetailSource.location!!
+            ),
+            events = listOf(
                     teamScheduleSource.teamSchedule.first().events.post.firstOrNull()?.group ?: emptyList(),
                     teamScheduleSource.teamSchedule.first().events.pre.firstOrNull()?.group ?: emptyList()
             ).flatten().filter {

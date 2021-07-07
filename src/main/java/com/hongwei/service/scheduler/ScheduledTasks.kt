@@ -1,7 +1,8 @@
 package com.hongwei.service.scheduler
 
 import com.hongwei.constants.Constants.TimeZone.SYDNEY
-import com.hongwei.controller.StatHubNbaController
+import com.hongwei.controller.StatHubNbaScheduleController
+import com.hongwei.controller.StatHubNbaStandingController
 import com.hongwei.service.nba.NbaPlayOffService
 import org.apache.log4j.LogManager
 import org.apache.log4j.Logger
@@ -15,7 +16,10 @@ class ScheduledTasks {
     private val logger: Logger = LogManager.getLogger(ScheduledTasks::class.java)
 
     @Autowired
-    private lateinit var statHubNbaController: StatHubNbaController
+    private lateinit var statHubNbaStandingController: StatHubNbaStandingController
+
+    @Autowired
+    private lateinit var statHubNbaScheduleController: StatHubNbaScheduleController
 
     @Autowired
     private lateinit var nbaPlayOffService: NbaPlayOffService
@@ -27,12 +31,12 @@ class ScheduledTasks {
         val hour = sydTime.get(Calendar.HOUR_OF_DAY)
         if (HoursUpdate.contains(hour)) {
             if (nbaPlayOffService.isSeasonOngoing()) {
-                statHubNbaController.generateEspnStanding()
+                statHubNbaStandingController.generateEspnStandingDb()
             }
 
             Thread {
                 Thread.sleep(1000 * 30)
-                statHubNbaController.generateEspnAllTeamSchedule()
+                statHubNbaScheduleController.generateEspnAllTeamSchedule()
             }.start()
         }
     }

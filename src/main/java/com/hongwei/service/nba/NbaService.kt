@@ -1,46 +1,60 @@
 package com.hongwei.service.nba
 
-import com.fasterxml.jackson.databind.DeserializationFeature
-import com.fasterxml.jackson.databind.ObjectMapper
-import com.fasterxml.jackson.module.kotlin.KotlinModule
-import com.hongwei.constants.Constants.AppDataPath.STANDING_JSON_PATH
-import com.hongwei.constants.Constants.AppDataPath.TEAM_SCHEDULE_JSON_PATH
-import com.hongwei.model.nba.*
+import com.hongwei.constants.NoContent
+import com.hongwei.model.jpa.NbaStandingEntity
+import com.hongwei.model.jpa.NbaStandingRepository
+import com.hongwei.model.jpa.NbaTeamScheduleEntity
+import com.hongwei.model.jpa.NbaTeamScheduleRepository
+import com.hongwei.model.nba.ConferenceStandingData
+import com.hongwei.model.nba.StandingData
+import com.hongwei.model.nba.TeamSchedule
 import org.apache.log4j.LogManager
 import org.apache.log4j.Logger
+import org.springframework.beans.factory.annotation.Autowired
 import org.springframework.beans.factory.annotation.Value
 import org.springframework.stereotype.Service
-import java.io.File
 import java.io.IOException
 
 @Service
 class NbaService {
     private val logger: Logger = LogManager.getLogger(NbaService::class.java)
 
-    @Value("\${appdata.nbaPath}")
-    private lateinit var nbaAppDataPath: String
+    @Value("\${appdata.dataPath}")
+    private lateinit var appDataPath: String
+
+    @Autowired
+    private lateinit var nbaTeamScheduleRepository: NbaTeamScheduleRepository
+
+    @Autowired
+    private lateinit var nbaStandingRepository: NbaStandingRepository
 
     @Throws(IOException::class)
     fun getScheduleByTeam(team: String, currentDataVersion: Long): TeamSchedule? {
-        val jsonPath = "$nbaAppDataPath$TEAM_SCHEDULE_JSON_PATH".replace("{team}", team)
-        val teamSchedule = ObjectMapper().registerModule(KotlinModule())
-                .disable(DeserializationFeature.FAIL_ON_UNKNOWN_PROPERTIES)
-                .readValue(File(jsonPath), TeamScheduleSource::class.java)
-        return if ((teamSchedule.dataVersion ?: 0) > currentDataVersion) {
-            TeamScheduleMapper.map(teamSchedule)
-        } else {
-            null
+        val teamScheduleDb: NbaTeamScheduleEntity? = nbaTeamScheduleRepository.findScheduleByTeam(team)
+        return when {
+            teamScheduleDb?.events == null -> {
+                throw NoContent
+            }
+            (teamScheduleDb.dataVersion ?: 0) > currentDataVersion -> {
+                TeamSchedule(teamScheduleDb.dataVersion ?: 0, teamScheduleDb.teamDetail!!, teamScheduleDb.events!!)
+            }
+            else -> {
+                null
+            }
         }
     }
 
     @Throws(IOException::class)
     fun getStanding(currentDataVersion: Long): StandingData? {
-        val jsonPath = "$nbaAppDataPath$STANDING_JSON_PATH"
-        val standingData = ObjectMapper().registerModule(KotlinModule())
-                .disable(DeserializationFeature.FAIL_ON_UNKNOWN_PROPERTIES)
-                .readValue(File(jsonPath), StandingSource::class.java)
-        return if ((standingData.dataVersion ?: 0) > currentDataVersion) {
-            StandingMapper.map(standingData)
+        val standingDataDb: NbaStandingEntity? = nbaStandingRepository.findLatestStandings()?.firstOrNull()
+        return if (standingDataDb?.easternStandings == null || standingDataDb.westernStandings == null) {
+            throw NoContent
+        } else if ((standingDataDb.dataVersion ?: 0) > currentDataVersion) {
+            StandingData(
+                    dataVersion = standingDataDb.dataVersion ?: 0,
+                    western = ConferenceStandingData(standingDataDb.westernStandings!!),
+                    eastern = ConferenceStandingData(standingDataDb.easternStandings!!)
+            )
         } else {
             null
         }
