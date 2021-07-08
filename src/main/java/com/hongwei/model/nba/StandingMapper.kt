@@ -1,21 +1,21 @@
 package com.hongwei.model.nba
 
 object StandingMapper {
-    fun map(standingSource: StandingSource): StandingData = StandingData(
+    fun map(standingSource: StandingSource): Standing = Standing(
             dataVersion = standingSource.dataVersion ?: 0,
-            western = ConferenceStandingData(mutableListOf<TeamStandingData>().apply {
+            western = mutableListOf<TeamStanding>().apply {
                 standingSource.westernConference.teams.forEachIndexed { i, teamStandingSource ->
                     add(mapTeamStandingData(i, teamStandingSource))
                 }
-            }),
-            eastern = ConferenceStandingData(mutableListOf<TeamStandingData>().apply {
+            },
+            eastern = mutableListOf<TeamStanding>().apply {
                 standingSource.easternConference.teams.forEachIndexed { i, teamStandingSource ->
                     add(mapTeamStandingData(i, teamStandingSource))
                 }
-            })
+            }
     )
 
-    private fun mapTeamStandingData(i: Int, teamStandingSource: TeamStandingSource): TeamStandingData = TeamStandingData(
+    private fun mapTeamStandingData(i: Int, teamStandingSource: TeamStandingSource): TeamStanding = TeamStanding(
             rank = teamStandingSource.rank.toIntOrNull() ?: (i + 1),
             teamAbbr = teamStandingSource.abbr,
             teamName = teamStandingSource.displayName,

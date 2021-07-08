@@ -1,16 +1,12 @@
 package com.hongwei.model.nba
 
-data class StandingData(
+data class Standing(
         val dataVersion: Long,
-        val western: ConferenceStandingData,
-        val eastern: ConferenceStandingData
+        val western: List<TeamStanding>,
+        val eastern: List<TeamStanding>
 )
 
-data class ConferenceStandingData(
-        val teams: List<TeamStandingData>
-)
-
-data class TeamStandingData(
+data class TeamStanding(
         val rank: Int,
         val teamAbbr: String,
         val teamName: String,

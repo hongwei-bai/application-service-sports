@@ -1,9 +1,7 @@
 package com.hongwei.model.jpa
 
-import com.hongwei.model.jpa.converter.NbaScheduleEventListConverter
-import com.hongwei.model.jpa.converter.NbaTeamDetailConverter
-import com.hongwei.model.nba.Event
-import com.hongwei.model.nba.TeamDetail
+import com.hongwei.model.jpa.converter.NbaScheduleTeamEventListConverter
+import com.hongwei.model.nba.TeamEvent
 import javax.persistence.*
 
 
@@ -11,19 +9,14 @@ import javax.persistence.*
 data class NbaTeamScheduleEntity(
         @Id
         @Column(nullable = false)
-        var team: String? = null,
+        var team: String = "",
 
         @Column(nullable = false)
-        var dataVersion: Long? = null,
+        var dataVersion: Long = 0L,
 
         @Lob
-        @Convert(converter = NbaTeamDetailConverter::class)
-        @Column(nullable = true)
-        var teamDetail: TeamDetail? = null,
-
-        @Lob
-        @Convert(converter = NbaScheduleEventListConverter::class)
-        @Column(nullable = true)
-        var events: List<Event>? = null
+        @Convert(converter = NbaScheduleTeamEventListConverter::class)
+        @Column(nullable = false)
+        var events: List<TeamEvent> = emptyList()
 )
 

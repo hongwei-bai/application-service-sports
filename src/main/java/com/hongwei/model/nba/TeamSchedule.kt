@@ -2,36 +2,40 @@ package com.hongwei.model.nba
 
 data class TeamSchedule(
         val dataVersion: Long = 0,
-        val teamDetail: TeamDetail,
-        val events: List<Event>
+        val team: Team,
+        val events: List<TeamEvent>
 )
 
-data class TeamDetail(
-        val abbrev: String,
-        val displayName: String,
-        val logo: String,
-        val teamColor: String,
-        val altColor: String,
-        val recordSummary: String,
-        val location: String
-)
-
-data class Event(
+data class TeamEvent(
         val unixTimeStamp: Long,
-        val localDisplayTime: String,
+        val isHome: Boolean,
         val opponent: Team,
-        val result: Result? = null
+        val result: TeamResult? = null
 )
 
 data class Team(
         val abbrev: String,
         val displayName: String,
         val logo: String,
-        val location: String,
-        val isHome: Boolean
-)
+        val location: String
+) {
+    override fun equals(other: Any?): Boolean {
+        if (this === other) return true
+        if (javaClass != other?.javaClass) return false
 
-data class Result(
+        other as Team
+
+        if (abbrev != other.abbrev) return false
+
+        return true
+    }
+
+    override fun hashCode(): Int {
+        return abbrev.hashCode()
+    }
+}
+
+data class TeamResult(
         val winLossSymbol: String,
         val currentTeamScore: Int,
         val opponentTeamScore: Int

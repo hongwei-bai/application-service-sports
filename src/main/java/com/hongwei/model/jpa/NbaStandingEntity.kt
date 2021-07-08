@@ -1,26 +1,26 @@
 package com.hongwei.model.jpa
 
 import com.hongwei.model.jpa.converter.NbaStandingsConverter
-import com.hongwei.model.nba.TeamStandingData
+import com.hongwei.model.nba.TeamStanding
 import javax.persistence.*
 
 
 @Entity
 data class NbaStandingEntity(
         @Id @GeneratedValue
-        private var id: Long? = null,
+        private var id: Long = 0L,
 
         @Column(nullable = false)
-        var dataVersion: Long? = null,
+        var dataVersion: Long = 0L,
 
         @Lob
         @Convert(converter = NbaStandingsConverter::class)
-        @Column(nullable = true)
-        var easternStandings: List<TeamStandingData>? = null,
+        @Column(nullable = false)
+        var eastern: List<TeamStanding> = emptyList(),
 
         @Lob
         @Convert(converter = NbaStandingsConverter::class)
-        @Column(nullable = true)
-        var westernStandings: List<TeamStandingData>? = null
+        @Column(nullable = false)
+        var western: List<TeamStanding> = emptyList()
 )
 

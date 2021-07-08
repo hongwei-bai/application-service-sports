@@ -8,13 +8,13 @@ import javax.persistence.AttributeConverter
 import javax.persistence.Converter
 
 @Converter
-class NbaScheduleEventListConverter : AttributeConverter<List<Event>?, String?> {
-    override fun convertToDatabaseColumn(stringList: List<Event>?): String? {
-        return if (stringList != null) Gson().toJson(stringList) else ""
+class NbaScheduleEventListConverter : AttributeConverter<List<Event>, String?> {
+    override fun convertToDatabaseColumn(stringList: List<Event>): String? {
+        return Gson().toJson(stringList)
     }
 
-    override fun convertToEntityAttribute(string: String?): List<Event>? {
-        val listType: Type = object : TypeToken<List<Event>?>() {}.type
+    override fun convertToEntityAttribute(string: String?): List<Event> {
+        val listType: Type = object : TypeToken<List<Event>>() {}.type
         return if (string != null) Gson().fromJson(string, listType) else emptyList()
     }
 }

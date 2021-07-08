@@ -7,5 +7,7 @@ data class NbaTeamTheme(
         val backgroundUrl: String? = null,
         val colorLight: Long? = null,
         val colorHome: Long? = null,
-        val colorGuest: Long? = null
+        val colorGuest: Long? = null,
+        val teamColor: Long? = null,
+        val altColor: Long? = null
 )

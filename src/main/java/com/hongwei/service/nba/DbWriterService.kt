@@ -1,11 +1,10 @@
 package com.hongwei.service.nba
 
-import com.google.gson.Gson
-import com.hongwei.model.jpa.NbaStandingEntity
-import com.hongwei.model.jpa.NbaStandingRepository
-import com.hongwei.model.jpa.NbaTeamScheduleEntity
-import com.hongwei.model.jpa.NbaTeamScheduleRepository
-import com.hongwei.model.nba.*
+import com.hongwei.model.jpa.*
+import com.hongwei.model.nba.Event
+import com.hongwei.model.nba.Standing
+import com.hongwei.model.nba.StandingMapper
+import com.hongwei.model.nba.StandingSource
 import org.apache.log4j.LogManager
 import org.apache.log4j.Logger
 import org.springframework.beans.factory.annotation.Autowired
@@ -21,25 +20,34 @@ class DbWriterService {
     @Autowired
     private lateinit var nbaStandingRepository: NbaStandingRepository
 
+    @Autowired
+    private lateinit var nbaTeamDetailRepository: NbaTeamDetailRepository
+
+    @Autowired
+    private lateinit var nbaScheduleRepository: NbaScheduleRepository
+
     fun writeStanding(jsonObj: StandingSource) {
-        val data: StandingData = StandingMapper.map(jsonObj)
+        val data: Standing = StandingMapper.map(jsonObj)
         val lastStandingRecordInDb: NbaStandingEntity? = nbaStandingRepository.findLatestStandings()?.firstOrNull()
         if (data.dataVersion != lastStandingRecordInDb?.dataVersion) {
             val entity = NbaStandingEntity(
                     dataVersion = data.dataVersion,
-                    easternStandings = data.eastern.teams,
-                    westernStandings = data.western.teams
+                    eastern = data.eastern,
+                    western = data.western
             )
             nbaStandingRepository.save(entity)
         }
     }
 
-    fun writeTeamSchedule(teamDetailJsonString: String, teamScheduleJsonString: String) {
-        logger.debug("teamDetailJsonString: $teamDetailJsonString")
-        val teamDetailSourceObj: TeamDetailSource = Gson().fromJson(teamDetailJsonString, TeamDetailSource::class.java)
-        val teamScheduleSourceObj: TeamScheduleSource = Gson().fromJson(teamScheduleJsonString, TeamScheduleSource::class.java)
-        val data = TeamScheduleMapper.map(teamDetailSourceObj, teamScheduleSourceObj)
-        val entity = NbaTeamScheduleEntity(data.teamDetail.abbrev, data.dataVersion, data.teamDetail, data.events)
-        nbaTeamScheduleRepository.save(entity)
+    fun writeTeamSchedule(teamScheduleEntity: NbaTeamScheduleEntity) {
+        nbaTeamScheduleRepository.save(teamScheduleEntity)
+    }
+
+    fun writeTeamDetail(teamDetailEntity: NbaTeamDetailEntity) {
+        nbaTeamDetailRepository.save(teamDetailEntity)
+    }
+
+    fun writeFullSchedule(dataVersion: String, events: List<Event>) {
+        nbaScheduleRepository.save(NbaScheduleEntity(dataVersion = dataVersion.toLong(), events = events))
     }
 }

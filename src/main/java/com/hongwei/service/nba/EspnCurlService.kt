@@ -41,7 +41,6 @@ class EspnCurlService {
 
         private const val TEAM_DETAIL_START = "\"team\":"
         private const val TEAM_DETAIL_END_EXCLUDE = "\"groups\":"
-        private const val TEAM_DETAIL_END_TRIM = ","
 
         val TEAMS = arrayOf(
                 "atl",

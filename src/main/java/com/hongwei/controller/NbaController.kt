@@ -37,6 +37,13 @@ class NbaController {
                 ResponseEntity.ok(it)
             } ?: throw ResetContent
 
+    @GetMapping(path = ["/schedule.do"])
+    @ResponseBody
+    fun getFullSchedule(dataVersion: Long): ResponseEntity<*> =
+            nbaService.getFullSchedule(dataVersion)?.let {
+                ResponseEntity.ok(it)
+            } ?: throw ResetContent
+
     @GetMapping(path = ["/playOff.do"])
     @ResponseBody
     fun getPlayOff(dataVersion: Long): ResponseEntity<*> =

@@ -4,13 +4,13 @@ import com.hongwei.constants.Constants.TimeZone.SYDNEY
 import java.util.*
 
 object TimeStampUtil {
-    fun getTimeVersionWithDayAndDataVersion(timeZone: String? = SYDNEY, dataVersion: Int? = 0): String {
+    fun getTimeVersionWithDayAndDataVersion(timeZone: String? = SYDNEY, dataVersion: Int? = null): String {
         val time = Calendar.getInstance(TimeZone.getTimeZone(timeZone))
         val year = time.get(Calendar.YEAR)
         val month = time.get(Calendar.MONTH)
         val day = time.get(Calendar.DAY_OF_MONTH)
         return year.toString() + (month + 1).toString().padStart(2, '0') +
-                day.toString().padStart(2, '0') + dataVersion.toString().padStart(2, '0')
+                day.toString().padStart(2, '0') + (dataVersion ?: 0).toString().padStart(2, '0')
     }
 
     fun getTimeVersionWithHour(timeZone: String? = SYDNEY): String {

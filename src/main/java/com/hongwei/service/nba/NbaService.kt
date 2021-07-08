@@ -1,17 +1,14 @@
 package com.hongwei.service.nba
 
 import com.hongwei.constants.NoContent
-import com.hongwei.model.jpa.NbaStandingEntity
-import com.hongwei.model.jpa.NbaStandingRepository
-import com.hongwei.model.jpa.NbaTeamScheduleEntity
-import com.hongwei.model.jpa.NbaTeamScheduleRepository
-import com.hongwei.model.nba.ConferenceStandingData
-import com.hongwei.model.nba.StandingData
+import com.hongwei.model.jpa.*
+import com.hongwei.model.nba.Schedule
+import com.hongwei.model.nba.Standing
+import com.hongwei.model.nba.Team
 import com.hongwei.model.nba.TeamSchedule
 import org.apache.log4j.LogManager
 import org.apache.log4j.Logger
 import org.springframework.beans.factory.annotation.Autowired
-import org.springframework.beans.factory.annotation.Value
 import org.springframework.stereotype.Service
 import java.io.IOException
 
@@ -19,24 +16,50 @@ import java.io.IOException
 class NbaService {
     private val logger: Logger = LogManager.getLogger(NbaService::class.java)
 
-    @Value("\${appdata.dataPath}")
-    private lateinit var appDataPath: String
-
     @Autowired
     private lateinit var nbaTeamScheduleRepository: NbaTeamScheduleRepository
 
     @Autowired
+    private lateinit var nbaTeamDetailRepository: NbaTeamDetailRepository
+
+    @Autowired
     private lateinit var nbaStandingRepository: NbaStandingRepository
+
+    @Autowired
+    private lateinit var nbaScheduleRepository: NbaScheduleRepository
 
     @Throws(IOException::class)
     fun getScheduleByTeam(team: String, currentDataVersion: Long): TeamSchedule? {
         val teamScheduleDb: NbaTeamScheduleEntity? = nbaTeamScheduleRepository.findScheduleByTeam(team)
+        val teamDetailDb: NbaTeamDetailEntity? = nbaTeamDetailRepository.findTeamDetail(team)
+        val teamDb: Team? = teamDetailDb?.run {
+            Team(
+                    abbrev = team,
+                    displayName = teamDetailDb.displayName,
+                    logo = teamDetailDb.logo,
+                    location = teamDetailDb.location
+            )
+        }
+        return if (teamScheduleDb == null || teamDb == null) {
+            throw NoContent
+        } else if (teamScheduleDb.dataVersion > currentDataVersion) {
+            TeamSchedule(teamScheduleDb.dataVersion, teamDb, teamScheduleDb.events)
+        } else {
+            null
+        }
+    }
+
+    @Throws(IOException::class)
+    fun getFullSchedule(currentDataVersion: Long): Schedule? {
+        val scheduleResponseBody: Schedule? = nbaScheduleRepository.findSchedule().firstOrNull()?.run {
+            Schedule(dataVersion, events)
+        }
         return when {
-            teamScheduleDb?.events == null -> {
+            scheduleResponseBody == null -> {
                 throw NoContent
             }
-            (teamScheduleDb.dataVersion ?: 0) > currentDataVersion -> {
-                TeamSchedule(teamScheduleDb.dataVersion ?: 0, teamScheduleDb.teamDetail!!, teamScheduleDb.events!!)
+            scheduleResponseBody.dataVersion > currentDataVersion -> {
+                scheduleResponseBody
             }
             else -> {
                 null
@@ -45,18 +68,22 @@ class NbaService {
     }
 
     @Throws(IOException::class)
-    fun getStanding(currentDataVersion: Long): StandingData? {
+    fun getStanding(currentDataVersion: Long): Standing? {
         val standingDataDb: NbaStandingEntity? = nbaStandingRepository.findLatestStandings()?.firstOrNull()
-        return if (standingDataDb?.easternStandings == null || standingDataDb.westernStandings == null) {
-            throw NoContent
-        } else if ((standingDataDb.dataVersion ?: 0) > currentDataVersion) {
-            StandingData(
-                    dataVersion = standingDataDb.dataVersion ?: 0,
-                    western = ConferenceStandingData(standingDataDb.westernStandings!!),
-                    eastern = ConferenceStandingData(standingDataDb.easternStandings!!)
-            )
-        } else {
-            null
+        return when {
+            standingDataDb == null -> {
+                throw NoContent
+            }
+            standingDataDb.dataVersion > currentDataVersion -> {
+                Standing(
+                        dataVersion = standingDataDb.dataVersion,
+                        western = standingDataDb.western,
+                        eastern = standingDataDb.eastern
+                )
+            }
+            else -> {
+                null
+            }
         }
     }
 }
