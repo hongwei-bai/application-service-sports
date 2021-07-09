@@ -102,11 +102,11 @@ object TeamScheduleMapper {
         SeasonTypeId.PreSeason.id -> EventType.PreSeason
         SeasonTypeId.Regular.id -> EventType.Season
         SeasonTypeId.PlayInTournament.id -> EventType.PlayIn
-        SeasonTypeId.PostSeason.id -> when (eventSectionTitle) {
-            SeasonStage.Round1.name -> EventType.PlayOffRound1
-            SeasonStage.Round2.name -> EventType.PlayOffRound2
-            SeasonStage.ConferenceFinal.name -> EventType.PlayOffConferenceFinal
-            SeasonStage.GrandFinal.name -> EventType.PlayOffGrandFinal
+        SeasonTypeId.PostSeason.id -> when (SeasonStage.parsePostSeasonTypeFromTitle(eventSectionTitle)) {
+            SeasonStage.Round1 -> EventType.PlayOffRound1
+            SeasonStage.Round2 -> EventType.PlayOffRound2
+            SeasonStage.ConferenceFinal -> EventType.PlayOffConferenceFinal
+            SeasonStage.GrandFinal -> EventType.PlayOffGrandFinal
             else -> null
         }
         else -> null

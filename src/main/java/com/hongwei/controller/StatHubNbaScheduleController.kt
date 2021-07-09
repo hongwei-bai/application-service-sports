@@ -37,6 +37,9 @@ class StatHubNbaScheduleController {
     @Autowired
     private lateinit var nbaPlayOffService: NbaPlayOffService
 
+    @Autowired
+    private lateinit var nbaAnalysisService: NbaAnalysisService
+
     @GetMapping(path = ["/test.do"])
     @ResponseBody
     fun test(url: String): ResponseEntity<*> = statCurlService.curl(url)?.let {
@@ -58,6 +61,19 @@ class StatHubNbaScheduleController {
     @PutMapping(path = ["/espnAllTeamsSchedule.do"])
     @ResponseBody
     fun generateEspnAllTeamSchedule(dataVersionBase: Int? = null): ResponseEntity<*> {
+        val eventSet = mutableSetOf<Event>()
+        TEAMS.forEach { team ->
+            mergeIntoList(eventSet, generateScheduleForEachTeam(team, dataVersionBase))
+        }
+        eventSet.sortedByDescending { it.unixTimeStamp }
+        val dataVersion = TimeStampUtil.getTimeVersionWithDayAndDataVersion(dataVersion = dataVersionBase)
+        dbWriterService.writeFullSchedule(dataVersion, eventSet.toList())
+        return ResponseEntity.ok(null)
+    }
+
+    @PutMapping(path = ["/espnAllTeamsScheduleOld.do"])
+    @ResponseBody
+    fun generateEspnAllTeamScheduleOld(dataVersionBase: Int? = null): ResponseEntity<*> {
         val playOffData = nbaPlayOffService.getPlayOff(0)
         val eventSet = mutableSetOf<Event>()
         var message = "[ERROR]Nothing happen in this api."
@@ -114,6 +130,13 @@ class StatHubNbaScheduleController {
     @ResponseBody
     fun generateEspnTeamSchedule(team: String, dataVersionBase: Int? = null): ResponseEntity<*> {
         generateScheduleForEachTeam(team, dataVersionBase)
+        return ResponseEntity.ok(null)
+    }
+
+    @GetMapping(path = ["/nbaStage.do"])
+    @ResponseBody
+    fun getNbaStage(): ResponseEntity<*> {
+        nbaAnalysisService.doAnalysisSeasonStatus()
         return ResponseEntity.ok(null)
     }
 
