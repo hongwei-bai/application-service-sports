@@ -6,6 +6,10 @@ import com.hongwei.constants.ResetContent
 import com.hongwei.model.jpa.NbaTeamDetailEntity
 import com.hongwei.model.jpa.NbaTeamScheduleEntity
 import com.hongwei.model.nba.*
+import com.hongwei.model.nba.espn.TeamDetailSource
+import com.hongwei.model.nba.espn.TeamScheduleSource
+import com.hongwei.model.nba.espn.mapper.TeamDetailMapper
+import com.hongwei.model.nba.espn.mapper.TeamScheduleMapper
 import com.hongwei.service.nba.*
 import com.hongwei.service.nba.EspnCurlService.Companion.TEAMS
 import com.hongwei.util.TimeStampUtil
@@ -118,10 +122,12 @@ class StatHubNbaScheduleController {
         val teamDetailEntity: NbaTeamDetailEntity = TeamDetailMapper.map(
                 Gson().fromJson(statCurlService.getTeamDetailJson(curlDoc), TeamDetailSource::class.java)
         )
-        val teamScheduleEntity: NbaTeamScheduleEntity = TeamScheduleMapper.map(team,
-                Gson().fromJson(statCurlService.getTeamScheduleJson(curlDoc, dataVersionBase
-                        ?: 0), TeamScheduleSource::class.java)
-        )
+        val teamScheduleSourceObj = statCurlService.getTeamScheduleJson(curlDoc, dataVersionBase ?: 0)
+
+        val teamScheduleEntity: NbaTeamScheduleEntity = teamScheduleSourceObj?.let {
+            TeamScheduleMapper.map(team, Gson().fromJson(teamScheduleSourceObj, TeamScheduleSource::class.java))
+        } ?: NbaTeamScheduleEntity
+                .emptyEntity(team, TimeStampUtil.getTimeVersionWithDayAndDataVersion(dataVersion = dataVersionBase).toLong())
         dbWriterService.writeTeamDetail(teamDetailEntity)
         dbWriterService.writeTeamSchedule(teamScheduleEntity)
         return teamScheduleEntity.events.map { TeamScheduleMapper.teamEventMapToEvent(it, teamDetailEntity) }

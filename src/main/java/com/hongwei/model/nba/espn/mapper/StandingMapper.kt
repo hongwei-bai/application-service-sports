@@ -1,4 +1,9 @@
-package com.hongwei.model.nba
+package com.hongwei.model.nba.espn.mapper
+
+import com.hongwei.model.nba.Standing
+import com.hongwei.model.nba.TeamStanding
+import com.hongwei.model.nba.espn.StandingSource
+import com.hongwei.model.nba.espn.TeamStandingSource
 
 object StandingMapper {
     fun map(standingSource: StandingSource): Standing = Standing(

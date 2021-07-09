@@ -1,9 +1,9 @@
 package com.hongwei.service.nba
 
-import com.hongwei.model.nba.ConferenceStandingSource
-import com.hongwei.model.nba.EspnTeamMapper
-import com.hongwei.model.nba.StandingSource
-import com.hongwei.model.nba.TeamStandingSource
+import com.hongwei.model.nba.espn.ConferenceStandingSource
+import com.hongwei.model.nba.espn.EspnTeamMapper
+import com.hongwei.model.nba.espn.StandingSource
+import com.hongwei.model.nba.espn.TeamStandingSource
 import com.hongwei.util.TimeStampUtil
 import org.apache.log4j.LogManager
 import org.apache.log4j.Logger

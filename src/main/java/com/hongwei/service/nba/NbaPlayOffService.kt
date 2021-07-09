@@ -6,7 +6,7 @@ import com.fasterxml.jackson.module.kotlin.KotlinModule
 import com.hongwei.constants.Constants.AppDataPath.NBA_DATA_PATH
 import com.hongwei.constants.Constants.AppDataPath.PLAYOFF_SOURCE_JSON_PATH
 import com.hongwei.model.nba.PlayOffResponseBody
-import com.hongwei.model.nba.PlayOffSourceRoot
+import com.hongwei.model.nba.espn.PlayOffSourceRoot
 import org.apache.log4j.LogManager
 import org.apache.log4j.Logger
 import org.springframework.beans.factory.annotation.Value

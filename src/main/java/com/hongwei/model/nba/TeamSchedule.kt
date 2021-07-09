@@ -8,6 +8,7 @@ data class TeamSchedule(
 
 data class TeamEvent(
         val unixTimeStamp: Long,
+        val eventType: String,
         val isHome: Boolean,
         val opponent: Team,
         val result: TeamResult? = null

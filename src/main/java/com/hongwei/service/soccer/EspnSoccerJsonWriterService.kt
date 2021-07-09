@@ -2,8 +2,6 @@ package com.hongwei.service.soccer
 
 import com.hongwei.constants.AppDataConfigurations
 import com.hongwei.constants.Constants
-import com.hongwei.model.nba.StandingSource
-import com.hongwei.util.JsonWriterUtil.writeJSONObject
 import com.hongwei.util.JsonWriterUtil.writeJsonString
 import com.hongwei.util.TimeStampUtil
 import org.apache.log4j.LogManager

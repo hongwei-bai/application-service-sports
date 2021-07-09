@@ -1,7 +1,7 @@
 package com.hongwei.controller
 
 import com.google.gson.Gson
-import com.hongwei.model.soccer.standing.SoccerStandingSourceOutput
+import com.hongwei.model.soccer.espn.SoccerStandingSourceOutput
 import com.hongwei.service.soccer.EspnSoccerCurlService
 import com.hongwei.service.soccer.EspnSoccerJsonWriterService
 import com.hongwei.service.soccer.EspnSoccerParseService

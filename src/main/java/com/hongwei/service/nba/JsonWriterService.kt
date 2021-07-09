@@ -2,7 +2,7 @@ package com.hongwei.service.nba
 
 import com.hongwei.constants.AppDataConfigurations
 import com.hongwei.constants.Constants
-import com.hongwei.model.nba.StandingSource
+import com.hongwei.model.nba.espn.StandingSource
 import com.hongwei.util.JsonWriterUtil.writeJSONObject
 import com.hongwei.util.JsonWriterUtil.writeJsonString
 import com.hongwei.util.TimeStampUtil

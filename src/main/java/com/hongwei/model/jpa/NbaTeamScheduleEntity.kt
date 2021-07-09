@@ -18,5 +18,8 @@ data class NbaTeamScheduleEntity(
         @Convert(converter = NbaScheduleTeamEventListConverter::class)
         @Column(nullable = false)
         var events: List<TeamEvent> = emptyList()
-)
-
+) {
+    companion object {
+        fun emptyEntity(team: String, dataVersion: Long) = NbaTeamScheduleEntity(team, dataVersion, emptyList())
+    }
+}

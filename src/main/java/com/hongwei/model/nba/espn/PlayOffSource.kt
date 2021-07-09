@@ -1,4 +1,6 @@
-package com.hongwei.model.nba
+package com.hongwei.model.nba.espn
+
+import com.hongwei.model.nba.*
 
 data class PlayOffSourceRoot(
         val dataVersion: Long,

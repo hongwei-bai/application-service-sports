@@ -3,8 +3,8 @@ package com.hongwei.service.nba
 import com.hongwei.model.jpa.*
 import com.hongwei.model.nba.Event
 import com.hongwei.model.nba.Standing
-import com.hongwei.model.nba.StandingMapper
-import com.hongwei.model.nba.StandingSource
+import com.hongwei.model.nba.espn.mapper.StandingMapper
+import com.hongwei.model.nba.espn.StandingSource
 import org.apache.log4j.LogManager
 import org.apache.log4j.Logger
 import org.springframework.beans.factory.annotation.Autowired

@@ -7,6 +7,7 @@ data class Schedule(
 
 data class Event(
         val unixTimeStamp: Long,
+        val eventType: String,
         val homeTeam: Team,
         val guestTeam: Team,
         val result: Result? = null

@@ -1,4 +1,4 @@
-package com.hongwei.model.nba
+package com.hongwei.model.nba.espn
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties
 

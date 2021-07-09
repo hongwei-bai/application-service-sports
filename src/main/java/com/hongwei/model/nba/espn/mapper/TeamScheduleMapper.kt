@@ -1,50 +1,33 @@
-package com.hongwei.model.nba
+package com.hongwei.model.nba.espn.mapper
 
 import com.hongwei.model.jpa.NbaTeamDetailEntity
 import com.hongwei.model.jpa.NbaTeamScheduleEntity
+import com.hongwei.model.nba.*
+import com.hongwei.model.nba.espn.*
+import com.hongwei.model.nba.espn.define.SeasonStage
+import com.hongwei.model.nba.espn.define.SeasonTypeId
 import java.text.SimpleDateFormat
-import java.time.Instant.now
 import java.util.*
 import java.util.Date
 
 object TeamScheduleMapper {
-    private const val WEEK_TS = 1000 * 3600 * 24 * 7L
-
     fun map(team: String, teamScheduleSource: TeamScheduleSource): NbaTeamScheduleEntity = NbaTeamScheduleEntity(
             team = team,
             dataVersion = teamScheduleSource.dataVersion ?: 0,
             events = listOf(
-                    teamScheduleSource.teamSchedule.first().events.post.map { it.group }.flatten(),
-                    teamScheduleSource.teamSchedule.first().events.pre.map { it.group }.flatten()
-            ).flatten().filter {
-                val lastWeekTs = Date.from(now()).time - WEEK_TS
-                parseDate(it.date.date)?.after(Date(lastWeekTs)) == true
-            }.map {
-                val date = parseDate(it.date.date)!!
-                TeamEvent(
-                        unixTimeStamp = date.time,
-                        isHome = it.opponent.homeAwaySymbol != "@",
-                        opponent = Team(
-                                abbrev = EspnTeamMapper.mapLegacyTeamShort(it.opponent.abbrev),
-                                displayName = it.opponent.displayName,
-                                logo = it.opponent.logo,
-                                location = it.opponent.location
-                        ),
-                        result = when (it.result.statusId.toIntOrNull()) {
-                            ResultStatus.Finished.value -> TeamResult(
-                                    winLossSymbol = it.result.winLossSymbol,
-                                    currentTeamScore = it.result.currentTeamScore,
-                                    opponentTeamScore = it.result.opponentTeamScore
-                            )
-                            else -> null
-                        }
-                )
-            }
+                    teamScheduleSource.teamSchedule.first().events.post.map {
+                        mapEventsSection(teamScheduleSource.teamSchedule.first().seasonType.type, it)
+                    }.flatten(),
+                    teamScheduleSource.teamSchedule.first().events.pre.map {
+                        mapEventsSection(teamScheduleSource.teamSchedule.first().seasonType.type, it)
+                    }.flatten()
+            ).flatten()
     )
 
     fun teamEventMapToEvent(teamEvent: TeamEvent, teamDetailEntity: NbaTeamDetailEntity): Event = if (teamEvent.isHome) {
         Event(
                 unixTimeStamp = teamEvent.unixTimeStamp,
+                eventType = teamEvent.eventType,
                 homeTeam = Team(
                         abbrev = teamDetailEntity.team,
                         displayName = teamDetailEntity.displayName,
@@ -68,6 +51,7 @@ object TeamScheduleMapper {
     } else {
         Event(
                 unixTimeStamp = teamEvent.unixTimeStamp,
+                eventType = teamEvent.eventType,
                 homeTeam = Team(
                         abbrev = teamEvent.opponent.abbrev,
                         displayName = teamEvent.opponent.displayName,
@@ -88,6 +72,44 @@ object TeamScheduleMapper {
                     )
                 }
         )
+    }
+
+    private fun mapEventsSection(seasonType: Int, section: EventsSection): List<TeamEvent> =
+            section.group.map {
+                val date = parseDate(it.date.date)!!
+                TeamEvent(
+                        unixTimeStamp = date.time,
+                        eventType = mapEventType(seasonType, section.title)?.name ?: "",
+                        isHome = it.opponent.homeAwaySymbol != "@",
+                        opponent = Team(
+                                abbrev = EspnTeamMapper.mapLegacyTeamShort(it.opponent.abbrev),
+                                displayName = it.opponent.displayName,
+                                logo = it.opponent.logo,
+                                location = it.opponent.location
+                        ),
+                        result = when (it.result.statusId.toIntOrNull()) {
+                            ResultStatus.Finished.value -> TeamResult(
+                                    winLossSymbol = it.result.winLossSymbol,
+                                    currentTeamScore = it.result.currentTeamScore,
+                                    opponentTeamScore = it.result.opponentTeamScore
+                            )
+                            else -> null
+                        }
+                )
+            }
+
+    private fun mapEventType(seasonType: Int, eventSectionTitle: String): EventType? = when (seasonType) {
+        SeasonTypeId.PreSeason.id -> EventType.PreSeason
+        SeasonTypeId.Regular.id -> EventType.Season
+        SeasonTypeId.PlayInTournament.id -> EventType.PlayIn
+        SeasonTypeId.PostSeason.id -> when (eventSectionTitle) {
+            SeasonStage.Round1.name -> EventType.PlayOffRound1
+            SeasonStage.Round2.name -> EventType.PlayOffRound2
+            SeasonStage.ConferenceFinal.name -> EventType.PlayOffConferenceFinal
+            SeasonStage.GrandFinal.name -> EventType.PlayOffGrandFinal
+            else -> null
+        }
+        else -> null
     }
 
     //2021-04-07T02:00Z

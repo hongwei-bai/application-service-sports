@@ -1,6 +1,7 @@
-package com.hongwei.model.nba
+package com.hongwei.model.nba.espn.mapper
 
 import com.hongwei.model.jpa.NbaTeamDetailEntity
+import com.hongwei.model.nba.espn.TeamDetailSource
 import java.math.BigInteger
 
 object TeamDetailMapper {

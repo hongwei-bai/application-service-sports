@@ -1,4 +1,4 @@
-package com.hongwei.model.soccer.standing
+package com.hongwei.model.soccer.espn
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties
 

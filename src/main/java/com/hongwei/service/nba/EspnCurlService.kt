@@ -2,6 +2,7 @@ package com.hongwei.service.nba
 
 import com.hongwei.constants.Endpoints
 import com.hongwei.curl.CUrlWrapper
+import com.hongwei.model.nba.espn.define.EspnNbaScheduleQuery
 import com.hongwei.util.TimeStampUtil
 import org.apache.log4j.LogManager
 import org.apache.log4j.Logger
@@ -21,9 +22,12 @@ class EspnCurlService {
     fun getTeamScheduleJson(curlDoc: String, dataVersionBase: Int): String? {
         val index0 = curlDoc.indexOf(TEAM_SCHEDULE_START)
         val index1 = curlDoc.indexOf(TEAM_SCHEDULE_END)
-        val mid = curlDoc.substring(index0, index1 + TEAM_SCHEDULE_END.length)
-        val dataVersion = TimeStampUtil.getTimeVersionWithDayAndDataVersion(dataVersion = dataVersionBase)
-        return "{\"dataVersion\": $dataVersion, $mid}"
+        if (index0 > 0 && index1 > 0) {
+            val mid = curlDoc.substring(index0, index1 + TEAM_SCHEDULE_END.length)
+            val dataVersion = TimeStampUtil.getTimeVersionWithDayAndDataVersion(dataVersion = dataVersionBase)
+            return "{\"dataVersion\": $dataVersion, $mid}"
+        }
+        return null
     }
 
     fun getTeamDetailJson(curlDoc: String): String? {
@@ -32,8 +36,7 @@ class EspnCurlService {
         return curlDoc.substring(index0, index1).trim().substringBeforeLast(",").replace(TEAM_DETAIL_START, "").trim()
     }
 
-    fun getTeamScheduleCurlDoc(teamShort: String): String =
-            CUrlWrapper.curl(Endpoints.Espn.TEAM_SCHEDULE.replace("{team}", teamShort)).toString()
+    fun getTeamScheduleCurlDoc(teamShort: String): String = CUrlWrapper.curl(EspnNbaScheduleQuery(teamShort).build()).toString()
 
     companion object {
         private const val TEAM_SCHEDULE_START = "\"teamSchedule\":"
