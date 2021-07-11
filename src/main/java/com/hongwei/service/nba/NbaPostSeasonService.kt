@@ -49,12 +49,15 @@ class NbaPostSeasonService {
     private fun analysisConferencePlayOff(conferenceStandings: List<TeamStanding>, playInEvents: List<PlayInEvent?>, dataVersionBase: Int?): NbaPostSeasonArchivedEntity? {
         val seed7 = if (playInEvents.first()?.result?.isHomeTeamWin == true) playInEvents.first()?.homeTeam?.teamAbbr else playInEvents.first()?.guestTeam?.teamAbbr
         val seed8 = if (playInEvents.last()?.result?.isHomeTeamWin == true) playInEvents.last()?.homeTeam?.teamAbbr else playInEvents.last()?.guestTeam?.teamAbbr
-        listOf(conferenceStandings.filter { it.rank <= 6 }.map { it.teamAbbr }, seed7, seed8)
-                .forEach {
-                    val teamSchedule = nbaTeamScheduleRepository.findScheduleByTeam(it as String)
-                    
+        val r1HighRankTeams = listOf(conferenceStandings[0].teamAbbr, conferenceStandings[3].teamAbbr, conferenceStandings[2].teamAbbr, conferenceStandings[1].teamAbbr)
+        val r1LowRankTeams = listOf(seed8, conferenceStandings[4].teamAbbr, conferenceStandings[5].teamAbbr, seed7)
 
-                }
+        // Round 1
+        r1HighRankTeams.forEachIndexed { i, team ->
+            val teamSchedule = nbaTeamScheduleRepository.findScheduleByTeam(team)
+
+
+        }
 
         return null
     }
