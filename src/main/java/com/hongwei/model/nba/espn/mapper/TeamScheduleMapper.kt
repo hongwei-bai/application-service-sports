@@ -42,7 +42,7 @@ object TeamScheduleMapper {
                 ),
                 result = teamEvent.result?.let { teamResult ->
                     Result(
-                            homeTeamWinLossSymbol = teamResult.winLossSymbol,
+                            isHomeTeamWin = teamResult.isWin,
                             homeTeamScore = teamResult.currentTeamScore,
                             guestTeamScore = teamResult.opponentTeamScore
                     )
@@ -66,9 +66,9 @@ object TeamScheduleMapper {
                 ),
                 result = teamEvent.result?.let { teamResult ->
                     Result(
-                            homeTeamWinLossSymbol = if (teamResult.winLossSymbol == "W") "L" else "W",
-                            homeTeamScore = teamResult.currentTeamScore,
-                            guestTeamScore = teamResult.opponentTeamScore
+                            isHomeTeamWin = !teamResult.isWin,
+                            homeTeamScore = teamResult.opponentTeamScore,
+                            guestTeamScore = teamResult.currentTeamScore
                     )
                 }
         )
@@ -89,7 +89,7 @@ object TeamScheduleMapper {
                         ),
                         result = when (it.result.statusId.toIntOrNull()) {
                             ResultStatus.Finished.value -> TeamResult(
-                                    winLossSymbol = it.result.winLossSymbol,
+                                    isWin = it.result.winLossSymbol == "W",
                                     currentTeamScore = it.result.currentTeamScore,
                                     opponentTeamScore = it.result.opponentTeamScore
                             )

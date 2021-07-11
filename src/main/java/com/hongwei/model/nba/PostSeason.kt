@@ -38,5 +38,6 @@ data class PostSeasonTeam(
         val seed: Int,
         val recordSummaryWin: Int,
         val recordSummaryLose: Int,
-        var isEliminatedBeforeFinal: Boolean
+        var isSurviveToPlayOff: Boolean,
+        var isSurvive: Boolean = true
 )

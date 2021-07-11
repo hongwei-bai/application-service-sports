@@ -21,13 +21,13 @@ data class NbaPostSeasonEntity(
         val easternPlayInEvents: List<PlayInEvent?> = emptyList(),
 
         @Lob @Convert(converter = NbaPlayOffSeriesListConverter::class) @Column(nullable = true)
-        val westernRound1Series: List<PlayOffSeries>? = emptyList(),
+        val westernRound1Series: List<PlayOffSeries?> = emptyList(),
         @Lob @Convert(converter = NbaPlayOffSeriesListConverter::class) @Column(nullable = true)
-        val easternRound1Series: List<PlayOffSeries>? = emptyList(),
+        val easternRound1Series: List<PlayOffSeries?> = emptyList(),
         @Lob @Convert(converter = NbaPlayOffSeriesListConverter::class) @Column(nullable = true)
-        val westernRound2Series: List<PlayOffSeries>? = emptyList(),
+        val westernRound2Series: List<PlayOffSeries?> = emptyList(),
         @Lob @Convert(converter = NbaPlayOffSeriesListConverter::class) @Column(nullable = true)
-        val easternRound2Series: List<PlayOffSeries>? = emptyList(),
+        val easternRound2Series: List<PlayOffSeries?> = emptyList(),
         @Lob @Convert(converter = NbaPlayOffSeriesConverter::class) @Column(nullable = true)
         val westernConferenceFinal: PlayOffSeries? = null,
         @Lob @Convert(converter = NbaPlayOffSeriesConverter::class) @Column(nullable = true)

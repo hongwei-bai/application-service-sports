@@ -25,11 +25,41 @@ class NbaPostSeasonService {
     private lateinit var nbaStandingRepository: NbaStandingRepository
 
     @Autowired
+    private lateinit var nbaTeamScheduleRepository: NbaTeamScheduleRepository
+
+    @Autowired
     private lateinit var nbaPostSeasonArchivedRepository: NbaPostSeasonArchivedRepository
 
     @Autowired
     private lateinit var nbaCurlService: EspnCurlService
 
+    // Pre-requests: Standing in db, playIn in db, teamSchedule in db
+    @Throws(IOException::class)
+    fun fetchPlayOff(dataVersionBase: Int?): NbaPostSeasonArchivedEntity? {
+        nbaStandingRepository.findLatestStandings()?.firstOrNull()?.let { standing ->
+            val playInEvents = nbaPostSeasonArchivedRepository.findPostSeasonArchived().firstOrNull()
+            playInEvents?.let {
+                analysisConferencePlayOff(standing.western, it.westernPlayInEvents, dataVersionBase)
+                analysisConferencePlayOff(standing.eastern, it.easternPlayInEvents, dataVersionBase)
+            }
+        }
+        return null
+    }
+
+    private fun analysisConferencePlayOff(conferenceStandings: List<TeamStanding>, playInEvents: List<PlayInEvent?>, dataVersionBase: Int?): NbaPostSeasonArchivedEntity? {
+        val seed7 = if (playInEvents.first()?.result?.isHomeTeamWin == true) playInEvents.first()?.homeTeam?.teamAbbr else playInEvents.first()?.guestTeam?.teamAbbr
+        val seed8 = if (playInEvents.last()?.result?.isHomeTeamWin == true) playInEvents.last()?.homeTeam?.teamAbbr else playInEvents.last()?.guestTeam?.teamAbbr
+        listOf(conferenceStandings.filter { it.rank <= 6 }.map { it.teamAbbr }, seed7, seed8)
+                .forEach {
+                    val teamSchedule = nbaTeamScheduleRepository.findScheduleByTeam(it as String)
+                    
+
+                }
+
+        return null
+    }
+
+    // Pre-requests: Standing in db
     @Throws(IOException::class)
     fun fetchPlayIn(currentStage: EventType, dataVersionBase: Int?): NbaPostSeasonArchivedEntity? {
         when (currentStage) {
@@ -92,8 +122,8 @@ class NbaPostSeasonService {
             }
             teamScheduleEntity?.run {
                 if (events.size == 1) {
-                    when (events.first().result?.winLossSymbol) {
-                        "W" -> {
+                    when (events.first().result?.isWin) {
+                        true -> {
                             seeds[0] = team.toLowerCase()
                             r1UpHomeWin = events.first().isHome
                             r2HomeTeam = events.first().opponent.abbrev.toLowerCase()
@@ -109,7 +139,7 @@ class NbaPostSeasonService {
                                 r1UpScore[1] = events.first().result?.currentTeamScore ?: 0
                             }
                         }
-                        "L" -> {
+                        false -> {
                             seeds[3] = team.toLowerCase()
                             r1LowHomeWin = !events.first().isHome
                             r2GuestTeam = events.first().opponent.abbrev.toLowerCase()
@@ -128,20 +158,20 @@ class NbaPostSeasonService {
                     }
                 } else if (events.size == 2) {
                     when {
-                        events.first().result?.winLossSymbol == "W" && events.last().result?.winLossSymbol == "W" -> {
+                        events.first().result?.isWin == true && events.last().result?.isWin == true -> {
                             seeds[1] = team.toLowerCase()
                             r2HomeWin = false
                             r2Score[0] = events.last().result?.opponentTeamScore ?: 0
                             r2Score[1] = events.last().result?.currentTeamScore ?: 0
                         }
-                        events.first().result?.winLossSymbol == "W" && events.last().result?.winLossSymbol == "L" -> seeds[2] = team
-                        events.first().result?.winLossSymbol == "L" && events.last().result?.winLossSymbol == "W" -> {
+                        events.first().result?.isWin == true && events.last().result?.isWin == false -> seeds[2] = team
+                        events.first().result?.isWin == false && events.last().result?.isWin == true -> {
                             seeds[1] = team.toLowerCase()
                             r2HomeWin = true
                             r2Score[0] = events.last().result?.currentTeamScore ?: 0
                             r2Score[1] = events.last().result?.opponentTeamScore ?: 0
                         }
-                        events.first().result?.winLossSymbol == "L" && events.last().result?.winLossSymbol == "L" -> seeds[2] = team
+                        events.first().result?.isWin == false && events.last().result?.isWin == false -> seeds[2] = team
                     }
                 }
             }
@@ -159,7 +189,8 @@ class NbaPostSeasonService {
                                     seed = seeds.indexOf(team) + 7,
                                     recordSummaryWin = recordSummaryWin,
                                     recordSummaryLose = recordSummaryLose,
-                                    isEliminatedBeforeFinal = false
+                                    isSurviveToPlayOff = true,
+                                    isSurvive = true
                             )
                         },
                         guestTeam = playInTeamDetailMap[seedsBeforePlayIn[1]]!!.run {
@@ -172,11 +203,12 @@ class NbaPostSeasonService {
                                     seed = seeds.indexOf(team) + 7,
                                     recordSummaryWin = recordSummaryWin,
                                     recordSummaryLose = recordSummaryLose,
-                                    isEliminatedBeforeFinal = false
+                                    isSurviveToPlayOff = true,
+                                    isSurvive = true
                             )
                         },
                         result = Result(
-                                homeTeamWinLossSymbol = if (r1UpHomeWin) "W" else "L",
+                                isHomeTeamWin = r1UpHomeWin,
                                 homeTeamScore = r1UpScore.first(),
                                 guestTeamScore = r1UpScore.last()
                         )
@@ -193,7 +225,8 @@ class NbaPostSeasonService {
                                     seed = seeds.indexOf(team) + 7,
                                     recordSummaryWin = recordSummaryWin,
                                     recordSummaryLose = recordSummaryLose,
-                                    isEliminatedBeforeFinal = false
+                                    isSurviveToPlayOff = true,
+                                    isSurvive = true
                             )
                         },
                         guestTeam = playInTeamDetailMap[seedsBeforePlayIn[3]]!!.run {
@@ -206,11 +239,12 @@ class NbaPostSeasonService {
                                     seed = seeds.indexOf(team) + 7,
                                     recordSummaryWin = recordSummaryWin,
                                     recordSummaryLose = recordSummaryLose,
-                                    isEliminatedBeforeFinal = false
+                                    isSurviveToPlayOff = true,
+                                    isSurvive = true
                             )
                         },
                         result = Result(
-                                homeTeamWinLossSymbol = if (r1LowHomeWin) "W" else "L",
+                                isHomeTeamWin = r1LowHomeWin,
                                 homeTeamScore = r1LowScore.first(),
                                 guestTeamScore = r1LowScore.last()
                         )
@@ -227,7 +261,8 @@ class NbaPostSeasonService {
                                     seed = seeds.indexOf(team) + 7,
                                     recordSummaryWin = recordSummaryWin,
                                     recordSummaryLose = recordSummaryLose,
-                                    isEliminatedBeforeFinal = false
+                                    isSurviveToPlayOff = true,
+                                    isSurvive = true
                             )
                         },
                         guestTeam = playInTeamDetailMap[r2GuestTeam]!!.run {
@@ -240,11 +275,12 @@ class NbaPostSeasonService {
                                     seed = seeds.indexOf(team) + 7,
                                     recordSummaryWin = recordSummaryWin,
                                     recordSummaryLose = recordSummaryLose,
-                                    isEliminatedBeforeFinal = false
+                                    isSurviveToPlayOff = true,
+                                    isSurvive = true
                             )
                         },
                         result = Result(
-                                homeTeamWinLossSymbol = if (r2HomeWin) "W" else "L",
+                                isHomeTeamWin = r2HomeWin,
                                 homeTeamScore = r2Score.first(),
                                 guestTeamScore = r2Score.last()
                         )
@@ -254,10 +290,10 @@ class NbaPostSeasonService {
 
         playInEvents.forEach {
             if (seeds.indexOf(it.homeTeam.teamAbbr) >= 2) {
-                it.homeTeam.isEliminatedBeforeFinal = true
+                it.homeTeam.isSurviveToPlayOff = false
             }
             if (seeds.indexOf(it.guestTeam.teamAbbr) >= 2) {
-                it.guestTeam.isEliminatedBeforeFinal = true
+                it.guestTeam.isSurviveToPlayOff = false
             }
         }
 

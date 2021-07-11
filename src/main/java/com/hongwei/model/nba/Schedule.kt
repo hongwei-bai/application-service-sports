@@ -34,7 +34,7 @@ data class Event(
 }
 
 data class Result(
-        val homeTeamWinLossSymbol: String,
+        val isHomeTeamWin: Boolean,
         val homeTeamScore: Int,
         val guestTeamScore: Int
 )

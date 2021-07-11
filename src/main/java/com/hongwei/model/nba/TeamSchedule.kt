@@ -37,7 +37,7 @@ data class Team(
 }
 
 data class TeamResult(
-        val winLossSymbol: String,
+        val isWin: Boolean,
         val currentTeamScore: Int,
         val opponentTeamScore: Int
 )

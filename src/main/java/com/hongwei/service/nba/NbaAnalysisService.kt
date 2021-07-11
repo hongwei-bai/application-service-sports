@@ -82,7 +82,7 @@ class NbaAnalysisService {
         }.forEach {
             val team = it?.team
             val score = it?.events?.filter { teamEvent ->
-                teamEvent.eventType == EventType.PlayOffGrandFinal.name && teamEvent.result?.winLossSymbol == "W"
+                teamEvent.eventType == EventType.PlayOffGrandFinal.name && teamEvent.result?.isWin == true
             }?.size
         }
     }
@@ -109,11 +109,11 @@ class NbaAnalysisService {
                 numberOfPlayInMatchAhead(9) + numberOfPlayInMatchAhead(10)
         if (numberOfMatchPlayed == 6 && numberOfMatchAhead == 0) {
             // Finished
-            val seed7AndSeed9 = playInTeamSchedules.filter { it?.events?.filter { teamEvent -> teamEvent.result?.winLossSymbol == "W" }?.size == 1 }
+            val seed7AndSeed9 = playInTeamSchedules.filter { it?.events?.filter { teamEvent -> teamEvent.result?.isWin == true }?.size == 1 }
             val seed7 = seed7AndSeed9.first { upperTeams.contains(it?.team) }
-            val seed8 = playInTeamSchedules.first { it?.events?.filter { teamEvent -> teamEvent.result?.winLossSymbol == "W" }?.size == 2 }
+            val seed8 = playInTeamSchedules.first { it?.events?.filter { teamEvent -> teamEvent.result?.isWin == true }?.size == 2 }
             val seed9 = seed7AndSeed9.first { lowerTeams.contains(it?.team) }
-            val seed10 = playInTeamSchedules.first { it?.events?.filter { teamEvent -> teamEvent.result?.winLossSymbol == "L" }?.size == 2 }
+            val seed10 = playInTeamSchedules.first { it?.events?.filter { teamEvent -> teamEvent.result?.isWin == true }?.size == 2 }
             logger.debug("seed7: $seed7")
             logger.debug("seed8: $seed8")
             logger.debug("seed9: $seed9")
