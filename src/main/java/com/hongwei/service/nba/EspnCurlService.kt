@@ -38,6 +38,8 @@ class EspnCurlService {
 
     fun getTeamScheduleCurlDoc(teamShort: String): String = CUrlWrapper.curl(EspnNbaScheduleQuery(teamShort).build()).toString()
 
+    fun getPlayedPlayInTeamScheduleCurlDoc(teamShort: String): String = CUrlWrapper.curl(EspnNbaScheduleQuery(teamShort).playIn().build()).toString()
+
     companion object {
         private const val TEAM_SCHEDULE_START = "\"teamSchedule\":"
         private const val TEAM_SCHEDULE_END = "\"No Data Available\""

@@ -48,7 +48,7 @@ class NbaController {
     @ResponseBody
     fun getPlayOff(dataVersion: Long): ResponseEntity<*> =
             nbaPlayOffService.getPlayOff(dataVersion)?.let {
-                ResponseEntity.ok(it)
+                ResponseEntity.ok(null)
             } ?: throw ResetContent
 
     @GetMapping(path = ["/teamTheme.do"])

@@ -12,7 +12,7 @@ import java.util.Date
 
 object TeamScheduleMapper {
     fun map(team: String, teamScheduleSource: TeamScheduleSource): NbaTeamScheduleEntity = NbaTeamScheduleEntity(
-            team = team,
+            team = team.toLowerCase(),
             dataVersion = teamScheduleSource.dataVersion ?: 0,
             events = listOf(
                     teamScheduleSource.teamSchedule.first().events.post.map {

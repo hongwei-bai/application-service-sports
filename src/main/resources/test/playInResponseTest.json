@@ -1,0 +1,176 @@
+[
+  {
+    "homeTeam": {
+      "teamAbbr": "lal",
+      "displayName": "Los Angeles Lakers",
+      "logo": "https://a.espncdn.com/i/teamlogos/nba/500/lal.png",
+      "location": "Los Angeles",
+      "rank": 7,
+      "seed": 7,
+      "recordSummaryWin": 42,
+      "recordSummaryLose": 30,
+      "isEliminatedBeforeFinal": false
+    },
+    "guestTeam": {
+      "teamAbbr": "gs",
+      "displayName": "Golden State Warriors",
+      "logo": "https://a.espncdn.com/i/teamlogos/nba/500/gs.png",
+      "location": "Golden State",
+      "rank": 8,
+      "seed": 9,
+      "recordSummaryWin": 39,
+      "recordSummaryLose": 33,
+      "isEliminatedBeforeFinal": true
+    },
+    "result": {
+      "homeTeamWinLossSymbol": "W",
+      "homeTeamScore": 103,
+      "guestTeamScore": 100
+    }
+  },
+  {
+    "homeTeam": {
+      "teamAbbr": "mem",
+      "displayName": "Memphis Grizzlies",
+      "logo": "https://a.espncdn.com/i/teamlogos/nba/500/mem.png",
+      "location": "Memphis",
+      "rank": 9,
+      "seed": 8,
+      "recordSummaryWin": 38,
+      "recordSummaryLose": 34,
+      "isEliminatedBeforeFinal": false
+    },
+    "guestTeam": {
+      "teamAbbr": "sa",
+      "displayName": "San Antonio Spurs",
+      "logo": "https://a.espncdn.com/i/teamlogos/nba/500/sa.png",
+      "location": "San Antonio",
+      "rank": 10,
+      "seed": 10,
+      "recordSummaryWin": 33,
+      "recordSummaryLose": 39,
+      "isEliminatedBeforeFinal": true
+    },
+    "result": {
+      "homeTeamWinLossSymbol": "W",
+      "homeTeamScore": 96,
+      "guestTeamScore": 100
+    }
+  },
+  {
+    "homeTeam": {
+      "teamAbbr": "gs",
+      "displayName": "Golden State Warriors",
+      "logo": "https://a.espncdn.com/i/teamlogos/nba/500/gs.png",
+      "location": "Golden State",
+      "rank": 8,
+      "seed": 9,
+      "recordSummaryWin": 39,
+      "recordSummaryLose": 33,
+      "isEliminatedBeforeFinal": true
+    },
+    "guestTeam": {
+      "teamAbbr": "mem",
+      "displayName": "Memphis Grizzlies",
+      "logo": "https://a.espncdn.com/i/teamlogos/nba/500/mem.png",
+      "location": "Memphis",
+      "rank": 9,
+      "seed": 8,
+      "recordSummaryWin": 38,
+      "recordSummaryLose": 34,
+      "isEliminatedBeforeFinal": false
+    },
+    "result": {
+      "homeTeamWinLossSymbol": "L",
+      "homeTeamScore": 96,
+      "guestTeamScore": 100
+    }
+  },
+  {
+    "homeTeam": {
+      "teamAbbr": "bos",
+      "displayName": "Boston Celtics",
+      "logo": "https://a.espncdn.com/i/teamlogos/nba/500/bos.png",
+      "location": "Boston",
+      "rank": 7,
+      "seed": 7,
+      "recordSummaryWin": 36,
+      "recordSummaryLose": 36,
+      "isEliminatedBeforeFinal": false
+    },
+    "guestTeam": {
+      "teamAbbr": "wsh",
+      "displayName": "Washington Wizards",
+      "logo": "https://a.espncdn.com/i/teamlogos/nba/500/wsh.png",
+      "location": "Washington",
+      "rank": 8,
+      "seed": 8,
+      "recordSummaryWin": 34,
+      "recordSummaryLose": 38,
+      "isEliminatedBeforeFinal": false
+    },
+    "result": {
+      "homeTeamWinLossSymbol": "W",
+      "homeTeamScore": 118,
+      "guestTeamScore": 100
+    }
+  },
+  {
+    "homeTeam": {
+      "teamAbbr": "ind",
+      "displayName": "Indiana Pacers",
+      "logo": "https://a.espncdn.com/i/teamlogos/nba/500/ind.png",
+      "location": "Indiana",
+      "rank": 9,
+      "seed": 9,
+      "recordSummaryWin": 34,
+      "recordSummaryLose": 38,
+      "isEliminatedBeforeFinal": true
+    },
+    "guestTeam": {
+      "teamAbbr": "cha",
+      "displayName": "Charlotte Hornets",
+      "logo": "https://a.espncdn.com/i/teamlogos/nba/500/cha.png",
+      "location": "Charlotte",
+      "rank": 10,
+      "seed": 10,
+      "recordSummaryWin": 33,
+      "recordSummaryLose": 39,
+      "isEliminatedBeforeFinal": true
+    },
+    "result": {
+      "homeTeamWinLossSymbol": "W",
+      "homeTeamScore": 117,
+      "guestTeamScore": 144
+    }
+  },
+  {
+    "homeTeam": {
+      "teamAbbr": "wsh",
+      "displayName": "Washington Wizards",
+      "logo": "https://a.espncdn.com/i/teamlogos/nba/500/wsh.png",
+      "location": "Washington",
+      "rank": 8,
+      "seed": 8,
+      "recordSummaryWin": 34,
+      "recordSummaryLose": 38,
+      "isEliminatedBeforeFinal": false
+    },
+    "guestTeam": {
+      "teamAbbr": "ind",
+      "displayName": "Indiana Pacers",
+      "logo": "https://a.espncdn.com/i/teamlogos/nba/500/ind.png",
+      "location": "Indiana",
+      "rank": 9,
+      "seed": 9,
+      "recordSummaryWin": 34,
+      "recordSummaryLose": 38,
+      "isEliminatedBeforeFinal": true
+    },
+    "result": {
+      "homeTeamWinLossSymbol": "W",
+      "homeTeamScore": 100,
+      "guestTeamScore": 118
+    }
+  }
+]

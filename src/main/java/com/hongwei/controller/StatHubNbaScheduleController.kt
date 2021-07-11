@@ -18,7 +18,6 @@ import org.apache.log4j.Logger
 import org.springframework.beans.factory.annotation.Autowired
 import org.springframework.http.ResponseEntity
 import org.springframework.web.bind.annotation.*
-import java.util.*
 
 @RestController
 @RequestMapping("/hub")
@@ -71,61 +70,6 @@ class StatHubNbaScheduleController {
         return ResponseEntity.ok(null)
     }
 
-    @PutMapping(path = ["/espnAllTeamsScheduleOld.do"])
-    @ResponseBody
-    fun generateEspnAllTeamScheduleOld(dataVersionBase: Int? = null): ResponseEntity<*> {
-        val playOffData = nbaPlayOffService.getPlayOff(0)
-        val eventSet = mutableSetOf<Event>()
-        var message = "[ERROR]Nothing happen in this api."
-        when {
-            playOffData?.playInOngoing == true -> {
-                val standing = nbaService.getStanding(0)
-                message = if (standing != null) {
-                    val playInTeams = (standing.western + standing.eastern)
-                            .filter { it.rank in 7..10 }
-                            .map { it.teamAbbr.toLowerCase(Locale.US) }
-                    playInTeams.forEach { team ->
-                        mergeIntoList(eventSet, generateScheduleForEachTeam(team, dataVersionBase))
-                    }
-                    "Play-in Tournament: Schedules for following teams are generated: ${playInTeams.joinToString(",")}"
-                } else {
-                    "[ERROR]Play-in Tournament: standing data is null, failed to generate play-in schedules."
-                }
-            }
-            playOffData?.playOffOngoing == true -> {
-                val standing = nbaService.getStanding(0)
-                val playInData = nbaPlayOffService.getPlayOff(0)?.playIn
-                val westernSeed7 = playInData?.western?.winnerOf78 ?: "TBD"
-                val westernSeed8 = playInData?.western?.lastWinner ?: "TBD"
-                val easternSeed7 = playInData?.eastern?.winnerOf78 ?: "TBD"
-                val easternSeed8 = playInData?.eastern?.lastWinner ?: "TBD"
-                message = if (standing != null && westernSeed7 != "TBD" && westernSeed8 != "TBD" && easternSeed7 != "TBD" && easternSeed8 != "TBD") {
-                    val playOffTeams = (standing.western + standing.eastern)
-                            .filter { it.rank in 1..6 }
-                            .map { it.teamAbbr }.map { it.toLowerCase(Locale.US) } +
-                            listOf(westernSeed7, westernSeed8, easternSeed7, easternSeed8).map { it.toLowerCase(Locale.US) }
-                    playOffTeams.forEach { team ->
-                        mergeIntoList(eventSet, generateScheduleForEachTeam(team, dataVersionBase))
-                    }
-                    "PlayOff: Schedules for following teams are generated: ${playOffTeams.joinToString(",")}"
-                } else {
-                    "[ERROR]PlayOff: standing or play-in result data is null, failed to generate playoff schedules."
-                }
-            }
-            else -> {
-                TEAMS.forEach { team ->
-                    mergeIntoList(eventSet, generateScheduleForEachTeam(team, dataVersionBase))
-                }
-                message = "Regular season: ${TEAMS.size} teams' schedule generated."
-            }
-        }
-
-        eventSet.sortedByDescending { it.unixTimeStamp }
-        val dataVersion = TimeStampUtil.getTimeVersionWithDayAndDataVersion(dataVersion = dataVersionBase)
-        dbWriterService.writeFullSchedule(dataVersion, eventSet.toList())
-        return ResponseEntity.ok(message)
-    }
-
     @PutMapping(path = ["/espnTeamSchedule.do"])
     @ResponseBody
     fun generateEspnTeamSchedule(team: String, dataVersionBase: Int? = null): ResponseEntity<*> {
@@ -135,10 +79,13 @@ class StatHubNbaScheduleController {
 
     @GetMapping(path = ["/nbaStage.do"])
     @ResponseBody
-    fun getNbaStage(): ResponseEntity<*> {
-        nbaAnalysisService.doAnalysisSeasonStatus()
-        return ResponseEntity.ok(null)
-    }
+    fun getNbaStage(): ResponseEntity<*> =
+            ResponseEntity.ok(nbaAnalysisService.doAnalysisSeasonStatus())
+
+    @GetMapping(path = ["/nbaAnalysis.do"])
+    @ResponseBody
+    fun doNbaAnalysis(): ResponseEntity<*> =
+            ResponseEntity.ok(nbaAnalysisService.doAnalysis())
 
     private fun generateScheduleForEachTeam(team: String, dataVersionBase: Int?): List<Event> {
         val curlDoc = statCurlService.getTeamScheduleCurlDoc(team)
