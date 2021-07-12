@@ -1,9 +1,11 @@
 package com.hongwei.service.nba
 
 import com.google.gson.Gson
-import com.hongwei.model.jpa.*
+import com.hongwei.model.jpa.NbaStandingEntity
+import com.hongwei.model.jpa.NbaStandingRepository
+import com.hongwei.model.jpa.NbaTeamScheduleEntity
+import com.hongwei.model.jpa.NbaTeamScheduleRepository
 import com.hongwei.model.nba.EventType
-import com.hongwei.model.nba.TeamStanding
 import org.apache.log4j.LogManager
 import org.apache.log4j.Logger
 import org.springframework.beans.factory.annotation.Autowired
@@ -18,13 +20,7 @@ class NbaAnalysisService {
     private lateinit var nbaTeamScheduleRepository: NbaTeamScheduleRepository
 
     @Autowired
-    private lateinit var nbaTeamDetailRepository: NbaTeamDetailRepository
-
-    @Autowired
     private lateinit var nbaStandingRepository: NbaStandingRepository
-
-    @Autowired
-    private lateinit var nbaScheduleRepository: NbaScheduleRepository
 
     @Autowired
     private lateinit var nbaPostSeasonService: NbaPostSeasonService
@@ -70,65 +66,6 @@ class NbaAnalysisService {
                 }
             }
             else -> null
-        }
-    }
-
-    private fun doAnalysisFinal(playOffTeamSchedules: List<NbaTeamScheduleEntity?>) {
-        val debugTimes = playOffTeamSchedules.filter {
-            it?.events?.any { teamEvent -> teamEvent.eventType == EventType.PlayOffGrandFinal.name } == true
-        }.size
-
-        playOffTeamSchedules.filter {
-            it?.events?.any { teamEvent -> teamEvent.eventType == EventType.PlayOffGrandFinal.name } == true
-        }.forEach {
-            val team = it?.team
-            val score = it?.events?.filter { teamEvent ->
-                teamEvent.eventType == EventType.PlayOffGrandFinal.name && teamEvent.result?.isWin == true
-            }?.size
-        }
-    }
-
-    private fun doAnalysisPlayIn(conferenceStandings: List<TeamStanding>, playInTeamSchedules: List<NbaTeamScheduleEntity?>) {
-        fun numberOfPlayInMatchPlayed(rank: Int): Int = playInTeamSchedules.firstOrNull {
-            it?.team == conferenceStandings.first { standing -> standing.rank == rank }.teamAbbr
-        }?.events?.filter {
-            it.eventType == EventType.PlayIn.name && it.result != null
-        }?.size ?: 0
-
-        fun numberOfPlayInMatchAhead(rank: Int): Int = playInTeamSchedules.firstOrNull {
-            it?.team == conferenceStandings.first { standing -> standing.rank == rank }.teamAbbr
-        }?.events?.filter {
-            it.eventType == EventType.PlayIn.name && it.result == null
-        }?.size ?: 0
-
-        val upperTeams = conferenceStandings.filter { it.rank == 7 || it.rank == 8 }.map { it.teamAbbr }
-        val lowerTeams = conferenceStandings.filter { it.rank == 9 || it.rank == 10 }.map { it.teamAbbr }
-
-        val numberOfMatchPlayed = numberOfPlayInMatchPlayed(7) + numberOfPlayInMatchPlayed(8) +
-                numberOfPlayInMatchPlayed(9) + numberOfPlayInMatchPlayed(10)
-        val numberOfMatchAhead = numberOfPlayInMatchAhead(7) + numberOfPlayInMatchAhead(8) +
-                numberOfPlayInMatchAhead(9) + numberOfPlayInMatchAhead(10)
-        if (numberOfMatchPlayed == 6 && numberOfMatchAhead == 0) {
-            // Finished
-            val seed7AndSeed9 = playInTeamSchedules.filter { it?.events?.filter { teamEvent -> teamEvent.result?.isWin == true }?.size == 1 }
-            val seed7 = seed7AndSeed9.first { upperTeams.contains(it?.team) }
-            val seed8 = playInTeamSchedules.first { it?.events?.filter { teamEvent -> teamEvent.result?.isWin == true }?.size == 2 }
-            val seed9 = seed7AndSeed9.first { lowerTeams.contains(it?.team) }
-            val seed10 = playInTeamSchedules.first { it?.events?.filter { teamEvent -> teamEvent.result?.isWin == true }?.size == 2 }
-            logger.debug("seed7: $seed7")
-            logger.debug("seed8: $seed8")
-            logger.debug("seed9: $seed9")
-            logger.debug("seed10: $seed10")
-        } else if (numberOfMatchPlayed == 4 && numberOfMatchAhead == 2) {
-            // R2 Ongoing
-        } else if (numberOfMatchPlayed == 4 && numberOfMatchAhead == 0) {
-            // R2 Ongoing
-        } else if (numberOfMatchPlayed == 2 && numberOfMatchAhead == 2) {
-            // R1 Ongoing
-        } else if (numberOfMatchPlayed == 0 && numberOfMatchAhead == 4) {
-            // R1 Not Start
-        } else {
-            // Unknown
         }
     }
 

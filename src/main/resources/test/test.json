@@ -1,0 +1,2413 @@
+{
+  "id": 35,
+  "dataVersion": 2021071200,
+  "westernPlayInEvents": [
+    {
+      "homeTeam": {
+        "teamAbbr": "lal",
+        "displayName": "Los Angeles Lakers",
+        "logo": "https://a.espncdn.com/i/teamlogos/nba/500/lal.png",
+        "location": "Los Angeles",
+        "rank": 7,
+        "seed": 7,
+        "recordSummaryWin": 42,
+        "recordSummaryLose": 30,
+        "isSurviveToPlayOff": false,
+        "isSurvive": false
+      },
+      "guestTeam": {
+        "teamAbbr": "gs",
+        "displayName": "Golden State Warriors",
+        "logo": "https://a.espncdn.com/i/teamlogos/nba/500/gs.png",
+        "location": "Golden State",
+        "rank": 8,
+        "seed": 9,
+        "recordSummaryWin": 39,
+        "recordSummaryLose": 33,
+        "isSurviveToPlayOff": false,
+        "isSurvive": false
+      },
+      "result": {
+        "isHomeTeamWin": false,
+        "homeTeamScore": 103,
+        "guestTeamScore": 100
+      }
+    },
+    {
+      "homeTeam": {
+        "teamAbbr": "mem",
+        "displayName": "Memphis Grizzlies",
+        "logo": "https://a.espncdn.com/i/teamlogos/nba/500/mem.png",
+        "location": "Memphis",
+        "rank": 9,
+        "seed": 8,
+        "recordSummaryWin": 38,
+        "recordSummaryLose": 34,
+        "isSurviveToPlayOff": false,
+        "isSurvive": false
+      },
+      "guestTeam": {
+        "teamAbbr": "sa",
+        "displayName": "San Antonio Spurs",
+        "logo": "https://a.espncdn.com/i/teamlogos/nba/500/sa.png",
+        "location": "San Antonio",
+        "rank": 10,
+        "seed": 10,
+        "recordSummaryWin": 33,
+        "recordSummaryLose": 39,
+        "isSurviveToPlayOff": false,
+        "isSurvive": false
+      },
+      "result": {
+        "isHomeTeamWin": false,
+        "homeTeamScore": 96,
+        "guestTeamScore": 100
+      }
+    },
+    {
+      "homeTeam": {
+        "teamAbbr": "gs",
+        "displayName": "Golden State Warriors",
+        "logo": "https://a.espncdn.com/i/teamlogos/nba/500/gs.png",
+        "location": "Golden State",
+        "rank": 8,
+        "seed": 9,
+        "recordSummaryWin": 39,
+        "recordSummaryLose": 33,
+        "isSurviveToPlayOff": false,
+        "isSurvive": false
+      },
+      "guestTeam": {
+        "teamAbbr": "mem",
+        "displayName": "Memphis Grizzlies",
+        "logo": "https://a.espncdn.com/i/teamlogos/nba/500/mem.png",
+        "location": "Memphis",
+        "rank": 9,
+        "seed": 8,
+        "recordSummaryWin": 38,
+        "recordSummaryLose": 34,
+        "isSurviveToPlayOff": false,
+        "isSurvive": false
+      },
+      "result": {
+        "isHomeTeamWin": false,
+        "homeTeamScore": 112,
+        "guestTeamScore": 117
+      }
+    }
+  ],
+  "easternPlayInEvents": [
+    {
+      "homeTeam": {
+        "teamAbbr": "bos",
+        "displayName": "Boston Celtics",
+        "logo": "https://a.espncdn.com/i/teamlogos/nba/500/bos.png",
+        "location": "Boston",
+        "rank": 7,
+        "seed": 7,
+        "recordSummaryWin": 36,
+        "recordSummaryLose": 36,
+        "isSurviveToPlayOff": false,
+        "isSurvive": false
+      },
+      "guestTeam": {
+        "teamAbbr": "wsh",
+        "displayName": "Washington Wizards",
+        "logo": "https://a.espncdn.com/i/teamlogos/nba/500/wsh.png",
+        "location": "Washington",
+        "rank": 8,
+        "seed": 8,
+        "recordSummaryWin": 34,
+        "recordSummaryLose": 38,
+        "isSurviveToPlayOff": false,
+        "isSurvive": false
+      },
+      "result": {
+        "isHomeTeamWin": false,
+        "homeTeamScore": 118,
+        "guestTeamScore": 100
+      }
+    },
+    {
+      "homeTeam": {
+        "teamAbbr": "ind",
+        "displayName": "Indiana Pacers",
+        "logo": "https://a.espncdn.com/i/teamlogos/nba/500/ind.png",
+        "location": "Indiana",
+        "rank": 9,
+        "seed": 9,
+        "recordSummaryWin": 34,
+        "recordSummaryLose": 38,
+        "isSurviveToPlayOff": false,
+        "isSurvive": false
+      },
+      "guestTeam": {
+        "teamAbbr": "cha",
+        "displayName": "Charlotte Hornets",
+        "logo": "https://a.espncdn.com/i/teamlogos/nba/500/cha.png",
+        "location": "Charlotte",
+        "rank": 10,
+        "seed": 10,
+        "recordSummaryWin": 33,
+        "recordSummaryLose": 39,
+        "isSurviveToPlayOff": false,
+        "isSurvive": false
+      },
+      "result": {
+        "isHomeTeamWin": false,
+        "homeTeamScore": 117,
+        "guestTeamScore": 144
+      }
+    },
+    {
+      "homeTeam": {
+        "teamAbbr": "wsh",
+        "displayName": "Washington Wizards",
+        "logo": "https://a.espncdn.com/i/teamlogos/nba/500/wsh.png",
+        "location": "Washington",
+        "rank": 8,
+        "seed": 8,
+        "recordSummaryWin": 34,
+        "recordSummaryLose": 38,
+        "isSurviveToPlayOff": false,
+        "isSurvive": false
+      },
+      "guestTeam": {
+        "teamAbbr": "ind",
+        "displayName": "Indiana Pacers",
+        "logo": "https://a.espncdn.com/i/teamlogos/nba/500/ind.png",
+        "location": "Indiana",
+        "rank": 9,
+        "seed": 9,
+        "recordSummaryWin": 34,
+        "recordSummaryLose": 38,
+        "isSurviveToPlayOff": false,
+        "isSurvive": false
+      },
+      "result": {
+        "isHomeTeamWin": false,
+        "homeTeamScore": 142,
+        "guestTeamScore": 115
+      }
+    }
+  ],
+  "westernRound1Series": [
+    {
+      "team1": {
+        "teamAbbr": "utah",
+        "displayName": "Utah Jazz",
+        "logo": "https://a.espncdn.com/i/teamlogos/nba/500/utah.png",
+        "location": "Utah",
+        "rank": 1,
+        "seed": 1,
+        "recordSummaryWin": 52,
+        "recordSummaryLose": 20,
+        "isSurviveToPlayOff": true,
+        "isSurvive": true
+      },
+      "team2": {
+        "teamAbbr": "mem",
+        "displayName": "Memphis Grizzlies",
+        "logo": "https://a.espncdn.com/i/teamlogos/nba/500/mem.png",
+        "location": "Memphis",
+        "rank": 10,
+        "seed": 8,
+        "recordSummaryWin": 38,
+        "recordSummaryLose": 34,
+        "isSurviveToPlayOff": true,
+        "isSurvive": false
+      },
+      "events": [
+        {
+          "unixTimeStamp": 1621819800000,
+          "eventType": "PlayOffRound1",
+          "homeTeam": {
+            "abbrev": "utah",
+            "displayName": "Utah Jazz",
+            "logo": "https://a.espncdn.com/i/teamlogos/nba/500/utah.png",
+            "location": "Utah"
+          },
+          "guestTeam": {
+            "abbrev": "mem",
+            "displayName": "Memphis Grizzlies",
+            "logo": "https://a.espncdn.com/i/teamlogos/nba/500/mem.png",
+            "location": "Memphis"
+          },
+          "result": {
+            "isHomeTeamWin": false,
+            "homeTeamScore": 109,
+            "guestTeamScore": 112
+          }
+        },
+        {
+          "unixTimeStamp": 1622080800000,
+          "eventType": "PlayOffRound1",
+          "homeTeam": {
+            "abbrev": "utah",
+            "displayName": "Utah Jazz",
+            "logo": "https://a.espncdn.com/i/teamlogos/nba/500/utah.png",
+            "location": "Utah"
+          },
+          "guestTeam": {
+            "abbrev": "mem",
+            "displayName": "Memphis Grizzlies",
+            "logo": "https://a.espncdn.com/i/teamlogos/nba/500/mem.png",
+            "location": "Memphis"
+          },
+          "result": {
+            "isHomeTeamWin": true,
+            "homeTeamScore": 141,
+            "guestTeamScore": 129
+          }
+        },
+        {
+          "unixTimeStamp": 1622338200000,
+          "eventType": "PlayOffRound1",
+          "homeTeam": {
+            "abbrev": "mem",
+            "displayName": "Memphis Grizzlies",
+            "logo": "https://a.espncdn.com/i/teamlogos/nba/500/mem.png",
+            "location": "Memphis"
+          },
+          "guestTeam": {
+            "abbrev": "utah",
+            "displayName": "Utah Jazz",
+            "logo": "https://a.espncdn.com/i/teamlogos/nba/500/utah.png",
+            "location": "Utah"
+          },
+          "result": {
+            "isHomeTeamWin": false,
+            "homeTeamScore": 111,
+            "guestTeamScore": 121
+          }
+        },
+        {
+          "unixTimeStamp": 1622511000000,
+          "eventType": "PlayOffRound1",
+          "homeTeam": {
+            "abbrev": "mem",
+            "displayName": "Memphis Grizzlies",
+            "logo": "https://a.espncdn.com/i/teamlogos/nba/500/mem.png",
+            "location": "Memphis"
+          },
+          "guestTeam": {
+            "abbrev": "utah",
+            "displayName": "Utah Jazz",
+            "logo": "https://a.espncdn.com/i/teamlogos/nba/500/utah.png",
+            "location": "Utah"
+          },
+          "result": {
+            "isHomeTeamWin": false,
+            "homeTeamScore": 113,
+            "guestTeamScore": 120
+          }
+        },
+        {
+          "unixTimeStamp": 1622683800000,
+          "eventType": "PlayOffRound1",
+          "homeTeam": {
+            "abbrev": "utah",
+            "displayName": "Utah Jazz",
+            "logo": "https://a.espncdn.com/i/teamlogos/nba/500/utah.png",
+            "location": "Utah"
+          },
+          "guestTeam": {
+            "abbrev": "mem",
+            "displayName": "Memphis Grizzlies",
+            "logo": "https://a.espncdn.com/i/teamlogos/nba/500/mem.png",
+            "location": "Memphis"
+          },
+          "result": {
+            "isHomeTeamWin": true,
+            "homeTeamScore": 126,
+            "guestTeamScore": 110
+          }
+        }
+      ]
+    },
+    {
+      "team1": {
+        "teamAbbr": "lac",
+        "displayName": "LA Clippers",
+        "logo": "https://a.espncdn.com/i/teamlogos/nba/500/lac.png",
+        "location": "LA",
+        "rank": 4,
+        "seed": 4,
+        "recordSummaryWin": 47,
+        "recordSummaryLose": 25,
+        "isSurviveToPlayOff": true,
+        "isSurvive": true
+      },
+      "team2": {
+        "teamAbbr": "dal",
+        "displayName": "Dallas Mavericks",
+        "logo": "https://a.espncdn.com/i/teamlogos/nba/500/dal.png",
+        "location": "Dallas",
+        "rank": 5,
+        "seed": 5,
+        "recordSummaryWin": 42,
+        "recordSummaryLose": 30,
+        "isSurviveToPlayOff": true,
+        "isSurvive": false
+      },
+      "events": [
+        {
+          "unixTimeStamp": 1621715400000,
+          "eventType": "PlayOffRound1",
+          "homeTeam": {
+            "abbrev": "lac",
+            "displayName": "LA Clippers",
+            "logo": "https://a.espncdn.com/i/teamlogos/nba/500/lac.png",
+            "location": "LA"
+          },
+          "guestTeam": {
+            "abbrev": "dal",
+            "displayName": "Dallas Mavericks",
+            "logo": "https://a.espncdn.com/i/teamlogos/nba/500/dal.png",
+            "location": "Dallas"
+          },
+          "result": {
+            "isHomeTeamWin": false,
+            "homeTeamScore": 103,
+            "guestTeamScore": 113
+          }
+        },
+        {
+          "unixTimeStamp": 1621996200000,
+          "eventType": "PlayOffRound1",
+          "homeTeam": {
+            "abbrev": "lac",
+            "displayName": "LA Clippers",
+            "logo": "https://a.espncdn.com/i/teamlogos/nba/500/lac.png",
+            "location": "LA"
+          },
+          "guestTeam": {
+            "abbrev": "dal",
+            "displayName": "Dallas Mavericks",
+            "logo": "https://a.espncdn.com/i/teamlogos/nba/500/dal.png",
+            "location": "Dallas"
+          },
+          "result": {
+            "isHomeTeamWin": false,
+            "homeTeamScore": 121,
+            "guestTeamScore": 127
+          }
+        },
+        {
+          "unixTimeStamp": 1622251800000,
+          "eventType": "PlayOffRound1",
+          "homeTeam": {
+            "abbrev": "dal",
+            "displayName": "Dallas Mavericks",
+            "logo": "https://a.espncdn.com/i/teamlogos/nba/500/dal.png",
+            "location": "Dallas"
+          },
+          "guestTeam": {
+            "abbrev": "lac",
+            "displayName": "LA Clippers",
+            "logo": "https://a.espncdn.com/i/teamlogos/nba/500/lac.png",
+            "location": "LA"
+          },
+          "result": {
+            "isHomeTeamWin": false,
+            "homeTeamScore": 108,
+            "guestTeamScore": 118
+          }
+        },
+        {
+          "unixTimeStamp": 1622424600000,
+          "eventType": "PlayOffRound1",
+          "homeTeam": {
+            "abbrev": "dal",
+            "displayName": "Dallas Mavericks",
+            "logo": "https://a.espncdn.com/i/teamlogos/nba/500/dal.png",
+            "location": "Dallas"
+          },
+          "guestTeam": {
+            "abbrev": "lac",
+            "displayName": "LA Clippers",
+            "logo": "https://a.espncdn.com/i/teamlogos/nba/500/lac.png",
+            "location": "LA"
+          },
+          "result": {
+            "isHomeTeamWin": false,
+            "homeTeamScore": 81,
+            "guestTeamScore": 106
+          }
+        },
+        {
+          "unixTimeStamp": 1622685600000,
+          "eventType": "PlayOffRound1",
+          "homeTeam": {
+            "abbrev": "lac",
+            "displayName": "LA Clippers",
+            "logo": "https://a.espncdn.com/i/teamlogos/nba/500/lac.png",
+            "location": "LA"
+          },
+          "guestTeam": {
+            "abbrev": "dal",
+            "displayName": "Dallas Mavericks",
+            "logo": "https://a.espncdn.com/i/teamlogos/nba/500/dal.png",
+            "location": "Dallas"
+          },
+          "result": {
+            "isHomeTeamWin": false,
+            "homeTeamScore": 100,
+            "guestTeamScore": 105
+          }
+        },
+        {
+          "unixTimeStamp": 1622854800000,
+          "eventType": "PlayOffRound1",
+          "homeTeam": {
+            "abbrev": "dal",
+            "displayName": "Dallas Mavericks",
+            "logo": "https://a.espncdn.com/i/teamlogos/nba/500/dal.png",
+            "location": "Dallas"
+          },
+          "guestTeam": {
+            "abbrev": "lac",
+            "displayName": "LA Clippers",
+            "logo": "https://a.espncdn.com/i/teamlogos/nba/500/lac.png",
+            "location": "LA"
+          },
+          "result": {
+            "isHomeTeamWin": false,
+            "homeTeamScore": 97,
+            "guestTeamScore": 104
+          }
+        },
+        {
+          "unixTimeStamp": 1623007800000,
+          "eventType": "PlayOffRound1",
+          "homeTeam": {
+            "abbrev": "lac",
+            "displayName": "LA Clippers",
+            "logo": "https://a.espncdn.com/i/teamlogos/nba/500/lac.png",
+            "location": "LA"
+          },
+          "guestTeam": {
+            "abbrev": "dal",
+            "displayName": "Dallas Mavericks",
+            "logo": "https://a.espncdn.com/i/teamlogos/nba/500/dal.png",
+            "location": "Dallas"
+          },
+          "result": {
+            "isHomeTeamWin": true,
+            "homeTeamScore": 126,
+            "guestTeamScore": 111
+          }
+        }
+      ]
+    },
+    {
+      "team1": {
+        "teamAbbr": "den",
+        "displayName": "Denver Nuggets",
+        "logo": "https://a.espncdn.com/i/teamlogos/nba/500/den.png",
+        "location": "Denver",
+        "rank": 3,
+        "seed": 3,
+        "recordSummaryWin": 47,
+        "recordSummaryLose": 25,
+        "isSurviveToPlayOff": true,
+        "isSurvive": true
+      },
+      "team2": {
+        "teamAbbr": "por",
+        "displayName": "Portland Trail Blazers",
+        "logo": "https://a.espncdn.com/i/teamlogos/nba/500/por.png",
+        "location": "Portland",
+        "rank": 6,
+        "seed": 6,
+        "recordSummaryWin": 42,
+        "recordSummaryLose": 30,
+        "isSurviveToPlayOff": true,
+        "isSurvive": false
+      },
+      "events": [
+        {
+          "unixTimeStamp": 1621737000000,
+          "eventType": "PlayOffRound1",
+          "homeTeam": {
+            "abbrev": "den",
+            "displayName": "Denver Nuggets",
+            "logo": "https://a.espncdn.com/i/teamlogos/nba/500/den.png",
+            "location": "Denver"
+          },
+          "guestTeam": {
+            "abbrev": "por",
+            "displayName": "Portland Trail Blazers",
+            "logo": "https://a.espncdn.com/i/teamlogos/nba/500/por.png",
+            "location": "Portland"
+          },
+          "result": {
+            "isHomeTeamWin": false,
+            "homeTeamScore": 109,
+            "guestTeamScore": 123
+          }
+        },
+        {
+          "unixTimeStamp": 1621908000000,
+          "eventType": "PlayOffRound1",
+          "homeTeam": {
+            "abbrev": "den",
+            "displayName": "Denver Nuggets",
+            "logo": "https://a.espncdn.com/i/teamlogos/nba/500/den.png",
+            "location": "Denver"
+          },
+          "guestTeam": {
+            "abbrev": "por",
+            "displayName": "Portland Trail Blazers",
+            "logo": "https://a.espncdn.com/i/teamlogos/nba/500/por.png",
+            "location": "Portland"
+          },
+          "result": {
+            "isHomeTeamWin": true,
+            "homeTeamScore": 128,
+            "guestTeamScore": 109
+          }
+        },
+        {
+          "unixTimeStamp": 1622169000000,
+          "eventType": "PlayOffRound1",
+          "homeTeam": {
+            "abbrev": "por",
+            "displayName": "Portland Trail Blazers",
+            "logo": "https://a.espncdn.com/i/teamlogos/nba/500/por.png",
+            "location": "Portland"
+          },
+          "guestTeam": {
+            "abbrev": "den",
+            "displayName": "Denver Nuggets",
+            "logo": "https://a.espncdn.com/i/teamlogos/nba/500/den.png",
+            "location": "Denver"
+          },
+          "result": {
+            "isHomeTeamWin": false,
+            "homeTeamScore": 115,
+            "guestTeamScore": 120
+          }
+        },
+        {
+          "unixTimeStamp": 1622318400000,
+          "eventType": "PlayOffRound1",
+          "homeTeam": {
+            "abbrev": "por",
+            "displayName": "Portland Trail Blazers",
+            "logo": "https://a.espncdn.com/i/teamlogos/nba/500/por.png",
+            "location": "Portland"
+          },
+          "guestTeam": {
+            "abbrev": "den",
+            "displayName": "Denver Nuggets",
+            "logo": "https://a.espncdn.com/i/teamlogos/nba/500/den.png",
+            "location": "Denver"
+          },
+          "result": {
+            "isHomeTeamWin": true,
+            "homeTeamScore": 115,
+            "guestTeamScore": 95
+          }
+        },
+        {
+          "unixTimeStamp": 1622595600000,
+          "eventType": "PlayOffRound1",
+          "homeTeam": {
+            "abbrev": "den",
+            "displayName": "Denver Nuggets",
+            "logo": "https://a.espncdn.com/i/teamlogos/nba/500/den.png",
+            "location": "Denver"
+          },
+          "guestTeam": {
+            "abbrev": "por",
+            "displayName": "Portland Trail Blazers",
+            "logo": "https://a.espncdn.com/i/teamlogos/nba/500/por.png",
+            "location": "Portland"
+          },
+          "result": {
+            "isHomeTeamWin": true,
+            "homeTeamScore": 147,
+            "guestTeamScore": 140
+          }
+        },
+        {
+          "unixTimeStamp": 1622764800000,
+          "eventType": "PlayOffRound1",
+          "homeTeam": {
+            "abbrev": "por",
+            "displayName": "Portland Trail Blazers",
+            "logo": "https://a.espncdn.com/i/teamlogos/nba/500/por.png",
+            "location": "Portland"
+          },
+          "guestTeam": {
+            "abbrev": "den",
+            "displayName": "Denver Nuggets",
+            "logo": "https://a.espncdn.com/i/teamlogos/nba/500/den.png",
+            "location": "Denver"
+          },
+          "result": {
+            "isHomeTeamWin": false,
+            "homeTeamScore": 115,
+            "guestTeamScore": 126
+          }
+        }
+      ]
+    },
+    {
+      "team1": {
+        "teamAbbr": "phx",
+        "displayName": "Phoenix Suns",
+        "logo": "https://a.espncdn.com/i/teamlogos/nba/500/phx.png",
+        "location": "Phoenix",
+        "rank": 2,
+        "seed": 2,
+        "recordSummaryWin": 51,
+        "recordSummaryLose": 21,
+        "isSurviveToPlayOff": true,
+        "isSurvive": true
+      },
+      "team2": {
+        "teamAbbr": "gs",
+        "displayName": "Golden State Warriors",
+        "logo": "https://a.espncdn.com/i/teamlogos/nba/500/gs.png",
+        "location": "Golden State",
+        "rank": 8,
+        "seed": 7,
+        "recordSummaryWin": 39,
+        "recordSummaryLose": 33,
+        "isSurviveToPlayOff": true,
+        "isSurvive": false
+      },
+      "events": [
+        {
+          "unixTimeStamp": 1621798200000,
+          "eventType": "PlayOffRound1",
+          "homeTeam": {
+            "abbrev": "phx",
+            "displayName": "Phoenix Suns",
+            "logo": "https://a.espncdn.com/i/teamlogos/nba/500/phx.png",
+            "location": "Phoenix"
+          },
+          "guestTeam": {
+            "abbrev": "lal",
+            "displayName": "Los Angeles Lakers",
+            "logo": "https://a.espncdn.com/i/teamlogos/nba/500/lal.png",
+            "location": "Los Angeles"
+          },
+          "result": {
+            "isHomeTeamWin": true,
+            "homeTeamScore": 99,
+            "guestTeamScore": 90
+          }
+        },
+        {
+          "unixTimeStamp": 1621994400000,
+          "eventType": "PlayOffRound1",
+          "homeTeam": {
+            "abbrev": "phx",
+            "displayName": "Phoenix Suns",
+            "logo": "https://a.espncdn.com/i/teamlogos/nba/500/phx.png",
+            "location": "Phoenix"
+          },
+          "guestTeam": {
+            "abbrev": "lal",
+            "displayName": "Los Angeles Lakers",
+            "logo": "https://a.espncdn.com/i/teamlogos/nba/500/lal.png",
+            "location": "Los Angeles"
+          },
+          "result": {
+            "isHomeTeamWin": false,
+            "homeTeamScore": 102,
+            "guestTeamScore": 109
+          }
+        },
+        {
+          "unixTimeStamp": 1622167200000,
+          "eventType": "PlayOffRound1",
+          "homeTeam": {
+            "abbrev": "lal",
+            "displayName": "Los Angeles Lakers",
+            "logo": "https://a.espncdn.com/i/teamlogos/nba/500/lal.png",
+            "location": "Los Angeles"
+          },
+          "guestTeam": {
+            "abbrev": "phx",
+            "displayName": "Phoenix Suns",
+            "logo": "https://a.espncdn.com/i/teamlogos/nba/500/phx.png",
+            "location": "Phoenix"
+          },
+          "result": {
+            "isHomeTeamWin": true,
+            "homeTeamScore": 109,
+            "guestTeamScore": 95
+          }
+        },
+        {
+          "unixTimeStamp": 1622403000000,
+          "eventType": "PlayOffRound1",
+          "homeTeam": {
+            "abbrev": "lal",
+            "displayName": "Los Angeles Lakers",
+            "logo": "https://a.espncdn.com/i/teamlogos/nba/500/lal.png",
+            "location": "Los Angeles"
+          },
+          "guestTeam": {
+            "abbrev": "phx",
+            "displayName": "Phoenix Suns",
+            "logo": "https://a.espncdn.com/i/teamlogos/nba/500/phx.png",
+            "location": "Phoenix"
+          },
+          "result": {
+            "isHomeTeamWin": false,
+            "homeTeamScore": 92,
+            "guestTeamScore": 100
+          }
+        },
+        {
+          "unixTimeStamp": 1622599200000,
+          "eventType": "PlayOffRound1",
+          "homeTeam": {
+            "abbrev": "phx",
+            "displayName": "Phoenix Suns",
+            "logo": "https://a.espncdn.com/i/teamlogos/nba/500/phx.png",
+            "location": "Phoenix"
+          },
+          "guestTeam": {
+            "abbrev": "lal",
+            "displayName": "Los Angeles Lakers",
+            "logo": "https://a.espncdn.com/i/teamlogos/nba/500/lal.png",
+            "location": "Los Angeles"
+          },
+          "result": {
+            "isHomeTeamWin": true,
+            "homeTeamScore": 115,
+            "guestTeamScore": 85
+          }
+        },
+        {
+          "unixTimeStamp": 1622773800000,
+          "eventType": "PlayOffRound1",
+          "homeTeam": {
+            "abbrev": "lal",
+            "displayName": "Los Angeles Lakers",
+            "logo": "https://a.espncdn.com/i/teamlogos/nba/500/lal.png",
+            "location": "Los Angeles"
+          },
+          "guestTeam": {
+            "abbrev": "phx",
+            "displayName": "Phoenix Suns",
+            "logo": "https://a.espncdn.com/i/teamlogos/nba/500/phx.png",
+            "location": "Phoenix"
+          },
+          "result": {
+            "isHomeTeamWin": false,
+            "homeTeamScore": 100,
+            "guestTeamScore": 113
+          }
+        }
+      ]
+    }
+  ],
+  "easternRound1Series": [
+    {
+      "team1": {
+        "teamAbbr": "phi",
+        "displayName": "Philadelphia 76ers",
+        "logo": "https://a.espncdn.com/i/teamlogos/nba/500/phi.png",
+        "location": "Philadelphia",
+        "rank": 1,
+        "seed": 1,
+        "recordSummaryWin": 49,
+        "recordSummaryLose": 23,
+        "isSurviveToPlayOff": true,
+        "isSurvive": true
+      },
+      "team2": {
+        "teamAbbr": "ind",
+        "displayName": "Indiana Pacers",
+        "logo": "https://a.espncdn.com/i/teamlogos/nba/500/ind.png",
+        "location": "Indiana",
+        "rank": 10,
+        "seed": 8,
+        "recordSummaryWin": 34,
+        "recordSummaryLose": 38,
+        "isSurviveToPlayOff": true,
+        "isSurvive": false
+      },
+      "events": [
+        {
+          "unixTimeStamp": 1621789200000,
+          "eventType": "PlayOffRound1",
+          "homeTeam": {
+            "abbrev": "phi",
+            "displayName": "Philadelphia 76ers",
+            "logo": "https://a.espncdn.com/i/teamlogos/nba/500/phi.png",
+            "location": "Philadelphia"
+          },
+          "guestTeam": {
+            "abbrev": "wsh",
+            "displayName": "Washington Wizards",
+            "logo": "https://a.espncdn.com/i/teamlogos/nba/500/wsh.png",
+            "location": "Washington"
+          },
+          "result": {
+            "isHomeTeamWin": true,
+            "homeTeamScore": 125,
+            "guestTeamScore": 118
+          }
+        },
+        {
+          "unixTimeStamp": 1622070000000,
+          "eventType": "PlayOffRound1",
+          "homeTeam": {
+            "abbrev": "phi",
+            "displayName": "Philadelphia 76ers",
+            "logo": "https://a.espncdn.com/i/teamlogos/nba/500/phi.png",
+            "location": "Philadelphia"
+          },
+          "guestTeam": {
+            "abbrev": "wsh",
+            "displayName": "Washington Wizards",
+            "logo": "https://a.espncdn.com/i/teamlogos/nba/500/wsh.png",
+            "location": "Washington"
+          },
+          "result": {
+            "isHomeTeamWin": true,
+            "homeTeamScore": 120,
+            "guestTeamScore": 95
+          }
+        },
+        {
+          "unixTimeStamp": 1622329200000,
+          "eventType": "PlayOffRound1",
+          "homeTeam": {
+            "abbrev": "wsh",
+            "displayName": "Washington Wizards",
+            "logo": "https://a.espncdn.com/i/teamlogos/nba/500/wsh.png",
+            "location": "Washington"
+          },
+          "guestTeam": {
+            "abbrev": "phi",
+            "displayName": "Philadelphia 76ers",
+            "logo": "https://a.espncdn.com/i/teamlogos/nba/500/phi.png",
+            "location": "Philadelphia"
+          },
+          "result": {
+            "isHomeTeamWin": false,
+            "homeTeamScore": 103,
+            "guestTeamScore": 132
+          }
+        },
+        {
+          "unixTimeStamp": 1622502000000,
+          "eventType": "PlayOffRound1",
+          "homeTeam": {
+            "abbrev": "wsh",
+            "displayName": "Washington Wizards",
+            "logo": "https://a.espncdn.com/i/teamlogos/nba/500/wsh.png",
+            "location": "Washington"
+          },
+          "guestTeam": {
+            "abbrev": "phi",
+            "displayName": "Philadelphia 76ers",
+            "logo": "https://a.espncdn.com/i/teamlogos/nba/500/phi.png",
+            "location": "Philadelphia"
+          },
+          "result": {
+            "isHomeTeamWin": true,
+            "homeTeamScore": 122,
+            "guestTeamScore": 114
+          }
+        },
+        {
+          "unixTimeStamp": 1622674800000,
+          "eventType": "PlayOffRound1",
+          "homeTeam": {
+            "abbrev": "phi",
+            "displayName": "Philadelphia 76ers",
+            "logo": "https://a.espncdn.com/i/teamlogos/nba/500/phi.png",
+            "location": "Philadelphia"
+          },
+          "guestTeam": {
+            "abbrev": "wsh",
+            "displayName": "Washington Wizards",
+            "logo": "https://a.espncdn.com/i/teamlogos/nba/500/wsh.png",
+            "location": "Washington"
+          },
+          "result": {
+            "isHomeTeamWin": true,
+            "homeTeamScore": 129,
+            "guestTeamScore": 112
+          }
+        }
+      ]
+    },
+    {
+      "team1": {
+        "teamAbbr": "ny",
+        "displayName": "New York Knicks",
+        "logo": "https://a.espncdn.com/i/teamlogos/nba/500/ny.png",
+        "location": "New York",
+        "rank": 4,
+        "seed": 4,
+        "recordSummaryWin": 41,
+        "recordSummaryLose": 31,
+        "isSurviveToPlayOff": true,
+        "isSurvive": false
+      },
+      "team2": {
+        "teamAbbr": "atl",
+        "displayName": "Atlanta Hawks",
+        "logo": "https://a.espncdn.com/i/teamlogos/nba/500/atl.png",
+        "location": "Atlanta",
+        "rank": 5,
+        "seed": 5,
+        "recordSummaryWin": 41,
+        "recordSummaryLose": 31,
+        "isSurviveToPlayOff": true,
+        "isSurvive": true
+      },
+      "events": [
+        {
+          "unixTimeStamp": 1621810800000,
+          "eventType": "PlayOffRound1",
+          "homeTeam": {
+            "abbrev": "ny",
+            "displayName": "New York Knicks",
+            "logo": "https://a.espncdn.com/i/teamlogos/nba/500/ny.png",
+            "location": "New York"
+          },
+          "guestTeam": {
+            "abbrev": "atl",
+            "displayName": "Atlanta Hawks",
+            "logo": "https://a.espncdn.com/i/teamlogos/nba/500/atl.png",
+            "location": "Atlanta"
+          },
+          "result": {
+            "isHomeTeamWin": false,
+            "homeTeamScore": 105,
+            "guestTeamScore": 107
+          }
+        },
+        {
+          "unixTimeStamp": 1622071800000,
+          "eventType": "PlayOffRound1",
+          "homeTeam": {
+            "abbrev": "ny",
+            "displayName": "New York Knicks",
+            "logo": "https://a.espncdn.com/i/teamlogos/nba/500/ny.png",
+            "location": "New York"
+          },
+          "guestTeam": {
+            "abbrev": "atl",
+            "displayName": "Atlanta Hawks",
+            "logo": "https://a.espncdn.com/i/teamlogos/nba/500/atl.png",
+            "location": "Atlanta"
+          },
+          "result": {
+            "isHomeTeamWin": true,
+            "homeTeamScore": 101,
+            "guestTeamScore": 92
+          }
+        },
+        {
+          "unixTimeStamp": 1622242800000,
+          "eventType": "PlayOffRound1",
+          "homeTeam": {
+            "abbrev": "atl",
+            "displayName": "Atlanta Hawks",
+            "logo": "https://a.espncdn.com/i/teamlogos/nba/500/atl.png",
+            "location": "Atlanta"
+          },
+          "guestTeam": {
+            "abbrev": "ny",
+            "displayName": "New York Knicks",
+            "logo": "https://a.espncdn.com/i/teamlogos/nba/500/ny.png",
+            "location": "New York"
+          },
+          "result": {
+            "isHomeTeamWin": true,
+            "homeTeamScore": 105,
+            "guestTeamScore": 94
+          }
+        },
+        {
+          "unixTimeStamp": 1622394000000,
+          "eventType": "PlayOffRound1",
+          "homeTeam": {
+            "abbrev": "atl",
+            "displayName": "Atlanta Hawks",
+            "logo": "https://a.espncdn.com/i/teamlogos/nba/500/atl.png",
+            "location": "Atlanta"
+          },
+          "guestTeam": {
+            "abbrev": "ny",
+            "displayName": "New York Knicks",
+            "logo": "https://a.espncdn.com/i/teamlogos/nba/500/ny.png",
+            "location": "New York"
+          },
+          "result": {
+            "isHomeTeamWin": true,
+            "homeTeamScore": 113,
+            "guestTeamScore": 96
+          }
+        },
+        {
+          "unixTimeStamp": 1622676600000,
+          "eventType": "PlayOffRound1",
+          "homeTeam": {
+            "abbrev": "ny",
+            "displayName": "New York Knicks",
+            "logo": "https://a.espncdn.com/i/teamlogos/nba/500/ny.png",
+            "location": "New York"
+          },
+          "guestTeam": {
+            "abbrev": "atl",
+            "displayName": "Atlanta Hawks",
+            "logo": "https://a.espncdn.com/i/teamlogos/nba/500/atl.png",
+            "location": "Atlanta"
+          },
+          "result": {
+            "isHomeTeamWin": false,
+            "homeTeamScore": 89,
+            "guestTeamScore": 103
+          }
+        }
+      ]
+    },
+    {
+      "team1": {
+        "teamAbbr": "mil",
+        "displayName": "Milwaukee Bucks",
+        "logo": "https://a.espncdn.com/i/teamlogos/nba/500/mil.png",
+        "location": "Milwaukee",
+        "rank": 3,
+        "seed": 3,
+        "recordSummaryWin": 46,
+        "recordSummaryLose": 26,
+        "isSurviveToPlayOff": true,
+        "isSurvive": true
+      },
+      "team2": {
+        "teamAbbr": "mia",
+        "displayName": "Miami Heat",
+        "logo": "https://a.espncdn.com/i/teamlogos/nba/500/mia.png",
+        "location": "Miami",
+        "rank": 6,
+        "seed": 6,
+        "recordSummaryWin": 40,
+        "recordSummaryLose": 32,
+        "isSurviveToPlayOff": true,
+        "isSurvive": false
+      },
+      "events": [
+        {
+          "unixTimeStamp": 1621706400000,
+          "eventType": "PlayOffRound1",
+          "homeTeam": {
+            "abbrev": "mil",
+            "displayName": "Milwaukee Bucks",
+            "logo": "https://a.espncdn.com/i/teamlogos/nba/500/mil.png",
+            "location": "Milwaukee"
+          },
+          "guestTeam": {
+            "abbrev": "mia",
+            "displayName": "Miami Heat",
+            "logo": "https://a.espncdn.com/i/teamlogos/nba/500/mia.png",
+            "location": "Miami"
+          },
+          "result": {
+            "isHomeTeamWin": true,
+            "homeTeamScore": 109,
+            "guestTeamScore": 107
+          }
+        },
+        {
+          "unixTimeStamp": 1621899000000,
+          "eventType": "PlayOffRound1",
+          "homeTeam": {
+            "abbrev": "mil",
+            "displayName": "Milwaukee Bucks",
+            "logo": "https://a.espncdn.com/i/teamlogos/nba/500/mil.png",
+            "location": "Milwaukee"
+          },
+          "guestTeam": {
+            "abbrev": "mia",
+            "displayName": "Miami Heat",
+            "logo": "https://a.espncdn.com/i/teamlogos/nba/500/mia.png",
+            "location": "Miami"
+          },
+          "result": {
+            "isHomeTeamWin": true,
+            "homeTeamScore": 132,
+            "guestTeamScore": 98
+          }
+        },
+        {
+          "unixTimeStamp": 1622158200000,
+          "eventType": "PlayOffRound1",
+          "homeTeam": {
+            "abbrev": "mia",
+            "displayName": "Miami Heat",
+            "logo": "https://a.espncdn.com/i/teamlogos/nba/500/mia.png",
+            "location": "Miami"
+          },
+          "guestTeam": {
+            "abbrev": "mil",
+            "displayName": "Milwaukee Bucks",
+            "logo": "https://a.espncdn.com/i/teamlogos/nba/500/mil.png",
+            "location": "Milwaukee"
+          },
+          "result": {
+            "isHomeTeamWin": false,
+            "homeTeamScore": 84,
+            "guestTeamScore": 113
+          }
+        },
+        {
+          "unixTimeStamp": 1622309400000,
+          "eventType": "PlayOffRound1",
+          "homeTeam": {
+            "abbrev": "mia",
+            "displayName": "Miami Heat",
+            "logo": "https://a.espncdn.com/i/teamlogos/nba/500/mia.png",
+            "location": "Miami"
+          },
+          "guestTeam": {
+            "abbrev": "mil",
+            "displayName": "Milwaukee Bucks",
+            "logo": "https://a.espncdn.com/i/teamlogos/nba/500/mil.png",
+            "location": "Milwaukee"
+          },
+          "result": {
+            "isHomeTeamWin": false,
+            "homeTeamScore": 103,
+            "guestTeamScore": 120
+          }
+        }
+      ]
+    },
+    {
+      "team1": {
+        "teamAbbr": "bkn",
+        "displayName": "Brooklyn Nets",
+        "logo": "https://a.espncdn.com/i/teamlogos/nba/500/bkn.png",
+        "location": "Brooklyn",
+        "rank": 2,
+        "seed": 2,
+        "recordSummaryWin": 48,
+        "recordSummaryLose": 24,
+        "isSurviveToPlayOff": true,
+        "isSurvive": true
+      },
+      "team2": {
+        "teamAbbr": "wsh",
+        "displayName": "Washington Wizards",
+        "logo": "https://a.espncdn.com/i/teamlogos/nba/500/wsh.png",
+        "location": "Washington",
+        "rank": 8,
+        "seed": 7,
+        "recordSummaryWin": 34,
+        "recordSummaryLose": 38,
+        "isSurviveToPlayOff": true,
+        "isSurvive": false
+      },
+      "events": [
+        {
+          "unixTimeStamp": 1621728000000,
+          "eventType": "PlayOffRound1",
+          "homeTeam": {
+            "abbrev": "bkn",
+            "displayName": "Brooklyn Nets",
+            "logo": "https://a.espncdn.com/i/teamlogos/nba/500/bkn.png",
+            "location": "Brooklyn"
+          },
+          "guestTeam": {
+            "abbrev": "bos",
+            "displayName": "Boston Celtics",
+            "logo": "https://a.espncdn.com/i/teamlogos/nba/500/bos.png",
+            "location": "Boston"
+          },
+          "result": {
+            "isHomeTeamWin": true,
+            "homeTeamScore": 104,
+            "guestTeamScore": 93
+          }
+        },
+        {
+          "unixTimeStamp": 1621985400000,
+          "eventType": "PlayOffRound1",
+          "homeTeam": {
+            "abbrev": "bkn",
+            "displayName": "Brooklyn Nets",
+            "logo": "https://a.espncdn.com/i/teamlogos/nba/500/bkn.png",
+            "location": "Brooklyn"
+          },
+          "guestTeam": {
+            "abbrev": "bos",
+            "displayName": "Boston Celtics",
+            "logo": "https://a.espncdn.com/i/teamlogos/nba/500/bos.png",
+            "location": "Boston"
+          },
+          "result": {
+            "isHomeTeamWin": true,
+            "homeTeamScore": 130,
+            "guestTeamScore": 108
+          }
+        },
+        {
+          "unixTimeStamp": 1622248200000,
+          "eventType": "PlayOffRound1",
+          "homeTeam": {
+            "abbrev": "bos",
+            "displayName": "Boston Celtics",
+            "logo": "https://a.espncdn.com/i/teamlogos/nba/500/bos.png",
+            "location": "Boston"
+          },
+          "guestTeam": {
+            "abbrev": "bkn",
+            "displayName": "Brooklyn Nets",
+            "logo": "https://a.espncdn.com/i/teamlogos/nba/500/bkn.png",
+            "location": "Brooklyn"
+          },
+          "result": {
+            "isHomeTeamWin": true,
+            "homeTeamScore": 125,
+            "guestTeamScore": 119
+          }
+        },
+        {
+          "unixTimeStamp": 1622415600000,
+          "eventType": "PlayOffRound1",
+          "homeTeam": {
+            "abbrev": "bos",
+            "displayName": "Boston Celtics",
+            "logo": "https://a.espncdn.com/i/teamlogos/nba/500/bos.png",
+            "location": "Boston"
+          },
+          "guestTeam": {
+            "abbrev": "bkn",
+            "displayName": "Brooklyn Nets",
+            "logo": "https://a.espncdn.com/i/teamlogos/nba/500/bkn.png",
+            "location": "Brooklyn"
+          },
+          "result": {
+            "isHomeTeamWin": false,
+            "homeTeamScore": 126,
+            "guestTeamScore": 141
+          }
+        },
+        {
+          "unixTimeStamp": 1622590200000,
+          "eventType": "PlayOffRound1",
+          "homeTeam": {
+            "abbrev": "bkn",
+            "displayName": "Brooklyn Nets",
+            "logo": "https://a.espncdn.com/i/teamlogos/nba/500/bkn.png",
+            "location": "Brooklyn"
+          },
+          "guestTeam": {
+            "abbrev": "bos",
+            "displayName": "Boston Celtics",
+            "logo": "https://a.espncdn.com/i/teamlogos/nba/500/bos.png",
+            "location": "Boston"
+          },
+          "result": {
+            "isHomeTeamWin": true,
+            "homeTeamScore": 123,
+            "guestTeamScore": 109
+          }
+        }
+      ]
+    }
+  ],
+  "westernRound2Series": [
+    {
+      "team1": {
+        "teamAbbr": "utah",
+        "displayName": "Utah Jazz",
+        "logo": "https://a.espncdn.com/i/teamlogos/nba/500/utah.png",
+        "location": "Utah",
+        "rank": 1,
+        "seed": 1,
+        "recordSummaryWin": 52,
+        "recordSummaryLose": 20,
+        "isSurviveToPlayOff": true,
+        "isSurvive": true
+      },
+      "team2": {
+        "teamAbbr": "lac",
+        "displayName": "LA Clippers",
+        "logo": "https://a.espncdn.com/i/teamlogos/nba/500/lac.png",
+        "location": "LA",
+        "rank": 4,
+        "seed": 4,
+        "recordSummaryWin": 47,
+        "recordSummaryLose": 25,
+        "isSurviveToPlayOff": true,
+        "isSurvive": false
+      },
+      "events": [
+        {
+          "unixTimeStamp": 1623204000000,
+          "eventType": "PlayOffRound2",
+          "homeTeam": {
+            "abbrev": "utah",
+            "displayName": "Utah Jazz",
+            "logo": "https://a.espncdn.com/i/teamlogos/nba/500/utah.png",
+            "location": "Utah"
+          },
+          "guestTeam": {
+            "abbrev": "lac",
+            "displayName": "LA Clippers",
+            "logo": "https://a.espncdn.com/i/teamlogos/nba/500/lac.png",
+            "location": "LA"
+          },
+          "result": {
+            "isHomeTeamWin": true,
+            "homeTeamScore": 112,
+            "guestTeamScore": 109
+          }
+        },
+        {
+          "unixTimeStamp": 1623376800000,
+          "eventType": "PlayOffRound2",
+          "homeTeam": {
+            "abbrev": "utah",
+            "displayName": "Utah Jazz",
+            "logo": "https://a.espncdn.com/i/teamlogos/nba/500/utah.png",
+            "location": "Utah"
+          },
+          "guestTeam": {
+            "abbrev": "lac",
+            "displayName": "LA Clippers",
+            "logo": "https://a.espncdn.com/i/teamlogos/nba/500/lac.png",
+            "location": "LA"
+          },
+          "result": {
+            "isHomeTeamWin": true,
+            "homeTeamScore": 117,
+            "guestTeamScore": 111
+          }
+        },
+        {
+          "unixTimeStamp": 1623544200000,
+          "eventType": "PlayOffRound2",
+          "homeTeam": {
+            "abbrev": "lac",
+            "displayName": "LA Clippers",
+            "logo": "https://a.espncdn.com/i/teamlogos/nba/500/lac.png",
+            "location": "LA"
+          },
+          "guestTeam": {
+            "abbrev": "utah",
+            "displayName": "Utah Jazz",
+            "logo": "https://a.espncdn.com/i/teamlogos/nba/500/utah.png",
+            "location": "Utah"
+          },
+          "result": {
+            "isHomeTeamWin": true,
+            "homeTeamScore": 132,
+            "guestTeamScore": 106
+          }
+        },
+        {
+          "unixTimeStamp": 1623722400000,
+          "eventType": "PlayOffRound2",
+          "homeTeam": {
+            "abbrev": "lac",
+            "displayName": "LA Clippers",
+            "logo": "https://a.espncdn.com/i/teamlogos/nba/500/lac.png",
+            "location": "LA"
+          },
+          "guestTeam": {
+            "abbrev": "utah",
+            "displayName": "Utah Jazz",
+            "logo": "https://a.espncdn.com/i/teamlogos/nba/500/utah.png",
+            "location": "Utah"
+          },
+          "result": {
+            "isHomeTeamWin": true,
+            "homeTeamScore": 118,
+            "guestTeamScore": 104
+          }
+        },
+        {
+          "unixTimeStamp": 1623895200000,
+          "eventType": "PlayOffRound2",
+          "homeTeam": {
+            "abbrev": "utah",
+            "displayName": "Utah Jazz",
+            "logo": "https://a.espncdn.com/i/teamlogos/nba/500/utah.png",
+            "location": "Utah"
+          },
+          "guestTeam": {
+            "abbrev": "lac",
+            "displayName": "LA Clippers",
+            "logo": "https://a.espncdn.com/i/teamlogos/nba/500/lac.png",
+            "location": "LA"
+          },
+          "result": {
+            "isHomeTeamWin": false,
+            "homeTeamScore": 111,
+            "guestTeamScore": 119
+          }
+        },
+        {
+          "unixTimeStamp": 1624068000000,
+          "eventType": "PlayOffRound2",
+          "homeTeam": {
+            "abbrev": "lac",
+            "displayName": "LA Clippers",
+            "logo": "https://a.espncdn.com/i/teamlogos/nba/500/lac.png",
+            "location": "LA"
+          },
+          "guestTeam": {
+            "abbrev": "utah",
+            "displayName": "Utah Jazz",
+            "logo": "https://a.espncdn.com/i/teamlogos/nba/500/utah.png",
+            "location": "Utah"
+          },
+          "result": {
+            "isHomeTeamWin": true,
+            "homeTeamScore": 131,
+            "guestTeamScore": 119
+          }
+        }
+      ]
+    },
+    {
+      "team1": {
+        "teamAbbr": "den",
+        "displayName": "Denver Nuggets",
+        "logo": "https://a.espncdn.com/i/teamlogos/nba/500/den.png",
+        "location": "Denver",
+        "rank": 3,
+        "seed": 3,
+        "recordSummaryWin": 47,
+        "recordSummaryLose": 25,
+        "isSurviveToPlayOff": true,
+        "isSurvive": true
+      },
+      "team2": {
+        "teamAbbr": "phx",
+        "displayName": "Phoenix Suns",
+        "logo": "https://a.espncdn.com/i/teamlogos/nba/500/phx.png",
+        "location": "Phoenix",
+        "rank": 2,
+        "seed": 2,
+        "recordSummaryWin": 51,
+        "recordSummaryLose": 21,
+        "isSurviveToPlayOff": true,
+        "isSurvive": false
+      },
+      "events": [
+        {
+          "unixTimeStamp": 1623117600000,
+          "eventType": "PlayOffRound2",
+          "homeTeam": {
+            "abbrev": "phx",
+            "displayName": "Phoenix Suns",
+            "logo": "https://a.espncdn.com/i/teamlogos/nba/500/phx.png",
+            "location": "Phoenix"
+          },
+          "guestTeam": {
+            "abbrev": "den",
+            "displayName": "Denver Nuggets",
+            "logo": "https://a.espncdn.com/i/teamlogos/nba/500/den.png",
+            "location": "Denver"
+          },
+          "result": {
+            "isHomeTeamWin": true,
+            "homeTeamScore": 122,
+            "guestTeamScore": 105
+          }
+        },
+        {
+          "unixTimeStamp": 1623288600000,
+          "eventType": "PlayOffRound2",
+          "homeTeam": {
+            "abbrev": "phx",
+            "displayName": "Phoenix Suns",
+            "logo": "https://a.espncdn.com/i/teamlogos/nba/500/phx.png",
+            "location": "Phoenix"
+          },
+          "guestTeam": {
+            "abbrev": "den",
+            "displayName": "Denver Nuggets",
+            "logo": "https://a.espncdn.com/i/teamlogos/nba/500/den.png",
+            "location": "Denver"
+          },
+          "result": {
+            "isHomeTeamWin": true,
+            "homeTeamScore": 123,
+            "guestTeamScore": 98
+          }
+        },
+        {
+          "unixTimeStamp": 1623463200000,
+          "eventType": "PlayOffRound2",
+          "homeTeam": {
+            "abbrev": "den",
+            "displayName": "Denver Nuggets",
+            "logo": "https://a.espncdn.com/i/teamlogos/nba/500/den.png",
+            "location": "Denver"
+          },
+          "guestTeam": {
+            "abbrev": "phx",
+            "displayName": "Phoenix Suns",
+            "logo": "https://a.espncdn.com/i/teamlogos/nba/500/phx.png",
+            "location": "Phoenix"
+          },
+          "result": {
+            "isHomeTeamWin": false,
+            "homeTeamScore": 102,
+            "guestTeamScore": 116
+          }
+        },
+        {
+          "unixTimeStamp": 1623628800000,
+          "eventType": "PlayOffRound2",
+          "homeTeam": {
+            "abbrev": "den",
+            "displayName": "Denver Nuggets",
+            "logo": "https://a.espncdn.com/i/teamlogos/nba/500/den.png",
+            "location": "Denver"
+          },
+          "guestTeam": {
+            "abbrev": "phx",
+            "displayName": "Phoenix Suns",
+            "logo": "https://a.espncdn.com/i/teamlogos/nba/500/phx.png",
+            "location": "Phoenix"
+          },
+          "result": {
+            "isHomeTeamWin": false,
+            "homeTeamScore": 118,
+            "guestTeamScore": 125
+          }
+        }
+      ]
+    }
+  ],
+  "easternRound2Series": [
+    {
+      "team1": {
+        "teamAbbr": "phi",
+        "displayName": "Philadelphia 76ers",
+        "logo": "https://a.espncdn.com/i/teamlogos/nba/500/phi.png",
+        "location": "Philadelphia",
+        "rank": 1,
+        "seed": 1,
+        "recordSummaryWin": 49,
+        "recordSummaryLose": 23,
+        "isSurviveToPlayOff": true,
+        "isSurvive": true
+      },
+      "team2": {
+        "teamAbbr": "atl",
+        "displayName": "Atlanta Hawks",
+        "logo": "https://a.espncdn.com/i/teamlogos/nba/500/atl.png",
+        "location": "Atlanta",
+        "rank": 5,
+        "seed": 5,
+        "recordSummaryWin": 41,
+        "recordSummaryLose": 31,
+        "isSurviveToPlayOff": true,
+        "isSurvive": false
+      },
+      "events": [
+        {
+          "unixTimeStamp": 1622998800000,
+          "eventType": "PlayOffRound2",
+          "homeTeam": {
+            "abbrev": "phi",
+            "displayName": "Philadelphia 76ers",
+            "logo": "https://a.espncdn.com/i/teamlogos/nba/500/phi.png",
+            "location": "Philadelphia"
+          },
+          "guestTeam": {
+            "abbrev": "atl",
+            "displayName": "Atlanta Hawks",
+            "logo": "https://a.espncdn.com/i/teamlogos/nba/500/atl.png",
+            "location": "Atlanta"
+          },
+          "result": {
+            "isHomeTeamWin": false,
+            "homeTeamScore": 124,
+            "guestTeamScore": 128
+          }
+        },
+        {
+          "unixTimeStamp": 1623195000000,
+          "eventType": "PlayOffRound2",
+          "homeTeam": {
+            "abbrev": "phi",
+            "displayName": "Philadelphia 76ers",
+            "logo": "https://a.espncdn.com/i/teamlogos/nba/500/phi.png",
+            "location": "Philadelphia"
+          },
+          "guestTeam": {
+            "abbrev": "atl",
+            "displayName": "Atlanta Hawks",
+            "logo": "https://a.espncdn.com/i/teamlogos/nba/500/atl.png",
+            "location": "Atlanta"
+          },
+          "result": {
+            "isHomeTeamWin": true,
+            "homeTeamScore": 118,
+            "guestTeamScore": 102
+          }
+        },
+        {
+          "unixTimeStamp": 1623454200000,
+          "eventType": "PlayOffRound2",
+          "homeTeam": {
+            "abbrev": "atl",
+            "displayName": "Atlanta Hawks",
+            "logo": "https://a.espncdn.com/i/teamlogos/nba/500/atl.png",
+            "location": "Atlanta"
+          },
+          "guestTeam": {
+            "abbrev": "phi",
+            "displayName": "Philadelphia 76ers",
+            "logo": "https://a.espncdn.com/i/teamlogos/nba/500/phi.png",
+            "location": "Philadelphia"
+          },
+          "result": {
+            "isHomeTeamWin": false,
+            "homeTeamScore": 111,
+            "guestTeamScore": 127
+          }
+        },
+        {
+          "unixTimeStamp": 1623713400000,
+          "eventType": "PlayOffRound2",
+          "homeTeam": {
+            "abbrev": "atl",
+            "displayName": "Atlanta Hawks",
+            "logo": "https://a.espncdn.com/i/teamlogos/nba/500/atl.png",
+            "location": "Atlanta"
+          },
+          "guestTeam": {
+            "abbrev": "phi",
+            "displayName": "Philadelphia 76ers",
+            "logo": "https://a.espncdn.com/i/teamlogos/nba/500/phi.png",
+            "location": "Philadelphia"
+          },
+          "result": {
+            "isHomeTeamWin": true,
+            "homeTeamScore": 103,
+            "guestTeamScore": 100
+          }
+        },
+        {
+          "unixTimeStamp": 1623886200000,
+          "eventType": "PlayOffRound2",
+          "homeTeam": {
+            "abbrev": "phi",
+            "displayName": "Philadelphia 76ers",
+            "logo": "https://a.espncdn.com/i/teamlogos/nba/500/phi.png",
+            "location": "Philadelphia"
+          },
+          "guestTeam": {
+            "abbrev": "atl",
+            "displayName": "Atlanta Hawks",
+            "logo": "https://a.espncdn.com/i/teamlogos/nba/500/atl.png",
+            "location": "Atlanta"
+          },
+          "result": {
+            "isHomeTeamWin": false,
+            "homeTeamScore": 106,
+            "guestTeamScore": 109
+          }
+        },
+        {
+          "unixTimeStamp": 1624059000000,
+          "eventType": "PlayOffRound2",
+          "homeTeam": {
+            "abbrev": "atl",
+            "displayName": "Atlanta Hawks",
+            "logo": "https://a.espncdn.com/i/teamlogos/nba/500/atl.png",
+            "location": "Atlanta"
+          },
+          "guestTeam": {
+            "abbrev": "phi",
+            "displayName": "Philadelphia 76ers",
+            "logo": "https://a.espncdn.com/i/teamlogos/nba/500/phi.png",
+            "location": "Philadelphia"
+          },
+          "result": {
+            "isHomeTeamWin": false,
+            "homeTeamScore": 99,
+            "guestTeamScore": 104
+          }
+        },
+        {
+          "unixTimeStamp": 1624233600000,
+          "eventType": "PlayOffRound2",
+          "homeTeam": {
+            "abbrev": "phi",
+            "displayName": "Philadelphia 76ers",
+            "logo": "https://a.espncdn.com/i/teamlogos/nba/500/phi.png",
+            "location": "Philadelphia"
+          },
+          "guestTeam": {
+            "abbrev": "atl",
+            "displayName": "Atlanta Hawks",
+            "logo": "https://a.espncdn.com/i/teamlogos/nba/500/atl.png",
+            "location": "Atlanta"
+          },
+          "result": {
+            "isHomeTeamWin": false,
+            "homeTeamScore": 96,
+            "guestTeamScore": 103
+          }
+        }
+      ]
+    },
+    {
+      "team1": {
+        "teamAbbr": "mil",
+        "displayName": "Milwaukee Bucks",
+        "logo": "https://a.espncdn.com/i/teamlogos/nba/500/mil.png",
+        "location": "Milwaukee",
+        "rank": 3,
+        "seed": 3,
+        "recordSummaryWin": 46,
+        "recordSummaryLose": 26,
+        "isSurviveToPlayOff": true,
+        "isSurvive": true
+      },
+      "team2": {
+        "teamAbbr": "bkn",
+        "displayName": "Brooklyn Nets",
+        "logo": "https://a.espncdn.com/i/teamlogos/nba/500/bkn.png",
+        "location": "Brooklyn",
+        "rank": 2,
+        "seed": 2,
+        "recordSummaryWin": 48,
+        "recordSummaryLose": 24,
+        "isSurviveToPlayOff": true,
+        "isSurvive": false
+      },
+      "events": [
+        {
+          "unixTimeStamp": 1622935800000,
+          "eventType": "PlayOffRound2",
+          "homeTeam": {
+            "abbrev": "bkn",
+            "displayName": "Brooklyn Nets",
+            "logo": "https://a.espncdn.com/i/teamlogos/nba/500/bkn.png",
+            "location": "Brooklyn"
+          },
+          "guestTeam": {
+            "abbrev": "mil",
+            "displayName": "Milwaukee Bucks",
+            "logo": "https://a.espncdn.com/i/teamlogos/nba/500/mil.png",
+            "location": "Milwaukee"
+          },
+          "result": {
+            "isHomeTeamWin": true,
+            "homeTeamScore": 115,
+            "guestTeamScore": 107
+          }
+        },
+        {
+          "unixTimeStamp": 1623108600000,
+          "eventType": "PlayOffRound2",
+          "homeTeam": {
+            "abbrev": "bkn",
+            "displayName": "Brooklyn Nets",
+            "logo": "https://a.espncdn.com/i/teamlogos/nba/500/bkn.png",
+            "location": "Brooklyn"
+          },
+          "guestTeam": {
+            "abbrev": "mil",
+            "displayName": "Milwaukee Bucks",
+            "logo": "https://a.espncdn.com/i/teamlogos/nba/500/mil.png",
+            "location": "Milwaukee"
+          },
+          "result": {
+            "isHomeTeamWin": true,
+            "homeTeamScore": 125,
+            "guestTeamScore": 86
+          }
+        },
+        {
+          "unixTimeStamp": 1623367800000,
+          "eventType": "PlayOffRound2",
+          "homeTeam": {
+            "abbrev": "mil",
+            "displayName": "Milwaukee Bucks",
+            "logo": "https://a.espncdn.com/i/teamlogos/nba/500/mil.png",
+            "location": "Milwaukee"
+          },
+          "guestTeam": {
+            "abbrev": "bkn",
+            "displayName": "Brooklyn Nets",
+            "logo": "https://a.espncdn.com/i/teamlogos/nba/500/bkn.png",
+            "location": "Brooklyn"
+          },
+          "result": {
+            "isHomeTeamWin": true,
+            "homeTeamScore": 86,
+            "guestTeamScore": 83
+          }
+        },
+        {
+          "unixTimeStamp": 1623610800000,
+          "eventType": "PlayOffRound2",
+          "homeTeam": {
+            "abbrev": "mil",
+            "displayName": "Milwaukee Bucks",
+            "logo": "https://a.espncdn.com/i/teamlogos/nba/500/mil.png",
+            "location": "Milwaukee"
+          },
+          "guestTeam": {
+            "abbrev": "bkn",
+            "displayName": "Brooklyn Nets",
+            "logo": "https://a.espncdn.com/i/teamlogos/nba/500/bkn.png",
+            "location": "Brooklyn"
+          },
+          "result": {
+            "isHomeTeamWin": true,
+            "homeTeamScore": 107,
+            "guestTeamScore": 96
+          }
+        },
+        {
+          "unixTimeStamp": 1623803400000,
+          "eventType": "PlayOffRound2",
+          "homeTeam": {
+            "abbrev": "bkn",
+            "displayName": "Brooklyn Nets",
+            "logo": "https://a.espncdn.com/i/teamlogos/nba/500/bkn.png",
+            "location": "Brooklyn"
+          },
+          "guestTeam": {
+            "abbrev": "mil",
+            "displayName": "Milwaukee Bucks",
+            "logo": "https://a.espncdn.com/i/teamlogos/nba/500/mil.png",
+            "location": "Milwaukee"
+          },
+          "result": {
+            "isHomeTeamWin": true,
+            "homeTeamScore": 114,
+            "guestTeamScore": 108
+          }
+        },
+        {
+          "unixTimeStamp": 1623976200000,
+          "eventType": "PlayOffRound2",
+          "homeTeam": {
+            "abbrev": "mil",
+            "displayName": "Milwaukee Bucks",
+            "logo": "https://a.espncdn.com/i/teamlogos/nba/500/mil.png",
+            "location": "Milwaukee"
+          },
+          "guestTeam": {
+            "abbrev": "bkn",
+            "displayName": "Brooklyn Nets",
+            "logo": "https://a.espncdn.com/i/teamlogos/nba/500/bkn.png",
+            "location": "Brooklyn"
+          },
+          "result": {
+            "isHomeTeamWin": true,
+            "homeTeamScore": 104,
+            "guestTeamScore": 89
+          }
+        },
+        {
+          "unixTimeStamp": 1624149000000,
+          "eventType": "PlayOffRound2",
+          "homeTeam": {
+            "abbrev": "bkn",
+            "displayName": "Brooklyn Nets",
+            "logo": "https://a.espncdn.com/i/teamlogos/nba/500/bkn.png",
+            "location": "Brooklyn"
+          },
+          "guestTeam": {
+            "abbrev": "mil",
+            "displayName": "Milwaukee Bucks",
+            "logo": "https://a.espncdn.com/i/teamlogos/nba/500/mil.png",
+            "location": "Milwaukee"
+          },
+          "result": {
+            "isHomeTeamWin": false,
+            "homeTeamScore": 111,
+            "guestTeamScore": 115
+          }
+        }
+      ]
+    }
+  ],
+  "westernConferenceFinal": {
+    "team1": {
+      "teamAbbr": "lac",
+      "displayName": "LA Clippers",
+      "logo": "https://a.espncdn.com/i/teamlogos/nba/500/lac.png",
+      "location": "LA",
+      "rank": 4,
+      "seed": 4,
+      "recordSummaryWin": 47,
+      "recordSummaryLose": 25,
+      "isSurviveToPlayOff": true,
+      "isSurvive": false
+    },
+    "team2": {
+      "teamAbbr": "phx",
+      "displayName": "Phoenix Suns",
+      "logo": "https://a.espncdn.com/i/teamlogos/nba/500/phx.png",
+      "location": "Phoenix",
+      "rank": 2,
+      "seed": 2,
+      "recordSummaryWin": 51,
+      "recordSummaryLose": 21,
+      "isSurviveToPlayOff": true,
+      "isSurvive": true
+    },
+    "events": [
+      {
+        "unixTimeStamp": 1623204000000,
+        "eventType": "PlayOffRound2",
+        "homeTeam": {
+          "abbrev": "utah",
+          "displayName": "Utah Jazz",
+          "logo": "https://a.espncdn.com/i/teamlogos/nba/500/utah.png",
+          "location": "Utah"
+        },
+        "guestTeam": {
+          "abbrev": "lac",
+          "displayName": "LA Clippers",
+          "logo": "https://a.espncdn.com/i/teamlogos/nba/500/lac.png",
+          "location": "LA"
+        },
+        "result": {
+          "isHomeTeamWin": true,
+          "homeTeamScore": 112,
+          "guestTeamScore": 109
+        }
+      },
+      {
+        "unixTimeStamp": 1623376800000,
+        "eventType": "PlayOffRound2",
+        "homeTeam": {
+          "abbrev": "utah",
+          "displayName": "Utah Jazz",
+          "logo": "https://a.espncdn.com/i/teamlogos/nba/500/utah.png",
+          "location": "Utah"
+        },
+        "guestTeam": {
+          "abbrev": "lac",
+          "displayName": "LA Clippers",
+          "logo": "https://a.espncdn.com/i/teamlogos/nba/500/lac.png",
+          "location": "LA"
+        },
+        "result": {
+          "isHomeTeamWin": true,
+          "homeTeamScore": 117,
+          "guestTeamScore": 111
+        }
+      },
+      {
+        "unixTimeStamp": 1623544200000,
+        "eventType": "PlayOffRound2",
+        "homeTeam": {
+          "abbrev": "lac",
+          "displayName": "LA Clippers",
+          "logo": "https://a.espncdn.com/i/teamlogos/nba/500/lac.png",
+          "location": "LA"
+        },
+        "guestTeam": {
+          "abbrev": "utah",
+          "displayName": "Utah Jazz",
+          "logo": "https://a.espncdn.com/i/teamlogos/nba/500/utah.png",
+          "location": "Utah"
+        },
+        "result": {
+          "isHomeTeamWin": true,
+          "homeTeamScore": 132,
+          "guestTeamScore": 106
+        }
+      },
+      {
+        "unixTimeStamp": 1623722400000,
+        "eventType": "PlayOffRound2",
+        "homeTeam": {
+          "abbrev": "lac",
+          "displayName": "LA Clippers",
+          "logo": "https://a.espncdn.com/i/teamlogos/nba/500/lac.png",
+          "location": "LA"
+        },
+        "guestTeam": {
+          "abbrev": "utah",
+          "displayName": "Utah Jazz",
+          "logo": "https://a.espncdn.com/i/teamlogos/nba/500/utah.png",
+          "location": "Utah"
+        },
+        "result": {
+          "isHomeTeamWin": true,
+          "homeTeamScore": 118,
+          "guestTeamScore": 104
+        }
+      },
+      {
+        "unixTimeStamp": 1623895200000,
+        "eventType": "PlayOffRound2",
+        "homeTeam": {
+          "abbrev": "utah",
+          "displayName": "Utah Jazz",
+          "logo": "https://a.espncdn.com/i/teamlogos/nba/500/utah.png",
+          "location": "Utah"
+        },
+        "guestTeam": {
+          "abbrev": "lac",
+          "displayName": "LA Clippers",
+          "logo": "https://a.espncdn.com/i/teamlogos/nba/500/lac.png",
+          "location": "LA"
+        },
+        "result": {
+          "isHomeTeamWin": false,
+          "homeTeamScore": 111,
+          "guestTeamScore": 119
+        }
+      },
+      {
+        "unixTimeStamp": 1624068000000,
+        "eventType": "PlayOffRound2",
+        "homeTeam": {
+          "abbrev": "lac",
+          "displayName": "LA Clippers",
+          "logo": "https://a.espncdn.com/i/teamlogos/nba/500/lac.png",
+          "location": "LA"
+        },
+        "guestTeam": {
+          "abbrev": "utah",
+          "displayName": "Utah Jazz",
+          "logo": "https://a.espncdn.com/i/teamlogos/nba/500/utah.png",
+          "location": "Utah"
+        },
+        "result": {
+          "isHomeTeamWin": true,
+          "homeTeamScore": 131,
+          "guestTeamScore": 119
+        }
+      }
+    ]
+  },
+  "easternConferenceFinal": {
+    "team1": {
+      "teamAbbr": "atl",
+      "displayName": "Atlanta Hawks",
+      "logo": "https://a.espncdn.com/i/teamlogos/nba/500/atl.png",
+      "location": "Atlanta",
+      "rank": 5,
+      "seed": 5,
+      "recordSummaryWin": 41,
+      "recordSummaryLose": 31,
+      "isSurviveToPlayOff": true,
+      "isSurvive": false
+    },
+    "team2": {
+      "teamAbbr": "mil",
+      "displayName": "Milwaukee Bucks",
+      "logo": "https://a.espncdn.com/i/teamlogos/nba/500/mil.png",
+      "location": "Milwaukee",
+      "rank": 3,
+      "seed": 3,
+      "recordSummaryWin": 46,
+      "recordSummaryLose": 26,
+      "isSurviveToPlayOff": true,
+      "isSurvive": true
+    },
+    "events": [
+      {
+        "unixTimeStamp": 1622998800000,
+        "eventType": "PlayOffRound2",
+        "homeTeam": {
+          "abbrev": "phi",
+          "displayName": "Philadelphia 76ers",
+          "logo": "https://a.espncdn.com/i/teamlogos/nba/500/phi.png",
+          "location": "Philadelphia"
+        },
+        "guestTeam": {
+          "abbrev": "atl",
+          "displayName": "Atlanta Hawks",
+          "logo": "https://a.espncdn.com/i/teamlogos/nba/500/atl.png",
+          "location": "Atlanta"
+        },
+        "result": {
+          "isHomeTeamWin": false,
+          "homeTeamScore": 124,
+          "guestTeamScore": 128
+        }
+      },
+      {
+        "unixTimeStamp": 1623195000000,
+        "eventType": "PlayOffRound2",
+        "homeTeam": {
+          "abbrev": "phi",
+          "displayName": "Philadelphia 76ers",
+          "logo": "https://a.espncdn.com/i/teamlogos/nba/500/phi.png",
+          "location": "Philadelphia"
+        },
+        "guestTeam": {
+          "abbrev": "atl",
+          "displayName": "Atlanta Hawks",
+          "logo": "https://a.espncdn.com/i/teamlogos/nba/500/atl.png",
+          "location": "Atlanta"
+        },
+        "result": {
+          "isHomeTeamWin": true,
+          "homeTeamScore": 118,
+          "guestTeamScore": 102
+        }
+      },
+      {
+        "unixTimeStamp": 1623454200000,
+        "eventType": "PlayOffRound2",
+        "homeTeam": {
+          "abbrev": "atl",
+          "displayName": "Atlanta Hawks",
+          "logo": "https://a.espncdn.com/i/teamlogos/nba/500/atl.png",
+          "location": "Atlanta"
+        },
+        "guestTeam": {
+          "abbrev": "phi",
+          "displayName": "Philadelphia 76ers",
+          "logo": "https://a.espncdn.com/i/teamlogos/nba/500/phi.png",
+          "location": "Philadelphia"
+        },
+        "result": {
+          "isHomeTeamWin": false,
+          "homeTeamScore": 111,
+          "guestTeamScore": 127
+        }
+      },
+      {
+        "unixTimeStamp": 1623713400000,
+        "eventType": "PlayOffRound2",
+        "homeTeam": {
+          "abbrev": "atl",
+          "displayName": "Atlanta Hawks",
+          "logo": "https://a.espncdn.com/i/teamlogos/nba/500/atl.png",
+          "location": "Atlanta"
+        },
+        "guestTeam": {
+          "abbrev": "phi",
+          "displayName": "Philadelphia 76ers",
+          "logo": "https://a.espncdn.com/i/teamlogos/nba/500/phi.png",
+          "location": "Philadelphia"
+        },
+        "result": {
+          "isHomeTeamWin": true,
+          "homeTeamScore": 103,
+          "guestTeamScore": 100
+        }
+      },
+      {
+        "unixTimeStamp": 1623886200000,
+        "eventType": "PlayOffRound2",
+        "homeTeam": {
+          "abbrev": "phi",
+          "displayName": "Philadelphia 76ers",
+          "logo": "https://a.espncdn.com/i/teamlogos/nba/500/phi.png",
+          "location": "Philadelphia"
+        },
+        "guestTeam": {
+          "abbrev": "atl",
+          "displayName": "Atlanta Hawks",
+          "logo": "https://a.espncdn.com/i/teamlogos/nba/500/atl.png",
+          "location": "Atlanta"
+        },
+        "result": {
+          "isHomeTeamWin": false,
+          "homeTeamScore": 106,
+          "guestTeamScore": 109
+        }
+      },
+      {
+        "unixTimeStamp": 1624059000000,
+        "eventType": "PlayOffRound2",
+        "homeTeam": {
+          "abbrev": "atl",
+          "displayName": "Atlanta Hawks",
+          "logo": "https://a.espncdn.com/i/teamlogos/nba/500/atl.png",
+          "location": "Atlanta"
+        },
+        "guestTeam": {
+          "abbrev": "phi",
+          "displayName": "Philadelphia 76ers",
+          "logo": "https://a.espncdn.com/i/teamlogos/nba/500/phi.png",
+          "location": "Philadelphia"
+        },
+        "result": {
+          "isHomeTeamWin": false,
+          "homeTeamScore": 99,
+          "guestTeamScore": 104
+        }
+      },
+      {
+        "unixTimeStamp": 1624233600000,
+        "eventType": "PlayOffRound2",
+        "homeTeam": {
+          "abbrev": "phi",
+          "displayName": "Philadelphia 76ers",
+          "logo": "https://a.espncdn.com/i/teamlogos/nba/500/phi.png",
+          "location": "Philadelphia"
+        },
+        "guestTeam": {
+          "abbrev": "atl",
+          "displayName": "Atlanta Hawks",
+          "logo": "https://a.espncdn.com/i/teamlogos/nba/500/atl.png",
+          "location": "Atlanta"
+        },
+        "result": {
+          "isHomeTeamWin": false,
+          "homeTeamScore": 96,
+          "guestTeamScore": 103
+        }
+      }
+    ]
+  },
+  "final": {
+    "team1": {
+      "teamAbbr": "phx",
+      "displayName": "Phoenix Suns",
+      "logo": "https://a.espncdn.com/i/teamlogos/nba/500/phx.png",
+      "location": "Phoenix",
+      "rank": 2,
+      "seed": 2,
+      "recordSummaryWin": 51,
+      "recordSummaryLose": 21,
+      "isSurviveToPlayOff": true,
+      "isSurvive": true
+    },
+    "team2": {
+      "teamAbbr": "mil",
+      "displayName": "Milwaukee Bucks",
+      "logo": "https://a.espncdn.com/i/teamlogos/nba/500/mil.png",
+      "location": "Milwaukee",
+      "rank": 3,
+      "seed": 3,
+      "recordSummaryWin": 46,
+      "recordSummaryLose": 26,
+      "isSurviveToPlayOff": true,
+      "isSurvive": true
+    },
+    "events": [
+      {
+        "unixTimeStamp": 1625619600000,
+        "eventType": "PlayOffGrandFinal",
+        "homeTeam": {
+          "abbrev": "phx",
+          "displayName": "Phoenix Suns",
+          "logo": "https://a.espncdn.com/i/teamlogos/nba/500/phx.png",
+          "location": "Phoenix"
+        },
+        "guestTeam": {
+          "abbrev": "mil",
+          "displayName": "Milwaukee Bucks",
+          "logo": "https://a.espncdn.com/i/teamlogos/nba/500/mil.png",
+          "location": "Milwaukee"
+        },
+        "result": {
+          "isHomeTeamWin": true,
+          "homeTeamScore": 118,
+          "guestTeamScore": 105
+        }
+      },
+      {
+        "unixTimeStamp": 1625792400000,
+        "eventType": "PlayOffGrandFinal",
+        "homeTeam": {
+          "abbrev": "phx",
+          "displayName": "Phoenix Suns",
+          "logo": "https://a.espncdn.com/i/teamlogos/nba/500/phx.png",
+          "location": "Phoenix"
+        },
+        "guestTeam": {
+          "abbrev": "mil",
+          "displayName": "Milwaukee Bucks",
+          "logo": "https://a.espncdn.com/i/teamlogos/nba/500/mil.png",
+          "location": "Milwaukee"
+        },
+        "result": {
+          "isHomeTeamWin": true,
+          "homeTeamScore": 118,
+          "guestTeamScore": 108
+        }
+      },
+      {
+        "unixTimeStamp": 1626048000000,
+        "eventType": "PlayOffGrandFinal",
+        "homeTeam": {
+          "abbrev": "mil",
+          "displayName": "Milwaukee Bucks",
+          "logo": "https://a.espncdn.com/i/teamlogos/nba/500/mil.png",
+          "location": "Milwaukee"
+        },
+        "guestTeam": {
+          "abbrev": "phx",
+          "displayName": "Phoenix Suns",
+          "logo": "https://a.espncdn.com/i/teamlogos/nba/500/phx.png",
+          "location": "Phoenix"
+        },
+        "result": {
+          "isHomeTeamWin": true,
+          "homeTeamScore": 120,
+          "guestTeamScore": 100
+        }
+      },
+      {
+        "unixTimeStamp": 1626310800000,
+        "eventType": "PlayOffGrandFinal",
+        "homeTeam": {
+          "abbrev": "mil",
+          "displayName": "Milwaukee Bucks",
+          "logo": "https://a.espncdn.com/i/teamlogos/nba/500/mil.png",
+          "location": "Milwaukee"
+        },
+        "guestTeam": {
+          "abbrev": "phx",
+          "displayName": "Phoenix Suns",
+          "logo": "https://a.espncdn.com/i/teamlogos/nba/500/phx.png",
+          "location": "Phoenix"
+        }
+      },
+      {
+        "unixTimeStamp": 1626570000000,
+        "eventType": "PlayOffGrandFinal",
+        "homeTeam": {
+          "abbrev": "phx",
+          "displayName": "Phoenix Suns",
+          "logo": "https://a.espncdn.com/i/teamlogos/nba/500/phx.png",
+          "location": "Phoenix"
+        },
+        "guestTeam": {
+          "abbrev": "mil",
+          "displayName": "Milwaukee Bucks",
+          "logo": "https://a.espncdn.com/i/teamlogos/nba/500/mil.png",
+          "location": "Milwaukee"
+        }
+      },
+      {
+        "unixTimeStamp": 1626829200000,
+        "eventType": "PlayOffGrandFinal",
+        "homeTeam": {
+          "abbrev": "mil",
+          "displayName": "Milwaukee Bucks",
+          "logo": "https://a.espncdn.com/i/teamlogos/nba/500/mil.png",
+          "location": "Milwaukee"
+        },
+        "guestTeam": {
+          "abbrev": "phx",
+          "displayName": "Phoenix Suns",
+          "logo": "https://a.espncdn.com/i/teamlogos/nba/500/phx.png",
+          "location": "Phoenix"
+        }
+      }
+    ]
+  }
+}

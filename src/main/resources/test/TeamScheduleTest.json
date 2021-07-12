@@ -1,0 +1,178 @@
+[
+  {
+    "unixTimeStamp": 1621819800000,
+    "eventType": "PlayOffRound1",
+    "isHome": true,
+    "opponent": {
+      "abbrev": "mem",
+      "displayName": "Memphis Grizzlies",
+      "logo": "https://a.espncdn.com/i/teamlogos/nba/500/mem.png",
+      "location": "Memphis"
+    },
+    "result": {
+      "winLossSymbol": "L",
+      "currentTeamScore": 109,
+      "opponentTeamScore": 112
+    }
+  },
+  {
+    "unixTimeStamp": 1622080800000,
+    "eventType": "PlayOffRound1",
+    "isHome": true,
+    "opponent": {
+      "abbrev": "mem",
+      "displayName": "Memphis Grizzlies",
+      "logo": "https://a.espncdn.com/i/teamlogos/nba/500/mem.png",
+      "location": "Memphis"
+    },
+    "result": {
+      "winLossSymbol": "W",
+      "currentTeamScore": 141,
+      "opponentTeamScore": 129
+    }
+  },
+  {
+    "unixTimeStamp": 1622338200000,
+    "eventType": "PlayOffRound1",
+    "isHome": false,
+    "opponent": {
+      "abbrev": "mem",
+      "displayName": "Memphis Grizzlies",
+      "logo": "https://a.espncdn.com/i/teamlogos/nba/500/mem.png",
+      "location": "Memphis"
+    },
+    "result": {
+      "winLossSymbol": "W",
+      "currentTeamScore": 121,
+      "opponentTeamScore": 111
+    }
+  },
+  {
+    "unixTimeStamp": 1622511000000,
+    "eventType": "PlayOffRound1",
+    "isHome": false,
+    "opponent": {
+      "abbrev": "mem",
+      "displayName": "Memphis Grizzlies",
+      "logo": "https://a.espncdn.com/i/teamlogos/nba/500/mem.png",
+      "location": "Memphis"
+    },
+    "result": {
+      "winLossSymbol": "W",
+      "currentTeamScore": 120,
+      "opponentTeamScore": 113
+    }
+  },
+  {
+    "unixTimeStamp": 1622683800000,
+    "eventType": "PlayOffRound1",
+    "isHome": true,
+    "opponent": {
+      "abbrev": "mem",
+      "displayName": "Memphis Grizzlies",
+      "logo": "https://a.espncdn.com/i/teamlogos/nba/500/mem.png",
+      "location": "Memphis"
+    },
+    "result": {
+      "winLossSymbol": "W",
+      "currentTeamScore": 126,
+      "opponentTeamScore": 110
+    }
+  },
+  {
+    "unixTimeStamp": 1623204000000,
+    "eventType": "PlayOffRound2",
+    "isHome": true,
+    "opponent": {
+      "abbrev": "lac",
+      "displayName": "LA Clippers",
+      "logo": "https://a.espncdn.com/i/teamlogos/nba/500/lac.png",
+      "location": "LA"
+    },
+    "result": {
+      "winLossSymbol": "W",
+      "currentTeamScore": 112,
+      "opponentTeamScore": 109
+    }
+  },
+  {
+    "unixTimeStamp": 1623376800000,
+    "eventType": "PlayOffRound2",
+    "isHome": true,
+    "opponent": {
+      "abbrev": "lac",
+      "displayName": "LA Clippers",
+      "logo": "https://a.espncdn.com/i/teamlogos/nba/500/lac.png",
+      "location": "LA"
+    },
+    "result": {
+      "winLossSymbol": "W",
+      "currentTeamScore": 117,
+      "opponentTeamScore": 111
+    }
+  },
+  {
+    "unixTimeStamp": 1623544200000,
+    "eventType": "PlayOffRound2",
+    "isHome": false,
+    "opponent": {
+      "abbrev": "lac",
+      "displayName": "LA Clippers",
+      "logo": "https://a.espncdn.com/i/teamlogos/nba/500/lac.png",
+      "location": "LA"
+    },
+    "result": {
+      "winLossSymbol": "L",
+      "currentTeamScore": 106,
+      "opponentTeamScore": 132
+    }
+  },
+  {
+    "unixTimeStamp": 1623722400000,
+    "eventType": "PlayOffRound2",
+    "isHome": false,
+    "opponent": {
+      "abbrev": "lac",
+      "displayName": "LA Clippers",
+      "logo": "https://a.espncdn.com/i/teamlogos/nba/500/lac.png",
+      "location": "LA"
+    },
+    "result": {
+      "winLossSymbol": "L",
+      "currentTeamScore": 104,
+      "opponentTeamScore": 118
+    }
+  },
+  {
+    "unixTimeStamp": 1623895200000,
+    "eventType": "PlayOffRound2",
+    "isHome": true,
+    "opponent": {
+      "abbrev": "lac",
+      "displayName": "LA Clippers",
+      "logo": "https://a.espncdn.com/i/teamlogos/nba/500/lac.png",
+      "location": "LA"
+    },
+    "result": {
+      "winLossSymbol": "L",
+      "currentTeamScore": 111,
+      "opponentTeamScore": 119
+    }
+  },
+  {
+    "unixTimeStamp": 1624068000000,
+    "eventType": "PlayOffRound2",
+    "isHome": false,
+    "opponent": {
+      "abbrev": "lac",
+      "displayName": "LA Clippers",
+      "logo": "https://a.espncdn.com/i/teamlogos/nba/500/lac.png",
+      "location": "LA"
+    },
+    "result": {
+      "winLossSymbol": "L",
+      "currentTeamScore": 119,
+      "opponentTeamScore": 131
+    }
+  }
+]

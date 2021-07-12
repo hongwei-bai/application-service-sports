@@ -22,7 +22,7 @@ object StandingMapper {
 
     private fun mapTeamStandingData(i: Int, teamStandingSource: TeamStandingSource): TeamStanding = TeamStanding(
             rank = teamStandingSource.rank.toIntOrNull() ?: (i + 1),
-            teamAbbr = teamStandingSource.abbr,
+            teamAbbr = teamStandingSource.abbr.toLowerCase(),
             teamName = teamStandingSource.displayName,
             wins = teamStandingSource.detail[0].toInt(),
             losses = teamStandingSource.detail[1].toInt(),

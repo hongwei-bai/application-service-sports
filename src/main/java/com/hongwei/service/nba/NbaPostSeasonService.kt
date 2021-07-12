@@ -39,7 +39,7 @@ class NbaPostSeasonService {
 
     // Pre-requests: Standing in db, playIn in db, teamSchedule in db
     @Throws(IOException::class)
-    fun fetchPlayOff(dataVersionBase: Int?): NbaPostSeasonArchivedEntity? {
+    fun fetchPlayOff(dataVersionBase: Int?): NbaPostSeasonEntity? {
         nbaStandingRepository.findLatestStandings()?.firstOrNull()?.let { standing ->
             val playInEvents = nbaPostSeasonArchivedRepository.findPostSeasonArchived().firstOrNull()
             playInEvents?.let {
@@ -53,6 +53,10 @@ class NbaPostSeasonService {
                 } else null
                 val postSeasonEntity = NbaPostSeasonEntity(
                         dataVersion = TimeStampUtil.getTimeVersionWithDayAndDataVersion(dataVersion = dataVersionBase).toLong(),
+                        westernPlayInEvents = nbaPostSeasonArchivedRepository.findPostSeasonArchived().firstOrNull()?.westernPlayInEvents
+                                ?: emptyList(),
+                        easternPlayInEvents = nbaPostSeasonArchivedRepository.findPostSeasonArchived().firstOrNull()?.easternPlayInEvents
+                                ?: emptyList(),
                         westernRound1Series = westernSeries.subList(0, 4),
                         westernRound2Series = westernSeries.subList(4, 6),
                         westernConferenceFinal = westernSeries.last(),
@@ -62,6 +66,7 @@ class NbaPostSeasonService {
                         final = finalSeries
                 )
                 nbaPostSeasonRepository.save(postSeasonEntity)
+                return postSeasonEntity
             }
         }
         return null
@@ -144,11 +149,12 @@ class NbaPostSeasonService {
         val round2Winners = Array<NbaTeamDetailEntity?>(2) { null }
         val conferenceFinalTeamSeeds = mutableListOf<Int>()
         val conferenceFinalTeamRanks = mutableListOf<Int>()
-        round1Winners.filterIndexed { i, _ -> i % 2 == 0 }.forEachIndexed { i, teamDetail ->
+        round1Winners.filterIndexed { i, _ -> i % 2 == 0 }.forEachIndexed { j, teamDetail ->
+            val i = j * 2
             val teamSchedule = nbaTeamScheduleRepository.findScheduleByTeam(teamDetail?.team)
             val opponentDetail = round1Winners[i + 1]
             if (teamDetail != null && opponentDetail != null && teamSchedule != null) {
-                round2Events[i] = PlayOffSeries(
+                round2Events[j] = PlayOffSeries(
                         team1 = PostSeasonTeamMapper.map(teamDetail, r2TeamRanks[i], r2TeamSeeds[i]),
                         team2 = PostSeasonTeamMapper.map(opponentDetail, r2TeamRanks[i + 1], r2TeamSeeds[i + 1]),
                         events = teamSchedule.events.filter { it.eventType == EventType.PlayOffRound2.name }.map { TeamScheduleMapper.teamEventMapToEvent(it, teamDetail) }
@@ -158,16 +164,16 @@ class NbaPostSeasonService {
                     val team2Wins = filter { it.result?.isWin == false }.size
                     when {
                         team1Wins == 4 -> {
-                            round2Winners[i] = teamDetail
+                            round2Winners[j] = teamDetail
                             conferenceFinalTeamSeeds.add(r2TeamSeeds[i])
                             conferenceFinalTeamRanks.add(r2TeamRanks[i])
-                            round2Events[i]?.team2?.isSurvive = false
+                            round2Events[j]?.team2?.isSurvive = false
                         }
                         team2Wins == 4 -> {
-                            round2Winners[i] = opponentDetail
+                            round2Winners[j] = opponentDetail
                             conferenceFinalTeamSeeds.add(r2TeamSeeds[i + 1])
                             conferenceFinalTeamRanks.add(r2TeamRanks[i + 1])
-                            round2Events[i]?.team2?.isSurvive = false
+                            round2Events[j]?.team2?.isSurvive = false
                         }
                         else -> {
                             // No-Op
