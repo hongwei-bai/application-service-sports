@@ -17,9 +17,8 @@ data class PostSeason(
 )
 
 data class PlayOffSeries(
-        val highRankTeam: PostSeasonTeam,
-        val lowRankTeam: PostSeasonTeam,
-        val highRankTeamOnTop: Boolean,
+        val team1: PostSeasonTeam,
+        val team2: PostSeasonTeam,
         val events: List<Event?>
 )
 

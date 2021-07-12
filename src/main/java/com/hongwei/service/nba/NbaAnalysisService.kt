@@ -34,6 +34,7 @@ class NbaAnalysisService {
         val seasonStatus = doAnalysisSeasonStatus()
         return seasonStatus?.let {
             Gson().toJson(nbaPostSeasonService.fetchPlayIn(seasonStatus, 0))
+            Gson().toJson(nbaPostSeasonService.fetchPlayOff(0))
         }
     }
 
