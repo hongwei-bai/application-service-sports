@@ -3,8 +3,8 @@ package com.hongwei.controller
 import com.google.gson.Gson
 import com.hongwei.constants.BadRequest
 import com.hongwei.constants.ResetContent
-import com.hongwei.model.jpa.NbaTeamDetailEntity
-import com.hongwei.model.jpa.NbaTeamScheduleEntity
+import com.hongwei.model.jpa.nba.NbaTeamDetailEntity
+import com.hongwei.model.jpa.nba.NbaTeamScheduleEntity
 import com.hongwei.model.nba.*
 import com.hongwei.model.nba.espn.TeamDetailSource
 import com.hongwei.model.nba.espn.TeamScheduleSource
@@ -31,12 +31,6 @@ class StatHubNbaScheduleController {
     private lateinit var dbWriterService: DbWriterService
 
     @Autowired
-    private lateinit var nbaService: NbaService
-
-    @Autowired
-    private lateinit var nbaPlayOffService: NbaPlayOffService
-
-    @Autowired
     private lateinit var nbaAnalysisService: NbaAnalysisService
 
     @GetMapping(path = ["/test.do"])
@@ -51,29 +45,28 @@ class StatHubNbaScheduleController {
 
     @GetMapping(path = ["/espnTeamSchedule.do"])
     @ResponseBody
-    fun getEspnTeamSchedule(team: String, dataVersionBase: Int? = null): ResponseEntity<*> =
-            statCurlService.getTeamScheduleJson(statCurlService.getTeamScheduleCurlDoc(team), dataVersionBase
-                    ?: 0)?.let {
+    fun getEspnTeamSchedule(team: String): ResponseEntity<*> =
+            statCurlService.getTeamScheduleJson(statCurlService.getTeamScheduleCurlDoc(team))?.let {
                 ResponseEntity.ok(it)
             } ?: throw ResetContent
 
     @PutMapping(path = ["/espnAllTeamsSchedule.do"])
     @ResponseBody
-    fun generateEspnAllTeamSchedule(dataVersionBase: Int? = null): ResponseEntity<*> {
+    fun generateEspnAllTeamSchedule(): ResponseEntity<*> {
         val eventSet = mutableSetOf<Event>()
         TEAMS.forEach { team ->
-            mergeIntoList(eventSet, generateScheduleForEachTeam(team, dataVersionBase))
+            mergeIntoList(eventSet, generateScheduleForEachTeam(team))
         }
         eventSet.sortedByDescending { it.unixTimeStamp }
-        val dataVersion = TimeStampUtil.getTimeVersionWithDayAndDataVersion(dataVersion = dataVersionBase)
+        val dataVersion = TimeStampUtil.getTimeVersionWithMinute()
         dbWriterService.writeFullSchedule(dataVersion, eventSet.toList())
         return ResponseEntity.ok(null)
     }
 
     @PutMapping(path = ["/espnTeamSchedule.do"])
     @ResponseBody
-    fun generateEspnTeamSchedule(team: String, dataVersionBase: Int? = null): ResponseEntity<*> {
-        generateScheduleForEachTeam(team, dataVersionBase)
+    fun generateEspnTeamSchedule(team: String): ResponseEntity<*> {
+        generateScheduleForEachTeam(team)
         return ResponseEntity.ok(null)
     }
 
@@ -85,19 +78,19 @@ class StatHubNbaScheduleController {
     @GetMapping(path = ["/nbaAnalysis.do"])
     @ResponseBody
     fun doNbaAnalysis(): ResponseEntity<*> =
-            ResponseEntity.ok(nbaAnalysisService.doAnalysis())
+            ResponseEntity.ok(nbaAnalysisService.doAnalysisPostSeason())
 
-    private fun generateScheduleForEachTeam(team: String, dataVersionBase: Int?): List<Event> {
+    private fun generateScheduleForEachTeam(team: String): List<Event> {
         val curlDoc = statCurlService.getTeamScheduleCurlDoc(team)
         val teamDetailEntity: NbaTeamDetailEntity = TeamDetailMapper.map(
                 Gson().fromJson(statCurlService.getTeamDetailJson(curlDoc), TeamDetailSource::class.java)
         )
-        val teamScheduleSourceObj = statCurlService.getTeamScheduleJson(curlDoc, dataVersionBase ?: 0)
+        val teamScheduleSourceObj = statCurlService.getTeamScheduleJson(curlDoc)
 
         val teamScheduleEntity: NbaTeamScheduleEntity = teamScheduleSourceObj?.let {
             TeamScheduleMapper.map(team, Gson().fromJson(teamScheduleSourceObj, TeamScheduleSource::class.java))
         } ?: NbaTeamScheduleEntity
-                .emptyEntity(team, TimeStampUtil.getTimeVersionWithDayAndDataVersion(dataVersion = dataVersionBase).toLong())
+                .emptyEntity(team, TimeStampUtil.getTimeVersionWithMinute())
         dbWriterService.writeTeamDetail(teamDetailEntity)
         dbWriterService.writeTeamSchedule(teamScheduleEntity)
         return teamScheduleEntity.events.map { TeamScheduleMapper.teamEventMapToEvent(it, teamDetailEntity) }

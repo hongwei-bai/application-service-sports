@@ -3,7 +3,7 @@ package com.hongwei.model.soccer.espn
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties
 
 data class SoccerStandingSourceOutput(
-        val dataVersion: String,
+        val dataVersion: Long,
         val data: SoccerStandingSourceWrap
 )
 

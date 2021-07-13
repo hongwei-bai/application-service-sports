@@ -2,6 +2,9 @@ package com.hongwei.service.soccer
 
 import com.hongwei.constants.Endpoints
 import com.hongwei.curl.CUrlWrapper
+import com.hongwei.model.soccer.espn.define.EspnSoccerScheduleQuery
+import com.hongwei.model.soccer.espn.define.SoccerLeague
+import com.hongwei.model.soccer.espn.define.SoccerQueryType
 import org.apache.log4j.LogManager
 import org.apache.log4j.Logger
 import org.springframework.stereotype.Service
@@ -14,6 +17,11 @@ class EspnSoccerCurlService {
     fun curl(url: String): Document? = CUrlWrapper.curl(url)
 
     fun getStanding(): Document? = CUrlWrapper.curl(Endpoints.Espn.Soccer.SERIEA_STANDING)
+
+    fun getTeamFixtures(teamId: Int): Document? = CUrlWrapper.curl(EspnSoccerScheduleQuery(teamId, SoccerQueryType.Fixtures).build())
+
+    fun getTeamResults(teamId: Int): Document? = CUrlWrapper.curl(
+            EspnSoccerScheduleQuery(teamId, SoccerQueryType.Results).league(SoccerLeague.ItalianSerieA).build())
 
     companion object {
         const val TeamUrlBase = "https://www.espn.com.au/"

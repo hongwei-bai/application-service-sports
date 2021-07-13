@@ -1,11 +1,12 @@
 package com.hongwei.service.nba
 
-import com.google.gson.Gson
-import com.hongwei.model.jpa.NbaStandingEntity
-import com.hongwei.model.jpa.NbaStandingRepository
-import com.hongwei.model.jpa.NbaTeamScheduleEntity
-import com.hongwei.model.jpa.NbaTeamScheduleRepository
+import com.hongwei.model.jpa.nba.NbaStandingEntity
+import com.hongwei.model.jpa.nba.NbaStandingRepository
+import com.hongwei.model.jpa.nba.NbaTeamScheduleEntity
+import com.hongwei.model.jpa.nba.NbaTeamScheduleRepository
 import com.hongwei.model.nba.EventType
+import com.hongwei.model.nba.PostSeason
+import com.hongwei.model.nba.mapper.PostSeasonMapper
 import org.apache.log4j.LogManager
 import org.apache.log4j.Logger
 import org.springframework.beans.factory.annotation.Autowired
@@ -23,14 +24,25 @@ class NbaAnalysisService {
     private lateinit var nbaStandingRepository: NbaStandingRepository
 
     @Autowired
-    private lateinit var nbaPostSeasonService: NbaPostSeasonService
+    private lateinit var nbaPlayOffAnalysisService: NbaPlayOffAnalysisService
+
+    @Autowired
+    private lateinit var nbaPlayInAnalysisService: NbaPlayInAnalysisService
 
     @Throws(IOException::class)
-    fun doAnalysis(): String? {
-        val seasonStatus = doAnalysisSeasonStatus()
-        return seasonStatus?.let {
-            Gson().toJson(nbaPostSeasonService.fetchPlayIn(seasonStatus, 0))
-            Gson().toJson(nbaPostSeasonService.fetchPlayOff(0))
+    fun doAnalysisPostSeason(): PostSeason? {
+        return when (val stage = doAnalysisSeasonStatus()) {
+            EventType.PlayOffRound1,
+            EventType.PlayOffRound2,
+            EventType.PlayOffConferenceFinal,
+            EventType.PlayOffGrandFinal -> {
+                nbaPlayInAnalysisService.fetchPlayIn(false)
+                PostSeasonMapper.map(stage, nbaPlayOffAnalysisService.fetchPlayOff())
+            }
+            EventType.PlayIn -> {
+                PostSeasonMapper.mapPlayIn(stage, nbaPlayInAnalysisService.fetchPlayIn(true))
+            }
+            else -> null
         }
     }
 

@@ -1,16 +1,17 @@
 package com.hongwei.model.soccer.standing
 
-data class SoccerLeagueOverall(
-        val dataVersion: String,
-        val standing: List<SoccerStandingStats>
+data class SoccerStanding(
+        val dataVersion: Long,
+        val league: String,
+        val leagueTitle: String,
+        val standings: List<SoccerStandingStats>
 )
 
 data class SoccerStandingStats(
         val teamId: Int,
         val teamAbbr: String,
-        val team: String,
-        val path: String,
-        val logoEspn: String,
+        val displayName: String,
+        val shortDisplayName: String,
         val logo: String?,
         val wins: Int,
         val losses: Int,
@@ -22,7 +23,6 @@ data class SoccerStandingStats(
         val rankChange: Int,
         val rank: Int,
         val goalDifference: Int,
-        val pointDeductions: Int,
-        val pointsPerGame: Int,
-        val overallRecord: Int
+        val pointDeductions: String,
+        val pointsPerGame: Int
 )

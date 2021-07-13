@@ -19,12 +19,12 @@ class EspnCurlService {
 
     fun getTeamList(): List<String> = TEAMS.toList()
 
-    fun getTeamScheduleJson(curlDoc: String, dataVersionBase: Int): String? {
+    fun getTeamScheduleJson(curlDoc: String): String? {
         val index0 = curlDoc.indexOf(TEAM_SCHEDULE_START)
         val index1 = curlDoc.indexOf(TEAM_SCHEDULE_END)
         if (index0 > 0 && index1 > 0) {
             val mid = curlDoc.substring(index0, index1 + TEAM_SCHEDULE_END.length)
-            val dataVersion = TimeStampUtil.getTimeVersionWithDayAndDataVersion(dataVersion = dataVersionBase)
+            val dataVersion = TimeStampUtil.getTimeVersionWithMinute()
             return "{\"dataVersion\": $dataVersion, $mid}"
         }
         return null

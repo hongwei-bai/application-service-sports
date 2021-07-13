@@ -1,6 +1,6 @@
 package com.hongwei.model.nba.mapper
 
-import com.hongwei.model.jpa.NbaTeamDetailEntity
+import com.hongwei.model.jpa.nba.NbaTeamDetailEntity
 import com.hongwei.model.nba.PostSeasonTeam
 
 object PostSeasonTeamMapper {

@@ -1,6 +1,6 @@
 package com.hongwei.service.nba
 
-import com.hongwei.model.jpa.*
+import com.hongwei.model.jpa.nba.*
 import com.hongwei.model.nba.Event
 import com.hongwei.model.nba.Standing
 import com.hongwei.model.nba.espn.mapper.StandingMapper
@@ -47,7 +47,7 @@ class DbWriterService {
         nbaTeamDetailRepository.save(teamDetailEntity)
     }
 
-    fun writeFullSchedule(dataVersion: String, events: List<Event>) {
-        nbaScheduleRepository.save(NbaScheduleEntity(dataVersion = dataVersion.toLong(), events = events))
+    fun writeFullSchedule(dataVersion: Long, events: List<Event>) {
+        nbaScheduleRepository.save(NbaScheduleEntity(dataVersion = dataVersion, events = events))
     }
 }

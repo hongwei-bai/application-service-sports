@@ -1,7 +1,8 @@
 package com.hongwei.controller
 
+import com.hongwei.constants.InternalServerError
 import com.hongwei.constants.ResetContent
-import com.hongwei.service.nba.NbaPlayOffService
+import com.hongwei.service.nba.NbaPostSeasonService
 import com.hongwei.service.nba.NbaService
 import com.hongwei.service.nba.NbaThemeService
 import org.springframework.beans.factory.annotation.Autowired
@@ -21,7 +22,7 @@ class NbaController {
     private lateinit var nbaThemeService: NbaThemeService
 
     @Autowired
-    private lateinit var nbaPlayOffService: NbaPlayOffService
+    private lateinit var nbaPostSeasonService: NbaPostSeasonService
 
     @GetMapping(path = ["/teamSchedule.do"])
     @ResponseBody
@@ -44,12 +45,19 @@ class NbaController {
                 ResponseEntity.ok(it)
             } ?: throw ResetContent
 
-    @GetMapping(path = ["/playOff.do"])
+    @GetMapping(path = ["/postSeason.do"])
     @ResponseBody
     fun getPlayOff(dataVersion: Long): ResponseEntity<*> =
-            nbaPlayOffService.getPlayOff(dataVersion)?.let {
-                ResponseEntity.ok(null)
-            } ?: throw ResetContent
+            nbaPostSeasonService.getPostSeason(dataVersion)?.let {
+                ResponseEntity.ok(it)
+            } ?: throw InternalServerError
+
+    @GetMapping(path = ["/seasonStatus.do"])
+    @ResponseBody
+    fun getSeasonStatus(): ResponseEntity<*> =
+            nbaPostSeasonService.getSeasonStatus()?.let {
+                ResponseEntity.ok(it)
+            } ?: throw InternalServerError
 
     @GetMapping(path = ["/teamTheme.do"])
     @ResponseBody

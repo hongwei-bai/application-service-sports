@@ -1,7 +1,7 @@
 package com.hongwei.service.nba
 
 import com.hongwei.constants.NoContent
-import com.hongwei.model.jpa.*
+import com.hongwei.model.jpa.nba.*
 import com.hongwei.model.nba.Schedule
 import com.hongwei.model.nba.Standing
 import com.hongwei.model.nba.Team

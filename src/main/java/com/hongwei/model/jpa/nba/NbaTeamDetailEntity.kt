@@ -1,4 +1,4 @@
-package com.hongwei.model.jpa
+package com.hongwei.model.jpa.nba
 
 import javax.persistence.Column
 import javax.persistence.Entity

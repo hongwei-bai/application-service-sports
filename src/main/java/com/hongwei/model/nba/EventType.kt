@@ -20,5 +20,24 @@ enum class EventType {
         } catch (e: Exception) {
             false
         }
+
+        fun isPlayInOngoing(eventType: EventType?): Boolean = eventType == PlayIn
+
+        fun isPlayOffStarted(eventType: EventType?): Boolean = when (eventType) {
+            PlayOffRound1,
+            PlayOffRound2,
+            PlayOffConferenceFinal,
+            PlayOffGrandFinal -> true
+            else -> false
+        }
+
+        fun isPostSeasonStarted(eventType: EventType?): Boolean = when (eventType) {
+            PlayIn,
+            PlayOffRound1,
+            PlayOffRound2,
+            PlayOffConferenceFinal,
+            PlayOffGrandFinal -> true
+            else -> false
+        }
     }
 }

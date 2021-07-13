@@ -1,11 +1,12 @@
 package com.hongwei.model.nba.espn.mapper
 
-import com.hongwei.model.jpa.NbaTeamDetailEntity
-import com.hongwei.model.jpa.NbaTeamScheduleEntity
+import com.hongwei.model.jpa.nba.NbaTeamDetailEntity
+import com.hongwei.model.jpa.nba.NbaTeamScheduleEntity
 import com.hongwei.model.nba.*
 import com.hongwei.model.nba.espn.*
 import com.hongwei.model.nba.espn.define.SeasonStage
 import com.hongwei.model.nba.espn.define.SeasonTypeId
+import com.hongwei.util.TimeStampUtil
 import java.text.SimpleDateFormat
 import java.util.*
 import java.util.Date
@@ -13,7 +14,7 @@ import java.util.Date
 object TeamScheduleMapper {
     fun map(team: String, teamScheduleSource: TeamScheduleSource): NbaTeamScheduleEntity = NbaTeamScheduleEntity(
             team = team.toLowerCase(),
-            dataVersion = teamScheduleSource.dataVersion ?: 0,
+            dataVersion = TimeStampUtil.getTimeVersionWithMinute(),
             events = listOf(
                     teamScheduleSource.teamSchedule.first().events.post.map {
                         mapEventsSection(teamScheduleSource.teamSchedule.first().seasonType.type, it)

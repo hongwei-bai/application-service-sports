@@ -16,9 +16,6 @@ class StatHubNbaStandingController {
     private lateinit var espnStandingParseService: EspnStandingParseService
 
     @Autowired
-    private lateinit var jsonWriterService: JsonWriterService
-
-    @Autowired
     private lateinit var dbWriterService: DbWriterService
 
     @GetMapping(path = ["/espnStanding.do"])
@@ -27,17 +24,6 @@ class StatHubNbaStandingController {
         val standingData = espnStandingParseService.parseStanding(
                 statCurlService.getStanding()!!)
         return ResponseEntity.ok(Gson().toJson(standingData))
-    }
-
-    @PutMapping(path = ["/espnStandingJson.do"])
-    @ResponseBody
-    fun generateEspnStandingJson(): ResponseEntity<*> {
-        val standingData = espnStandingParseService.parseStanding(
-                statCurlService.getStanding()!!)
-        standingData?.let {
-            jsonWriterService.writeStanding(it)
-        }
-        return ResponseEntity.ok(null)
     }
 
     @PutMapping(path = ["/espnStanding.do"])

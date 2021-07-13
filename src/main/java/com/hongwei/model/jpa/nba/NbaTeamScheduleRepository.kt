@@ -1,5 +1,6 @@
-package com.hongwei.model.jpa
+package com.hongwei.model.jpa.nba
 
+import com.hongwei.model.jpa.nba.NbaTeamScheduleEntity
 import org.springframework.data.jpa.repository.JpaRepository
 import org.springframework.data.jpa.repository.Modifying
 import org.springframework.data.jpa.repository.Query
