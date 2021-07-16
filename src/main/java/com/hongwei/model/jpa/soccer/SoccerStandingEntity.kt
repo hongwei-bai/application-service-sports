@@ -1,7 +1,7 @@
 package com.hongwei.model.jpa.soccer
 
 import com.hongwei.model.jpa.converter.SoccerStandingsConverter
-import com.hongwei.model.soccer.standing.SoccerStandingStats
+import com.hongwei.model.soccer.SoccerStandingStats
 import javax.persistence.*
 
 @Entity

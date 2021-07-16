@@ -2,6 +2,7 @@ package com.hongwei.model.nba.espn.mapper
 
 import com.hongwei.model.jpa.nba.NbaTeamDetailEntity
 import com.hongwei.model.nba.espn.TeamDetailSource
+import com.hongwei.util.TeamColorUtil.convertColorHexStringToLong
 import java.math.BigInteger
 
 object TeamDetailMapper {
@@ -16,12 +17,4 @@ object TeamDetailMapper {
             recordSummaryLose = recordSummaryBreakdown.last().toInt(),
             location = teamDetailSource.location
     )
-
-    private fun convertColorHexStringToLong(colorHexString: String, argbString: String? = when (colorHexString.length) {
-        6 -> "FF$colorHexString"
-        8 -> colorHexString
-        else -> null
-    }): Long = argbString?.let {
-        BigInteger(it, 16).toLong()
-    } ?: 0L
 }

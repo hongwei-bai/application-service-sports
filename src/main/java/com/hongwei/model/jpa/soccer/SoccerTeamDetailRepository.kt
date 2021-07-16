@@ -11,7 +11,10 @@ interface SoccerTeamDetailRepository : JpaRepository<SoccerTeamDetailEntity?, St
     fun findTeamDetailByTeam(@Param("team") team: String): SoccerTeamDetailEntity?
 
     @Query("from SoccerTeamDetailEntity entity where entity.id=:id")
-    fun findTeamDetailById(@Param("id") team: Int): SoccerTeamDetailEntity?
+    fun findTeamDetailById(@Param("id") team: Long): SoccerTeamDetailEntity?
+
+    @Query("from SoccerTeamDetailEntity entity where entity.isQuerying=true")
+    fun findQueryingTeams(): List<SoccerTeamDetailEntity>?
 
     @Transactional
     @Modifying

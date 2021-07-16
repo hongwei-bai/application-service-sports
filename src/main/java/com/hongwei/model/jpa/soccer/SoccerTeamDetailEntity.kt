@@ -8,7 +8,7 @@ import javax.persistence.Id
 @Entity
 data class SoccerTeamDetailEntity(
         @Id @Column(nullable = false)
-        var id: Int = 0,
+        var id: Long = 0L,
 
         @Column(nullable = false)
         var league: String = "",
@@ -29,6 +29,9 @@ data class SoccerTeamDetailEntity(
         var location: String = "",
 
         @Column(nullable = true)
-        var teamColor: Long? = null
+        var teamColor: Long? = null,
+
+        @Column(nullable = false)
+        var isQuerying: Boolean = false
 )
 

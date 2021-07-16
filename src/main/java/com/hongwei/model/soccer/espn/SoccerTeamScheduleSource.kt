@@ -7,8 +7,10 @@ data class SoccerTeamScheduleSource(
 )
 
 data class SoccerTeamSource(
-        val id: Int,
+        val id: Long,
         val abbrev: String,
+        val displayName: String,
+        val shortDisplayName: String,
         val teamColor: String
 )
 
@@ -18,11 +20,37 @@ data class SoccerTeamEventSource(
         val date: String,
         val tbd: Boolean,
         val completed: Boolean,
-        val league: String
+        val league: String,
+        val broadcasts: List<SoccerBroadcastSource>?,
+        val score: String?,
+        val status: SoccerEventStatusSource?,
+        val venue: SoccerVenueSource?
+)
+
+data class SoccerBroadcastSource(
+        val name: String,
+        val type: String,
+        val market: String
+)
+
+data class SoccerEventStatusSource(
+        val state: String,
+        val detail: String,
+        val link: String
+)
+
+data class SoccerVenueSource(
+        val fullName: String,
+        val address: SoccerVenueAddressSource?
+)
+
+data class SoccerVenueAddressSource(
+        val city: String?,
+        val country: String?
 )
 
 data class SoccerCompetitorSource(
-        val id: Int,
+        val id: Long,
         val abbrev: String,
         val displayName: String,
         val logo: String,

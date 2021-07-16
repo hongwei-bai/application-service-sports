@@ -23,15 +23,15 @@ class StatHubSoccerController {
         return ResponseEntity.ok(soccerAnalysisService.fetchStandings(league))
     }
 
-    @RequestMapping(path = ["/espnTeamFixtures.do"])
+    @RequestMapping(path = ["/espnTeamSchedule.do"])
     @ResponseBody
-    fun generateEspnTeamFixtures(teamId: Int): ResponseEntity<*> {
-        return ResponseEntity.ok(soccerAnalysisService.fetchTeamFixtures(teamId))
+    fun generateEspnTeamSchedule(teamId: Long): ResponseEntity<*> {
+        return ResponseEntity.ok(soccerAnalysisService.fetchTeamSchedules(teamId))
     }
 
-    @RequestMapping(path = ["/espnTeamResults.do"])
+    @RequestMapping(path = ["/bbcSchedule.do"])
     @ResponseBody
-    fun generateEspnTeamResults(teamId: Int): ResponseEntity<*> {
-        return ResponseEntity.ok(soccerAnalysisService.fetchTeamResults(teamId))
+    fun generateBbcSchedule(): ResponseEntity<*> {
+        return ResponseEntity.ok(soccerAnalysisService.fetchChampionLeagueSchedules())
     }
 }

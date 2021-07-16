@@ -2,7 +2,7 @@ package com.hongwei.model.jpa.converter
 
 import com.google.gson.Gson
 import com.google.gson.reflect.TypeToken
-import com.hongwei.model.soccer.standing.SoccerStandingStats
+import com.hongwei.model.soccer.SoccerStandingStats
 import java.lang.reflect.Type
 import javax.persistence.AttributeConverter
 import javax.persistence.Converter

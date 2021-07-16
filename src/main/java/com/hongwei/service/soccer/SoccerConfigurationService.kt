@@ -30,12 +30,5 @@ class SoccerConfigurationService {
         return NbaTeamThemeMapper.map(teamTheme, team)
     }
 
-    companion object {
-        val EuropeCommonLeagues = listOf(
-                "UEFA.CHAMPIONS",
-                "UEFA.EUROPA",
-                "UEFA.EUROPA_QUAL",
-                "CLUB.FRIENDLY"
-        )
-    }
+
 }

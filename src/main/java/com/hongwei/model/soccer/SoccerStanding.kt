@@ -1,4 +1,4 @@
-package com.hongwei.model.soccer.standing
+package com.hongwei.model.soccer
 
 data class SoccerStanding(
         val dataVersion: Long,
@@ -8,7 +8,7 @@ data class SoccerStanding(
 )
 
 data class SoccerStandingStats(
-        val teamId: Int,
+        val teamId: Long,
         val teamAbbr: String,
         val displayName: String,
         val shortDisplayName: String,

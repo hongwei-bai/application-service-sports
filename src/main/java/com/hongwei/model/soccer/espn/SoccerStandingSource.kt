@@ -9,7 +9,18 @@ data class SoccerStandingSourceOutput(
 
 @JsonIgnoreProperties
 data class SoccerStandingSourceWrap(
+        val routing: SoccerStandingSourceWrapRouting,
         val page: SoccerStandingSourceWrap_Page
+)
+
+@JsonIgnoreProperties
+data class SoccerStandingSourceWrapRouting(
+        val params: SoccerStandingSourceWrapParams
+)
+
+@JsonIgnoreProperties
+data class SoccerStandingSourceWrapParams(
+        val league: String
 )
 
 @JsonIgnoreProperties
@@ -48,7 +59,7 @@ data class SoccerStandingTeamWrapSource(
 
 @JsonIgnoreProperties
 data class SoccerStandingTeamSource(
-        val id: Int,
+        val id: Long,
         val abbrev: String,
         val displayName: String,
         val shortDisplayName: String,

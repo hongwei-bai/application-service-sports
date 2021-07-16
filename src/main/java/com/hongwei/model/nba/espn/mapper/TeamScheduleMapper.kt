@@ -3,13 +3,14 @@ package com.hongwei.model.nba.espn.mapper
 import com.hongwei.model.jpa.nba.NbaTeamDetailEntity
 import com.hongwei.model.jpa.nba.NbaTeamScheduleEntity
 import com.hongwei.model.nba.*
-import com.hongwei.model.nba.espn.*
+import com.hongwei.model.nba.espn.EspnTeamMapper
+import com.hongwei.model.nba.espn.EventsSection
+import com.hongwei.model.nba.espn.ResultStatus
+import com.hongwei.model.nba.espn.TeamScheduleSource
 import com.hongwei.model.nba.espn.define.SeasonStage
 import com.hongwei.model.nba.espn.define.SeasonTypeId
+import com.hongwei.util.EspnDateTimeParseUtil.parseDate
 import com.hongwei.util.TimeStampUtil
-import java.text.SimpleDateFormat
-import java.util.*
-import java.util.Date
 
 object TeamScheduleMapper {
     fun map(team: String, teamScheduleSource: TeamScheduleSource): NbaTeamScheduleEntity = NbaTeamScheduleEntity(
@@ -111,14 +112,5 @@ object TeamScheduleMapper {
             else -> null
         }
         else -> null
-    }
-
-    //2021-04-07T02:00Z
-    private fun parseDate(dateString: String): Date? = try {
-        val simpleDateFormat = SimpleDateFormat("yyyy-MM-dd'T'HH:mm'Z'")
-        simpleDateFormat.timeZone = TimeZone.getTimeZone("GMT")
-        simpleDateFormat.parse(dateString)
-    } catch (e: Exception) {
-        null
     }
 }
