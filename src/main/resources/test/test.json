@@ -1,1 +1,1777 @@
-{"Date":1626220800000,"NSW":5366,"VIC":20539,"QLD":1588,"SA":662,"WA":1015,"TAS":232,"NT":113,"ACT":123,"ObjectId":1128,"Total_Cases":29638,"NSW_Deaths":56,"VIC_Deaths":820,"QLD_Deaths":4,"SA_Deaths":4,"WA_Deaths":9,"TAS_Deaths":13,"NT_Deaths":null,"ACT_Deaths":3,"Total_Deaths":909,"NSW_Tests":5851712,"VIC_Tests":6035711,"QLD_Tests":2540184,"SA_Tests":1195026,"WA_Tests":1134609,"TAS_Tests":191272,"NT_Tests":153909,"ACT_Tests":174757,"NSW_Tests_Negative":94534,"VIC_Tests_Negative":null,"QLD_Tests_Negative":null,"SA_Tests_Negative":null,"WA_Tests_Negative":13833,"TAS_Tests_Negative":null,"NT_Tests_Negative":null,"ACT_Tests_Negative":4363,"Total_Tests":17277180,"Total_Tests_Negative":112730}}]}
+[
+  {
+    "date": "2021-07-08T07:00Z",
+    "description": "Announced the hiring of Nate McMillan as the full-time head coach.",
+    "team": {
+      "id": "1",
+      "location": "Atlanta",
+      "name": "Hawks",
+      "abbreviation": "ATL",
+      "displayName": "Atlanta Hawks",
+      "color": "002B5C",
+      "alternateColor": "002b5c",
+      "logos": [
+        {
+          "href": "https://a.espncdn.com/i/teamlogos/nba/500/atl.png",
+          "width": 500,
+          "height": 500,
+          "alt": "",
+          "rel": [
+            "full",
+            "default"
+          ]
+        },
+        {
+          "href": "https://a.espncdn.com/i/teamlogos/nba/500-dark/atl.png",
+          "width": 500,
+          "height": 500,
+          "alt": "",
+          "rel": [
+            "full",
+            "dark"
+          ]
+        },
+        {
+          "href": "https://a.espncdn.com/i/teamlogos/nba/500/scoreboard/atl.png",
+          "width": 500,
+          "height": 500,
+          "alt": "",
+          "rel": [
+            "full",
+            "scoreboard"
+          ]
+        },
+        {
+          "href": "https://a.espncdn.com/i/teamlogos/nba/500-dark/scoreboard/atl.png",
+          "width": 500,
+          "height": 500,
+          "alt": "",
+          "rel": [
+            "full",
+            "scoreboard",
+            "dark"
+          ]
+        }
+      ],
+      "links": [
+        {
+          "language": "en-US",
+          "rel": [
+            "clubhouse",
+            "desktop",
+            "team"
+          ],
+          "href": "https://www.espn.com/nba/team/_/name/atl/atlanta-hawks",
+          "text": "Clubhouse",
+          "shortText": "Clubhouse",
+          "isExternal": false,
+          "isPremium": false
+        }
+      ]
+    }
+  },
+  {
+    "date": "2021-06-18T07:00Z",
+    "description": "Acquired G Kemba Walker from Boston in exchange for Cs Al Horford, Moses Brown and a 2023 second-round draft pick.",
+    "team": {
+      "id": "25",
+      "location": "Oklahoma City",
+      "name": "Thunder",
+      "abbreviation": "OKC",
+      "displayName": "Oklahoma City Thunder",
+      "color": "C67C03",
+      "alternateColor": "f05133",
+      "logos": [
+        {
+          "href": "https://a.espncdn.com/i/teamlogos/nba/500/okc.png",
+          "width": 500,
+          "height": 500,
+          "alt": "",
+          "rel": [
+            "full",
+            "default"
+          ]
+        },
+        {
+          "href": "https://a.espncdn.com/i/teamlogos/nba/500-dark/okc.png",
+          "width": 500,
+          "height": 500,
+          "alt": "",
+          "rel": [
+            "full",
+            "dark"
+          ]
+        },
+        {
+          "href": "https://a.espncdn.com/i/teamlogos/nba/500/scoreboard/okc.png",
+          "width": 500,
+          "height": 500,
+          "alt": "",
+          "rel": [
+            "full",
+            "scoreboard"
+          ]
+        },
+        {
+          "href": "https://a.espncdn.com/i/teamlogos/nba/500-dark/scoreboard/okc.png",
+          "width": 500,
+          "height": 500,
+          "alt": "",
+          "rel": [
+            "full",
+            "scoreboard",
+            "dark"
+          ]
+        }
+      ],
+      "links": [
+        {
+          "language": "en-US",
+          "rel": [
+            "clubhouse",
+            "desktop",
+            "team"
+          ],
+          "href": "https://www.espn.com/nba/team/_/name/okc/oklahoma-city-thunder",
+          "text": "Clubhouse",
+          "shortText": "Clubhouse",
+          "isExternal": false,
+          "isPremium": false
+        }
+      ]
+    }
+  },
+  {
+    "date": "2021-06-06T07:00Z",
+    "description": "Signed G Gary Payton II to a rest-of-season contract.",
+    "team": {
+      "id": "9",
+      "location": "Golden State",
+      "name": "Warriors",
+      "abbreviation": "GS",
+      "displayName": "Golden State Warriors",
+      "color": "003da5",
+      "alternateColor": "fdb927",
+      "logos": [
+        {
+          "href": "https://a.espncdn.com/i/teamlogos/nba/500/gs.png",
+          "width": 500,
+          "height": 500,
+          "alt": "",
+          "rel": [
+            "full",
+            "default"
+          ]
+        },
+        {
+          "href": "https://a.espncdn.com/i/teamlogos/nba/500-dark/gs.png",
+          "width": 500,
+          "height": 500,
+          "alt": "",
+          "rel": [
+            "full",
+            "dark"
+          ]
+        },
+        {
+          "href": "https://a.espncdn.com/i/teamlogos/nba/500/scoreboard/gs.png",
+          "width": 500,
+          "height": 500,
+          "alt": "",
+          "rel": [
+            "full",
+            "scoreboard"
+          ]
+        },
+        {
+          "href": "https://a.espncdn.com/i/teamlogos/nba/500-dark/scoreboard/gs.png",
+          "width": 500,
+          "height": 500,
+          "alt": "",
+          "rel": [
+            "full",
+            "scoreboard",
+            "dark"
+          ]
+        }
+      ],
+      "links": [
+        {
+          "language": "en-US",
+          "rel": [
+            "clubhouse",
+            "desktop",
+            "team"
+          ],
+          "href": "https://www.espn.com/nba/team/_/name/gs/golden-state-warriors",
+          "text": "Clubhouse",
+          "shortText": "Clubhouse",
+          "isExternal": false,
+          "isPremium": false
+        }
+      ]
+    }
+  },
+  {
+    "date": "2021-06-02T07:00Z",
+    "description": "Named John Beilein senior advisor/player development.",
+    "team": {
+      "id": "8",
+      "location": "Detroit",
+      "name": "Pistons",
+      "abbreviation": "DET",
+      "displayName": "Detroit Pistons",
+      "color": "FA002C",
+      "alternateColor": "006bb6",
+      "logos": [
+        {
+          "href": "https://a.espncdn.com/i/teamlogos/nba/500/det.png",
+          "width": 500,
+          "height": 500,
+          "alt": "",
+          "rel": [
+            "full",
+            "default"
+          ]
+        },
+        {
+          "href": "https://a.espncdn.com/i/teamlogos/nba/500-dark/det.png",
+          "width": 500,
+          "height": 500,
+          "alt": "",
+          "rel": [
+            "full",
+            "dark"
+          ]
+        },
+        {
+          "href": "https://a.espncdn.com/i/teamlogos/nba/500/scoreboard/det.png",
+          "width": 500,
+          "height": 500,
+          "alt": "",
+          "rel": [
+            "full",
+            "scoreboard"
+          ]
+        },
+        {
+          "href": "https://a.espncdn.com/i/teamlogos/nba/500-dark/scoreboard/det.png",
+          "width": 500,
+          "height": 500,
+          "alt": "",
+          "rel": [
+            "full",
+            "scoreboard",
+            "dark"
+          ]
+        }
+      ],
+      "links": [
+        {
+          "language": "en-US",
+          "rel": [
+            "clubhouse",
+            "desktop",
+            "team"
+          ],
+          "href": "https://www.espn.com/nba/team/_/name/det/detroit-pistons",
+          "text": "Clubhouse",
+          "shortText": "Clubhouse",
+          "isExternal": false,
+          "isPremium": false
+        }
+      ]
+    }
+  },
+  {
+    "date": "2021-05-15T07:00Z",
+    "description": "Signed G Charlie Brown Jr. to a rest-of-season contract.",
+    "team": {
+      "id": "25",
+      "location": "Oklahoma City",
+      "name": "Thunder",
+      "abbreviation": "OKC",
+      "displayName": "Oklahoma City Thunder",
+      "color": "C67C03",
+      "alternateColor": "f05133",
+      "logos": [
+        {
+          "href": "https://a.espncdn.com/i/teamlogos/nba/500/okc.png",
+          "width": 500,
+          "height": 500,
+          "alt": "",
+          "rel": [
+            "full",
+            "default"
+          ]
+        },
+        {
+          "href": "https://a.espncdn.com/i/teamlogos/nba/500-dark/okc.png",
+          "width": 500,
+          "height": 500,
+          "alt": "",
+          "rel": [
+            "full",
+            "dark"
+          ]
+        },
+        {
+          "href": "https://a.espncdn.com/i/teamlogos/nba/500/scoreboard/okc.png",
+          "width": 500,
+          "height": 500,
+          "alt": "",
+          "rel": [
+            "full",
+            "scoreboard"
+          ]
+        },
+        {
+          "href": "https://a.espncdn.com/i/teamlogos/nba/500-dark/scoreboard/okc.png",
+          "width": 500,
+          "height": 500,
+          "alt": "",
+          "rel": [
+            "full",
+            "scoreboard",
+            "dark"
+          ]
+        }
+      ],
+      "links": [
+        {
+          "language": "en-US",
+          "rel": [
+            "clubhouse",
+            "desktop",
+            "team"
+          ],
+          "href": "https://www.espn.com/nba/team/_/name/okc/oklahoma-city-thunder",
+          "text": "Clubhouse",
+          "shortText": "Clubhouse",
+          "isExternal": false,
+          "isPremium": false
+        }
+      ]
+    }
+  },
+  {
+    "date": "2021-05-15T07:00Z",
+    "description": "Claimed G DaQuan Jeffries off waivers from Houston.",
+    "team": {
+      "id": "24",
+      "location": "San Antonio",
+      "name": "Spurs",
+      "abbreviation": "SA",
+      "displayName": "San Antonio Spurs",
+      "color": "000000",
+      "alternateColor": "061922",
+      "logos": [
+        {
+          "href": "https://a.espncdn.com/i/teamlogos/nba/500/sa.png",
+          "width": 500,
+          "height": 500,
+          "alt": "",
+          "rel": [
+            "full",
+            "default"
+          ]
+        },
+        {
+          "href": "https://a.espncdn.com/i/teamlogos/nba/500-dark/sa.png",
+          "width": 500,
+          "height": 500,
+          "alt": "",
+          "rel": [
+            "full",
+            "dark"
+          ]
+        },
+        {
+          "href": "https://a.espncdn.com/i/teamlogos/nba/500/scoreboard/sa.png",
+          "width": 500,
+          "height": 500,
+          "alt": "",
+          "rel": [
+            "full",
+            "scoreboard"
+          ]
+        },
+        {
+          "href": "https://a.espncdn.com/i/teamlogos/nba/500-dark/scoreboard/sa.png",
+          "width": 500,
+          "height": 500,
+          "alt": "",
+          "rel": [
+            "full",
+            "scoreboard",
+            "dark"
+          ]
+        }
+      ],
+      "links": [
+        {
+          "language": "en-US",
+          "rel": [
+            "clubhouse",
+            "desktop",
+            "team"
+          ],
+          "href": "https://www.espn.com/nba/team/_/name/sa/san-antonio-spurs",
+          "text": "Clubhouse",
+          "shortText": "Clubhouse",
+          "isExternal": false,
+          "isPremium": false
+        }
+      ]
+    }
+  },
+  {
+    "date": "2021-05-14T07:00Z",
+    "description": "Signed C Omer Yurtseven to a remainder-of-the-season contract.",
+    "team": {
+      "id": "14",
+      "location": "Miami",
+      "name": "Heat",
+      "abbreviation": "MIA",
+      "displayName": "Miami Heat",
+      "color": "000000",
+      "alternateColor": "000000",
+      "logos": [
+        {
+          "href": "https://a.espncdn.com/i/teamlogos/nba/500/mia.png",
+          "width": 500,
+          "height": 500,
+          "alt": "",
+          "rel": [
+            "full",
+            "default"
+          ]
+        },
+        {
+          "href": "https://a.espncdn.com/i/teamlogos/nba/500-dark/mia.png",
+          "width": 500,
+          "height": 500,
+          "alt": "",
+          "rel": [
+            "full",
+            "dark"
+          ]
+        },
+        {
+          "href": "https://a.espncdn.com/i/teamlogos/nba/500/scoreboard/mia.png",
+          "width": 500,
+          "height": 500,
+          "alt": "",
+          "rel": [
+            "full",
+            "scoreboard"
+          ]
+        },
+        {
+          "href": "https://a.espncdn.com/i/teamlogos/nba/500-dark/scoreboard/mia.png",
+          "width": 500,
+          "height": 500,
+          "alt": "",
+          "rel": [
+            "full",
+            "scoreboard",
+            "dark"
+          ]
+        }
+      ],
+      "links": [
+        {
+          "language": "en-US",
+          "rel": [
+            "clubhouse",
+            "desktop",
+            "team"
+          ],
+          "href": "https://www.espn.com/nba/team/_/name/mia/miami-heat",
+          "text": "Clubhouse",
+          "shortText": "Clubhouse",
+          "isExternal": false,
+          "isPremium": false
+        }
+      ]
+    }
+  },
+  {
+    "date": "2021-05-14T07:00Z",
+    "description": "Signed G Khyri Thomas to a remainder-of-the-season contract. Signed F Cameron Reynolds to a 10-day contract.",
+    "team": {
+      "id": "10",
+      "location": "Houston",
+      "name": "Rockets",
+      "abbreviation": "HOU",
+      "displayName": "Houston Rockets",
+      "color": "D40026",
+      "alternateColor": "c4ced3",
+      "logos": [
+        {
+          "href": "https://a.espncdn.com/i/teamlogos/nba/500/hou.png",
+          "width": 500,
+          "height": 500,
+          "alt": "",
+          "rel": [
+            "full",
+            "default"
+          ]
+        },
+        {
+          "href": "https://a.espncdn.com/i/teamlogos/nba/500-dark/hou.png",
+          "width": 500,
+          "height": 500,
+          "alt": "",
+          "rel": [
+            "full",
+            "dark"
+          ]
+        },
+        {
+          "href": "https://a.espncdn.com/i/teamlogos/nba/500/scoreboard/hou.png",
+          "width": 500,
+          "height": 500,
+          "alt": "",
+          "rel": [
+            "full",
+            "scoreboard"
+          ]
+        },
+        {
+          "href": "https://a.espncdn.com/i/teamlogos/nba/500-dark/scoreboard/hou.png",
+          "width": 500,
+          "height": 500,
+          "alt": "",
+          "rel": [
+            "full",
+            "scoreboard",
+            "dark"
+          ]
+        }
+      ],
+      "links": [
+        {
+          "language": "en-US",
+          "rel": [
+            "clubhouse",
+            "desktop",
+            "team"
+          ],
+          "href": "https://www.espn.com/nba/team/_/name/hou/houston-rockets",
+          "text": "Clubhouse",
+          "shortText": "Clubhouse",
+          "isExternal": false,
+          "isPremium": false
+        }
+      ]
+    }
+  },
+  {
+    "date": "2021-05-14T07:00Z",
+    "description": "Signed F Anderson Varejao to a 10-day contract.",
+    "team": {
+      "id": "5",
+      "location": "Cleveland",
+      "name": "Cavaliers",
+      "abbreviation": "CLE",
+      "displayName": "Cleveland Cavaliers",
+      "color": "061642",
+      "alternateColor": "fdbb30",
+      "logos": [
+        {
+          "href": "https://a.espncdn.com/i/teamlogos/nba/500/cle.png",
+          "width": 500,
+          "height": 500,
+          "alt": "",
+          "rel": [
+            "full",
+            "default"
+          ]
+        },
+        {
+          "href": "https://a.espncdn.com/i/teamlogos/nba/500-dark/cle.png",
+          "width": 500,
+          "height": 500,
+          "alt": "",
+          "rel": [
+            "full",
+            "dark"
+          ]
+        },
+        {
+          "href": "https://a.espncdn.com/i/teamlogos/nba/500/scoreboard/cle.png",
+          "width": 500,
+          "height": 500,
+          "alt": "",
+          "rel": [
+            "full",
+            "scoreboard"
+          ]
+        },
+        {
+          "href": "https://a.espncdn.com/i/teamlogos/nba/500-dark/scoreboard/cle.png",
+          "width": 500,
+          "height": 500,
+          "alt": "",
+          "rel": [
+            "full",
+            "scoreboard",
+            "dark"
+          ]
+        }
+      ],
+      "links": [
+        {
+          "language": "en-US",
+          "rel": [
+            "clubhouse",
+            "desktop",
+            "team"
+          ],
+          "href": "https://www.espn.com/nba/team/_/name/cle/cleveland-cavaliers",
+          "text": "Clubhouse",
+          "shortText": "Clubhouse",
+          "isExternal": false,
+          "isPremium": false
+        }
+      ]
+    }
+  },
+  {
+    "date": "2021-05-13T07:00Z",
+    "description": "Signed G Mike James to a remainder-of-the-season contract.",
+    "team": {
+      "id": "17",
+      "location": "Brooklyn",
+      "name": "Nets",
+      "abbreviation": "BKN",
+      "displayName": "Brooklyn Nets",
+      "color": "000000",
+      "alternateColor": "ffffff",
+      "logos": [
+        {
+          "href": "https://a.espncdn.com/i/teamlogos/nba/500/bkn.png",
+          "width": 500,
+          "height": 500,
+          "alt": "",
+          "rel": [
+            "full",
+            "default"
+          ]
+        },
+        {
+          "href": "https://a.espncdn.com/i/teamlogos/nba/500-dark/bkn.png",
+          "width": 500,
+          "height": 500,
+          "alt": "",
+          "rel": [
+            "full",
+            "dark"
+          ]
+        },
+        {
+          "href": "https://a.espncdn.com/i/teamlogos/nba/500/scoreboard/bkn.png",
+          "width": 500,
+          "height": 500,
+          "alt": "",
+          "rel": [
+            "full",
+            "scoreboard"
+          ]
+        },
+        {
+          "href": "https://a.espncdn.com/i/teamlogos/nba/500-dark/scoreboard/bkn.png",
+          "width": 500,
+          "height": 500,
+          "alt": "",
+          "rel": [
+            "full",
+            "scoreboard",
+            "dark"
+          ]
+        }
+      ],
+      "links": [
+        {
+          "language": "en-US",
+          "rel": [
+            "clubhouse",
+            "desktop",
+            "team"
+          ],
+          "href": "https://www.espn.com/nba/team/_/name/bkn/brooklyn-nets",
+          "text": "Clubhouse",
+          "shortText": "Clubhouse",
+          "isExternal": false,
+          "isPremium": false
+        }
+      ]
+    }
+  },
+  {
+    "date": "2021-05-13T07:00Z",
+    "description": "Signed G Elijah Bryant to a remainder-of-the-season contract.",
+    "team": {
+      "id": "15",
+      "location": "Milwaukee",
+      "name": "Bucks",
+      "abbreviation": "MIL",
+      "displayName": "Milwaukee Bucks",
+      "color": "003813",
+      "alternateColor": "f0ebd2",
+      "logos": [
+        {
+          "href": "https://a.espncdn.com/i/teamlogos/nba/500/mil.png",
+          "width": 500,
+          "height": 500,
+          "alt": "",
+          "rel": [
+            "full",
+            "default"
+          ]
+        },
+        {
+          "href": "https://a.espncdn.com/i/teamlogos/nba/500-dark/mil.png",
+          "width": 500,
+          "height": 500,
+          "alt": "",
+          "rel": [
+            "full",
+            "dark"
+          ]
+        },
+        {
+          "href": "https://a.espncdn.com/i/teamlogos/nba/500/scoreboard/mil.png",
+          "width": 500,
+          "height": 500,
+          "alt": "",
+          "rel": [
+            "full",
+            "scoreboard"
+          ]
+        },
+        {
+          "href": "https://a.espncdn.com/i/teamlogos/nba/500-dark/scoreboard/mil.png",
+          "width": 500,
+          "height": 500,
+          "alt": "",
+          "rel": [
+            "full",
+            "scoreboard",
+            "dark"
+          ]
+        }
+      ],
+      "links": [
+        {
+          "language": "en-US",
+          "rel": [
+            "clubhouse",
+            "desktop",
+            "team"
+          ],
+          "href": "https://www.espn.com/nba/team/_/name/mil/milwaukee-bucks",
+          "text": "Clubhouse",
+          "shortText": "Clubhouse",
+          "isExternal": false,
+          "isPremium": false
+        }
+      ]
+    }
+  },
+  {
+    "date": "2021-05-13T07:00Z",
+    "description": "Waived G DaQuan Jeffries.",
+    "team": {
+      "id": "10",
+      "location": "Houston",
+      "name": "Rockets",
+      "abbreviation": "HOU",
+      "displayName": "Houston Rockets",
+      "color": "D40026",
+      "alternateColor": "c4ced3",
+      "logos": [
+        {
+          "href": "https://a.espncdn.com/i/teamlogos/nba/500/hou.png",
+          "width": 500,
+          "height": 500,
+          "alt": "",
+          "rel": [
+            "full",
+            "default"
+          ]
+        },
+        {
+          "href": "https://a.espncdn.com/i/teamlogos/nba/500-dark/hou.png",
+          "width": 500,
+          "height": 500,
+          "alt": "",
+          "rel": [
+            "full",
+            "dark"
+          ]
+        },
+        {
+          "href": "https://a.espncdn.com/i/teamlogos/nba/500/scoreboard/hou.png",
+          "width": 500,
+          "height": 500,
+          "alt": "",
+          "rel": [
+            "full",
+            "scoreboard"
+          ]
+        },
+        {
+          "href": "https://a.espncdn.com/i/teamlogos/nba/500-dark/scoreboard/hou.png",
+          "width": 500,
+          "height": 500,
+          "alt": "",
+          "rel": [
+            "full",
+            "scoreboard",
+            "dark"
+          ]
+        }
+      ],
+      "links": [
+        {
+          "language": "en-US",
+          "rel": [
+            "clubhouse",
+            "desktop",
+            "team"
+          ],
+          "href": "https://www.espn.com/nba/team/_/name/hou/houston-rockets",
+          "text": "Clubhouse",
+          "shortText": "Clubhouse",
+          "isExternal": false,
+          "isPremium": false
+        }
+      ]
+    }
+  },
+  {
+    "date": "2021-05-13T07:00Z",
+    "description": "Re-signed F Juan Toscano-Anderson to a remainder-of-the-season contract. Signed F Jordan Bell to a two-way contract.",
+    "team": {
+      "id": "9",
+      "location": "Golden State",
+      "name": "Warriors",
+      "abbreviation": "GS",
+      "displayName": "Golden State Warriors",
+      "color": "003da5",
+      "alternateColor": "fdb927",
+      "logos": [
+        {
+          "href": "https://a.espncdn.com/i/teamlogos/nba/500/gs.png",
+          "width": 500,
+          "height": 500,
+          "alt": "",
+          "rel": [
+            "full",
+            "default"
+          ]
+        },
+        {
+          "href": "https://a.espncdn.com/i/teamlogos/nba/500-dark/gs.png",
+          "width": 500,
+          "height": 500,
+          "alt": "",
+          "rel": [
+            "full",
+            "dark"
+          ]
+        },
+        {
+          "href": "https://a.espncdn.com/i/teamlogos/nba/500/scoreboard/gs.png",
+          "width": 500,
+          "height": 500,
+          "alt": "",
+          "rel": [
+            "full",
+            "scoreboard"
+          ]
+        },
+        {
+          "href": "https://a.espncdn.com/i/teamlogos/nba/500-dark/scoreboard/gs.png",
+          "width": 500,
+          "height": 500,
+          "alt": "",
+          "rel": [
+            "full",
+            "scoreboard",
+            "dark"
+          ]
+        }
+      ],
+      "links": [
+        {
+          "language": "en-US",
+          "rel": [
+            "clubhouse",
+            "desktop",
+            "team"
+          ],
+          "href": "https://www.espn.com/nba/team/_/name/gs/golden-state-warriors",
+          "text": "Clubhouse",
+          "shortText": "Clubhouse",
+          "isExternal": false,
+          "isPremium": false
+        }
+      ]
+    }
+  },
+  {
+    "date": "2021-05-12T07:00Z",
+    "description": "Signed F Ignas Brazdeikis to a remainder-of-the-season contract.",
+    "team": {
+      "id": "19",
+      "location": "Orlando",
+      "name": "Magic",
+      "abbreviation": "ORL",
+      "displayName": "Orlando Magic",
+      "color": "0860A8",
+      "alternateColor": "c4ced3",
+      "logos": [
+        {
+          "href": "https://a.espncdn.com/i/teamlogos/nba/500/orl.png",
+          "width": 500,
+          "height": 500,
+          "alt": "",
+          "rel": [
+            "full",
+            "default"
+          ]
+        },
+        {
+          "href": "https://a.espncdn.com/i/teamlogos/nba/500-dark/orl.png",
+          "width": 500,
+          "height": 500,
+          "alt": "",
+          "rel": [
+            "full",
+            "dark"
+          ]
+        },
+        {
+          "href": "https://a.espncdn.com/i/teamlogos/nba/500/scoreboard/orl.png",
+          "width": 500,
+          "height": 500,
+          "alt": "",
+          "rel": [
+            "full",
+            "scoreboard"
+          ]
+        },
+        {
+          "href": "https://a.espncdn.com/i/teamlogos/nba/500-dark/scoreboard/orl.png",
+          "width": 500,
+          "height": 500,
+          "alt": "",
+          "rel": [
+            "full",
+            "scoreboard",
+            "dark"
+          ]
+        }
+      ],
+      "links": [
+        {
+          "language": "en-US",
+          "rel": [
+            "clubhouse",
+            "desktop",
+            "team"
+          ],
+          "href": "https://www.espn.com/nba/team/_/name/orl/orlando-magic",
+          "text": "Clubhouse",
+          "shortText": "Clubhouse",
+          "isExternal": false,
+          "isPremium": false
+        }
+      ]
+    }
+  },
+  {
+    "date": "2021-05-12T07:00Z",
+    "description": "Waived F Rodions Kurucs.",
+    "team": {
+      "id": "15",
+      "location": "Milwaukee",
+      "name": "Bucks",
+      "abbreviation": "MIL",
+      "displayName": "Milwaukee Bucks",
+      "color": "003813",
+      "alternateColor": "f0ebd2",
+      "logos": [
+        {
+          "href": "https://a.espncdn.com/i/teamlogos/nba/500/mil.png",
+          "width": 500,
+          "height": 500,
+          "alt": "",
+          "rel": [
+            "full",
+            "default"
+          ]
+        },
+        {
+          "href": "https://a.espncdn.com/i/teamlogos/nba/500-dark/mil.png",
+          "width": 500,
+          "height": 500,
+          "alt": "",
+          "rel": [
+            "full",
+            "dark"
+          ]
+        },
+        {
+          "href": "https://a.espncdn.com/i/teamlogos/nba/500/scoreboard/mil.png",
+          "width": 500,
+          "height": 500,
+          "alt": "",
+          "rel": [
+            "full",
+            "scoreboard"
+          ]
+        },
+        {
+          "href": "https://a.espncdn.com/i/teamlogos/nba/500-dark/scoreboard/mil.png",
+          "width": 500,
+          "height": 500,
+          "alt": "",
+          "rel": [
+            "full",
+            "scoreboard",
+            "dark"
+          ]
+        }
+      ],
+      "links": [
+        {
+          "language": "en-US",
+          "rel": [
+            "clubhouse",
+            "desktop",
+            "team"
+          ],
+          "href": "https://www.espn.com/nba/team/_/name/mil/milwaukee-bucks",
+          "text": "Clubhouse",
+          "shortText": "Clubhouse",
+          "isExternal": false,
+          "isPremium": false
+        }
+      ]
+    }
+  },
+  {
+    "date": "2021-05-11T07:00Z",
+    "description": "Signed F Gary Clark to a two-way contract.",
+    "team": {
+      "id": "20",
+      "location": "Philadelphia",
+      "name": "76ers",
+      "abbreviation": "PHI",
+      "displayName": "Philadelphia 76ers",
+      "color": "000000",
+      "alternateColor": "f1f2f3",
+      "logos": [
+        {
+          "href": "https://a.espncdn.com/i/teamlogos/nba/500/phi.png",
+          "width": 500,
+          "height": 500,
+          "alt": "",
+          "rel": [
+            "full",
+            "default"
+          ]
+        },
+        {
+          "href": "https://a.espncdn.com/i/teamlogos/nba/500-dark/phi.png",
+          "width": 500,
+          "height": 500,
+          "alt": "",
+          "rel": [
+            "full",
+            "dark"
+          ]
+        },
+        {
+          "href": "https://a.espncdn.com/i/teamlogos/nba/500/scoreboard/phi.png",
+          "width": 500,
+          "height": 500,
+          "alt": "",
+          "rel": [
+            "full",
+            "scoreboard"
+          ]
+        },
+        {
+          "href": "https://a.espncdn.com/i/teamlogos/nba/500-dark/scoreboard/phi.png",
+          "width": 500,
+          "height": 500,
+          "alt": "",
+          "rel": [
+            "full",
+            "scoreboard",
+            "dark"
+          ]
+        }
+      ],
+      "links": [
+        {
+          "language": "en-US",
+          "rel": [
+            "clubhouse",
+            "desktop",
+            "team"
+          ],
+          "href": "https://www.espn.com/nba/team/_/name/phi/philadelphia-76ers",
+          "text": "Clubhouse",
+          "shortText": "Clubhouse",
+          "isExternal": false,
+          "isPremium": false
+        }
+      ]
+    }
+  },
+  {
+    "date": "2021-05-10T07:00Z",
+    "description": "Signed F Cameron Oliver to a 10-day contract.",
+    "team": {
+      "id": "10",
+      "location": "Houston",
+      "name": "Rockets",
+      "abbreviation": "HOU",
+      "displayName": "Houston Rockets",
+      "color": "D40026",
+      "alternateColor": "c4ced3",
+      "logos": [
+        {
+          "href": "https://a.espncdn.com/i/teamlogos/nba/500/hou.png",
+          "width": 500,
+          "height": 500,
+          "alt": "",
+          "rel": [
+            "full",
+            "default"
+          ]
+        },
+        {
+          "href": "https://a.espncdn.com/i/teamlogos/nba/500-dark/hou.png",
+          "width": 500,
+          "height": 500,
+          "alt": "",
+          "rel": [
+            "full",
+            "dark"
+          ]
+        },
+        {
+          "href": "https://a.espncdn.com/i/teamlogos/nba/500/scoreboard/hou.png",
+          "width": 500,
+          "height": 500,
+          "alt": "",
+          "rel": [
+            "full",
+            "scoreboard"
+          ]
+        },
+        {
+          "href": "https://a.espncdn.com/i/teamlogos/nba/500-dark/scoreboard/hou.png",
+          "width": 500,
+          "height": 500,
+          "alt": "",
+          "rel": [
+            "full",
+            "scoreboard",
+            "dark"
+          ]
+        }
+      ],
+      "links": [
+        {
+          "language": "en-US",
+          "rel": [
+            "clubhouse",
+            "desktop",
+            "team"
+          ],
+          "href": "https://www.espn.com/nba/team/_/name/hou/houston-rockets",
+          "text": "Clubhouse",
+          "shortText": "Clubhouse",
+          "isExternal": false,
+          "isPremium": false
+        }
+      ]
+    }
+  },
+  {
+    "date": "2021-05-07T07:00Z",
+    "description": "Signed G Khyri Thomas to a 10-day contract.",
+    "team": {
+      "id": "10",
+      "location": "Houston",
+      "name": "Rockets",
+      "abbreviation": "HOU",
+      "displayName": "Houston Rockets",
+      "color": "D40026",
+      "alternateColor": "c4ced3",
+      "logos": [
+        {
+          "href": "https://a.espncdn.com/i/teamlogos/nba/500/hou.png",
+          "width": 500,
+          "height": 500,
+          "alt": "",
+          "rel": [
+            "full",
+            "default"
+          ]
+        },
+        {
+          "href": "https://a.espncdn.com/i/teamlogos/nba/500-dark/hou.png",
+          "width": 500,
+          "height": 500,
+          "alt": "",
+          "rel": [
+            "full",
+            "dark"
+          ]
+        },
+        {
+          "href": "https://a.espncdn.com/i/teamlogos/nba/500/scoreboard/hou.png",
+          "width": 500,
+          "height": 500,
+          "alt": "",
+          "rel": [
+            "full",
+            "scoreboard"
+          ]
+        },
+        {
+          "href": "https://a.espncdn.com/i/teamlogos/nba/500-dark/scoreboard/hou.png",
+          "width": 500,
+          "height": 500,
+          "alt": "",
+          "rel": [
+            "full",
+            "scoreboard",
+            "dark"
+          ]
+        }
+      ],
+      "links": [
+        {
+          "language": "en-US",
+          "rel": [
+            "clubhouse",
+            "desktop",
+            "team"
+          ],
+          "href": "https://www.espn.com/nba/team/_/name/hou/houston-rockets",
+          "text": "Clubhouse",
+          "shortText": "Clubhouse",
+          "isExternal": false,
+          "isPremium": false
+        }
+      ]
+    }
+  },
+  {
+    "date": "2021-05-07T07:00Z",
+    "description": "Signed F Naji Marshall to a remainder-of-the season contract.",
+    "team": {
+      "id": "3",
+      "location": "New Orleans",
+      "name": "Pelicans",
+      "abbreviation": "NO",
+      "displayName": "New Orleans Pelicans",
+      "color": "002a5c",
+      "alternateColor": "b4975a",
+      "logos": [
+        {
+          "href": "https://a.espncdn.com/i/teamlogos/nba/500/no.png",
+          "width": 500,
+          "height": 500,
+          "alt": "",
+          "rel": [
+            "full",
+            "default"
+          ]
+        },
+        {
+          "href": "https://a.espncdn.com/i/teamlogos/nba/500-dark/no.png",
+          "width": 500,
+          "height": 500,
+          "alt": "",
+          "rel": [
+            "full",
+            "dark"
+          ]
+        },
+        {
+          "href": "https://a.espncdn.com/i/teamlogos/nba/500/scoreboard/no.png",
+          "width": 500,
+          "height": 500,
+          "alt": "",
+          "rel": [
+            "full",
+            "scoreboard"
+          ]
+        },
+        {
+          "href": "https://a.espncdn.com/i/teamlogos/nba/500-dark/scoreboard/no.png",
+          "width": 500,
+          "height": 500,
+          "alt": "",
+          "rel": [
+            "full",
+            "scoreboard",
+            "dark"
+          ]
+        }
+      ],
+      "links": [
+        {
+          "language": "en-US",
+          "rel": [
+            "clubhouse",
+            "desktop",
+            "team"
+          ],
+          "href": "https://www.espn.com/nba/team/_/name/no/new-orleans-pelicans",
+          "text": "Clubhouse",
+          "shortText": "Clubhouse",
+          "isExternal": false,
+          "isPremium": false
+        }
+      ]
+    }
+  },
+  {
+    "date": "2021-05-05T07:00Z",
+    "description": "Signed G Charlie Brown.",
+    "team": {
+      "id": "25",
+      "location": "Oklahoma City",
+      "name": "Thunder",
+      "abbreviation": "OKC",
+      "displayName": "Oklahoma City Thunder",
+      "color": "C67C03",
+      "alternateColor": "f05133",
+      "logos": [
+        {
+          "href": "https://a.espncdn.com/i/teamlogos/nba/500/okc.png",
+          "width": 500,
+          "height": 500,
+          "alt": "",
+          "rel": [
+            "full",
+            "default"
+          ]
+        },
+        {
+          "href": "https://a.espncdn.com/i/teamlogos/nba/500-dark/okc.png",
+          "width": 500,
+          "height": 500,
+          "alt": "",
+          "rel": [
+            "full",
+            "dark"
+          ]
+        },
+        {
+          "href": "https://a.espncdn.com/i/teamlogos/nba/500/scoreboard/okc.png",
+          "width": 500,
+          "height": 500,
+          "alt": "",
+          "rel": [
+            "full",
+            "scoreboard"
+          ]
+        },
+        {
+          "href": "https://a.espncdn.com/i/teamlogos/nba/500-dark/scoreboard/okc.png",
+          "width": 500,
+          "height": 500,
+          "alt": "",
+          "rel": [
+            "full",
+            "scoreboard",
+            "dark"
+          ]
+        }
+      ],
+      "links": [
+        {
+          "language": "en-US",
+          "rel": [
+            "clubhouse",
+            "desktop",
+            "team"
+          ],
+          "href": "https://www.espn.com/nba/team/_/name/okc/oklahoma-city-thunder",
+          "text": "Clubhouse",
+          "shortText": "Clubhouse",
+          "isExternal": false,
+          "isPremium": false
+        }
+      ]
+    }
+  },
+  {
+    "date": "2021-05-04T07:00Z",
+    "description": "Signed G Sindarius Thornwell to a two-way contract. Waived G Devin Cannady.",
+    "team": {
+      "id": "19",
+      "location": "Orlando",
+      "name": "Magic",
+      "abbreviation": "ORL",
+      "displayName": "Orlando Magic",
+      "color": "0860A8",
+      "alternateColor": "c4ced3",
+      "logos": [
+        {
+          "href": "https://a.espncdn.com/i/teamlogos/nba/500/orl.png",
+          "width": 500,
+          "height": 500,
+          "alt": "",
+          "rel": [
+            "full",
+            "default"
+          ]
+        },
+        {
+          "href": "https://a.espncdn.com/i/teamlogos/nba/500-dark/orl.png",
+          "width": 500,
+          "height": 500,
+          "alt": "",
+          "rel": [
+            "full",
+            "dark"
+          ]
+        },
+        {
+          "href": "https://a.espncdn.com/i/teamlogos/nba/500/scoreboard/orl.png",
+          "width": 500,
+          "height": 500,
+          "alt": "",
+          "rel": [
+            "full",
+            "scoreboard"
+          ]
+        },
+        {
+          "href": "https://a.espncdn.com/i/teamlogos/nba/500-dark/scoreboard/orl.png",
+          "width": 500,
+          "height": 500,
+          "alt": "",
+          "rel": [
+            "full",
+            "scoreboard",
+            "dark"
+          ]
+        }
+      ],
+      "links": [
+        {
+          "language": "en-US",
+          "rel": [
+            "clubhouse",
+            "desktop",
+            "team"
+          ],
+          "href": "https://www.espn.com/nba/team/_/name/orl/orlando-magic",
+          "text": "Clubhouse",
+          "shortText": "Clubhouse",
+          "isExternal": false,
+          "isPremium": false
+        }
+      ]
+    }
+  },
+  {
+    "date": "2021-05-04T07:00Z",
+    "description": "Signed F Anderson Varejo to a 10-day contract.",
+    "team": {
+      "id": "5",
+      "location": "Cleveland",
+      "name": "Cavaliers",
+      "abbreviation": "CLE",
+      "displayName": "Cleveland Cavaliers",
+      "color": "061642",
+      "alternateColor": "fdbb30",
+      "logos": [
+        {
+          "href": "https://a.espncdn.com/i/teamlogos/nba/500/cle.png",
+          "width": 500,
+          "height": 500,
+          "alt": "",
+          "rel": [
+            "full",
+            "default"
+          ]
+        },
+        {
+          "href": "https://a.espncdn.com/i/teamlogos/nba/500-dark/cle.png",
+          "width": 500,
+          "height": 500,
+          "alt": "",
+          "rel": [
+            "full",
+            "dark"
+          ]
+        },
+        {
+          "href": "https://a.espncdn.com/i/teamlogos/nba/500/scoreboard/cle.png",
+          "width": 500,
+          "height": 500,
+          "alt": "",
+          "rel": [
+            "full",
+            "scoreboard"
+          ]
+        },
+        {
+          "href": "https://a.espncdn.com/i/teamlogos/nba/500-dark/scoreboard/cle.png",
+          "width": 500,
+          "height": 500,
+          "alt": "",
+          "rel": [
+            "full",
+            "scoreboard",
+            "dark"
+          ]
+        }
+      ],
+      "links": [
+        {
+          "language": "en-US",
+          "rel": [
+            "clubhouse",
+            "desktop",
+            "team"
+          ],
+          "href": "https://www.espn.com/nba/team/_/name/cle/cleveland-cavaliers",
+          "text": "Clubhouse",
+          "shortText": "Clubhouse",
+          "isExternal": false,
+          "isPremium": false
+        }
+      ]
+    }
+  },
+  {
+    "date": "2021-05-03T07:00Z",
+    "description": "Signed G Jared Harper to a two-way contract.",
+    "team": {
+      "id": "18",
+      "location": "New York",
+      "name": "Knicks",
+      "abbreviation": "NY",
+      "displayName": "New York Knicks",
+      "color": "225EA8",
+      "alternateColor": "f58426",
+      "logos": [
+        {
+          "href": "https://a.espncdn.com/i/teamlogos/nba/500/ny.png",
+          "width": 500,
+          "height": 500,
+          "alt": "",
+          "rel": [
+            "full",
+            "default"
+          ]
+        },
+        {
+          "href": "https://a.espncdn.com/i/teamlogos/nba/500-dark/ny.png",
+          "width": 500,
+          "height": 500,
+          "alt": "",
+          "rel": [
+            "full",
+            "dark"
+          ]
+        },
+        {
+          "href": "https://a.espncdn.com/i/teamlogos/nba/500/scoreboard/ny.png",
+          "width": 500,
+          "height": 500,
+          "alt": "",
+          "rel": [
+            "full",
+            "scoreboard"
+          ]
+        },
+        {
+          "href": "https://a.espncdn.com/i/teamlogos/nba/500-dark/scoreboard/ny.png",
+          "width": 500,
+          "height": 500,
+          "alt": "",
+          "rel": [
+            "full",
+            "scoreboard",
+            "dark"
+          ]
+        }
+      ],
+      "links": [
+        {
+          "language": "en-US",
+          "rel": [
+            "clubhouse",
+            "desktop",
+            "team"
+          ],
+          "href": "https://www.espn.com/nba/team/_/name/ny/new-york-knicks",
+          "text": "Clubhouse",
+          "shortText": "Clubhouse",
+          "isExternal": false,
+          "isPremium": false
+        }
+      ]
+    }
+  },
+  {
+    "date": "2021-05-03T07:00Z",
+    "description": "Signed G Mike James to a 10-day contract.",
+    "team": {
+      "id": "17",
+      "location": "Brooklyn",
+      "name": "Nets",
+      "abbreviation": "BKN",
+      "displayName": "Brooklyn Nets",
+      "color": "000000",
+      "alternateColor": "ffffff",
+      "logos": [
+        {
+          "href": "https://a.espncdn.com/i/teamlogos/nba/500/bkn.png",
+          "width": 500,
+          "height": 500,
+          "alt": "",
+          "rel": [
+            "full",
+            "default"
+          ]
+        },
+        {
+          "href": "https://a.espncdn.com/i/teamlogos/nba/500-dark/bkn.png",
+          "width": 500,
+          "height": 500,
+          "alt": "",
+          "rel": [
+            "full",
+            "dark"
+          ]
+        },
+        {
+          "href": "https://a.espncdn.com/i/teamlogos/nba/500/scoreboard/bkn.png",
+          "width": 500,
+          "height": 500,
+          "alt": "",
+          "rel": [
+            "full",
+            "scoreboard"
+          ]
+        },
+        {
+          "href": "https://a.espncdn.com/i/teamlogos/nba/500-dark/scoreboard/bkn.png",
+          "width": 500,
+          "height": 500,
+          "alt": "",
+          "rel": [
+            "full",
+            "scoreboard",
+            "dark"
+          ]
+        }
+      ],
+      "links": [
+        {
+          "language": "en-US",
+          "rel": [
+            "clubhouse",
+            "desktop",
+            "team"
+          ],
+          "href": "https://www.espn.com/nba/team/_/name/bkn/brooklyn-nets",
+          "text": "Clubhouse",
+          "shortText": "Clubhouse",
+          "isExternal": false,
+          "isPremium": false
+        }
+      ]
+    }
+  },
+  {
+    "date": "2021-05-01T07:00Z",
+    "description": "Signed F Mfiondu Kabengele for the remainder of the season.",
+    "team": {
+      "id": "5",
+      "location": "Cleveland",
+      "name": "Cavaliers",
+      "abbreviation": "CLE",
+      "displayName": "Cleveland Cavaliers",
+      "color": "061642",
+      "alternateColor": "fdbb30",
+      "logos": [
+        {
+          "href": "https://a.espncdn.com/i/teamlogos/nba/500/cle.png",
+          "width": 500,
+          "height": 500,
+          "alt": "",
+          "rel": [
+            "full",
+            "default"
+          ]
+        },
+        {
+          "href": "https://a.espncdn.com/i/teamlogos/nba/500-dark/cle.png",
+          "width": 500,
+          "height": 500,
+          "alt": "",
+          "rel": [
+            "full",
+            "dark"
+          ]
+        },
+        {
+          "href": "https://a.espncdn.com/i/teamlogos/nba/500/scoreboard/cle.png",
+          "width": 500,
+          "height": 500,
+          "alt": "",
+          "rel": [
+            "full",
+            "scoreboard"
+          ]
+        },
+        {
+          "href": "https://a.espncdn.com/i/teamlogos/nba/500-dark/scoreboard/cle.png",
+          "width": 500,
+          "height": 500,
+          "alt": "",
+          "rel": [
+            "full",
+            "scoreboard",
+            "dark"
+          ]
+        }
+      ],
+      "links": [
+        {
+          "language": "en-US",
+          "rel": [
+            "clubhouse",
+            "desktop",
+            "team"
+          ],
+          "href": "https://www.espn.com/nba/team/_/name/cle/cleveland-cavaliers",
+          "text": "Clubhouse",
+          "shortText": "Clubhouse",
+          "isExternal": false,
+          "isPremium": false
+        }
+      ]
+    }
+  }
+]

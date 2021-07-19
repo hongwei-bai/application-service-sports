@@ -15,54 +15,61 @@ import org.springframework.web.bind.annotation.RestController
 @RestController
 @RequestMapping("/nba")
 class NbaController {
-    @Autowired
-    private lateinit var nbaService: NbaService
+	@Autowired
+	private lateinit var nbaService: NbaService
 
-    @Autowired
-    private lateinit var nbaThemeService: NbaThemeService
+	@Autowired
+	private lateinit var nbaThemeService: NbaThemeService
 
-    @Autowired
-    private lateinit var nbaPostSeasonService: NbaPostSeasonService
+	@Autowired
+	private lateinit var nbaPostSeasonService: NbaPostSeasonService
 
-    @GetMapping(path = ["/teamSchedule.do"])
-    @ResponseBody
-    fun getTeamSchedule(team: String, dataVersion: Long): ResponseEntity<*> =
-            nbaService.getScheduleByTeam(team, dataVersion)?.let {
-                ResponseEntity.ok(it)
-            } ?: throw ResetContent
+	@GetMapping(path = ["/teamSchedule.do"])
+	@ResponseBody
+	fun getTeamSchedule(team: String, dataVersion: Long): ResponseEntity<*> =
+		nbaService.getScheduleByTeam(team, dataVersion)?.let {
+			ResponseEntity.ok(it)
+		} ?: throw ResetContent
 
-    @GetMapping(path = ["/standing.do"])
-    @ResponseBody
-    fun getStanding(dataVersion: Long): ResponseEntity<*> =
-            nbaService.getStanding(dataVersion)?.let {
-                ResponseEntity.ok(it)
-            } ?: throw ResetContent
+	@GetMapping(path = ["/standing.do"])
+	@ResponseBody
+	fun getStanding(dataVersion: Long): ResponseEntity<*> =
+		nbaService.getStanding(dataVersion)?.let {
+			ResponseEntity.ok(it)
+		} ?: throw ResetContent
 
-    @GetMapping(path = ["/schedule.do"])
-    @ResponseBody
-    fun getFullSchedule(dataVersion: Long): ResponseEntity<*> =
-            nbaService.getFullSchedule(dataVersion)?.let {
-                ResponseEntity.ok(it)
-            } ?: throw ResetContent
+	@GetMapping(path = ["/schedule.do"])
+	@ResponseBody
+	fun getFullSchedule(dataVersion: Long): ResponseEntity<*> =
+		nbaService.getFullSchedule(dataVersion)?.let {
+			ResponseEntity.ok(it)
+		} ?: throw ResetContent
 
-    @GetMapping(path = ["/postSeason.do"])
-    @ResponseBody
-    fun getPlayOff(dataVersion: Long): ResponseEntity<*> =
-            nbaPostSeasonService.getPostSeason(dataVersion)?.let {
-                ResponseEntity.ok(it)
-            } ?: throw InternalServerError
+	@GetMapping(path = ["/postSeason.do"])
+	@ResponseBody
+	fun getPlayOff(dataVersion: Long): ResponseEntity<*> =
+		nbaPostSeasonService.getPostSeason(dataVersion)?.let {
+			ResponseEntity.ok(it)
+		} ?: throw InternalServerError
 
-    @GetMapping(path = ["/seasonStatus.do"])
-    @ResponseBody
-    fun getSeasonStatus(): ResponseEntity<*> =
-            nbaPostSeasonService.getSeasonStatus()?.let {
-                ResponseEntity.ok(it)
-            } ?: throw InternalServerError
+	@GetMapping(path = ["/seasonStatus.do"])
+	@ResponseBody
+	fun getSeasonStatus(): ResponseEntity<*> =
+		nbaPostSeasonService.getSeasonStatus()?.let {
+			ResponseEntity.ok(it)
+		} ?: throw InternalServerError
 
-    @GetMapping(path = ["/teamTheme.do"])
-    @ResponseBody
-    fun getTeamTheme(team: String, dataVersion: Long): ResponseEntity<*> =
-            nbaThemeService.getTeamTheme(team, dataVersion)?.let {
-                ResponseEntity.ok(it)
-            } ?: throw ResetContent
+	@GetMapping(path = ["/transactions.do"])
+	@ResponseBody
+	fun getTransactions(dataVersion: Long): ResponseEntity<*> =
+		nbaService.getTransactions(dataVersion)?.let {
+			ResponseEntity.ok(it)
+		} ?: throw ResetContent
+
+	@GetMapping(path = ["/teamTheme.do"])
+	@ResponseBody
+	fun getTeamTheme(team: String, dataVersion: Long): ResponseEntity<*> =
+		nbaThemeService.getTeamTheme(team, dataVersion)?.let {
+			ResponseEntity.ok(it)
+		} ?: throw ResetContent
 }

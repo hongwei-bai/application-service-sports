@@ -11,8 +11,8 @@ import org.springframework.web.bind.annotation.RestController
 
 @RestController
 @RequestMapping("/hub/soccer")
-class StatHubSoccerController {
-    private val logger: Logger = LogManager.getLogger(StatHubSoccerController::class.java)
+class SoccerHubController {
+    private val logger: Logger = LogManager.getLogger(SoccerHubController::class.java)
 
     @Autowired
     private lateinit var soccerAnalysisService: SoccerAnalysisService

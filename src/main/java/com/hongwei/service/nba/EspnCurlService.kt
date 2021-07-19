@@ -17,6 +17,8 @@ class EspnCurlService {
 
     fun getStanding(): Document? = CUrlWrapper.curl(Endpoints.Espn.STANDING)
 
+    fun getTransactions(): Document? = CUrlWrapper.curl(Endpoints.Espn.TRANSACTIONS)
+
     fun getTeamList(): List<String> = TEAMS.toList()
 
     fun getTeamScheduleJson(curlDoc: String): String? {
@@ -36,6 +38,15 @@ class EspnCurlService {
         return curlDoc.substring(index0, index1).trim().substringBeforeLast(",").replace(TEAM_DETAIL_START, "").trim()
     }
 
+    fun getTransactionsJson(curlDoc: String): String? {
+        val index0 = curlDoc.indexOf(TRANSACTIONS_START_EXCLUDE)
+        val index1 = curlDoc.indexOf(TRANSACTIONS_END_EXCLUDE)
+        if (index0 > 0 && index1 > 0) {
+            return curlDoc.substring(index0 + TRANSACTIONS_START_EXCLUDE.length, index1 - 1)
+        }
+        return null
+    }
+
     fun getTeamScheduleCurlDoc(teamShort: String): String = CUrlWrapper.curl(EspnNbaScheduleQuery(teamShort).build()).toString()
 
     fun getPlayedPlayInTeamScheduleCurlDoc(teamShort: String): String = CUrlWrapper.curl(EspnNbaScheduleQuery(teamShort).playIn().build()).toString()
@@ -46,6 +57,9 @@ class EspnCurlService {
 
         private const val TEAM_DETAIL_START = "\"team\":"
         private const val TEAM_DETAIL_END_EXCLUDE = "\"groups\":"
+
+        private const val TRANSACTIONS_START_EXCLUDE = "\"transactions\":"
+        private const val TRANSACTIONS_END_EXCLUDE = "\"requestParams\":"
 
         val TEAMS = arrayOf(
                 "atl",

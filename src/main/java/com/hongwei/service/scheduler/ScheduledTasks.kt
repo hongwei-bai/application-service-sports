@@ -1,8 +1,7 @@
 package com.hongwei.service.scheduler
 
 import com.hongwei.constants.Constants.TimeZone.SYDNEY
-import com.hongwei.controller.StatHubNbaScheduleController
-import com.hongwei.controller.StatHubNbaStandingController
+import com.hongwei.controller.NbaHubController
 import com.hongwei.model.nba.EventType
 import com.hongwei.service.nba.NbaAnalysisService
 import com.hongwei.service.soccer.SoccerAnalysisService
@@ -18,10 +17,7 @@ class ScheduledTasks {
     private val logger: Logger = LogManager.getLogger(ScheduledTasks::class.java)
 
     @Autowired
-    private lateinit var statHubNbaStandingController: StatHubNbaStandingController
-
-    @Autowired
-    private lateinit var statHubNbaScheduleController: StatHubNbaScheduleController
+    private lateinit var nbaHubController: NbaHubController
 
     @Autowired
     private lateinit var nbaAnalysisService: NbaAnalysisService
@@ -56,14 +52,14 @@ class ScheduledTasks {
                 when (nbaAnalysisService.doAnalysisSeasonStatus()) {
                     EventType.PreSeason,
                     EventType.Season -> {
-                        statHubNbaStandingController.generateEspnStandingDb()
+                        nbaHubController.generateEspnStandingDb()
                     }
                     else -> null
                 }
 
 
                 Thread.sleep(1000 * 30)
-                statHubNbaScheduleController.generateEspnAllTeamSchedule()
+                nbaHubController.generateEspnAllTeamSchedule()
 
                 Thread.sleep(1000 * 300)
                 when (nbaAnalysisService.doAnalysisSeasonStatus()) {
