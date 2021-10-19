@@ -1,0 +1,202 @@
+{
+  "team": {
+    "id": "9",
+    "abbrev": "GS",
+    "displayName": "Golden State Warriors",
+    "shortDisplayName": "Warriors",
+    "logo": "https://a.espncdn.com/i/teamlogos/nba/500/gs.png",
+    "teamColor": "003da5",
+    "altColor": "fdb927",
+    "uid": "s:40~l:46~t:9",
+    "recordSummary": "0-0",
+    "standingSummary": "1st in Pacific Division",
+    "location": "Golden State",
+    "links": "/nba/team/_/name/gs/golden-state-warriors"
+  },
+  "groups": {
+    "id": "4",
+    "parent": {
+      "id": "6"
+    },
+    "isConference": false
+  },
+  "parsedTeams": [
+    {
+      "label": "More NBA Teams",
+      "hidden": true
+    },
+    {
+      "id": "1",
+      "value": "1",
+      "label": "Atlanta Hawks",
+      "paramValue": "atl"
+    },
+    {
+      "id": "2",
+      "value": "2",
+      "label": "Boston Celtics",
+      "paramValue": "bos"
+    },
+    {
+      "id": "17",
+      "value": "17",
+      "label": "Brooklyn Nets",
+      "paramValue": "bkn"
+    },
+    {
+      "id": "30",
+      "value": "30",
+      "label": "Charlotte Hornets",
+      "paramValue": "cha"
+    },
+    {
+      "id": "4",
+      "value": "4",
+      "label": "Chicago Bulls",
+      "paramValue": "chi"
+    },
+    {
+      "id": "5",
+      "value": "5",
+      "label": "Cleveland Cavaliers",
+      "paramValue": "cle"
+    },
+    {
+      "id": "6",
+      "value": "6",
+      "label": "Dallas Mavericks",
+      "paramValue": "dal"
+    },
+    {
+      "id": "7",
+      "value": "7",
+      "label": "Denver Nuggets",
+      "paramValue": "den"
+    },
+    {
+      "id": "8",
+      "value": "8",
+      "label": "Detroit Pistons",
+      "paramValue": "det"
+    },
+    {
+      "id": "10",
+      "value": "10",
+      "label": "Houston Rockets",
+      "paramValue": "hou"
+    },
+    {
+      "id": "11",
+      "value": "11",
+      "label": "Indiana Pacers",
+      "paramValue": "ind"
+    },
+    {
+      "id": "12",
+      "value": "12",
+      "label": "LA Clippers",
+      "paramValue": "lac"
+    },
+    {
+      "id": "13",
+      "value": "13",
+      "label": "Los Angeles Lakers",
+      "paramValue": "lal"
+    },
+    {
+      "id": "29",
+      "value": "29",
+      "label": "Memphis Grizzlies",
+      "paramValue": "mem"
+    },
+    {
+      "id": "14",
+      "value": "14",
+      "label": "Miami Heat",
+      "paramValue": "mia"
+    },
+    {
+      "id": "15",
+      "value": "15",
+      "label": "Milwaukee Bucks",
+      "paramValue": "mil"
+    },
+    {
+      "id": "16",
+      "value": "16",
+      "label": "Minnesota Timberwolves",
+      "paramValue": "min"
+    },
+    {
+      "id": "3",
+      "value": "3",
+      "label": "New Orleans Pelicans",
+      "paramValue": "no"
+    },
+    {
+      "id": "18",
+      "value": "18",
+      "label": "New York Knicks",
+      "paramValue": "ny"
+    },
+    {
+      "id": "25",
+      "value": "25",
+      "label": "Oklahoma City Thunder",
+      "paramValue": "okc"
+    },
+    {
+      "id": "19",
+      "value": "19",
+      "label": "Orlando Magic",
+      "paramValue": "orl"
+    },
+    {
+      "id": "20",
+      "value": "20",
+      "label": "Philadelphia 76ers",
+      "paramValue": "phi"
+    },
+    {
+      "id": "21",
+      "value": "21",
+      "label": "Phoenix Suns",
+      "paramValue": "phx"
+    },
+    {
+      "id": "22",
+      "value": "22",
+      "label": "Portland Trail Blazers",
+      "paramValue": "por"
+    },
+    {
+      "id": "23",
+      "value": "23",
+      "label": "Sacramento Kings",
+      "paramValue": "sac"
+    },
+    {
+      "id": "24",
+      "value": "24",
+      "label": "San Antonio Spurs",
+      "paramValue": "sa"
+    },
+    {
+      "id": "28",
+      "value": "28",
+      "label": "Toronto Raptors",
+      "paramValue": "tor"
+    },
+    {
+      "id": "26",
+      "value": "26",
+      "label": "Utah Jazz",
+      "paramValue": "utah"
+    },
+    {
+      "id": "27",
+      "value": "27",
+      "label": "Washington Wizards",
+      "paramValue": "wsh"
+    }
+  ]

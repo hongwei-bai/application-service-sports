@@ -4,9 +4,9 @@ import com.fasterxml.jackson.databind.DeserializationFeature
 import com.fasterxml.jackson.databind.ObjectMapper
 import com.fasterxml.jackson.module.kotlin.KotlinModule
 import com.hongwei.constants.Constants
-import com.hongwei.model.nba.theme.NbaTeamTheme
-import com.hongwei.model.nba.theme.NbaTeamThemeJson
-import com.hongwei.model.nba.theme.NbaTeamThemeMapper
+import com.hongwei.model.nba.theme_v1.NbaTeamTheme
+import com.hongwei.model.nba.theme_v1.NbaTeamThemeJson
+import com.hongwei.model.nba.theme_v1.NbaTeamThemeMapper
 import org.apache.log4j.LogManager
 import org.apache.log4j.Logger
 import org.springframework.beans.factory.annotation.Value

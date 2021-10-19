@@ -1,4 +1,4 @@
-package com.hongwei.model.nba.theme
+package com.hongwei.model.nba.theme_v1
 
 object NbaTeamThemeMapper {
     fun map(teamThemeJson: NbaTeamThemeJson, team: String): NbaTeamTheme? = null
