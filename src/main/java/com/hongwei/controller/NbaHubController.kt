@@ -36,6 +36,9 @@ class NbaHubController {
     @Autowired
     private lateinit var espnStandingParseService: EspnStandingParseService
 
+    @Autowired
+    private lateinit var nbaThemeService: NbaThemeService
+
     @GetMapping(path = ["/test.do"])
     @ResponseBody
     fun test(url: String): ResponseEntity<*> = statCurlService.curl(url)?.let {
@@ -86,18 +89,25 @@ class NbaHubController {
     @GetMapping(path = ["/espnStanding.do"])
     @ResponseBody
     fun getEspnStanding(): ResponseEntity<*> {
-        val standingData = espnStandingParseService.parseStanding(
-                statCurlService.getStanding()!!)
+        val standingData = statCurlService.getStanding()?.let { standingHtmlDocument ->
+            espnStandingParseService.parseStanding(standingHtmlDocument)
+        }
         return ResponseEntity.ok(Gson().toJson(standingData))
     }
 
     @PutMapping(path = ["/espnStanding.do"])
     @ResponseBody
     fun generateEspnStandingDb(): ResponseEntity<*> {
-        val standingData = espnStandingParseService.parseStanding(
-                statCurlService.getStanding()!!)
-        standingData?.let {
-            dbWriterService.writeStanding(it)
+        statCurlService.getStanding()?.let { standingHtmlDocument ->
+            val standingData = espnStandingParseService.parseStanding(standingHtmlDocument)
+            standingData?.let {
+                val teamDetailDb = nbaThemeService.getAllTeamDetail()
+                if (teamDetailDb.isNotEmpty()) {
+                    dbWriterService.writeStanding(teamDetailDb, it)
+                } else {
+                    logger.info("generateEspnStandingDb, no team details found, you may need to generate teamSchedule first.")
+                }
+            }
         }
         return ResponseEntity.ok(null)
     }

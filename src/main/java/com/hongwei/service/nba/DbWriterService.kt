@@ -3,6 +3,7 @@ package com.hongwei.service.nba
 import com.hongwei.model.jpa.nba.*
 import com.hongwei.model.nba.Event
 import com.hongwei.model.nba.Standing
+import com.hongwei.model.nba.TeamDetail
 import com.hongwei.model.nba.espn.mapper.StandingMapper
 import com.hongwei.model.nba.espn.StandingSource
 import org.apache.log4j.LogManager
@@ -26,8 +27,8 @@ class DbWriterService {
     @Autowired
     private lateinit var nbaScheduleRepository: NbaScheduleRepository
 
-    fun writeStanding(jsonObj: StandingSource) {
-        val data: Standing = StandingMapper.map(jsonObj)
+    fun writeStanding(teamDetailMap: Map<String, NbaTeamDetailEntity>, jsonObj: StandingSource) {
+        val data: Standing = StandingMapper.map(teamDetailMap, jsonObj)
         val lastStandingRecordInDb: NbaStandingEntity? = nbaStandingRepository.findLatestStandings()?.firstOrNull()
         if (data.dataVersion != lastStandingRecordInDb?.dataVersion) {
             val entity = NbaStandingEntity(

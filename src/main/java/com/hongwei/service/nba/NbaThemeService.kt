@@ -5,7 +5,6 @@ import com.fasterxml.jackson.databind.ObjectMapper
 import com.fasterxml.jackson.module.kotlin.KotlinModule
 import com.hongwei.constants.Constants
 import com.hongwei.constants.Constants.AppDataPath.NBA_DATA_PATH
-import com.hongwei.model.jpa.nba.NbaStandingEntity
 import com.hongwei.model.jpa.nba.NbaTeamDetailEntity
 import com.hongwei.model.jpa.nba.NbaTeamDetailRepository
 import com.hongwei.model.nba.TeamDetail
@@ -47,5 +46,13 @@ class NbaThemeService {
         return entity?.let {
             TeamDetailMapper.map(entity)
         }
+    }
+
+    @Throws(IOException::class)
+    fun getAllTeamDetail(): Map<String, NbaTeamDetailEntity> {
+        val list = nbaTeamDetailRepository.findAllTeamDetail()
+        return list.map {
+            it.team to it
+        }.toMap()
     }
 }

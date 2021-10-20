@@ -10,6 +10,9 @@ interface NbaTeamDetailRepository : JpaRepository<NbaTeamDetailEntity?, String?>
     @Query("from NbaTeamDetailEntity entity where entity.team=:team")
     fun findTeamDetail(@Param("team") team: String?): NbaTeamDetailEntity?
 
+    @Query("from NbaTeamDetailEntity entity")
+    fun findAllTeamDetail(): List<NbaTeamDetailEntity>
+
     @Transactional
     @Modifying
     @Query("delete from NbaTeamDetailEntity entity where entity.team=:team")

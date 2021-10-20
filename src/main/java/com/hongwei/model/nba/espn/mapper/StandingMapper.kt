@@ -1,29 +1,32 @@
 package com.hongwei.model.nba.espn.mapper
 
+import com.hongwei.model.jpa.nba.NbaTeamDetailEntity
 import com.hongwei.model.nba.Standing
 import com.hongwei.model.nba.TeamStanding
 import com.hongwei.model.nba.espn.StandingSource
 import com.hongwei.model.nba.espn.TeamStandingSource
 
 object StandingMapper {
-    fun map(standingSource: StandingSource): Standing = Standing(
+    fun map(teamDetailMap: Map<String, NbaTeamDetailEntity>, standingSource: StandingSource): Standing = Standing(
             dataVersion = standingSource.dataVersion ?: 0,
             western = mutableListOf<TeamStanding>().apply {
                 standingSource.westernConference.teams.forEachIndexed { i, teamStandingSource ->
-                    add(mapTeamStandingData(i, teamStandingSource))
+                    add(mapTeamStandingData(i, teamDetailMap[teamStandingSource.abbr.toLowerCase()], teamStandingSource))
                 }
             },
             eastern = mutableListOf<TeamStanding>().apply {
                 standingSource.easternConference.teams.forEachIndexed { i, teamStandingSource ->
-                    add(mapTeamStandingData(i, teamStandingSource))
+                    add(mapTeamStandingData(i, teamDetailMap[teamStandingSource.abbr.toLowerCase()], teamStandingSource))
                 }
             }
     )
 
-    private fun mapTeamStandingData(i: Int, teamStandingSource: TeamStandingSource): TeamStanding = TeamStanding(
+    private fun mapTeamStandingData(i: Int, team: NbaTeamDetailEntity?, teamStandingSource: TeamStandingSource): TeamStanding = TeamStanding(
             rank = teamStandingSource.rank.toIntOrNull() ?: (i + 1),
             teamAbbr = teamStandingSource.abbr.toLowerCase(),
             teamName = teamStandingSource.displayName,
+            teamLogo = team?.logo ?: "",
+            teamLocation = team?.location ?: "",
             wins = teamStandingSource.detail[0].toInt(),
             losses = teamStandingSource.detail[1].toInt(),
             pct = teamStandingSource.detail[2].toDouble(),
@@ -41,12 +44,12 @@ object StandingMapper {
 
     private fun parseStreakString(streakString: String): Pair<String, Int> {
         val winOrLose = streakString.substring(0, 1)
-        val number = streakString.replace(winOrLose, "").toInt()
+        val number = streakString.replace(winOrLose, "").toIntOrNull() ?: 0
         return Pair(winOrLose, number)
     }
 
     private fun parseRecordString(recordString: String): Pair<Int, Int> {
         val numbers = recordString.split("-")
-        return Pair(numbers[0].toInt(), numbers[1].toInt())
+        return Pair(numbers[0].toIntOrNull() ?: 0, numbers[1].toIntOrNull() ?: 0)
     }
 }

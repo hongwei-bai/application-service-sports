@@ -10,6 +10,8 @@ data class TeamStanding(
         val rank: Int,
         val teamAbbr: String,
         val teamName: String,
+        val teamLogo: String,
+        val teamLocation: String,
         val wins: Int,
         val losses: Int,
         val pct: Double,
