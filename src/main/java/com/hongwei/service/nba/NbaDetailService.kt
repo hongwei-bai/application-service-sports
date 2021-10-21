@@ -21,8 +21,8 @@ import java.io.File
 import java.io.IOException
 
 @Service
-class NbaThemeService {
-    private val logger: Logger = LogManager.getLogger(NbaThemeService::class.java)
+class NbaDetailService {
+    private val logger: Logger = LogManager.getLogger(NbaDetailService::class.java)
 
     @Value("\${appdata.dataPath}")
     private lateinit var appDataPath: String

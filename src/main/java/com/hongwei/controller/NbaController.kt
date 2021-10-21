@@ -4,7 +4,7 @@ import com.hongwei.constants.InternalServerError
 import com.hongwei.constants.ResetContent
 import com.hongwei.service.nba.NbaPostSeasonService
 import com.hongwei.service.nba.NbaService
-import com.hongwei.service.nba.NbaThemeService
+import com.hongwei.service.nba.NbaDetailService
 import org.springframework.beans.factory.annotation.Autowired
 import org.springframework.http.ResponseEntity
 import org.springframework.web.bind.annotation.GetMapping
@@ -19,7 +19,7 @@ class NbaController {
     private lateinit var nbaService: NbaService
 
     @Autowired
-    private lateinit var nbaThemeService: NbaThemeService
+    private lateinit var nbaDetailService: NbaDetailService
 
     @Autowired
     private lateinit var nbaPostSeasonService: NbaPostSeasonService
@@ -70,14 +70,14 @@ class NbaController {
     @GetMapping(path = ["/teamTheme.do"])
     @ResponseBody
     fun getTeamTheme(team: String, dataVersion: Long): ResponseEntity<*> =
-            nbaThemeService.getTeamTheme(team, dataVersion)?.let {
+            nbaDetailService.getTeamTheme(team, dataVersion)?.let {
                 ResponseEntity.ok(it)
             } ?: throw ResetContent
 
     @GetMapping(path = ["/teamDetail.do"])
     @ResponseBody
     fun getTeamTheme(team: String): ResponseEntity<*> =
-            nbaThemeService.getTeamDetail(team)?.let {
+            nbaDetailService.getTeamDetail(team)?.let {
                 ResponseEntity.ok(it)
             } ?: throw ResetContent
 }

@@ -5,6 +5,8 @@ import com.hongwei.controller.NbaHubController
 import com.hongwei.model.nba.EventType
 import com.hongwei.service.nba.NbaAnalysisService
 import com.hongwei.service.soccer.SoccerAnalysisService
+import kotlinx.coroutines.delay
+import kotlinx.coroutines.runBlocking
 import org.apache.log4j.LogManager
 import org.apache.log4j.Logger
 import org.springframework.beans.factory.annotation.Autowired
@@ -33,7 +35,7 @@ class ScheduledTasks {
         val sydTime = Calendar.getInstance(TimeZone.getTimeZone(SYDNEY))
         val hour = sydTime.get(Calendar.HOUR_OF_DAY)
 
-        Thread {
+        runBlocking {
             if (SoccerHoursUpdate.contains(hour)) {
                 if (!initialized) {
                     initializeOnce()
@@ -43,7 +45,7 @@ class ScheduledTasks {
                     }
                 }
             }
-            Thread.sleep(1000 * 300)
+            delay(1000 * 300)
             soccerAnalysisService.getQueryingTeams().forEach { teamDetail ->
                 soccerAnalysisService.fetchTeamSchedules(teamDetail.id)
             }
@@ -58,10 +60,10 @@ class ScheduledTasks {
                 }
 
 
-                Thread.sleep(1000 * 30)
+                delay(1000 * 30)
                 nbaHubController.generateEspnAllTeamSchedule()
 
-                Thread.sleep(1000 * 300)
+                delay(1000 * 300)
                 when (nbaAnalysisService.doAnalysisSeasonStatus()) {
                     EventType.PlayIn,
                     EventType.PlayOffRound1,
@@ -73,9 +75,10 @@ class ScheduledTasks {
                     else -> null
                 }
 
-                Thread.sleep(1000 * 300)
+                delay(1000 * 300)
+                nbaAnalysisService.saveTransactions()
             }
-        }.start()
+        }
     }
 
     private fun initializeOnce() {

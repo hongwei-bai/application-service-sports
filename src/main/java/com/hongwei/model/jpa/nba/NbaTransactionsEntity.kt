@@ -6,31 +6,33 @@ import javax.persistence.*
 
 @Entity
 data class NbaTransactionsEntity(
-	@Id @Column(nullable = false)
-	var dataVersion: Long = 0L,
+        @Id @Column(nullable = false)
+        var dataVersion: Long = 0L,
 
-	@Lob @Convert(converter = NbaTransactionListConverter::class) @Column(nullable = false)
-	val transactions: List<Transaction> = emptyList()
+        @Lob @Convert(converter = NbaTransactionListConverter::class) @Column(nullable = false)
+        val transactions: List<Transaction> = emptyList()
 ) {
-	override fun equals(other: Any?): Boolean {
-		if (this === other) return true
-		if (javaClass != other?.javaClass) return false
+    override fun equals(other: Any?): Boolean {
+        if (this === other) return true
+        if (javaClass != other?.javaClass) return false
 
-		other as NbaTransactionsEntity
+        other as NbaTransactionsEntity
 
-		if (transactions != other.transactions) return false
+        if (transactions != other.transactions) return false
 
-		return true
-	}
+        return true
+    }
 
-	override fun hashCode(): Int {
-		return transactions.hashCode()
-	}
+    override fun hashCode(): Int {
+        return transactions.hashCode()
+    }
 }
 
 @JsonIgnoreProperties
 data class Transaction(
-	val unixTimeStamp: Long,
-	val description: String,
-	val teamAbbr: String
+        val unixTimeStamp: Long,
+        val description: String,
+        val teamAbbr: String,
+        var teamDisplayName: String,
+        var teamLogo: String
 )

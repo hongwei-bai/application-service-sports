@@ -37,7 +37,7 @@ class NbaHubController {
     private lateinit var espnStandingParseService: EspnStandingParseService
 
     @Autowired
-    private lateinit var nbaThemeService: NbaThemeService
+    private lateinit var nbaDetailService: NbaDetailService
 
     @GetMapping(path = ["/test.do"])
     @ResponseBody
@@ -101,7 +101,7 @@ class NbaHubController {
         statCurlService.getStanding()?.let { standingHtmlDocument ->
             val standingData = espnStandingParseService.parseStanding(standingHtmlDocument)
             standingData?.let {
-                val teamDetailDb = nbaThemeService.getAllTeamDetail()
+                val teamDetailDb = nbaDetailService.getAllTeamDetail()
                 if (teamDetailDb.isNotEmpty()) {
                     dbWriterService.writeStanding(teamDetailDb, it)
                 } else {
@@ -114,7 +114,7 @@ class NbaHubController {
 
     @PutMapping(path = ["/espnTransactions.do"])
     @ResponseBody
-    fun getEspnTransactions(): ResponseEntity<*> =
+    fun generateEspnTransactions(): ResponseEntity<*> =
             nbaAnalysisService.saveTransactions()?.let {
                 ResponseEntity.ok(it)
             } ?: throw ResetContent
