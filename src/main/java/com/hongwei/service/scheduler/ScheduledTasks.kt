@@ -5,14 +5,14 @@ import com.hongwei.controller.NbaHubController
 import com.hongwei.model.nba.EventType
 import com.hongwei.service.nba.NbaAnalysisService
 import com.hongwei.service.soccer.SoccerAnalysisService
-import kotlinx.coroutines.delay
-import kotlinx.coroutines.runBlocking
+import kotlinx.coroutines.*
 import org.apache.log4j.LogManager
 import org.apache.log4j.Logger
 import org.springframework.beans.factory.annotation.Autowired
 import org.springframework.scheduling.annotation.Scheduled
 import org.springframework.stereotype.Component
 import java.util.*
+import java.util.concurrent.Executors
 
 @Component
 class ScheduledTasks {
@@ -27,6 +27,8 @@ class ScheduledTasks {
     @Autowired
     private lateinit var soccerAnalysisService: SoccerAnalysisService
 
+    private val dispatcher = Executors.newFixedThreadPool(4).asCoroutineDispatcher()
+
     private var initialized = false
 
     // 60 mins : 60 min x 60 s x 1000 ms = 1,800,000, For copy:3600000
@@ -35,49 +37,74 @@ class ScheduledTasks {
         val sydTime = Calendar.getInstance(TimeZone.getTimeZone(SYDNEY))
         val hour = sydTime.get(Calendar.HOUR_OF_DAY)
 
-        runBlocking {
-            if (SoccerHoursUpdate.contains(hour)) {
-                if (!initialized) {
-                    initializeOnce()
-                } else {
-                    soccerAnalysisService.getQueryingLeagues().forEach { league ->
-                        soccerAnalysisService.fetchStandings(league)
+        logger.debug("scheduler - reportCurrentTime, hour: $hour")
+        runBlocking(dispatcher) {
+            val jobSoccer = async {
+                logger.debug("scheduler - runBlocking, contained in soccer hours: ${SoccerHoursUpdate.contains(hour)}")
+                if (SoccerHoursUpdate.contains(hour)) {
+                    if (!initialized) {
+                        logger.info("scheduler - initializeOnce for soccer")
+                        initializeOnce()
+                    } else {
+                        logger.info("scheduler - soccer getQueryingLeagues")
+                        soccerAnalysisService.getQueryingLeagues().forEach { league ->
+                            soccerAnalysisService.fetchStandings(league)
+                        }
                     }
+                    delay(1000 * 10)
+                    val teams = soccerAnalysisService.getQueryingTeams()
+                    logger.debug("scheduler - soccer start fetchTeamSchedules...")
+                    teams.forEach { teamDetail ->
+                        soccerAnalysisService.fetchTeamSchedules(teamDetail.id)
+                    }
+                    logger.info("scheduler - soccer finish fetchTeamSchedules - ${teams.size} teams")
                 }
             }
-            delay(1000 * 300)
-            soccerAnalysisService.getQueryingTeams().forEach { teamDetail ->
-                soccerAnalysisService.fetchTeamSchedules(teamDetail.id)
-            }
 
-            if (NBAHoursUpdate.contains(hour)) {
-                when (nbaAnalysisService.doAnalysisSeasonStatus()) {
-                    EventType.PreSeason,
-                    EventType.Season -> {
-                        nbaHubController.generateEspnStandingDb()
-                    }
-                    else -> null
-                }
-
-
+            val jobNba = async {
                 delay(1000 * 30)
-                nbaHubController.generateEspnAllTeamSchedule()
-
-                delay(1000 * 300)
-                when (nbaAnalysisService.doAnalysisSeasonStatus()) {
-                    EventType.PlayIn,
-                    EventType.PlayOffRound1,
-                    EventType.PlayOffRound2,
-                    EventType.PlayOffConferenceFinal,
-                    EventType.PlayOffGrandFinal -> {
-                        nbaAnalysisService.doAnalysisPostSeason()
+                logger.debug("scheduler - runBlocking, contained in NBA hours: ${NBAHoursUpdate.contains(hour)}")
+                if (NBAHoursUpdate.contains(hour)) {
+                    logger.info("schedule for NBA, available hours")
+                    val seasonStatus = nbaAnalysisService.doAnalysisSeasonStatus()
+                    logger.debug("schedule for NBA, seasonStatus: $seasonStatus")
+                    when (seasonStatus) {
+                        EventType.PreSeason,
+                        EventType.Season -> {
+                            logger.debug("schedule for NBA, start generateEspnStandingDb...")
+                            nbaHubController.generateEspnStandingDb()
+                        }
+                        else -> null
                     }
-                    else -> null
-                }
 
-                delay(1000 * 300)
-                nbaAnalysisService.saveTransactions()
+                    delay(1000 * 30)
+                    logger.debug("schedule for NBA, start generateEspnAllTeamSchedule...")
+                    nbaHubController.generateEspnAllTeamSchedule()
+                    logger.debug("schedule for NBA, finish generateEspnAllTeamSchedule")
+
+                    delay(1000 * 30)
+                    when (seasonStatus) {
+                        EventType.PlayIn,
+                        EventType.PlayOffRound1,
+                        EventType.PlayOffRound2,
+                        EventType.PlayOffConferenceFinal,
+                        EventType.PlayOffGrandFinal -> {
+                            logger.debug("schedule for NBA, start doAnalysisPostSeason...")
+                            nbaAnalysisService.doAnalysisPostSeason()
+                            logger.debug("schedule for NBA, finish doAnalysisPostSeason")
+                        }
+                        else -> null
+                    }
+
+                    delay(1000 * 30)
+                    logger.debug("schedule for NBA, start saveTransactions...")
+                    nbaAnalysisService.saveTransactions()
+                    logger.info("schedule for NBA, finish saveTransactions")
+                }
             }
+
+            jobSoccer.start()
+            jobNba.start()
         }
     }
 
@@ -87,7 +114,7 @@ class ScheduledTasks {
     }
 
     companion object {
-        val NBAHoursUpdate = listOf(4, 16)
+        val NBAHoursUpdate = listOf(4, 12, 16)
 
         val SoccerHoursUpdate = listOf(7, 20)
     }
