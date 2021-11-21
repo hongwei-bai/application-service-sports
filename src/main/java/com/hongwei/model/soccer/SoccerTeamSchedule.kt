@@ -26,7 +26,7 @@ data class SoccerEventTeam(
         val teamId: Long,
         val abbrev: String,
         val displayName: String,
-        val logo: String,
+        val logo: String?,
         val location: String,
         val isHome: Boolean,
         val score: Int,
