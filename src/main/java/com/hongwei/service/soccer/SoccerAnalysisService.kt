@@ -9,6 +9,7 @@ import com.hongwei.model.soccer.espn.SoccerTeamScheduleSource
 import com.hongwei.model.soccer.espn.mapper.SoccerDetailMapper
 import com.hongwei.model.soccer.espn.mapper.SoccerStandingMapper
 import com.hongwei.model.soccer.espn.mapper.SoccerTeamScheduleMapper
+import com.hongwei.util.DateTimeUtil
 import com.hongwei.util.TeamColorUtil.convertColorHexStringToLong
 import org.apache.log4j.LogManager
 import org.apache.log4j.Logger
@@ -41,7 +42,8 @@ class SoccerAnalysisService {
     private lateinit var bbcSoccerParseService: BbcSoccerParseService
 
     fun fetchChampionLeagueSchedules(): BbcSoccerChampionLeagueSource? {
-        val doc = bbcSoccerCurlService.getSchedule()
+        val currentYearMonth = DateTimeUtil.getCurrentYearMonth()
+        val doc = bbcSoccerCurlService.getSchedule(currentYearMonth.first, currentYearMonth.second)
         val jsonString = bbcSoccerParseService.parseMonthSchedule(doc)
         return Gson().fromJson(jsonString, BbcSoccerChampionLeagueSource::class.java)
     }
