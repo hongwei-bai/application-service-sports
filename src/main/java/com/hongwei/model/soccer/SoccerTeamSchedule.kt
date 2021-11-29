@@ -11,14 +11,16 @@ data class SoccerTeamSchedule(
 
 data class SoccerTeamEvent(
         val competitors: List<SoccerEventTeam>,
-        val dateGMTString: String,
         val unixTimeStamp: Long?,
-        val tbd: Boolean,
         val completed: Boolean,
         val league: String,
         val broadcasts: List<String> = emptyList(),
-        val isHomeTeamWin: Boolean? = null,
+        val result: SoccerResultEnum? = null,
         val scoreDisplay: String?,
+        val otScore: String? = null,
+        val penaltyScore: String? = null,
+        val aggregateScore: String? = null,
+        val winner: String? = null,
         val venue: SoccerTeamVenue?
 )
 
@@ -29,7 +31,6 @@ data class SoccerEventTeam(
         val logo: String?,
         val location: String,
         val isHome: Boolean,
-        val score: Int,
         val winner: Boolean?
 )
 

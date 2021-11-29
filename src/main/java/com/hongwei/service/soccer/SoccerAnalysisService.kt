@@ -51,6 +51,7 @@ class SoccerAnalysisService {
     fun fetchTeamSchedules(teamId: Long): SoccerTeamScheduleEntity? {
         addQueryTeam(teamId)
         val teamFixturesSource = fetchTeamFixtures(teamId)
+        logger.debug(teamFixturesSource)
         val entityDb = soccerTeamScheduleRepository.findTeamSchedule(teamId)
         val teamDetail = soccerTeamDetailRepository.findTeamDetailById(teamId)
         if (teamDetail != null) {

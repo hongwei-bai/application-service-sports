@@ -22,6 +22,7 @@ data class SoccerTeamEventSource(
         val completed: Boolean,
         val league: String,
         val broadcasts: List<SoccerBroadcastSource>?,
+        val notes: String,
         val score: String?,
         val status: SoccerEventStatusSource?,
         val venue: SoccerVenueSource?
@@ -59,7 +60,6 @@ data class SoccerCompetitorSource(
         val location: String,
         val links: String,
         val isHome: Boolean,
-        val score: Int,
         val winner: Boolean? = false
 )
 
