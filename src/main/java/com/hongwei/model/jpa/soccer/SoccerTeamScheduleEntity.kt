@@ -19,6 +19,12 @@ data class SoccerTeamScheduleEntity(
         var teamDisplayName: String = "",
 
         @Column(nullable = false)
+        var logo: String = "",
+
+        @Column(nullable = false)
+        var location: String = "",
+
+        @Column(nullable = false)
         var league: String = "",
 
         @Lob

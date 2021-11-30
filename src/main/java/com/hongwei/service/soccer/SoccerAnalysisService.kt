@@ -55,7 +55,7 @@ class SoccerAnalysisService {
         val entityDb = soccerTeamScheduleRepository.findTeamSchedule(teamId)
         val teamDetail = soccerTeamDetailRepository.findTeamDetailById(teamId)
         if (teamDetail != null) {
-            val fixturesEntity = SoccerTeamScheduleMapper.map(teamDetail.league, teamFixturesSource)
+            val fixturesEntity = SoccerTeamScheduleMapper.map(teamDetail, teamFixturesSource)
             if (entityDb?.events != fixturesEntity?.events) {
                 val finishedEventsSource = mutableListOf<SoccerTeamEventSource>()
                 teamFixturesSource?.run {
@@ -64,7 +64,7 @@ class SoccerAnalysisService {
                         fetchTeamResults(teamId, league)?.events?.let { finishedEventsSource.addAll(it) }
                     }
                 }
-                val fullEntity = SoccerTeamScheduleMapper.map(teamDetail.league, teamFixturesSource, finishedEventsSource)
+                val fullEntity = SoccerTeamScheduleMapper.map(teamDetail, teamFixturesSource, finishedEventsSource)
                 if (fullEntity != null && fullEntity.finishedEvents.isNotEmpty() && entityDb?.finishedEvents != fullEntity.finishedEvents) {
                     soccerTeamScheduleRepository.save(fullEntity)
                     return fullEntity

@@ -1,5 +1,6 @@
 package com.hongwei.model.soccer.espn.mapper
 
+import com.hongwei.model.jpa.soccer.SoccerTeamDetailEntity
 import com.hongwei.model.jpa.soccer.SoccerTeamScheduleEntity
 import com.hongwei.model.soccer.*
 import com.hongwei.model.soccer.espn.SoccerCompetitorSource
@@ -14,42 +15,44 @@ object SoccerTeamScheduleMapper {
             SoccerTeamSchedule(
                     dataVersion = entity.dataVersion,
                     teamId = entity.teamId,
-                    teamAbbr = entity.teamAbbr,
+                    teamAbbr = entity.teamAbbr.toLowerCase(),
                     teamDisplayName = entity.teamDisplayName,
+                    logo = entity.logo,
+                    location = entity.location,
                     league = entity.league,
                     events = listOf(entity.events, entity.finishedEvents).flatten().sortedByDescending { it.unixTimeStamp }
             )
 
-    fun map(league: String, fixturesSource: SoccerTeamScheduleSource?, resultSourceList: List<SoccerTeamEventSource>? = null): SoccerTeamScheduleEntity? =
+    fun map(team: SoccerTeamDetailEntity, fixturesSource: SoccerTeamScheduleSource?, resultSourceList: List<SoccerTeamEventSource>? = null): SoccerTeamScheduleEntity? =
             fixturesSource?.let {
                 SoccerTeamScheduleEntity(
                         teamId = fixturesSource.team.id,
                         dataVersion = TimeStampUtil.getTimeVersionWithMinute(),
-                        teamAbbr = fixturesSource.team.abbrev,
+                        teamAbbr = fixturesSource.team.abbrev.toLowerCase(),
                         teamDisplayName = fixturesSource.team.displayName,
-                        league = league,
+                        logo = team.logo,
+                        location = team.location,
+                        league = team.league,
                         events = fixturesSource.events.map {
-                            mapTeamEvent(it)
+                            mapTeamEvent(team.team, it)
                         },
                         finishedEvents = resultSourceList?.map {
-                            mapTeamEvent(it)
+                            mapTeamEvent(team.team, it)
                         }?.sortedByDescending { it.unixTimeStamp }
                                 ?: emptyList()
                 )
             }
 
-    private fun mapEventTeam(eventSource: SoccerCompetitorSource): SoccerEventTeam =
-            SoccerEventTeam(
+    private fun mapTeam(eventSource: SoccerCompetitorSource): SoccerTeam =
+            SoccerTeam(
                     teamId = eventSource.id,
-                    abbrev = eventSource.abbrev,
+                    abbrev = eventSource.abbrev.toLowerCase(),
                     displayName = eventSource.displayName,
                     logo = eventSource.logo,
-                    location = eventSource.location,
-                    isHome = eventSource.isHome,
-                    winner = eventSource.winner
+                    location = eventSource.location
             )
 
-    private fun mapTeamEvent(eventSource: SoccerTeamEventSource): SoccerTeamEvent {
+    private fun mapTeamEvent(myTeamAbbr: String, eventSource: SoccerTeamEventSource): SoccerTeamEvent {
         var resultEnum: SoccerResultEnum? = null
         var winner: String? = null
         var ftScore: String? = null
@@ -101,17 +104,25 @@ object SoccerTeamScheduleMapper {
             else -> Unit
         }
 
+        val myTeam = eventSource.competitors.first { it.abbrev.toLowerCase() == myTeamAbbr }
+        val opponent = eventSource.competitors.first { it.abbrev.toLowerCase() != myTeamAbbr }
+        val homeEnum: SoccerHomeEnum = when {
+            myTeam.isHome -> SoccerHomeEnum.Home
+            opponent.isHome -> SoccerHomeEnum.Away
+            else -> SoccerHomeEnum.Neutral
+        }
         return SoccerTeamEvent(
-                competitors = eventSource.competitors.map { mapEventTeam(it) },
+                opponent = mapTeam(opponent),
                 unixTimeStamp = parseDate(eventSource.date)?.time,
+                homeAway = homeEnum,
                 completed = eventSource.completed,
                 league = eventSource.league,
                 broadcasts = eventSource.broadcasts?.map { it.name } ?: emptyList(),
                 result = resultEnum,
-                scoreDisplay = ftScore,
+                score = ftScore,
                 penaltyScore = penaltyScore,
                 aggregateScore = aggregateScore,
-                winner = winner,
+                winner = winner?.toLowerCase(),
                 venue = eventSource.venue?.let {
                     SoccerTeamVenue(
                             venue = it.fullName,
@@ -132,8 +143,8 @@ object SoccerTeamScheduleMapper {
     }
 
     private fun getWinner(eventSource: SoccerTeamEventSource) = when {
-        eventSource.notes.contains(eventSource.competitors.first().displayName) -> eventSource.competitors.first().abbrev
-        eventSource.notes.contains(eventSource.competitors.last().displayName) -> eventSource.competitors.last().abbrev
+        eventSource.notes.contains(eventSource.competitors.first().displayName) -> eventSource.competitors.first().abbrev.toLowerCase()
+        eventSource.notes.contains(eventSource.competitors.last().displayName) -> eventSource.competitors.last().abbrev.toLowerCase()
         else -> null
     }
 
