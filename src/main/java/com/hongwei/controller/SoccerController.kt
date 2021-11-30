@@ -18,4 +18,9 @@ class SoccerController {
     @ResponseBody
     fun getStandings(league: String, dataVersion: Long): ResponseEntity<*> =
             ResponseEntity.ok(soccerLeagueService.getStandings(league, dataVersion))
+
+    @GetMapping(path = ["/teamSchedule.do"])
+    @ResponseBody
+    fun getTeamSchedule(team: String, dataVersion: Long): ResponseEntity<*> =
+            ResponseEntity.ok(soccerLeagueService.getTeamSchedule(team, dataVersion))
 }

@@ -1,10 +1,7 @@
 package com.hongwei.model.soccer.espn.mapper
 
 import com.hongwei.model.jpa.soccer.SoccerTeamScheduleEntity
-import com.hongwei.model.soccer.SoccerEventTeam
-import com.hongwei.model.soccer.SoccerResultEnum
-import com.hongwei.model.soccer.SoccerTeamEvent
-import com.hongwei.model.soccer.SoccerTeamVenue
+import com.hongwei.model.soccer.*
 import com.hongwei.model.soccer.espn.SoccerCompetitorSource
 import com.hongwei.model.soccer.espn.SoccerTeamEventSource
 import com.hongwei.model.soccer.espn.SoccerTeamScheduleSource
@@ -13,6 +10,16 @@ import com.hongwei.util.TimeStampUtil
 import java.util.regex.Pattern
 
 object SoccerTeamScheduleMapper {
+    fun mapToResponseBody(entity: SoccerTeamScheduleEntity): SoccerTeamSchedule =
+            SoccerTeamSchedule(
+                    dataVersion = entity.dataVersion,
+                    teamId = entity.teamId,
+                    teamAbbr = entity.teamAbbr,
+                    teamDisplayName = entity.teamDisplayName,
+                    league = entity.league,
+                    events = listOf(entity.events, entity.finishedEvents).flatten().sortedByDescending { it.unixTimeStamp }
+            )
+
     fun map(league: String, fixturesSource: SoccerTeamScheduleSource?, resultSourceList: List<SoccerTeamEventSource>? = null): SoccerTeamScheduleEntity? =
             fixturesSource?.let {
                 SoccerTeamScheduleEntity(
@@ -43,28 +50,28 @@ object SoccerTeamScheduleMapper {
             )
 
     private fun mapTeamEvent(eventSource: SoccerTeamEventSource): SoccerTeamEvent {
-        var resultEnum: SoccerResultEnum = SoccerResultEnum.FT
+        var resultEnum: SoccerResultEnum? = null
         var winner: String? = null
         var ftScore: String? = null
         var penaltyScore: String? = null
         var aggregateScore: String? = null
-        println(">>>>>> notes: ${eventSource.notes}")
         when {
             eventSource.notes.isEmpty() -> {
                 if (eventSource.score?.isNotEmpty() == true) {
                     ftScore = eventSource.score.replace(" ", "")
                     val scoreArray = eventSource.score.split("-")
-                    val homeScore = scoreArray.first().toIntOrNull() ?: 0
-                    val guestScore = scoreArray.last().toIntOrNull() ?: 0
-                    println(">>>>>> str: ${eventSource.score} ==> $homeScore - $guestScore")
+                    val homeScore = scoreArray.first().trim().toIntOrNull() ?: 0
+                    val guestScore = scoreArray.last().trim().toIntOrNull() ?: 0
                     when {
                         homeScore == guestScore -> {
                             resultEnum = SoccerResultEnum.Tie
                         }
                         homeScore > guestScore -> {
+                            resultEnum = SoccerResultEnum.FT
                             winner = eventSource.competitors.first { it.isHome }.abbrev
                         }
                         else -> {
+                            resultEnum = SoccerResultEnum.FT
                             winner = eventSource.competitors.first { !it.isHome }.abbrev
                         }
                     }
@@ -128,11 +135,6 @@ object SoccerTeamScheduleMapper {
         eventSource.notes.contains(eventSource.competitors.first().displayName) -> eventSource.competitors.first().abbrev
         eventSource.notes.contains(eventSource.competitors.last().displayName) -> eventSource.competitors.last().abbrev
         else -> null
-    }
-
-    private fun getWinnerFromScore(score: String, eventSource: SoccerTeamEventSource) {
-
-
     }
 
     private const val FIRST_LEG = "1st Leg"
