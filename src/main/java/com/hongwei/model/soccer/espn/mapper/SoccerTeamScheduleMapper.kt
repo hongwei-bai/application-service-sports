@@ -33,10 +33,10 @@ object SoccerTeamScheduleMapper {
                         logo = team.logo,
                         location = team.location,
                         league = team.league,
-                        events = fixturesSource.events.map {
+                        events = fixturesSource.events.mapNotNull {
                             mapTeamEvent(team.team, it)
                         },
-                        finishedEvents = resultSourceList?.map {
+                        finishedEvents = resultSourceList?.mapNotNull {
                             mapTeamEvent(team.team, it)
                         }?.sortedByDescending { it.unixTimeStamp }
                                 ?: emptyList()
@@ -52,7 +52,7 @@ object SoccerTeamScheduleMapper {
                     location = eventSource.location
             )
 
-    private fun mapTeamEvent(myTeamAbbr: String, eventSource: SoccerTeamEventSource): SoccerTeamEvent {
+    private fun mapTeamEvent(myTeamAbbr: String, eventSource: SoccerTeamEventSource): SoccerTeamEvent? {
         var resultEnum: SoccerResultEnum? = null
         var winner: String? = null
         var ftScore: String? = null
@@ -111,26 +111,28 @@ object SoccerTeamScheduleMapper {
             opponent.isHome -> SoccerHomeEnum.Away
             else -> SoccerHomeEnum.Neutral
         }
-        return SoccerTeamEvent(
-                opponent = mapTeam(opponent),
-                unixTimeStamp = parseDate(eventSource.date)?.time,
-                homeAway = homeEnum,
-                completed = eventSource.completed,
-                league = eventSource.league,
-                broadcasts = eventSource.broadcasts?.map { it.name } ?: emptyList(),
-                result = resultEnum,
-                score = ftScore,
-                penaltyScore = penaltyScore,
-                aggregateScore = aggregateScore,
-                winner = winner?.toLowerCase(),
-                venue = eventSource.venue?.let {
-                    SoccerTeamVenue(
-                            venue = it.fullName,
-                            city = it.address?.city,
-                            country = it.address?.country
-                    )
-                }
-        )
+        return parseDate(eventSource.date)?.time?.let { timeStamp ->
+            SoccerTeamEvent(
+                    opponent = mapTeam(opponent),
+                    unixTimeStamp = timeStamp,
+                    homeAway = homeEnum,
+                    completed = eventSource.completed,
+                    league = eventSource.league,
+                    broadcasts = eventSource.broadcasts?.map { it.name } ?: emptyList(),
+                    result = resultEnum,
+                    score = ftScore,
+                    penaltyScore = penaltyScore,
+                    aggregateScore = aggregateScore,
+                    winner = winner?.toLowerCase(),
+                    venue = eventSource.venue?.let {
+                        SoccerTeamVenue(
+                                venue = it.fullName,
+                                city = it.address?.city,
+                                country = it.address?.country
+                        )
+                    }
+            )
+        }
     }
 
     private fun parseScore(notes: String): String? {

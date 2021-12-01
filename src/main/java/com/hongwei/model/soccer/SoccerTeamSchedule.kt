@@ -13,7 +13,7 @@ data class SoccerTeamSchedule(
 
 data class SoccerTeamEvent(
         val opponent: SoccerTeam,
-        val unixTimeStamp: Long?,
+        val unixTimeStamp: Long,
         val homeAway: SoccerHomeEnum,
         val completed: Boolean,
         val league: String,
