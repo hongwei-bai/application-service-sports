@@ -58,10 +58,10 @@ class NbaHubController {
 
     @PutMapping(path = ["/espnAllTeamsSchedule.do"])
     @ResponseBody
-    fun generateEspnAllTeamSchedule(downloadLogo: Boolean = false): ResponseEntity<*> {
+    fun generateEspnAllTeamSchedule(downloadLogo: Boolean? = null): ResponseEntity<*> {
         val eventSet = mutableSetOf<Event>()
         TEAMS.forEach { team ->
-            mergeIntoList(eventSet, generateScheduleForEachTeam(team, downloadLogo))
+            mergeIntoList(eventSet, generateScheduleForEachTeam(team, downloadLogo ?: false))
         }
         eventSet.sortedByDescending { it.unixTimeStamp }
         val dataVersion = TimeStampUtil.getTimeVersionWithMinute()
@@ -126,7 +126,7 @@ class NbaHubController {
             nbaDetailService.downloadNbaTeamLogo(teamDetailSource.logo)
         }
         val teamDetailEntity: NbaTeamDetailEntity = TeamDetailMapper.map(teamDetailSource)
-        teamDetailEntity.logo = nbaDetailService.getNormalisedLogoUrl(teamDetailSource.logo)
+        teamDetailEntity.logo = nbaDetailService.getAppLogoUrl(teamDetailSource.logo)
         val teamScheduleSourceObj = statCurlService.getTeamScheduleJson(curlDoc)
 
         val teamScheduleEntity: NbaTeamScheduleEntity = teamScheduleSourceObj?.let {

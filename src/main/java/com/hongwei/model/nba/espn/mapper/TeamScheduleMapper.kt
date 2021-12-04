@@ -87,7 +87,7 @@ object TeamScheduleMapper {
                         opponent = Team(
                                 abbrev = EspnTeamMapper.mapLegacyTeamShort(it.opponent.abbrev),
                                 displayName = it.opponent.displayName,
-                                logo = nbaDetailService.getNormalisedLogoUrl(it.opponent.logo),
+                                logo = nbaDetailService.getAppLogoUrl(it.opponent.logo),
                                 location = it.opponent.location
                         ),
                         result = when (it.result.statusId.toIntOrNull()) {

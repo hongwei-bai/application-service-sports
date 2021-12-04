@@ -19,8 +19,8 @@ class SoccerHubController {
 
     @RequestMapping(path = ["/espnStanding.do"])
     @ResponseBody
-    fun generateEspnStanding(league: String): ResponseEntity<*> {
-        return ResponseEntity.ok(soccerAnalysisService.fetchStandings(league))
+    fun generateEspnStanding(league: String, downloadLogos: Boolean? = null): ResponseEntity<*> {
+        return ResponseEntity.ok(soccerAnalysisService.fetchStandings(league, downloadLogos ?: false))
     }
 
     @RequestMapping(path = ["/espnTeamSchedule.do"])

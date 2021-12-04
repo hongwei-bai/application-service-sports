@@ -5,6 +5,7 @@ import com.hongwei.model.soccer.espn.SoccerStandingSourceOutput
 import com.hongwei.model.soccer.espn.SoccerStandingTeamWrapSource
 import com.hongwei.model.soccer.SoccerStanding
 import com.hongwei.model.soccer.SoccerStandingStats
+import com.hongwei.service.soccer.SoccerConfigurationService
 
 object SoccerStandingMapper {
     fun mapToResponseBody(entity: SoccerStandingEntity): SoccerStanding =
@@ -15,22 +16,22 @@ object SoccerStandingMapper {
                     standings = entity.standings
             )
 
-    fun map(league: String, source: SoccerStandingSourceOutput): SoccerStandingEntity =
+    fun map(league: String, source: SoccerStandingSourceOutput, configurationService: SoccerConfigurationService): SoccerStandingEntity =
             SoccerStandingEntity(
                     league = league,
                     dataVersion = source.dataVersion,
                     leagueTitle = source.data.page.content.standings.groups.groups.firstOrNull()?.name ?: "",
                     standings = source.data.page.content.standings.groups.groups.firstOrNull()?.standings
-                            ?.map { mapStandingTeam(it) } ?: emptyList()
+                            ?.map { mapStandingTeam(it, configurationService) } ?: emptyList()
             )
 
-    private fun mapStandingTeam(source: SoccerStandingTeamWrapSource): SoccerStandingStats =
+    private fun mapStandingTeam(source: SoccerStandingTeamWrapSource, configurationService: SoccerConfigurationService): SoccerStandingStats =
             SoccerStandingStats(
                     teamId = source.team.id,
                     teamAbbr = source.team.abbrev.toLowerCase(),
                     displayName = source.team.displayName,
                     shortDisplayName = source.team.shortDisplayName,
-                    logo = source.team.logo,
+                    logo = configurationService.getAppLogoUrl(source.team.logo),
                     wins = source.stats[0].toInt(),
                     losses = source.stats[1].toInt(),
                     draws = source.stats[2].toInt(),

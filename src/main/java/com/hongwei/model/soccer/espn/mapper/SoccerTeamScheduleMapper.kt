@@ -6,6 +6,7 @@ import com.hongwei.model.soccer.*
 import com.hongwei.model.soccer.espn.SoccerCompetitorSource
 import com.hongwei.model.soccer.espn.SoccerTeamEventSource
 import com.hongwei.model.soccer.espn.SoccerTeamScheduleSource
+import com.hongwei.service.soccer.SoccerConfigurationService
 import com.hongwei.util.EspnDateTimeParseUtil.parseDate
 import com.hongwei.util.TimeStampUtil
 import java.util.regex.Pattern
@@ -23,7 +24,13 @@ object SoccerTeamScheduleMapper {
                     events = listOf(entity.events, entity.finishedEvents).flatten().sortedByDescending { it.unixTimeStamp }
             )
 
-    fun map(team: SoccerTeamDetailEntity, fixturesSource: SoccerTeamScheduleSource?, resultSourceList: List<SoccerTeamEventSource>? = null): SoccerTeamScheduleEntity? =
+    fun map(
+            team: SoccerTeamDetailEntity,
+            fixturesSource: SoccerTeamScheduleSource?,
+            teamsWithLogos: List<String>,
+            configurationService: SoccerConfigurationService,
+            resultSourceList: List<SoccerTeamEventSource>? = null
+    ): SoccerTeamScheduleEntity? =
             fixturesSource?.let {
                 SoccerTeamScheduleEntity(
                         teamId = fixturesSource.team.id,
@@ -34,25 +41,18 @@ object SoccerTeamScheduleMapper {
                         location = team.location,
                         league = team.league,
                         events = fixturesSource.events.mapNotNull {
-                            mapTeamEvent(team.team, it)
+                            mapTeamEvent(team.team, it, teamsWithLogos, configurationService)
                         },
                         finishedEvents = resultSourceList?.mapNotNull {
-                            mapTeamEvent(team.team, it)
+                            mapTeamEvent(team.team, it, teamsWithLogos, configurationService)
                         }?.sortedByDescending { it.unixTimeStamp }
                                 ?: emptyList()
                 )
             }
 
-    private fun mapTeam(eventSource: SoccerCompetitorSource): SoccerTeam =
-            SoccerTeam(
-                    teamId = eventSource.id,
-                    abbrev = eventSource.abbrev.toLowerCase(),
-                    displayName = eventSource.displayName,
-                    logo = eventSource.logo,
-                    location = eventSource.location
-            )
-
-    private fun mapTeamEvent(myTeamAbbr: String, eventSource: SoccerTeamEventSource): SoccerTeamEvent? {
+    private fun mapTeamEvent(myTeamAbbr: String, eventSource: SoccerTeamEventSource,
+                             teamsWithLogos: List<String>,
+                             configurationService: SoccerConfigurationService): SoccerTeamEvent? {
         var resultEnum: SoccerResultEnum? = null
         var winner: String? = null
         var ftScore: String? = null
@@ -111,9 +111,12 @@ object SoccerTeamScheduleMapper {
             opponent.isHome -> SoccerHomeEnum.Away
             else -> SoccerHomeEnum.Neutral
         }
+        if (!teamsWithLogos.contains(opponent.abbrev)) {
+            configurationService.downloadSoccerTeamLogo(opponent.logo)
+        }
         return parseDate(eventSource.date)?.time?.let { timeStamp ->
             SoccerTeamEvent(
-                    opponent = mapTeam(opponent),
+                    opponent = mapTeam(opponent, configurationService),
                     unixTimeStamp = timeStamp,
                     homeAway = homeEnum,
                     completed = eventSource.completed,
@@ -134,6 +137,15 @@ object SoccerTeamScheduleMapper {
             )
         }
     }
+
+    private fun mapTeam(eventSource: SoccerCompetitorSource, configurationService: SoccerConfigurationService): SoccerTeam =
+            SoccerTeam(
+                    teamId = eventSource.id,
+                    abbrev = eventSource.abbrev.toLowerCase(),
+                    displayName = eventSource.displayName,
+                    logo = configurationService.getAppLogoUrl(eventSource.logo),
+                    location = eventSource.location
+            )
 
     private fun parseScore(notes: String): String? {
         val pattern = Pattern.compile(PATTERN_SCORE)

@@ -11,6 +11,7 @@ import com.hongwei.model.soccer.espn.mapper.SoccerStandingMapper
 import com.hongwei.model.soccer.espn.mapper.SoccerTeamScheduleMapper
 import com.hongwei.util.DateTimeUtil
 import com.hongwei.util.TeamColorUtil.convertColorHexStringToLong
+import com.hongwei.util.WebImageDownloadUtil
 import org.apache.log4j.LogManager
 import org.apache.log4j.Logger
 import org.springframework.beans.factory.annotation.Autowired
@@ -36,6 +37,9 @@ class SoccerAnalysisService {
     private lateinit var soccerTeamScheduleRepository: SoccerTeamScheduleRepository
 
     @Autowired
+    private lateinit var soccerConfigurationService: SoccerConfigurationService
+
+    @Autowired
     private lateinit var bbcSoccerCurlService: BbcSoccerCurlService
 
     @Autowired
@@ -54,9 +58,11 @@ class SoccerAnalysisService {
         logger.debug(teamFixturesSource)
         val entityDb = soccerTeamScheduleRepository.findTeamSchedule(teamId)
         val teamDetail = soccerTeamDetailRepository.findTeamDetailById(teamId)
+        val allTeamAbbrs = soccerTeamDetailRepository.findAll().mapNotNull { it?.team }
         if (teamDetail != null) {
-            val fixturesEntity = SoccerTeamScheduleMapper.map(teamDetail, teamFixturesSource)
-            if (entityDb?.events != fixturesEntity?.events) {
+            val fixturesEventsCount = SoccerTeamScheduleMapper.map(teamDetail, teamFixturesSource,
+                    allTeamAbbrs, soccerConfigurationService)?.events?.size
+            if (entityDb == null || entityDb.events.size != fixturesEventsCount) {
                 val finishedEventsSource = mutableListOf<SoccerTeamEventSource>()
                 teamFixturesSource?.run {
                     updateTeamColor(teamId, teamFixturesSource)
@@ -64,7 +70,8 @@ class SoccerAnalysisService {
                         fetchTeamResults(teamId, league)?.events?.let { finishedEventsSource.addAll(it) }
                     }
                 }
-                val fullEntity = SoccerTeamScheduleMapper.map(teamDetail, teamFixturesSource, finishedEventsSource)
+                val fullEntity = SoccerTeamScheduleMapper.map(teamDetail, teamFixturesSource, allTeamAbbrs,
+                        soccerConfigurationService, finishedEventsSource)
                 if (fullEntity != null && fullEntity.finishedEvents.isNotEmpty() && entityDb?.finishedEvents != fullEntity.finishedEvents) {
                     soccerTeamScheduleRepository.save(fullEntity)
                     return fullEntity
@@ -74,18 +81,23 @@ class SoccerAnalysisService {
         return entityDb
     }
 
-    fun fetchStandings(league: String): SoccerStandingEntity? {
+    fun fetchStandings(league: String, downloadLogo: Boolean = false): SoccerStandingEntity {
         val jsonString = soccerParseService.parseStandingInfo(soccerCurlService.getStanding())
         val sourceObject = Gson().fromJson(jsonString, SoccerStandingSourceOutput::class.java)
 
         SoccerDetailMapper.map(league, sourceObject)?.forEach {
+            if (downloadLogo) {
+                soccerConfigurationService.downloadSoccerTeamLogo(it.logo)
+            }
+            val appLogo = soccerConfigurationService.getAppLogoUrl(it.logo)
             val teamDetailDb = soccerTeamDetailRepository.findTeamDetailById(it.id)
-            if (teamDetailDb == null) {
+            if (teamDetailDb == null || appLogo != it.logo) {
+                it.logo = appLogo
                 soccerTeamDetailRepository.save(it)
             }
         }
         val standingEntityDb = soccerStandingRepository.findStandings(league)
-        val standingEntity = SoccerStandingMapper.map(league, sourceObject)
+        val standingEntity = SoccerStandingMapper.map(league, sourceObject, soccerConfigurationService)
         if (standingEntityDb == standingEntity) {
             return standingEntityDb
         }
@@ -95,7 +107,7 @@ class SoccerAnalysisService {
 
     fun initializeLeagues(leagues: List<String> = DEFAULT_LEAGUES) {
         leagues.forEach { league ->
-            soccerStandingRepository.findStandings(league) ?: fetchStandings(league)
+            soccerStandingRepository.findStandings(league) ?: fetchStandings(league, true)
         }
     }
 

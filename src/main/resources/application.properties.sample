@@ -14,8 +14,8 @@ server.port=8081
 #Security
 jwt.authorizationHeader=Authorization
 jwt.authorizationBearer=Bearer
-jwt.secretPublic=Public2021
-appdata.imagePathUrl=https://hongwei-test1.top/appimg/
+jwt.secretPublic={public secret}
+appdata.imagePathUrl={domain name}/appimg/sports_v2/
 
 #Debug
 #jwt.corsAllowDomain=http://localhost:3944
@@ -28,6 +28,6 @@ appdata.imagePathUrl=https://hongwei-test1.top/appimg/
 #appdata.imagePath=D:/test/appimg/sports_v2/
 
 #Deployment
-jwt.corsAllowDomain=https://hongwei-test1.top
+jwt.corsAllowDomain={domain name}
 appdata.dataPath=/usr/share/app/
 appdata.imagePath=/usr/share/appimg/sports_v2/

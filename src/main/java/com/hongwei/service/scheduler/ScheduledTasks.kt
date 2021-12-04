@@ -52,7 +52,7 @@ class ScheduledTasks {
                     } else {
                         logger.info("scheduler - soccer getQueryingLeagues")
                         soccerAnalysisService.getQueryingLeagues().forEach { league ->
-                            soccerAnalysisService.fetchStandings(league)
+                            soccerAnalysisService.fetchStandings(league, downloadLogos)
                         }
                     }
                     delay(1000 * 10)

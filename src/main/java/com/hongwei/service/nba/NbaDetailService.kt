@@ -1,6 +1,7 @@
 package com.hongwei.service.nba
 
 import com.hongwei.constants.AppDataConfigurations
+import com.hongwei.constants.Constants.LogoPath.NBA
 import com.hongwei.model.jpa.nba.NbaTeamDetailEntity
 import com.hongwei.model.jpa.nba.NbaTeamDetailRepository
 import com.hongwei.model.nba.TeamDetail
@@ -27,7 +28,7 @@ class NbaDetailService {
     fun getTeamDetail(team: String): TeamDetail? {
         val entity = nbaTeamDetailRepository.findTeamDetail(team)
         return entity?.let {
-            entity.logo = getNormalisedLogoUrl(it.logo)
+            entity.logo = getAppLogoUrl(it.logo)
             TeamDetailMapper.map(entity)
         }
     }
@@ -42,14 +43,14 @@ class NbaDetailService {
 
     fun downloadNbaTeamLogo(logoUrl: String): String {
         val imageFileName = FileNameUtils.getFileName(logoUrl)
-        val destPath = "${appDataConfigurations.imagePath}/logo/nba/$imageFileName"
+        val destPath = "${appDataConfigurations.imagePath}$NBA$imageFileName"
         val downloadSuccess = WebImageDownloadUtil.downloadWebImage(logoUrl, destPath)
         if (!downloadSuccess) {
             logger.warn("downloadNbaTeamLogo failed, logoUrl: $logoUrl -> dest: $destPath")
         }
-        return "${appDataConfigurations.imagePathUrl}/logo/nba/$imageFileName"
+        return "${appDataConfigurations.imagePathUrl}$NBA$imageFileName"
     }
 
-    fun getNormalisedLogoUrl(logoUrl: String): String =
-            "${appDataConfigurations.imagePathUrl}/logo/nba/${FileNameUtils.getFileName(logoUrl)}"
+    fun getAppLogoUrl(logoUrl: String): String =
+            "${appDataConfigurations.imagePathUrl}$NBA${FileNameUtils.getFileName(logoUrl)}"
 }
