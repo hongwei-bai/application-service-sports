@@ -58,10 +58,10 @@ class NbaHubController {
 
     @PutMapping(path = ["/espnAllTeamsSchedule.do"])
     @ResponseBody
-    fun generateEspnAllTeamSchedule(): ResponseEntity<*> {
+    fun generateEspnAllTeamSchedule(downloadLogo: Boolean = false): ResponseEntity<*> {
         val eventSet = mutableSetOf<Event>()
         TEAMS.forEach { team ->
-            mergeIntoList(eventSet, generateScheduleForEachTeam(team))
+            mergeIntoList(eventSet, generateScheduleForEachTeam(team, downloadLogo))
         }
         eventSet.sortedByDescending { it.unixTimeStamp }
         val dataVersion = TimeStampUtil.getTimeVersionWithMinute()
@@ -119,15 +119,18 @@ class NbaHubController {
                 ResponseEntity.ok(it)
             } ?: throw ResetContent
 
-    private fun generateScheduleForEachTeam(team: String): List<Event> {
+    private fun generateScheduleForEachTeam(team: String, downloadLogo: Boolean = false): List<Event> {
         val curlDoc = statCurlService.getTeamScheduleCurlDoc(team)
-        val teamDetailEntity: NbaTeamDetailEntity = TeamDetailMapper.map(
-                Gson().fromJson(statCurlService.getTeamDetailJson(curlDoc), TeamDetailSource::class.java)
-        )
+        val teamDetailSource: TeamDetailSource = Gson().fromJson(statCurlService.getTeamDetailJson(curlDoc), TeamDetailSource::class.java)
+        if (downloadLogo) {
+            nbaDetailService.downloadNbaTeamLogo(teamDetailSource.logo)
+        }
+        val teamDetailEntity: NbaTeamDetailEntity = TeamDetailMapper.map(teamDetailSource)
+        teamDetailEntity.logo = nbaDetailService.getNormalisedLogoUrl(teamDetailSource.logo)
         val teamScheduleSourceObj = statCurlService.getTeamScheduleJson(curlDoc)
 
         val teamScheduleEntity: NbaTeamScheduleEntity = teamScheduleSourceObj?.let {
-            TeamScheduleMapper.map(team, Gson().fromJson(teamScheduleSourceObj, TeamScheduleSource::class.java))
+            TeamScheduleMapper.map(team, Gson().fromJson(teamScheduleSourceObj, TeamScheduleSource::class.java), nbaDetailService)
         } ?: NbaTeamScheduleEntity
                 .emptyEntity(team, TimeStampUtil.getTimeVersionWithMinute())
         dbWriterService.writeTeamDetail(teamDetailEntity)

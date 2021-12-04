@@ -15,15 +15,19 @@ server.port=8081
 jwt.authorizationHeader=Authorization
 jwt.authorizationBearer=Bearer
 jwt.secretPublic=Public2021
+appdata.imagePathUrl=https://hongwei-test1.top/appimg/
 
 #Debug
 #jwt.corsAllowDomain=http://localhost:3944
-#appdata.nbaPath=D:/test/app/nba_v1/
+#appdata.dataPath=D:/test/app/
+#appdata.imagePath=D:/test/appimg/sports_v2/
 
 #Debug with Tomcat Authentication application
 #jwt.corsAllowDomain=http://localhost:3944
-#appdata.nbaPath=D:/test/app/nba_v1/
+#appdata.dataPath=D:/test/app/
+#appdata.imagePath=D:/test/appimg/sports_v2/
 
 #Deployment
-jwt.corsAllowDomain=https://{domain name}
-appdata.nbaPath=/usr/share/app/nba_v1/
+jwt.corsAllowDomain=https://hongwei-test1.top
+appdata.dataPath=/usr/share/app/
+appdata.imagePath=/usr/share/appimg/sports_v2/

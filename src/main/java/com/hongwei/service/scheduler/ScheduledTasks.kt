@@ -35,9 +35,13 @@ class ScheduledTasks {
     @Scheduled(fixedRate = 3600000)
     fun reportCurrentTime() {
         val sydTime = Calendar.getInstance(TimeZone.getTimeZone(SYDNEY))
+        val dayOfMonth = sydTime.get(Calendar.DAY_OF_MONTH)
         val hour = sydTime.get(Calendar.HOUR_OF_DAY)
 
         logger.debug("scheduler - reportCurrentTime, hour: $hour")
+        val downloadLogos = !initialized || logoUpdateDayOfMonth.contains(dayOfMonth)
+        logger.debug("scheduler - downloadLogos flag: $downloadLogos")
+
         runBlocking(dispatcher) {
             val jobSoccer = async {
                 logger.debug("scheduler - runBlocking, contained in soccer hours: ${SoccerHoursUpdate.contains(hour)}")
@@ -79,7 +83,7 @@ class ScheduledTasks {
 
                     delay(1000 * 30)
                     logger.debug("schedule for NBA, start generateEspnAllTeamSchedule...")
-                    nbaHubController.generateEspnAllTeamSchedule()
+                    nbaHubController.generateEspnAllTeamSchedule(downloadLogos)
                     logger.debug("schedule for NBA, finish generateEspnAllTeamSchedule")
 
                     delay(1000 * 30)
@@ -117,5 +121,7 @@ class ScheduledTasks {
         val NBAHoursUpdate = listOf(4, 12, 16)
 
         val SoccerHoursUpdate = listOf(7, 20)
+
+        val logoUpdateDayOfMonth = listOf(1)
     }
 }

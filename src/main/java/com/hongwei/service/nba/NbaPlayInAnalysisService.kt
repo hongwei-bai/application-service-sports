@@ -25,6 +25,9 @@ class NbaPlayInAnalysisService {
     private lateinit var nbaPlayInRepository: NbaPlayInRepository
 
     @Autowired
+    private lateinit var nbaDetailService: NbaDetailService
+
+    @Autowired
     private lateinit var nbaCurlService: EspnCurlService
 
     // Pre-requests: Standing in db
@@ -76,7 +79,8 @@ class NbaPlayInAnalysisService {
             )
             val teamScheduleSourceObj = nbaCurlService.getTeamScheduleJson(doc)
             val teamScheduleEntity: NbaTeamScheduleEntity? = teamScheduleSourceObj?.let {
-                TeamScheduleMapper.map(playInTeam.teamAbbr, Gson().fromJson(teamScheduleSourceObj, TeamScheduleSource::class.java))
+                TeamScheduleMapper.map(playInTeam.teamAbbr, Gson().fromJson(teamScheduleSourceObj, TeamScheduleSource::class.java),
+                        nbaDetailService)
             }
             teamScheduleEntity?.run {
                 if (events.size == 1) {

@@ -66,14 +66,6 @@ class NbaController {
                 ResponseEntity.ok(it)
             } ?: throw ResetContent
 
-    @Deprecated("NBA_V1")
-    @GetMapping(path = ["/teamTheme.do"])
-    @ResponseBody
-    fun getTeamTheme(team: String, dataVersion: Long): ResponseEntity<*> =
-            nbaDetailService.getTeamTheme(team, dataVersion)?.let {
-                ResponseEntity.ok(it)
-            } ?: throw ResetContent
-
     @GetMapping(path = ["/teamDetail.do"])
     @ResponseBody
     fun getTeamTheme(team: String): ResponseEntity<*> =

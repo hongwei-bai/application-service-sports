@@ -9,19 +9,20 @@ import com.hongwei.model.nba.espn.ResultStatus
 import com.hongwei.model.nba.espn.TeamScheduleSource
 import com.hongwei.model.nba.espn.define.SeasonStage
 import com.hongwei.model.nba.espn.define.SeasonTypeId
+import com.hongwei.service.nba.NbaDetailService
 import com.hongwei.util.EspnDateTimeParseUtil.parseDate
 import com.hongwei.util.TimeStampUtil
 
 object TeamScheduleMapper {
-    fun map(team: String, teamScheduleSource: TeamScheduleSource): NbaTeamScheduleEntity = NbaTeamScheduleEntity(
+    fun map(team: String, teamScheduleSource: TeamScheduleSource, nbaDetailService: NbaDetailService): NbaTeamScheduleEntity = NbaTeamScheduleEntity(
             team = team.toLowerCase(),
             dataVersion = TimeStampUtil.getTimeVersionWithMinute(),
             events = listOf(
                     teamScheduleSource.teamSchedule.first().events.post.map {
-                        mapEventsSection(teamScheduleSource.teamSchedule.first().seasonType.type, it)
+                        mapEventsSection(teamScheduleSource.teamSchedule.first().seasonType.type, it, nbaDetailService)
                     }.flatten(),
                     teamScheduleSource.teamSchedule.first().events.pre.map {
-                        mapEventsSection(teamScheduleSource.teamSchedule.first().seasonType.type, it)
+                        mapEventsSection(teamScheduleSource.teamSchedule.first().seasonType.type, it, nbaDetailService)
                     }.flatten()
             ).flatten()
     )
@@ -76,7 +77,7 @@ object TeamScheduleMapper {
         )
     }
 
-    private fun mapEventsSection(seasonType: Int, section: EventsSection): List<TeamEvent> =
+    private fun mapEventsSection(seasonType: Int, section: EventsSection, nbaDetailService: NbaDetailService): List<TeamEvent> =
             section.group.map {
                 val date = parseDate(it.date.date)!!
                 TeamEvent(
@@ -86,7 +87,7 @@ object TeamScheduleMapper {
                         opponent = Team(
                                 abbrev = EspnTeamMapper.mapLegacyTeamShort(it.opponent.abbrev),
                                 displayName = it.opponent.displayName,
-                                logo = it.opponent.logo,
+                                logo = nbaDetailService.getNormalisedLogoUrl(it.opponent.logo),
                                 location = it.opponent.location
                         ),
                         result = when (it.result.statusId.toIntOrNull()) {

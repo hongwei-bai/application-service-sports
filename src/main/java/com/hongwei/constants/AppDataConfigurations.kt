@@ -7,4 +7,8 @@ import org.springframework.context.annotation.Configuration
 @ConfigurationProperties(prefix = "appdata")
 open class AppDataConfigurations {
     lateinit var dataPath: String
+
+    lateinit var imagePath: String
+
+    lateinit var imagePathUrl: String
 }
