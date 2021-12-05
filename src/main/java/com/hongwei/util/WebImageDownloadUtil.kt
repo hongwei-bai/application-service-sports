@@ -1,12 +1,16 @@
 package com.hongwei.util
 
+import org.apache.log4j.LogManager
+import org.apache.log4j.Logger
 import java.io.BufferedInputStream
 import java.io.ByteArrayOutputStream
+import java.io.FileOutputStream
 import java.io.InputStream
 import java.net.URL
-import java.io.FileOutputStream
 
 object WebImageDownloadUtil {
+    private val logger: Logger = LogManager.getLogger(WebImageDownloadUtil::class.java)
+
     fun readWebImage(urlString: String): ByteArray {
         val url = URL(urlString)
         val `in`: InputStream = BufferedInputStream(url.openStream())
@@ -28,9 +32,11 @@ object WebImageDownloadUtil {
             val fos = FileOutputStream(dest)
             fos.write(response)
             fos.close()
+            UnixFilePermissionUtil.chmod777(dest)
             return true
         } catch (e: Exception) {
-            println("WebImageDownloadUtil::downloadWebImage caught exception: ${e.localizedMessage}")
+            logger.error("downloadWebImage failed! urlString: $urlString, dest: $dest")
+            logger.error("downloadWebImage caught exception: ${e.localizedMessage}")
         }
         return false
     }

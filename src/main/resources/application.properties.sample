@@ -29,5 +29,5 @@ appdata.imagePathUrl={domain name}/appimg/sports_v2/
 
 #Deployment
 jwt.corsAllowDomain={domain name}
-appdata.dataPath=/usr/share/app/
-appdata.imagePath=/usr/share/appimg/sports_v2/
+appdata.dataPath=/usr/share/nginx/html/app/
+appdata.imagePath=/usr/share/nginx/html/appimg/sports_v2/
