@@ -1,6 +1,7 @@
 package com.hongwei.service.nba
 
 import com.hongwei.constants.AppDataConfigurations
+import com.hongwei.constants.Constants
 import com.hongwei.constants.Constants.LogoPath.NBA
 import com.hongwei.model.jpa.nba.NbaTeamDetailEntity
 import com.hongwei.model.jpa.nba.NbaTeamDetailRepository
@@ -48,9 +49,9 @@ class NbaDetailService {
         if (!downloadSuccess) {
             logger.warn("downloadNbaTeamLogo failed, logoUrl: $logoUrl -> dest: $destPath")
         }
-        return "${appDataConfigurations.imagePathUrl}$NBA$imageFileName"
+        return "${Constants.LogoPath.URL_BASE}$NBA$imageFileName"
     }
 
     fun getAppLogoUrl(logoUrl: String): String =
-            "${appDataConfigurations.imagePathUrl}$NBA${FileNameUtils.getFileName(logoUrl)}"
+            "${Constants.LogoPath.URL_BASE}$NBA${FileNameUtils.getFileName(logoUrl)}"
 }

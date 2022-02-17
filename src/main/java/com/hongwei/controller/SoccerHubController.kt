@@ -19,14 +19,14 @@ class SoccerHubController {
 
     @RequestMapping(path = ["/espnStanding.do"])
     @ResponseBody
-    fun generateEspnStanding(league: String, downloadLogos: Boolean? = null): ResponseEntity<*> {
-        return ResponseEntity.ok(soccerAnalysisService.fetchStandings(league, downloadLogos ?: false))
+    fun generateEspnStanding(league: String, downloadLogo: Boolean? = null): ResponseEntity<*> {
+        return ResponseEntity.ok(soccerAnalysisService.fetchStandings(league, downloadLogo ?: false))
     }
 
     @RequestMapping(path = ["/espnTeamSchedule.do"])
     @ResponseBody
-    fun generateEspnTeamSchedule(teamId: Long): ResponseEntity<*> {
-        return ResponseEntity.ok(soccerAnalysisService.fetchTeamSchedules(teamId))
+    fun generateEspnTeamSchedule(teamId: Long, downloadLogo: Boolean? = null): ResponseEntity<*> {
+        return ResponseEntity.ok(soccerAnalysisService.fetchTeamSchedules(teamId, downloadLogo ?: false))
     }
 
     @RequestMapping(path = ["/bbcSchedule.do"])

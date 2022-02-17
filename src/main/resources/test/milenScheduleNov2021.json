@@ -1,0 +1,2487 @@
+{
+  "results": {
+    "news": {
+      "header": "Serie A News",
+      "link": "",
+      "articles": [
+        {
+          "headline": "AC Milan stunned by Sassuolo to slip to second successive league loss",
+          "byLine": "Reuters",
+          "description": "AC Milan slipped to their second successive Serie A defeat when Sassuolo stunned their opponents in the San Siro with a 3-1 comeback win.",
+          "link": "http://www.espnfc.com.au/report/_/gameId/614794",
+          "image": "https://a.espncdn.com/combiner/i?img=/photo/2021/1128/r943606_1296x729_16-9.jpg&h=120",
+          "premium": false,
+          "published": "2021-11-28T17:19:35Z",
+          "logoSrc": "https://a.espncdn.com/redesign/assets/img/logos/espnplus/espnplus-2x.png",
+          "images": [
+            {
+              "src": "https://a.espncdn.com/combiner/i?img=/photo/2021/1128/r943606_1296x729_16-9.jpg&h=120",
+              "alt": "AC Milan stunned by Sassuolo to slip to second successive league loss"
+            }
+          ]
+        },
+        {
+          "headline": "AC Milan's Junior Messias' improbable rise to Champions League reminds us why we love sports",
+          "byLine": "Gabriele Marcotti",
+          "description": "Junior Messias appearing from obscurity to keep AC Milan's Champions League hopes alive is the culmination of his incredible journey.",
+          "link": "http://www.espnfc.com/uefa-champions-league/story/4530494/ac-milans-junior-messias-improbable-rise-to-champions-league-reminds-us-why-we-love-sports",
+          "image": "https://a.espncdn.com/combiner/i?img=/photo/2021/1125/r942369_1296x729_16-9.jpg&h=120",
+          "premium": false,
+          "published": "2021-11-25T22:18:34Z",
+          "logoSrc": "https://a.espncdn.com/redesign/assets/img/logos/espnplus/espnplus-2x.png",
+          "images": [
+            {
+              "src": "https://a.espncdn.com/combiner/i?img=/photo/2021/1125/r942369_1296x729_16-9.jpg&h=120",
+              "alt": "AC Milan's Junior Messias' improbable rise to Champions League reminds us why we love sports"
+            }
+          ]
+        },
+        {
+          "headline": "The incredible story of AC Milan goalscorer Junior Messias",
+          "byLine": "",
+          "description": "Gab Marcotti reacts to the improbable story of ex-delivery man Junior Messias scoring the game-winning goal for AC Milan vs. Atletico.",
+          "link": "http://www.espnfc.com.au/soccer/club/ac-milan/103/video/4530157",
+          "image": "https://a.espncdn.com/combiner/i?img=/media/motion/ESPNi/2021/1125/int_211125_AC_Milan_Atletico_Madrid/int_211125_AC_Milan_Atletico_Madrid.jpg&h=120",
+          "premium": false,
+          "published": "2021-11-25T05:55:59Z",
+          "logoSrc": "https://a.espncdn.com/redesign/assets/img/logos/espnplus/espnplus-2x.png",
+          "images": [
+            {
+              "src": "https://a.espncdn.com/combiner/i?img=/media/motion/ESPNi/2021/1125/int_211125_AC_Milan_Atletico_Madrid/int_211125_AC_Milan_Atletico_Madrid.jpg&h=120",
+              "alt": "The incredible story of AC Milan goalscorer Junior Messias"
+            }
+          ]
+        }
+      ]
+    },
+    "season": {
+      "year": 2021,
+      "type": 10398,
+      "name": "2021-22 Italian Serie A",
+      "displayName": "2021-22 Italian Serie A",
+      "half": 1
+    },
+    "team": {
+      "id": "103",
+      "abbrev": "MIL",
+      "displayName": "AC Milan",
+      "shortDisplayName": "AC Milan",
+      "logo": "https://a.espncdn.com/i/teamlogos/soccer/500/103.png",
+      "teamColor": "C8142F",
+      "defaultLeague": {
+        "id": "730",
+        "alternateId": "12",
+        "name": "Italian Serie A",
+        "abbreviation": "Serie A",
+        "shortName": "Serie A",
+        "midsizeName": "ITA.1",
+        "links": [
+          {
+            "language": "en-AU",
+            "rel": [
+              "index",
+              "desktop",
+              "league"
+            ],
+            "href": "http://www.espn.com.au/football/league/_/name/ita.1",
+            "text": "Index",
+            "shortText": "Index",
+            "isExternal": false,
+            "isPremium": false
+          },
+          {
+            "language": "en-AU",
+            "rel": [
+              "schedule",
+              "desktop",
+              "league"
+            ],
+            "href": "http://www.espn.com.au/football/schedule/_/league/ita.1",
+            "text": "Schedule",
+            "shortText": "Schedule",
+            "isExternal": false,
+            "isPremium": false
+          },
+          {
+            "language": "en-AU",
+            "rel": [
+              "schedule",
+              "sportscenter",
+              "app",
+              "league"
+            ],
+            "href": "sportscenter://x-callback-url/showClubhouse?uid=s:600~l:730&section=scores",
+            "text": "Schedule",
+            "shortText": "Schedule",
+            "isExternal": false,
+            "isPremium": false
+          },
+          {
+            "language": "en-AU",
+            "rel": [
+              "standings",
+              "desktop",
+              "league"
+            ],
+            "href": "https://www.espn.com/soccer/table/_/league/ita.1",
+            "text": "Standings",
+            "shortText": "Standings",
+            "isExternal": false,
+            "isPremium": false
+          },
+          {
+            "language": "en-AU",
+            "rel": [
+              "scores",
+              "desktop",
+              "league"
+            ],
+            "href": "http://www.espn.com.au/football/scoreboard/_/league/ita.1",
+            "text": "Scores",
+            "shortText": "Scores",
+            "isExternal": false,
+            "isPremium": false
+          },
+          {
+            "language": "en-AU",
+            "rel": [
+              "scores",
+              "sportscenter",
+              "app",
+              "league"
+            ],
+            "href": "sportscenter://x-callback-url/showClubhouse?uid=s:600~l:730&section=scores",
+            "text": "Scores",
+            "shortText": "Scores",
+            "isExternal": false,
+            "isPremium": false
+          },
+          {
+            "language": "en-AU",
+            "rel": [
+              "stats",
+              "desktop",
+              "league"
+            ],
+            "href": "http://www.espn.com.au/football/stats/_/league/ita.1",
+            "text": "Stats",
+            "shortText": "Stats",
+            "isExternal": false,
+            "isPremium": false
+          },
+          {
+            "language": "en-AU",
+            "rel": [
+              "teams",
+              "desktop",
+              "league"
+            ],
+            "href": "http://www.espn.com.au/football/teams/_/league/ita.1",
+            "text": "Teams",
+            "shortText": "Teams",
+            "isExternal": false,
+            "isPremium": false
+          }
+        ],
+        "logos": [
+          {
+            "href": "https://a.espncdn.com/i/leaguelogos/soccer/500/12.png",
+            "width": 500,
+            "height": 500,
+            "alt": "",
+            "rel": [
+              "full",
+              "default"
+            ],
+            "lastUpdated": "2019-07-31T17:57Z"
+          },
+          {
+            "href": "https://a.espncdn.com/i/leaguelogos/soccer/500-dark/12.png",
+            "width": 500,
+            "height": 500,
+            "alt": "",
+            "rel": [
+              "full",
+              "dark"
+            ],
+            "lastUpdated": "2019-07-31T17:57Z"
+          }
+        ]
+      },
+      "recordSummary": "",
+      "standingSummary": "2nd in Italian Serie A",
+      "location": "AC Milan",
+      "links": "",
+      "isNational": false
+    },
+    "events": [
+      {
+        "id": "614794",
+        "competitors": [
+          {
+            "id": "103",
+            "abbrev": "MIL",
+            "displayName": "AC Milan",
+            "shortDisplayName": "AC Milan",
+            "logo": "https://a.espncdn.com/i/teamlogos/soccer/500/103.png",
+            "recordSummary": "",
+            "standingSummary": "",
+            "location": "AC Milan",
+            "links": "/football/club/_/id/103/ac-milan",
+            "isHome": true,
+            "score": 0
+          },
+          {
+            "id": "3997",
+            "abbrev": "SAS",
+            "displayName": "Sassuolo",
+            "shortDisplayName": "Sassuolo",
+            "logo": "https://a.espncdn.com/i/teamlogos/soccer/500/3997.png",
+            "recordSummary": "",
+            "standingSummary": "",
+            "location": "Sassuolo",
+            "links": "/football/club/_/id/3997/sassuolo",
+            "isHome": false,
+            "score": 0,
+            "winner": true
+          }
+        ],
+        "date": "2021-11-28T14:00Z",
+        "tbd": false,
+        "completed": true,
+        "broadcasts": null,
+        "link": "/football/match/_/gameId/614794",
+        "note": "",
+        "teams": [
+          {
+            "id": "103",
+            "abbrev": "MIL",
+            "displayName": "AC Milan",
+            "shortDisplayName": "AC Milan",
+            "logo": "https://a.espncdn.com/i/teamlogos/soccer/500/103.png",
+            "recordSummary": "",
+            "standingSummary": "",
+            "location": "AC Milan",
+            "links": "/football/club/_/id/103/ac-milan",
+            "isHome": true,
+            "score": 0
+          },
+          {
+            "id": "3997",
+            "abbrev": "SAS",
+            "displayName": "Sassuolo",
+            "shortDisplayName": "Sassuolo",
+            "logo": "https://a.espncdn.com/i/teamlogos/soccer/500/3997.png",
+            "recordSummary": "",
+            "standingSummary": "",
+            "location": "Sassuolo",
+            "links": "/football/club/_/id/3997/sassuolo",
+            "isHome": false,
+            "score": 0,
+            "winner": true
+          }
+        ],
+        "isTie": false,
+        "tickets": null,
+        "dateFormat": "ddd, D MMM",
+        "score": "1 - 3",
+        "status": {
+          "state": "post",
+          "detail": "FT",
+          "link": "/football/match/_/gameId/614794"
+        },
+        "league": "Italian Serie A",
+        "venue": {
+          "fullName": "Giuseppe Meazza",
+          "address": {
+            "city": "Milano",
+            "country": "Italy"
+          }
+        },
+        "attnd": 0,
+        "notes": ""
+      },
+      {
+        "id": "618714",
+        "competitors": [
+          {
+            "id": "1068",
+            "abbrev": "ATL",
+            "displayName": "Atletico Madrid",
+            "shortDisplayName": "Atletico Madrid",
+            "logo": "https://a.espncdn.com/i/teamlogos/soccer/500/1068.png",
+            "recordSummary": "",
+            "standingSummary": "",
+            "location": "Atletico Madrid",
+            "links": "/football/club/_/id/1068/atletico-madrid",
+            "isHome": true,
+            "score": 0
+          },
+          {
+            "id": "103",
+            "abbrev": "MIL",
+            "displayName": "AC Milan",
+            "shortDisplayName": "AC Milan",
+            "logo": "https://a.espncdn.com/i/teamlogos/soccer/500/103.png",
+            "recordSummary": "",
+            "standingSummary": "",
+            "location": "AC Milan",
+            "links": "/football/club/_/id/103/ac-milan",
+            "isHome": false,
+            "score": 0,
+            "winner": true
+          }
+        ],
+        "date": "2021-11-24T20:00Z",
+        "tbd": false,
+        "completed": true,
+        "broadcasts": null,
+        "link": "/football/match/_/gameId/618714",
+        "note": "",
+        "teams": [
+          {
+            "id": "1068",
+            "abbrev": "ATL",
+            "displayName": "Atletico Madrid",
+            "shortDisplayName": "Atletico Madrid",
+            "logo": "https://a.espncdn.com/i/teamlogos/soccer/500/1068.png",
+            "recordSummary": "",
+            "standingSummary": "",
+            "location": "Atletico Madrid",
+            "links": "/football/club/_/id/1068/atletico-madrid",
+            "isHome": true,
+            "score": 0
+          },
+          {
+            "id": "103",
+            "abbrev": "MIL",
+            "displayName": "AC Milan",
+            "shortDisplayName": "AC Milan",
+            "logo": "https://a.espncdn.com/i/teamlogos/soccer/500/103.png",
+            "recordSummary": "",
+            "standingSummary": "",
+            "location": "AC Milan",
+            "links": "/football/club/_/id/103/ac-milan",
+            "isHome": false,
+            "score": 0,
+            "winner": true
+          }
+        ],
+        "isTie": false,
+        "tickets": null,
+        "dateFormat": "ddd, D MMM",
+        "score": "0 - 1",
+        "status": {
+          "state": "post",
+          "detail": "FT",
+          "link": "/football/match/_/gameId/618714"
+        },
+        "league": "UEFA Champions League",
+        "venue": {
+          "fullName": "Wanda Metropolitano",
+          "address": {
+            "city": "Madrid",
+            "country": "Spain"
+          }
+        },
+        "attnd": "61,019",
+        "notes": ""
+      },
+      {
+        "id": "614799",
+        "competitors": [
+          {
+            "id": "109",
+            "abbrev": "FIO",
+            "displayName": "Fiorentina",
+            "shortDisplayName": "Fiorentina",
+            "logo": "https://a.espncdn.com/i/teamlogos/soccer/500/109.png",
+            "recordSummary": "",
+            "standingSummary": "",
+            "location": "Fiorentina",
+            "links": "/football/club/_/id/109/fiorentina",
+            "isHome": true,
+            "score": 0,
+            "winner": true
+          },
+          {
+            "id": "103",
+            "abbrev": "MIL",
+            "displayName": "AC Milan",
+            "shortDisplayName": "AC Milan",
+            "logo": "https://a.espncdn.com/i/teamlogos/soccer/500/103.png",
+            "recordSummary": "",
+            "standingSummary": "",
+            "location": "AC Milan",
+            "links": "/football/club/_/id/103/ac-milan",
+            "isHome": false,
+            "score": 0
+          }
+        ],
+        "date": "2021-11-20T19:45Z",
+        "tbd": false,
+        "completed": true,
+        "broadcasts": null,
+        "link": "/football/match/_/gameId/614799",
+        "note": "",
+        "teams": [
+          {
+            "id": "109",
+            "abbrev": "FIO",
+            "displayName": "Fiorentina",
+            "shortDisplayName": "Fiorentina",
+            "logo": "https://a.espncdn.com/i/teamlogos/soccer/500/109.png",
+            "recordSummary": "",
+            "standingSummary": "",
+            "location": "Fiorentina",
+            "links": "/football/club/_/id/109/fiorentina",
+            "isHome": true,
+            "score": 0,
+            "winner": true
+          },
+          {
+            "id": "103",
+            "abbrev": "MIL",
+            "displayName": "AC Milan",
+            "shortDisplayName": "AC Milan",
+            "logo": "https://a.espncdn.com/i/teamlogos/soccer/500/103.png",
+            "recordSummary": "",
+            "standingSummary": "",
+            "location": "AC Milan",
+            "links": "/football/club/_/id/103/ac-milan",
+            "isHome": false,
+            "score": 0
+          }
+        ],
+        "isTie": false,
+        "tickets": null,
+        "dateFormat": "ddd, D MMM",
+        "score": "4 - 3",
+        "status": {
+          "state": "post",
+          "detail": "FT",
+          "link": "/football/match/_/gameId/614799"
+        },
+        "league": "Italian Serie A",
+        "venue": {
+          "fullName": "Artemio Franchi",
+          "address": {
+            "city": "Firenze",
+            "country": "Italy"
+          }
+        },
+        "attnd": "32,567",
+        "notes": ""
+      },
+      {
+        "id": "614811",
+        "competitors": [
+          {
+            "id": "103",
+            "abbrev": "MIL",
+            "displayName": "AC Milan",
+            "shortDisplayName": "AC Milan",
+            "logo": "https://a.espncdn.com/i/teamlogos/soccer/500/103.png",
+            "recordSummary": "",
+            "standingSummary": "",
+            "location": "AC Milan",
+            "links": "/football/club/_/id/103/ac-milan",
+            "isHome": true,
+            "score": 0
+          },
+          {
+            "id": "110",
+            "abbrev": "INT",
+            "displayName": "Internazionale",
+            "shortDisplayName": "Internazionale",
+            "logo": "https://a.espncdn.com/i/teamlogos/soccer/500/110.png",
+            "recordSummary": "",
+            "standingSummary": "",
+            "location": "Internazionale",
+            "links": "/football/club/_/id/110/internazionale",
+            "isHome": false,
+            "score": 0
+          }
+        ],
+        "date": "2021-11-07T19:45Z",
+        "tbd": false,
+        "completed": true,
+        "broadcasts": null,
+        "link": "/football/match/_/gameId/614811",
+        "note": "",
+        "teams": [
+          {
+            "id": "103",
+            "abbrev": "MIL",
+            "displayName": "AC Milan",
+            "shortDisplayName": "AC Milan",
+            "logo": "https://a.espncdn.com/i/teamlogos/soccer/500/103.png",
+            "recordSummary": "",
+            "standingSummary": "",
+            "location": "AC Milan",
+            "links": "/football/club/_/id/103/ac-milan",
+            "isHome": true,
+            "score": 0
+          },
+          {
+            "id": "110",
+            "abbrev": "INT",
+            "displayName": "Internazionale",
+            "shortDisplayName": "Internazionale",
+            "logo": "https://a.espncdn.com/i/teamlogos/soccer/500/110.png",
+            "recordSummary": "",
+            "standingSummary": "",
+            "location": "Internazionale",
+            "links": "/football/club/_/id/110/internazionale",
+            "isHome": false,
+            "score": 0
+          }
+        ],
+        "isTie": true,
+        "tickets": null,
+        "dateFormat": "ddd, D MMM",
+        "score": "1 - 1",
+        "status": {
+          "state": "post",
+          "detail": "FT",
+          "link": "/football/match/_/gameId/614811"
+        },
+        "league": "Italian Serie A",
+        "venue": {
+          "fullName": "Giuseppe Meazza",
+          "address": {
+            "city": "Milano",
+            "country": "Italy"
+          }
+        },
+        "attnd": "56,608",
+        "notes": ""
+      },
+      {
+        "id": "618734",
+        "competitors": [
+          {
+            "id": "103",
+            "abbrev": "MIL",
+            "displayName": "AC Milan",
+            "shortDisplayName": "AC Milan",
+            "logo": "https://a.espncdn.com/i/teamlogos/soccer/500/103.png",
+            "recordSummary": "",
+            "standingSummary": "",
+            "location": "AC Milan",
+            "links": "/football/club/_/id/103/ac-milan",
+            "isHome": true,
+            "score": 0
+          },
+          {
+            "id": "437",
+            "abbrev": "POR",
+            "displayName": "FC Porto",
+            "shortDisplayName": "FC Porto",
+            "logo": "https://a.espncdn.com/i/teamlogos/soccer/500/437.png",
+            "recordSummary": "",
+            "standingSummary": "",
+            "location": "FC Porto",
+            "links": "/football/club/_/id/437/fc-porto",
+            "isHome": false,
+            "score": 0
+          }
+        ],
+        "date": "2021-11-03T17:45Z",
+        "tbd": false,
+        "completed": true,
+        "broadcasts": null,
+        "link": "/football/match/_/gameId/618734",
+        "note": "",
+        "teams": [
+          {
+            "id": "103",
+            "abbrev": "MIL",
+            "displayName": "AC Milan",
+            "shortDisplayName": "AC Milan",
+            "logo": "https://a.espncdn.com/i/teamlogos/soccer/500/103.png",
+            "recordSummary": "",
+            "standingSummary": "",
+            "location": "AC Milan",
+            "links": "/football/club/_/id/103/ac-milan",
+            "isHome": true,
+            "score": 0
+          },
+          {
+            "id": "437",
+            "abbrev": "POR",
+            "displayName": "FC Porto",
+            "shortDisplayName": "FC Porto",
+            "logo": "https://a.espncdn.com/i/teamlogos/soccer/500/437.png",
+            "recordSummary": "",
+            "standingSummary": "",
+            "location": "FC Porto",
+            "links": "/football/club/_/id/437/fc-porto",
+            "isHome": false,
+            "score": 0
+          }
+        ],
+        "isTie": true,
+        "tickets": null,
+        "dateFormat": "ddd, D MMM",
+        "score": "1 - 1",
+        "status": {
+          "state": "post",
+          "detail": "FT",
+          "link": "/football/match/_/gameId/618734"
+        },
+        "league": "UEFA Champions League",
+        "venue": {
+          "fullName": "Giuseppe Meazza",
+          "address": {
+            "city": "Milano",
+            "country": "Italy"
+          }
+        },
+        "attnd": "39,675",
+        "notes": ""
+      },
+      {
+        "id": "614820",
+        "competitors": [
+          {
+            "id": "104",
+            "abbrev": "ROMA",
+            "displayName": "AS Roma",
+            "shortDisplayName": "AS Roma",
+            "logo": "https://a.espncdn.com/i/teamlogos/soccer/500/104.png",
+            "recordSummary": "",
+            "standingSummary": "",
+            "location": "AS Roma",
+            "links": "/football/club/_/id/104/as-roma",
+            "isHome": true,
+            "score": 0
+          },
+          {
+            "id": "103",
+            "abbrev": "MIL",
+            "displayName": "AC Milan",
+            "shortDisplayName": "AC Milan",
+            "logo": "https://a.espncdn.com/i/teamlogos/soccer/500/103.png",
+            "recordSummary": "",
+            "standingSummary": "",
+            "location": "AC Milan",
+            "links": "/football/club/_/id/103/ac-milan",
+            "isHome": false,
+            "score": 0,
+            "winner": true
+          }
+        ],
+        "date": "2021-10-31T19:45Z",
+        "tbd": false,
+        "completed": true,
+        "broadcasts": null,
+        "link": "/football/match/_/gameId/614820",
+        "note": "",
+        "teams": [
+          {
+            "id": "104",
+            "abbrev": "ROMA",
+            "displayName": "AS Roma",
+            "shortDisplayName": "AS Roma",
+            "logo": "https://a.espncdn.com/i/teamlogos/soccer/500/104.png",
+            "recordSummary": "",
+            "standingSummary": "",
+            "location": "AS Roma",
+            "links": "/football/club/_/id/104/as-roma",
+            "isHome": true,
+            "score": 0
+          },
+          {
+            "id": "103",
+            "abbrev": "MIL",
+            "displayName": "AC Milan",
+            "shortDisplayName": "AC Milan",
+            "logo": "https://a.espncdn.com/i/teamlogos/soccer/500/103.png",
+            "recordSummary": "",
+            "standingSummary": "",
+            "location": "AC Milan",
+            "links": "/football/club/_/id/103/ac-milan",
+            "isHome": false,
+            "score": 0,
+            "winner": true
+          }
+        ],
+        "isTie": false,
+        "tickets": null,
+        "dateFormat": "ddd, D MMM",
+        "score": "1 - 2",
+        "status": {
+          "state": "post",
+          "detail": "FT",
+          "link": "/football/match/_/gameId/614820"
+        },
+        "league": "Italian Serie A",
+        "venue": {
+          "fullName": "Olimpico",
+          "address": {
+            "city": "Roma",
+            "country": "Italy"
+          }
+        },
+        "attnd": "51,001",
+        "notes": ""
+      },
+      {
+        "id": "614835",
+        "competitors": [
+          {
+            "id": "103",
+            "abbrev": "MIL",
+            "displayName": "AC Milan",
+            "shortDisplayName": "AC Milan",
+            "logo": "https://a.espncdn.com/i/teamlogos/soccer/500/103.png",
+            "recordSummary": "",
+            "standingSummary": "",
+            "location": "AC Milan",
+            "links": "/football/club/_/id/103/ac-milan",
+            "isHome": true,
+            "score": 0,
+            "winner": true
+          },
+          {
+            "id": "239",
+            "abbrev": "TOR",
+            "displayName": "Torino",
+            "shortDisplayName": "Torino",
+            "logo": "https://a.espncdn.com/i/teamlogos/soccer/500/239.png",
+            "recordSummary": "",
+            "standingSummary": "",
+            "location": "Torino",
+            "links": "/football/club/_/id/239/torino",
+            "isHome": false,
+            "score": 0
+          }
+        ],
+        "date": "2021-10-26T18:45Z",
+        "tbd": false,
+        "completed": true,
+        "broadcasts": null,
+        "link": "/football/match/_/gameId/614835",
+        "note": "",
+        "teams": [
+          {
+            "id": "103",
+            "abbrev": "MIL",
+            "displayName": "AC Milan",
+            "shortDisplayName": "AC Milan",
+            "logo": "https://a.espncdn.com/i/teamlogos/soccer/500/103.png",
+            "recordSummary": "",
+            "standingSummary": "",
+            "location": "AC Milan",
+            "links": "/football/club/_/id/103/ac-milan",
+            "isHome": true,
+            "score": 0,
+            "winner": true
+          },
+          {
+            "id": "239",
+            "abbrev": "TOR",
+            "displayName": "Torino",
+            "shortDisplayName": "Torino",
+            "logo": "https://a.espncdn.com/i/teamlogos/soccer/500/239.png",
+            "recordSummary": "",
+            "standingSummary": "",
+            "location": "Torino",
+            "links": "/football/club/_/id/239/torino",
+            "isHome": false,
+            "score": 0
+          }
+        ],
+        "isTie": false,
+        "tickets": null,
+        "dateFormat": "ddd, D MMM",
+        "score": "1 - 0",
+        "status": {
+          "state": "post",
+          "detail": "FT",
+          "link": "/football/match/_/gameId/614835"
+        },
+        "league": "Italian Serie A",
+        "venue": {
+          "fullName": "Giuseppe Meazza",
+          "address": {
+            "city": "Milano",
+            "country": "Italy"
+          }
+        },
+        "attnd": "35,929",
+        "notes": ""
+      },
+      {
+        "id": "614841",
+        "competitors": [
+          {
+            "id": "107",
+            "abbrev": "BOL",
+            "displayName": "Bologna",
+            "shortDisplayName": "Bologna",
+            "logo": "https://a.espncdn.com/i/teamlogos/soccer/500/107.png",
+            "recordSummary": "",
+            "standingSummary": "",
+            "location": "Bologna",
+            "links": "/football/club/_/id/107/bologna",
+            "isHome": true,
+            "score": 0
+          },
+          {
+            "id": "103",
+            "abbrev": "MIL",
+            "displayName": "AC Milan",
+            "shortDisplayName": "AC Milan",
+            "logo": "https://a.espncdn.com/i/teamlogos/soccer/500/103.png",
+            "recordSummary": "",
+            "standingSummary": "",
+            "location": "AC Milan",
+            "links": "/football/club/_/id/103/ac-milan",
+            "isHome": false,
+            "score": 0,
+            "winner": true
+          }
+        ],
+        "date": "2021-10-23T18:45Z",
+        "tbd": false,
+        "completed": true,
+        "broadcasts": null,
+        "link": "/football/match/_/gameId/614841",
+        "note": "",
+        "teams": [
+          {
+            "id": "107",
+            "abbrev": "BOL",
+            "displayName": "Bologna",
+            "shortDisplayName": "Bologna",
+            "logo": "https://a.espncdn.com/i/teamlogos/soccer/500/107.png",
+            "recordSummary": "",
+            "standingSummary": "",
+            "location": "Bologna",
+            "links": "/football/club/_/id/107/bologna",
+            "isHome": true,
+            "score": 0
+          },
+          {
+            "id": "103",
+            "abbrev": "MIL",
+            "displayName": "AC Milan",
+            "shortDisplayName": "AC Milan",
+            "logo": "https://a.espncdn.com/i/teamlogos/soccer/500/103.png",
+            "recordSummary": "",
+            "standingSummary": "",
+            "location": "AC Milan",
+            "links": "/football/club/_/id/103/ac-milan",
+            "isHome": false,
+            "score": 0,
+            "winner": true
+          }
+        ],
+        "isTie": false,
+        "tickets": null,
+        "dateFormat": "ddd, D MMM",
+        "score": "2 - 4",
+        "status": {
+          "state": "post",
+          "detail": "FT",
+          "link": "/football/match/_/gameId/614841"
+        },
+        "league": "Italian Serie A",
+        "venue": {
+          "fullName": "Renato Dall'Ara",
+          "address": {
+            "city": "Bologna",
+            "country": "Italy"
+          }
+        },
+        "attnd": "22,167",
+        "notes": ""
+      },
+      {
+        "id": "618755",
+        "competitors": [
+          {
+            "id": "437",
+            "abbrev": "POR",
+            "displayName": "FC Porto",
+            "shortDisplayName": "FC Porto",
+            "logo": "https://a.espncdn.com/i/teamlogos/soccer/500/437.png",
+            "recordSummary": "",
+            "standingSummary": "",
+            "location": "FC Porto",
+            "links": "/football/club/_/id/437/fc-porto",
+            "isHome": true,
+            "score": 0,
+            "winner": true
+          },
+          {
+            "id": "103",
+            "abbrev": "MIL",
+            "displayName": "AC Milan",
+            "shortDisplayName": "AC Milan",
+            "logo": "https://a.espncdn.com/i/teamlogos/soccer/500/103.png",
+            "recordSummary": "",
+            "standingSummary": "",
+            "location": "AC Milan",
+            "links": "/football/club/_/id/103/ac-milan",
+            "isHome": false,
+            "score": 0
+          }
+        ],
+        "date": "2021-10-19T19:00Z",
+        "tbd": false,
+        "completed": true,
+        "broadcasts": null,
+        "link": "/football/match/_/gameId/618755",
+        "note": "",
+        "teams": [
+          {
+            "id": "437",
+            "abbrev": "POR",
+            "displayName": "FC Porto",
+            "shortDisplayName": "FC Porto",
+            "logo": "https://a.espncdn.com/i/teamlogos/soccer/500/437.png",
+            "recordSummary": "",
+            "standingSummary": "",
+            "location": "FC Porto",
+            "links": "/football/club/_/id/437/fc-porto",
+            "isHome": true,
+            "score": 0,
+            "winner": true
+          },
+          {
+            "id": "103",
+            "abbrev": "MIL",
+            "displayName": "AC Milan",
+            "shortDisplayName": "AC Milan",
+            "logo": "https://a.espncdn.com/i/teamlogos/soccer/500/103.png",
+            "recordSummary": "",
+            "standingSummary": "",
+            "location": "AC Milan",
+            "links": "/football/club/_/id/103/ac-milan",
+            "isHome": false,
+            "score": 0
+          }
+        ],
+        "isTie": false,
+        "tickets": null,
+        "dateFormat": "ddd, D MMM",
+        "score": "1 - 0",
+        "status": {
+          "state": "post",
+          "detail": "FT",
+          "link": "/football/match/_/gameId/618755"
+        },
+        "league": "UEFA Champions League",
+        "venue": {
+          "fullName": "Estádio do Dragão",
+          "address": {
+            "city": "Porto",
+            "country": "Portugal"
+          }
+        },
+        "attnd": "32,130",
+        "notes": ""
+      },
+      {
+        "id": "614849",
+        "competitors": [
+          {
+            "id": "103",
+            "abbrev": "MIL",
+            "displayName": "AC Milan",
+            "shortDisplayName": "AC Milan",
+            "logo": "https://a.espncdn.com/i/teamlogos/soccer/500/103.png",
+            "recordSummary": "",
+            "standingSummary": "",
+            "location": "AC Milan",
+            "links": "/football/club/_/id/103/ac-milan",
+            "isHome": true,
+            "score": 0,
+            "winner": true
+          },
+          {
+            "id": "119",
+            "abbrev": "VER",
+            "displayName": "Hellas Verona",
+            "shortDisplayName": "Hellas Verona",
+            "logo": "https://a.espncdn.com/i/teamlogos/soccer/500/119.png",
+            "recordSummary": "",
+            "standingSummary": "",
+            "location": "Hellas Verona",
+            "links": "/football/club/_/id/119/hellas-verona",
+            "isHome": false,
+            "score": 0
+          }
+        ],
+        "date": "2021-10-16T18:45Z",
+        "tbd": false,
+        "completed": true,
+        "broadcasts": null,
+        "link": "/football/match/_/gameId/614849",
+        "note": "",
+        "teams": [
+          {
+            "id": "103",
+            "abbrev": "MIL",
+            "displayName": "AC Milan",
+            "shortDisplayName": "AC Milan",
+            "logo": "https://a.espncdn.com/i/teamlogos/soccer/500/103.png",
+            "recordSummary": "",
+            "standingSummary": "",
+            "location": "AC Milan",
+            "links": "/football/club/_/id/103/ac-milan",
+            "isHome": true,
+            "score": 0,
+            "winner": true
+          },
+          {
+            "id": "119",
+            "abbrev": "VER",
+            "displayName": "Hellas Verona",
+            "shortDisplayName": "Hellas Verona",
+            "logo": "https://a.espncdn.com/i/teamlogos/soccer/500/119.png",
+            "recordSummary": "",
+            "standingSummary": "",
+            "location": "Hellas Verona",
+            "links": "/football/club/_/id/119/hellas-verona",
+            "isHome": false,
+            "score": 0
+          }
+        ],
+        "isTie": false,
+        "tickets": null,
+        "dateFormat": "ddd, D MMM",
+        "score": "3 - 2",
+        "status": {
+          "state": "post",
+          "detail": "FT",
+          "link": "/football/match/_/gameId/614849"
+        },
+        "league": "Italian Serie A",
+        "venue": {
+          "fullName": "Giuseppe Meazza",
+          "address": {
+            "city": "Milano",
+            "country": "Italy"
+          }
+        },
+        "attnd": "40,128",
+        "notes": ""
+      },
+      {
+        "id": "614861",
+        "competitors": [
+          {
+            "id": "105",
+            "abbrev": "ATA",
+            "displayName": "Atalanta",
+            "shortDisplayName": "Atalanta",
+            "logo": "https://a.espncdn.com/i/teamlogos/soccer/500/105.png",
+            "recordSummary": "",
+            "standingSummary": "",
+            "location": "Atalanta",
+            "links": "/football/club/_/id/105/atalanta",
+            "isHome": true,
+            "score": 0
+          },
+          {
+            "id": "103",
+            "abbrev": "MIL",
+            "displayName": "AC Milan",
+            "shortDisplayName": "AC Milan",
+            "logo": "https://a.espncdn.com/i/teamlogos/soccer/500/103.png",
+            "recordSummary": "",
+            "standingSummary": "",
+            "location": "AC Milan",
+            "links": "/football/club/_/id/103/ac-milan",
+            "isHome": false,
+            "score": 0,
+            "winner": true
+          }
+        ],
+        "date": "2021-10-03T18:45Z",
+        "tbd": false,
+        "completed": true,
+        "broadcasts": null,
+        "link": "/football/match/_/gameId/614861",
+        "note": "",
+        "teams": [
+          {
+            "id": "105",
+            "abbrev": "ATA",
+            "displayName": "Atalanta",
+            "shortDisplayName": "Atalanta",
+            "logo": "https://a.espncdn.com/i/teamlogos/soccer/500/105.png",
+            "recordSummary": "",
+            "standingSummary": "",
+            "location": "Atalanta",
+            "links": "/football/club/_/id/105/atalanta",
+            "isHome": true,
+            "score": 0
+          },
+          {
+            "id": "103",
+            "abbrev": "MIL",
+            "displayName": "AC Milan",
+            "shortDisplayName": "AC Milan",
+            "logo": "https://a.espncdn.com/i/teamlogos/soccer/500/103.png",
+            "recordSummary": "",
+            "standingSummary": "",
+            "location": "AC Milan",
+            "links": "/football/club/_/id/103/ac-milan",
+            "isHome": false,
+            "score": 0,
+            "winner": true
+          }
+        ],
+        "isTie": false,
+        "tickets": null,
+        "dateFormat": "ddd, D MMM",
+        "score": "2 - 3",
+        "status": {
+          "state": "post",
+          "detail": "FT",
+          "link": "/football/match/_/gameId/614861"
+        },
+        "league": "Italian Serie A",
+        "venue": {
+          "fullName": "Gewiss Stadium",
+          "address": {
+            "city": "Bergamo",
+            "country": "Italy"
+          }
+        },
+        "attnd": "9,363",
+        "notes": ""
+      },
+      {
+        "id": "618768",
+        "competitors": [
+          {
+            "id": "103",
+            "abbrev": "MIL",
+            "displayName": "AC Milan",
+            "shortDisplayName": "AC Milan",
+            "logo": "https://a.espncdn.com/i/teamlogos/soccer/500/103.png",
+            "recordSummary": "",
+            "standingSummary": "",
+            "location": "AC Milan",
+            "links": "/football/club/_/id/103/ac-milan",
+            "isHome": true,
+            "score": 0
+          },
+          {
+            "id": "1068",
+            "abbrev": "ATL",
+            "displayName": "Atletico Madrid",
+            "shortDisplayName": "Atletico Madrid",
+            "logo": "https://a.espncdn.com/i/teamlogos/soccer/500/1068.png",
+            "recordSummary": "",
+            "standingSummary": "",
+            "location": "Atletico Madrid",
+            "links": "/football/club/_/id/1068/atletico-madrid",
+            "isHome": false,
+            "score": 0,
+            "winner": true
+          }
+        ],
+        "date": "2021-09-28T19:00Z",
+        "tbd": false,
+        "completed": true,
+        "broadcasts": null,
+        "link": "/football/match/_/gameId/618768",
+        "note": "",
+        "teams": [
+          {
+            "id": "103",
+            "abbrev": "MIL",
+            "displayName": "AC Milan",
+            "shortDisplayName": "AC Milan",
+            "logo": "https://a.espncdn.com/i/teamlogos/soccer/500/103.png",
+            "recordSummary": "",
+            "standingSummary": "",
+            "location": "AC Milan",
+            "links": "/football/club/_/id/103/ac-milan",
+            "isHome": true,
+            "score": 0
+          },
+          {
+            "id": "1068",
+            "abbrev": "ATL",
+            "displayName": "Atletico Madrid",
+            "shortDisplayName": "Atletico Madrid",
+            "logo": "https://a.espncdn.com/i/teamlogos/soccer/500/1068.png",
+            "recordSummary": "",
+            "standingSummary": "",
+            "location": "Atletico Madrid",
+            "links": "/football/club/_/id/1068/atletico-madrid",
+            "isHome": false,
+            "score": 0,
+            "winner": true
+          }
+        ],
+        "isTie": false,
+        "tickets": null,
+        "dateFormat": "ddd, D MMM",
+        "score": "1 - 2",
+        "status": {
+          "state": "post",
+          "detail": "FT",
+          "link": "/football/match/_/gameId/618768"
+        },
+        "league": "UEFA Champions League",
+        "venue": {
+          "fullName": "Giuseppe Meazza",
+          "address": {
+            "city": "Milano",
+            "country": "Italy"
+          }
+        },
+        "attnd": "35,374",
+        "notes": ""
+      },
+      {
+        "id": "614871",
+        "competitors": [
+          {
+            "id": "4056",
+            "abbrev": "SPE",
+            "displayName": "Spezia",
+            "shortDisplayName": "Spezia",
+            "logo": "https://a.espncdn.com/i/teamlogos/soccer/500/4056.png",
+            "recordSummary": "",
+            "standingSummary": "",
+            "location": "Spezia",
+            "links": "/football/club/_/id/4056/spezia",
+            "isHome": true,
+            "score": 0
+          },
+          {
+            "id": "103",
+            "abbrev": "MIL",
+            "displayName": "AC Milan",
+            "shortDisplayName": "AC Milan",
+            "logo": "https://a.espncdn.com/i/teamlogos/soccer/500/103.png",
+            "recordSummary": "",
+            "standingSummary": "",
+            "location": "AC Milan",
+            "links": "/football/club/_/id/103/ac-milan",
+            "isHome": false,
+            "score": 0,
+            "winner": true
+          }
+        ],
+        "date": "2021-09-25T13:00Z",
+        "tbd": false,
+        "completed": true,
+        "broadcasts": null,
+        "link": "/football/match/_/gameId/614871",
+        "note": "",
+        "teams": [
+          {
+            "id": "4056",
+            "abbrev": "SPE",
+            "displayName": "Spezia",
+            "shortDisplayName": "Spezia",
+            "logo": "https://a.espncdn.com/i/teamlogos/soccer/500/4056.png",
+            "recordSummary": "",
+            "standingSummary": "",
+            "location": "Spezia",
+            "links": "/football/club/_/id/4056/spezia",
+            "isHome": true,
+            "score": 0
+          },
+          {
+            "id": "103",
+            "abbrev": "MIL",
+            "displayName": "AC Milan",
+            "shortDisplayName": "AC Milan",
+            "logo": "https://a.espncdn.com/i/teamlogos/soccer/500/103.png",
+            "recordSummary": "",
+            "standingSummary": "",
+            "location": "AC Milan",
+            "links": "/football/club/_/id/103/ac-milan",
+            "isHome": false,
+            "score": 0,
+            "winner": true
+          }
+        ],
+        "isTie": false,
+        "tickets": null,
+        "dateFormat": "ddd, D MMM",
+        "score": "1 - 2",
+        "status": {
+          "state": "post",
+          "detail": "FT",
+          "link": "/football/match/_/gameId/614871"
+        },
+        "league": "Italian Serie A",
+        "venue": {
+          "fullName": "Alberto Picco",
+          "address": {
+            "city": "La Spezia",
+            "country": "Italy"
+          }
+        },
+        "attnd": "5,700",
+        "notes": ""
+      },
+      {
+        "id": "614885",
+        "competitors": [
+          {
+            "id": "103",
+            "abbrev": "MIL",
+            "displayName": "AC Milan",
+            "shortDisplayName": "AC Milan",
+            "logo": "https://a.espncdn.com/i/teamlogos/soccer/500/103.png",
+            "recordSummary": "",
+            "standingSummary": "",
+            "location": "AC Milan",
+            "links": "/football/club/_/id/103/ac-milan",
+            "isHome": true,
+            "score": 0,
+            "winner": true
+          },
+          {
+            "id": "17530",
+            "abbrev": "VEN",
+            "displayName": "Venezia",
+            "shortDisplayName": "Venezia",
+            "logo": "https://a.espncdn.com/i/teamlogos/soccer/500/17530.png",
+            "recordSummary": "",
+            "standingSummary": "",
+            "location": "Venezia",
+            "links": "/football/club/_/id/17530/venezia",
+            "isHome": false,
+            "score": 0
+          }
+        ],
+        "date": "2021-09-22T18:45Z",
+        "tbd": false,
+        "completed": true,
+        "broadcasts": null,
+        "link": "/football/match/_/gameId/614885",
+        "note": "",
+        "teams": [
+          {
+            "id": "103",
+            "abbrev": "MIL",
+            "displayName": "AC Milan",
+            "shortDisplayName": "AC Milan",
+            "logo": "https://a.espncdn.com/i/teamlogos/soccer/500/103.png",
+            "recordSummary": "",
+            "standingSummary": "",
+            "location": "AC Milan",
+            "links": "/football/club/_/id/103/ac-milan",
+            "isHome": true,
+            "score": 0,
+            "winner": true
+          },
+          {
+            "id": "17530",
+            "abbrev": "VEN",
+            "displayName": "Venezia",
+            "shortDisplayName": "Venezia",
+            "logo": "https://a.espncdn.com/i/teamlogos/soccer/500/17530.png",
+            "recordSummary": "",
+            "standingSummary": "",
+            "location": "Venezia",
+            "links": "/football/club/_/id/17530/venezia",
+            "isHome": false,
+            "score": 0
+          }
+        ],
+        "isTie": false,
+        "tickets": null,
+        "dateFormat": "ddd, D MMM",
+        "score": "2 - 0",
+        "status": {
+          "state": "post",
+          "detail": "FT",
+          "link": "/football/match/_/gameId/614885"
+        },
+        "league": "Italian Serie A",
+        "venue": {
+          "fullName": "Giuseppe Meazza",
+          "address": {
+            "city": "Milano",
+            "country": "Italy"
+          }
+        },
+        "attnd": "26,402",
+        "notes": ""
+      },
+      {
+        "id": "614890",
+        "competitors": [
+          {
+            "id": "111",
+            "abbrev": "JUV",
+            "displayName": "Juventus",
+            "shortDisplayName": "Juventus",
+            "logo": "https://a.espncdn.com/i/teamlogos/soccer/500/111.png",
+            "recordSummary": "",
+            "standingSummary": "",
+            "location": "Juventus",
+            "links": "/football/club/_/id/111/juventus",
+            "isHome": true,
+            "score": 0
+          },
+          {
+            "id": "103",
+            "abbrev": "MIL",
+            "displayName": "AC Milan",
+            "shortDisplayName": "AC Milan",
+            "logo": "https://a.espncdn.com/i/teamlogos/soccer/500/103.png",
+            "recordSummary": "",
+            "standingSummary": "",
+            "location": "AC Milan",
+            "links": "/football/club/_/id/103/ac-milan",
+            "isHome": false,
+            "score": 0
+          }
+        ],
+        "date": "2021-09-19T18:45Z",
+        "tbd": false,
+        "completed": true,
+        "broadcasts": null,
+        "link": "/football/match/_/gameId/614890",
+        "note": "",
+        "teams": [
+          {
+            "id": "111",
+            "abbrev": "JUV",
+            "displayName": "Juventus",
+            "shortDisplayName": "Juventus",
+            "logo": "https://a.espncdn.com/i/teamlogos/soccer/500/111.png",
+            "recordSummary": "",
+            "standingSummary": "",
+            "location": "Juventus",
+            "links": "/football/club/_/id/111/juventus",
+            "isHome": true,
+            "score": 0
+          },
+          {
+            "id": "103",
+            "abbrev": "MIL",
+            "displayName": "AC Milan",
+            "shortDisplayName": "AC Milan",
+            "logo": "https://a.espncdn.com/i/teamlogos/soccer/500/103.png",
+            "recordSummary": "",
+            "standingSummary": "",
+            "location": "AC Milan",
+            "links": "/football/club/_/id/103/ac-milan",
+            "isHome": false,
+            "score": 0
+          }
+        ],
+        "isTie": true,
+        "tickets": null,
+        "dateFormat": "ddd, D MMM",
+        "score": "1 - 1",
+        "status": {
+          "state": "post",
+          "detail": "FT",
+          "link": "/football/match/_/gameId/614890"
+        },
+        "league": "Italian Serie A",
+        "venue": {
+          "fullName": "Allianz Stadium",
+          "address": {
+            "city": "Torino",
+            "country": "Italy"
+          }
+        },
+        "attnd": "18,785",
+        "notes": ""
+      },
+      {
+        "id": "618778",
+        "competitors": [
+          {
+            "id": "364",
+            "abbrev": "LIV",
+            "displayName": "Liverpool",
+            "shortDisplayName": "Liverpool",
+            "logo": "https://a.espncdn.com/i/teamlogos/soccer/500/364.png",
+            "recordSummary": "",
+            "standingSummary": "",
+            "location": "Liverpool",
+            "links": "/football/club/_/id/364/liverpool",
+            "isHome": true,
+            "score": 0,
+            "winner": true
+          },
+          {
+            "id": "103",
+            "abbrev": "MIL",
+            "displayName": "AC Milan",
+            "shortDisplayName": "AC Milan",
+            "logo": "https://a.espncdn.com/i/teamlogos/soccer/500/103.png",
+            "recordSummary": "",
+            "standingSummary": "",
+            "location": "AC Milan",
+            "links": "/football/club/_/id/103/ac-milan",
+            "isHome": false,
+            "score": 0
+          }
+        ],
+        "date": "2021-09-15T19:00Z",
+        "tbd": false,
+        "completed": true,
+        "broadcasts": null,
+        "link": "/football/match/_/gameId/618778",
+        "note": "",
+        "teams": [
+          {
+            "id": "364",
+            "abbrev": "LIV",
+            "displayName": "Liverpool",
+            "shortDisplayName": "Liverpool",
+            "logo": "https://a.espncdn.com/i/teamlogos/soccer/500/364.png",
+            "recordSummary": "",
+            "standingSummary": "",
+            "location": "Liverpool",
+            "links": "/football/club/_/id/364/liverpool",
+            "isHome": true,
+            "score": 0,
+            "winner": true
+          },
+          {
+            "id": "103",
+            "abbrev": "MIL",
+            "displayName": "AC Milan",
+            "shortDisplayName": "AC Milan",
+            "logo": "https://a.espncdn.com/i/teamlogos/soccer/500/103.png",
+            "recordSummary": "",
+            "standingSummary": "",
+            "location": "AC Milan",
+            "links": "/football/club/_/id/103/ac-milan",
+            "isHome": false,
+            "score": 0
+          }
+        ],
+        "isTie": false,
+        "tickets": null,
+        "dateFormat": "ddd, D MMM",
+        "score": "3 - 2",
+        "status": {
+          "state": "post",
+          "detail": "FT",
+          "link": "/football/match/_/gameId/618778"
+        },
+        "league": "UEFA Champions League",
+        "venue": {
+          "fullName": "Anfield",
+          "address": {
+            "city": "Liverpool",
+            "country": "England"
+          }
+        },
+        "attnd": "51,445",
+        "notes": ""
+      },
+      {
+        "id": "614901",
+        "competitors": [
+          {
+            "id": "103",
+            "abbrev": "MIL",
+            "displayName": "AC Milan",
+            "shortDisplayName": "AC Milan",
+            "logo": "https://a.espncdn.com/i/teamlogos/soccer/500/103.png",
+            "recordSummary": "",
+            "standingSummary": "",
+            "location": "AC Milan",
+            "links": "/football/club/_/id/103/ac-milan",
+            "isHome": true,
+            "score": 0,
+            "winner": true
+          },
+          {
+            "id": "112",
+            "abbrev": "LAZ",
+            "displayName": "Lazio",
+            "shortDisplayName": "Lazio",
+            "logo": "https://a.espncdn.com/i/teamlogos/soccer/500/112.png",
+            "recordSummary": "",
+            "standingSummary": "",
+            "location": "Lazio",
+            "links": "/football/club/_/id/112/lazio",
+            "isHome": false,
+            "score": 0
+          }
+        ],
+        "date": "2021-09-12T16:00Z",
+        "tbd": false,
+        "completed": true,
+        "broadcasts": null,
+        "link": "/football/match/_/gameId/614901",
+        "note": "",
+        "teams": [
+          {
+            "id": "103",
+            "abbrev": "MIL",
+            "displayName": "AC Milan",
+            "shortDisplayName": "AC Milan",
+            "logo": "https://a.espncdn.com/i/teamlogos/soccer/500/103.png",
+            "recordSummary": "",
+            "standingSummary": "",
+            "location": "AC Milan",
+            "links": "/football/club/_/id/103/ac-milan",
+            "isHome": true,
+            "score": 0,
+            "winner": true
+          },
+          {
+            "id": "112",
+            "abbrev": "LAZ",
+            "displayName": "Lazio",
+            "shortDisplayName": "Lazio",
+            "logo": "https://a.espncdn.com/i/teamlogos/soccer/500/112.png",
+            "recordSummary": "",
+            "standingSummary": "",
+            "location": "Lazio",
+            "links": "/football/club/_/id/112/lazio",
+            "isHome": false,
+            "score": 0
+          }
+        ],
+        "isTie": false,
+        "tickets": null,
+        "dateFormat": "ddd, D MMM",
+        "score": "2 - 0",
+        "status": {
+          "state": "post",
+          "detail": "FT",
+          "link": "/football/match/_/gameId/614901"
+        },
+        "league": "Italian Serie A",
+        "venue": {
+          "fullName": "Giuseppe Meazza",
+          "address": {
+            "city": "Milano",
+            "country": "Italy"
+          }
+        },
+        "attnd": "36,207",
+        "notes": ""
+      },
+      {
+        "id": "614907",
+        "competitors": [
+          {
+            "id": "103",
+            "abbrev": "MIL",
+            "displayName": "AC Milan",
+            "shortDisplayName": "AC Milan",
+            "logo": "https://a.espncdn.com/i/teamlogos/soccer/500/103.png",
+            "recordSummary": "",
+            "standingSummary": "",
+            "location": "AC Milan",
+            "links": "/football/club/_/id/103/ac-milan",
+            "isHome": true,
+            "score": 0,
+            "winner": true
+          },
+          {
+            "id": "2925",
+            "abbrev": "CAG",
+            "displayName": "Cagliari",
+            "shortDisplayName": "Cagliari",
+            "logo": "https://a.espncdn.com/i/teamlogos/soccer/500/2925.png",
+            "recordSummary": "",
+            "standingSummary": "",
+            "location": "Cagliari",
+            "links": "/football/club/_/id/2925/cagliari",
+            "isHome": false,
+            "score": 0
+          }
+        ],
+        "date": "2021-08-29T18:45Z",
+        "tbd": false,
+        "completed": true,
+        "broadcasts": null,
+        "link": "/football/match/_/gameId/614907",
+        "note": "",
+        "teams": [
+          {
+            "id": "103",
+            "abbrev": "MIL",
+            "displayName": "AC Milan",
+            "shortDisplayName": "AC Milan",
+            "logo": "https://a.espncdn.com/i/teamlogos/soccer/500/103.png",
+            "recordSummary": "",
+            "standingSummary": "",
+            "location": "AC Milan",
+            "links": "/football/club/_/id/103/ac-milan",
+            "isHome": true,
+            "score": 0,
+            "winner": true
+          },
+          {
+            "id": "2925",
+            "abbrev": "CAG",
+            "displayName": "Cagliari",
+            "shortDisplayName": "Cagliari",
+            "logo": "https://a.espncdn.com/i/teamlogos/soccer/500/2925.png",
+            "recordSummary": "",
+            "standingSummary": "",
+            "location": "Cagliari",
+            "links": "/football/club/_/id/2925/cagliari",
+            "isHome": false,
+            "score": 0
+          }
+        ],
+        "isTie": false,
+        "tickets": null,
+        "dateFormat": "ddd, D MMM",
+        "score": "4 - 1",
+        "status": {
+          "state": "post",
+          "detail": "FT",
+          "link": "/football/match/_/gameId/614907"
+        },
+        "league": "Italian Serie A",
+        "venue": {
+          "fullName": "Giuseppe Meazza",
+          "address": {
+            "city": "Milano",
+            "country": "Italy"
+          }
+        },
+        "attnd": "31,946",
+        "notes": ""
+      },
+      {
+        "id": "614921",
+        "competitors": [
+          {
+            "id": "2734",
+            "abbrev": "SAM",
+            "displayName": "Sampdoria",
+            "shortDisplayName": "Sampdoria",
+            "logo": "https://a.espncdn.com/i/teamlogos/soccer/500/2734.png",
+            "recordSummary": "",
+            "standingSummary": "",
+            "location": "Sampdoria",
+            "links": "/football/club/_/id/2734/sampdoria",
+            "isHome": true,
+            "score": 0
+          },
+          {
+            "id": "103",
+            "abbrev": "MIL",
+            "displayName": "AC Milan",
+            "shortDisplayName": "AC Milan",
+            "logo": "https://a.espncdn.com/i/teamlogos/soccer/500/103.png",
+            "recordSummary": "",
+            "standingSummary": "",
+            "location": "AC Milan",
+            "links": "/football/club/_/id/103/ac-milan",
+            "isHome": false,
+            "score": 0,
+            "winner": true
+          }
+        ],
+        "date": "2021-08-23T18:45Z",
+        "tbd": false,
+        "completed": true,
+        "broadcasts": null,
+        "link": "/football/match/_/gameId/614921",
+        "note": "",
+        "teams": [
+          {
+            "id": "2734",
+            "abbrev": "SAM",
+            "displayName": "Sampdoria",
+            "shortDisplayName": "Sampdoria",
+            "logo": "https://a.espncdn.com/i/teamlogos/soccer/500/2734.png",
+            "recordSummary": "",
+            "standingSummary": "",
+            "location": "Sampdoria",
+            "links": "/football/club/_/id/2734/sampdoria",
+            "isHome": true,
+            "score": 0
+          },
+          {
+            "id": "103",
+            "abbrev": "MIL",
+            "displayName": "AC Milan",
+            "shortDisplayName": "AC Milan",
+            "logo": "https://a.espncdn.com/i/teamlogos/soccer/500/103.png",
+            "recordSummary": "",
+            "standingSummary": "",
+            "location": "AC Milan",
+            "links": "/football/club/_/id/103/ac-milan",
+            "isHome": false,
+            "score": 0,
+            "winner": true
+          }
+        ],
+        "isTie": false,
+        "tickets": null,
+        "dateFormat": "ddd, D MMM",
+        "score": "0 - 1",
+        "status": {
+          "state": "post",
+          "detail": "FT",
+          "link": "/football/match/_/gameId/614921"
+        },
+        "league": "Italian Serie A",
+        "venue": {
+          "fullName": "Luigi Ferraris",
+          "address": {
+            "city": "Genova",
+            "country": "Italy"
+          }
+        },
+        "attnd": "4,966",
+        "notes": ""
+      },
+      {
+        "id": "616894",
+        "competitors": [
+          {
+            "id": "103",
+            "abbrev": "MIL",
+            "displayName": "AC Milan",
+            "shortDisplayName": "AC Milan",
+            "logo": "https://a.espncdn.com/i/teamlogos/soccer/500/103.png",
+            "recordSummary": "",
+            "standingSummary": "",
+            "location": "AC Milan",
+            "links": "/football/club/_/id/103/ac-milan",
+            "isHome": true,
+            "score": 0,
+            "winner": true
+          },
+          {
+            "id": "443",
+            "abbrev": "PAO",
+            "displayName": "Panathinaikos",
+            "shortDisplayName": "Panathinaikos",
+            "logo": "https://a.espncdn.com/i/teamlogos/soccer/500/443.png",
+            "recordSummary": "",
+            "standingSummary": "",
+            "location": "Panathinaikos",
+            "links": "/football/club/_/id/443/panathinaikos",
+            "isHome": false,
+            "score": 0
+          }
+        ],
+        "date": "2021-08-14T18:30Z",
+        "tbd": false,
+        "completed": true,
+        "broadcasts": null,
+        "link": "/football/match/_/gameId/616894",
+        "note": "",
+        "teams": [
+          {
+            "id": "103",
+            "abbrev": "MIL",
+            "displayName": "AC Milan",
+            "shortDisplayName": "AC Milan",
+            "logo": "https://a.espncdn.com/i/teamlogos/soccer/500/103.png",
+            "recordSummary": "",
+            "standingSummary": "",
+            "location": "AC Milan",
+            "links": "/football/club/_/id/103/ac-milan",
+            "isHome": true,
+            "score": 0,
+            "winner": true
+          },
+          {
+            "id": "443",
+            "abbrev": "PAO",
+            "displayName": "Panathinaikos",
+            "shortDisplayName": "Panathinaikos",
+            "logo": "https://a.espncdn.com/i/teamlogos/soccer/500/443.png",
+            "recordSummary": "",
+            "standingSummary": "",
+            "location": "Panathinaikos",
+            "links": "/football/club/_/id/443/panathinaikos",
+            "isHome": false,
+            "score": 0
+          }
+        ],
+        "isTie": false,
+        "tickets": null,
+        "dateFormat": "ddd, D MMM",
+        "score": "2 - 1",
+        "status": {
+          "state": "post",
+          "detail": "FT",
+          "link": "/football/match/_/gameId/616894"
+        },
+        "league": "Club Friendly",
+        "venue": {
+          "fullName": "Nereo Rocco",
+          "address": {
+            "city": "Trieste",
+            "country": "Italy"
+          }
+        },
+        "attnd": "4,500",
+        "notes": ""
+      },
+      {
+        "id": "614161",
+        "competitors": [
+          {
+            "id": "86",
+            "abbrev": "MAD",
+            "displayName": "Real Madrid",
+            "shortDisplayName": "Real Madrid",
+            "logo": "https://a.espncdn.com/i/teamlogos/soccer/500/86.png",
+            "recordSummary": "",
+            "standingSummary": "",
+            "location": "Real Madrid",
+            "links": "/football/club/_/id/86/real-madrid",
+            "isHome": true,
+            "score": 0
+          },
+          {
+            "id": "103",
+            "abbrev": "MIL",
+            "displayName": "AC Milan",
+            "shortDisplayName": "AC Milan",
+            "logo": "https://a.espncdn.com/i/teamlogos/soccer/500/103.png",
+            "recordSummary": "",
+            "standingSummary": "",
+            "location": "AC Milan",
+            "links": "/football/club/_/id/103/ac-milan",
+            "isHome": false,
+            "score": 0
+          }
+        ],
+        "date": "2021-08-08T16:30Z",
+        "tbd": false,
+        "completed": true,
+        "broadcasts": null,
+        "link": "/football/match/_/gameId/614161",
+        "note": "",
+        "teams": [
+          {
+            "id": "86",
+            "abbrev": "MAD",
+            "displayName": "Real Madrid",
+            "shortDisplayName": "Real Madrid",
+            "logo": "https://a.espncdn.com/i/teamlogos/soccer/500/86.png",
+            "recordSummary": "",
+            "standingSummary": "",
+            "location": "Real Madrid",
+            "links": "/football/club/_/id/86/real-madrid",
+            "isHome": true,
+            "score": 0
+          },
+          {
+            "id": "103",
+            "abbrev": "MIL",
+            "displayName": "AC Milan",
+            "shortDisplayName": "AC Milan",
+            "logo": "https://a.espncdn.com/i/teamlogos/soccer/500/103.png",
+            "recordSummary": "",
+            "standingSummary": "",
+            "location": "AC Milan",
+            "links": "/football/club/_/id/103/ac-milan",
+            "isHome": false,
+            "score": 0
+          }
+        ],
+        "isTie": true,
+        "tickets": null,
+        "dateFormat": "ddd, D MMM",
+        "score": "0 - 0",
+        "status": {
+          "state": "post",
+          "detail": "FT",
+          "link": "/football/match/_/gameId/614161"
+        },
+        "league": "Club Friendly",
+        "venue": {
+          "fullName": "Wörthersee Stadion",
+          "address": {
+            "city": "Klagenfurt",
+            "country": "Austria"
+          }
+        },
+        "attnd": "30,000",
+        "notes": ""
+      },
+      {
+        "id": "616893",
+        "competitors": [
+          {
+            "id": "94",
+            "abbrev": "VAL",
+            "displayName": "Valencia",
+            "shortDisplayName": "Valencia",
+            "logo": "https://a.espncdn.com/i/teamlogos/soccer/500/94.png",
+            "recordSummary": "",
+            "standingSummary": "",
+            "location": "Valencia",
+            "links": "/football/club/_/id/94/valencia",
+            "isHome": true,
+            "score": 0,
+            "winner": true
+          },
+          {
+            "id": "103",
+            "abbrev": "MIL",
+            "displayName": "AC Milan",
+            "shortDisplayName": "AC Milan",
+            "logo": "https://a.espncdn.com/i/teamlogos/soccer/500/103.png",
+            "recordSummary": "",
+            "standingSummary": "",
+            "location": "AC Milan",
+            "links": "/football/club/_/id/103/ac-milan",
+            "isHome": false,
+            "score": 0
+          }
+        ],
+        "date": "2021-08-04T18:30Z",
+        "tbd": false,
+        "completed": true,
+        "broadcasts": null,
+        "link": "/football/match/_/gameId/616893",
+        "note": "Valencia win 5-3 on penalties",
+        "teams": [
+          {
+            "id": "94",
+            "abbrev": "VAL",
+            "displayName": "Valencia",
+            "shortDisplayName": "Valencia",
+            "logo": "https://a.espncdn.com/i/teamlogos/soccer/500/94.png",
+            "recordSummary": "",
+            "standingSummary": "",
+            "location": "Valencia",
+            "links": "/football/club/_/id/94/valencia",
+            "isHome": true,
+            "score": 0,
+            "winner": true
+          },
+          {
+            "id": "103",
+            "abbrev": "MIL",
+            "displayName": "AC Milan",
+            "shortDisplayName": "AC Milan",
+            "logo": "https://a.espncdn.com/i/teamlogos/soccer/500/103.png",
+            "recordSummary": "",
+            "standingSummary": "",
+            "location": "AC Milan",
+            "links": "/football/club/_/id/103/ac-milan",
+            "isHome": false,
+            "score": 0
+          }
+        ],
+        "isTie": false,
+        "tickets": null,
+        "dateFormat": "ddd, D MMM",
+        "score": "0 - 0",
+        "status": {
+          "state": "post",
+          "detail": "FT-Pens",
+          "link": "/football/match/_/gameId/616893"
+        },
+        "league": "Club Friendly",
+        "venue": {
+          "fullName": "Mestalla",
+          "address": {
+            "city": "Valencia",
+            "country": "Spain"
+          }
+        },
+        "attnd": 0,
+        "notes": "Valencia wins 5-3 on Penalty Kicks"
+      },
+      {
+        "id": "613959",
+        "competitors": [
+          {
+            "id": "2502",
+            "abbrev": "NICE",
+            "displayName": "Nice",
+            "shortDisplayName": "Nice",
+            "logo": "https://a.espncdn.com/i/teamlogos/soccer/500/2502.png",
+            "recordSummary": "",
+            "standingSummary": "",
+            "location": "Nice",
+            "links": "/football/club/_/id/2502/nice",
+            "isHome": true,
+            "score": 0
+          },
+          {
+            "id": "103",
+            "abbrev": "MIL",
+            "displayName": "AC Milan",
+            "shortDisplayName": "AC Milan",
+            "logo": "https://a.espncdn.com/i/teamlogos/soccer/500/103.png",
+            "recordSummary": "",
+            "standingSummary": "",
+            "location": "AC Milan",
+            "links": "/football/club/_/id/103/ac-milan",
+            "isHome": false,
+            "score": 0
+          }
+        ],
+        "date": "2021-07-31T18:30Z",
+        "tbd": false,
+        "completed": true,
+        "broadcasts": null,
+        "link": "/football/match/_/gameId/613959",
+        "note": "",
+        "teams": [
+          {
+            "id": "2502",
+            "abbrev": "NICE",
+            "displayName": "Nice",
+            "shortDisplayName": "Nice",
+            "logo": "https://a.espncdn.com/i/teamlogos/soccer/500/2502.png",
+            "recordSummary": "",
+            "standingSummary": "",
+            "location": "Nice",
+            "links": "/football/club/_/id/2502/nice",
+            "isHome": true,
+            "score": 0
+          },
+          {
+            "id": "103",
+            "abbrev": "MIL",
+            "displayName": "AC Milan",
+            "shortDisplayName": "AC Milan",
+            "logo": "https://a.espncdn.com/i/teamlogos/soccer/500/103.png",
+            "recordSummary": "",
+            "standingSummary": "",
+            "location": "AC Milan",
+            "links": "/football/club/_/id/103/ac-milan",
+            "isHome": false,
+            "score": 0
+          }
+        ],
+        "isTie": true,
+        "tickets": null,
+        "dateFormat": "ddd, D MMM",
+        "score": "1 - 1",
+        "status": {
+          "state": "post",
+          "detail": "FT",
+          "link": "/football/match/_/gameId/613959"
+        },
+        "league": "Club Friendly",
+        "venue": {
+          "fullName": "Allianz Riviera",
+          "address": {
+            "city": "Nice",
+            "country": "France"
+          }
+        },
+        "attnd": 0,
+        "notes": ""
+      },
+      {
+        "id": "615640",
+        "competitors": [
+          {
+            "id": "103",
+            "abbrev": "MIL",
+            "displayName": "AC Milan",
+            "shortDisplayName": "AC Milan",
+            "logo": "https://a.espncdn.com/i/teamlogos/soccer/500/103.png",
+            "recordSummary": "",
+            "standingSummary": "",
+            "location": "AC Milan",
+            "links": "/football/club/_/id/103/ac-milan",
+            "isHome": true,
+            "score": 0,
+            "winner": true
+          },
+          {
+            "id": "2573",
+            "abbrev": "MOD",
+            "displayName": "Modena",
+            "shortDisplayName": "Modena",
+            "recordSummary": "",
+            "standingSummary": "",
+            "location": "Modena",
+            "links": "/football/club/_/id/2573/modena",
+            "isHome": false,
+            "score": 0
+          }
+        ],
+        "date": "2021-07-24T15:00Z",
+        "tbd": false,
+        "completed": true,
+        "broadcasts": null,
+        "link": "/football/match/_/gameId/615640",
+        "note": "",
+        "teams": [
+          {
+            "id": "103",
+            "abbrev": "MIL",
+            "displayName": "AC Milan",
+            "shortDisplayName": "AC Milan",
+            "logo": "https://a.espncdn.com/i/teamlogos/soccer/500/103.png",
+            "recordSummary": "",
+            "standingSummary": "",
+            "location": "AC Milan",
+            "links": "/football/club/_/id/103/ac-milan",
+            "isHome": true,
+            "score": 0,
+            "winner": true
+          },
+          {
+            "id": "2573",
+            "abbrev": "MOD",
+            "displayName": "Modena",
+            "shortDisplayName": "Modena",
+            "recordSummary": "",
+            "standingSummary": "",
+            "location": "Modena",
+            "links": "/football/club/_/id/2573/modena",
+            "isHome": false,
+            "score": 0
+          }
+        ],
+        "isTie": false,
+        "tickets": null,
+        "dateFormat": "ddd, D MMM",
+        "score": "5 - 0",
+        "status": {
+          "state": "post",
+          "detail": "FT",
+          "link": "/football/match/_/gameId/615640"
+        },
+        "league": "Club Friendly",
+        "venue": {
+          "fullName": "Milanello",
+          "address": {
+            "city": "Milán",
+            "country": "Italy"
+          }
+        },
+        "attnd": 0,
+        "notes": ""
+      },
+      {
+        "id": "615223",
+        "competitors": [
+          {
+            "id": "103",
+            "abbrev": "MIL",
+            "displayName": "AC Milan",
+            "shortDisplayName": "AC Milan",
+            "logo": "https://a.espncdn.com/i/teamlogos/soccer/500/103.png",
+            "recordSummary": "",
+            "standingSummary": "",
+            "location": "AC Milan",
+            "links": "/football/club/_/id/103/ac-milan",
+            "isHome": true,
+            "score": 0,
+            "winner": true
+          },
+          {
+            "id": "3979",
+            "abbrev": "Pro Sesto",
+            "displayName": "Pro Sesto",
+            "shortDisplayName": "Pro Sesto",
+            "recordSummary": "",
+            "standingSummary": "",
+            "location": "Pro Sesto",
+            "links": "/football/club/_/id/3979/pro-sesto",
+            "isHome": false,
+            "score": 0
+          }
+        ],
+        "date": "2021-07-17T15:00Z",
+        "tbd": false,
+        "completed": true,
+        "broadcasts": null,
+        "link": "/football/match/_/gameId/615223",
+        "note": "",
+        "teams": [
+          {
+            "id": "103",
+            "abbrev": "MIL",
+            "displayName": "AC Milan",
+            "shortDisplayName": "AC Milan",
+            "logo": "https://a.espncdn.com/i/teamlogos/soccer/500/103.png",
+            "recordSummary": "",
+            "standingSummary": "",
+            "location": "AC Milan",
+            "links": "/football/club/_/id/103/ac-milan",
+            "isHome": true,
+            "score": 0,
+            "winner": true
+          },
+          {
+            "id": "3979",
+            "abbrev": "Pro Sesto",
+            "displayName": "Pro Sesto",
+            "shortDisplayName": "Pro Sesto",
+            "recordSummary": "",
+            "standingSummary": "",
+            "location": "Pro Sesto",
+            "links": "/football/club/_/id/3979/pro-sesto",
+            "isHome": false,
+            "score": 0
+          }
+        ],
+        "isTie": false,
+        "tickets": null,
+        "dateFormat": "ddd, D MMM",
+        "score": "6 - 0",
+        "status": {
+          "state": "post",
+          "detail": "FT",
+          "link": "/football/match/_/gameId/615223"
+        },
+        "league": "Club Friendly",
+        "venue": {
+          "fullName": "Centro Sportivo",
+          "address": {
+            "city": "San Donato Milanese",
+            "country": "Italy"
+          }
+        },
+        "attnd": 0,
+        "notes": ""
+      }
+    ],
+    "pageHeading": "AC Milan Results",
+    "dropdownLeagues": [
+      {
+        "title": "All Competitions",
+        "value": "all",
+        "href": "/football/team/results/_/id/103"
+      },
+      {
+        "title": "Italian Serie A",
+        "href": "/football/team/results/_/id/103/league/ITA.1",
+        "value": "ITA.1"
+      },
+      {
+        "title": "UEFA Champions League",
+        "href": "/football/team/results/_/id/103/league/UEFA.CHAMPIONS",
+        "value": "UEFA.CHAMPIONS"
+      },
+      {
+        "title": "Club Friendly",
+        "href": "/football/team/results/_/id/103/league/CLUB.FRIENDLY",
+        "value": "CLUB.FRIENDLY"
+      },
+      {
+        "title": "UEFA Europa League",
+        "href": "/football/team/results/_/id/103/league/UEFA.EUROPA",
+        "value": "UEFA.EUROPA"
+      },
+      {
+        "title": "Italian Coppa Italia",
+        "href": "/football/team/results/_/id/103/league/ITA.COPPA_ITALIA",
+        "value": "ITA.COPPA_ITALIA"
+      },
+      {
+        "title": "UEFA Europa League Qualifying",
+        "href": "/football/team/results/_/id/103/league/UEFA.EUROPA_QUAL",
+        "value": "UEFA.EUROPA_QUAL"
+      },
+      {
+        "title": "International Champions Cup",
+        "href": "/football/team/results/_/id/103/league/GLOBAL.CHAMPS_CUP",
+        "value": "GLOBAL.CHAMPS_CUP"
+      },
+      {
+        "title": "Supercoppa Italiana",
+        "href": "/football/team/results/_/id/103/league/ITA.SUPER_CUP",
+        "value": "ITA.SUPER_CUP"
+      },
+      {
+        "title": "World Football Challenge",
+        "href": "/football/team/results/_/id/103/league/GLOBAL.WORLD_FOOTBALL_CHALLENGE",
+        "value": "GLOBAL.WORLD_FOOTBALL_CHALLENGE"
+      },
+      {
+        "title": "UEFA Cup",
+        "href": "/football/team/results/_/id/103/league/UEFA.UEFA",
+        "value": "UEFA.UEFA"
+      },
+      {
+        "title": "UEFA Super Cup",
+        "href": "/football/team/results/_/id/103/league/UEFA.SUPER_CUP",
+        "value": "UEFA.SUPER_CUP"
+      },
+      {
+        "title": "FIFA Club World Cup",
+        "href": "/football/team/results/_/id/103/league/FIFA.CWC",
+        "value": "FIFA.CWC"
+      },
+      {
+        "title": "Intercontinental Cup",
+        "href": "/football/team/results/_/id/103/league/INTERCONTINENTAL",
+        "value": "INTERCONTINENTAL"
+      }
+    ],
+    "seasons": [
+      {
+        "value": 2021,
+        "link": "/football/team/results/_/id/103/season/2021"
+      },
+      {
+        "value": 2020,
+        "link": "/football/team/results/_/id/103/season/2020"
+      },
+      {
+        "value": 2019,
+        "link": "/football/team/results/_/id/103/season/2019"
+      },
+      {
+        "value": 2018,
+        "link": "/football/team/results/_/id/103/season/2018"
+      },
+      {
+        "value": 2017,
+        "link": "/football/team/results/_/id/103/season/2017"
+      }
+    ],
+    "headers": {
+      "conf": [
+        {
+          "abbr": "DATE",
+          "key": "date"
+        },
+        {
+          "abbr": "MATCH",
+          "key": "events"
+        },
+        {
+          "abbr": "SCORE",
+          "key": "score"
+        },
+        {
+          "abbr": "COLSPAN",
+          "key": "colspan"
+        },
+        {
+          "abbr": "RESULT",
+          "key": "teams"
+        },
+        {
+          "abbr": "COMPETITION",
+          "key": "competition"
+        }
+      ],
+      "list": [
+        "DATE",
+        "MATCH",
+        "SCORE",
+        "COLSPAN",
+        "RESULT",
+        "COMPETITION"
+      ]
+    }
+  }
+}

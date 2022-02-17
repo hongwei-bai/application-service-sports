@@ -52,17 +52,16 @@ class SoccerAnalysisService {
         return Gson().fromJson(jsonString, BbcSoccerChampionLeagueSource::class.java)
     }
 
-    fun fetchTeamSchedules(teamId: Long): SoccerTeamScheduleEntity? {
+    fun fetchTeamSchedules(teamId: Long, downloadLogo: Boolean): SoccerTeamScheduleEntity? {
         addQueryTeam(teamId)
         val teamFixturesSource = fetchTeamFixtures(teamId)
-        logger.debug(teamFixturesSource)
         val entityDb = soccerTeamScheduleRepository.findTeamSchedule(teamId)
         val teamDetail = soccerTeamDetailRepository.findTeamDetailById(teamId)
         val allTeamAbbrs = soccerTeamDetailRepository.findAll().mapNotNull { it?.team }
         if (teamDetail != null) {
             val fixturesEventsCount = SoccerTeamScheduleMapper.map(teamDetail, teamFixturesSource,
-                    allTeamAbbrs, soccerConfigurationService)?.events?.size
-            if (entityDb == null || entityDb.events.size != fixturesEventsCount) {
+                    allTeamAbbrs, soccerConfigurationService, downloadLogo)?.events?.size
+            if (downloadLogo || entityDb == null || entityDb.events.size != fixturesEventsCount) {
                 val finishedEventsSource = mutableListOf<SoccerTeamEventSource>()
                 teamFixturesSource?.run {
                     updateTeamColor(teamId, teamFixturesSource)
@@ -71,8 +70,8 @@ class SoccerAnalysisService {
                     }
                 }
                 val fullEntity = SoccerTeamScheduleMapper.map(teamDetail, teamFixturesSource, allTeamAbbrs,
-                        soccerConfigurationService, finishedEventsSource)
-                if (fullEntity != null && fullEntity.finishedEvents.isNotEmpty() && entityDb?.finishedEvents != fullEntity.finishedEvents) {
+                        soccerConfigurationService, downloadLogo, finishedEventsSource)
+                if (fullEntity != null && fullEntity.finishedEvents.isNotEmpty()) {
                     soccerTeamScheduleRepository.save(fullEntity)
                     return fullEntity
                 }
@@ -82,7 +81,7 @@ class SoccerAnalysisService {
     }
 
     fun fetchStandings(league: String, downloadLogo: Boolean = false): SoccerStandingEntity {
-        val jsonString = soccerParseService.parseStandingInfo(soccerCurlService.getStanding())
+        val jsonString = soccerParseService.parseStandingInfo(soccerCurlService.getStanding(league))
         val sourceObject = Gson().fromJson(jsonString, SoccerStandingSourceOutput::class.java)
 
         SoccerDetailMapper.map(league, sourceObject)?.forEach {
@@ -91,8 +90,10 @@ class SoccerAnalysisService {
             }
             val appLogo = soccerConfigurationService.getAppLogoUrl(it.logo)
             val teamDetailDb = soccerTeamDetailRepository.findTeamDetailById(it.id)
+            val querying = teamDetailDb?.isQuerying ?: false
             if (teamDetailDb == null || appLogo != it.logo) {
                 it.logo = appLogo
+                it.isQuerying = querying
                 soccerTeamDetailRepository.save(it)
             }
         }
@@ -105,9 +106,13 @@ class SoccerAnalysisService {
         return standingEntity
     }
 
-    fun initializeLeagues(leagues: List<String> = DEFAULT_LEAGUES) {
+    fun initializeLeagues(downloadLogo: Boolean, leagues: List<String> = DEFAULT_LEAGUES) {
         leagues.forEach { league ->
-            soccerStandingRepository.findStandings(league) ?: fetchStandings(league, true)
+            if (downloadLogo) {
+                fetchStandings(league, true)
+            } else {
+                soccerStandingRepository.findStandings(league) ?: fetchStandings(league, false)
+            }
         }
     }
 

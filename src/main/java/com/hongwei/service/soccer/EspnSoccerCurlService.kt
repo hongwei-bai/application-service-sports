@@ -16,7 +16,8 @@ class EspnSoccerCurlService {
 
     fun curl(url: String): Document? = CUrlWrapper.curl(url)
 
-    fun getStanding(): Document? = CUrlWrapper.curl(Endpoints.Espn.Soccer.SERIEA_STANDING)
+    fun getStanding(league: String): Document? = CUrlWrapper.curl(Endpoints.Espn.Soccer.SERIEA_STANDING
+            .replace("{league}", league))
 
     fun getTeamFixtures(teamId: Long): Document? = CUrlWrapper.curl(EspnSoccerScheduleQuery(teamId, SoccerQueryType.Fixtures).build())
 

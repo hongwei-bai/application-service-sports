@@ -29,6 +29,7 @@ object SoccerTeamScheduleMapper {
             fixturesSource: SoccerTeamScheduleSource?,
             teamsWithLogos: List<String>,
             configurationService: SoccerConfigurationService,
+            downloadLogo: Boolean,
             resultSourceList: List<SoccerTeamEventSource>? = null
     ): SoccerTeamScheduleEntity? =
             fixturesSource?.let {
@@ -41,10 +42,10 @@ object SoccerTeamScheduleMapper {
                         location = team.location,
                         league = team.league,
                         events = fixturesSource.events.mapNotNull {
-                            mapTeamEvent(team.team, it, teamsWithLogos, configurationService)
+                            mapTeamEvent(team.team, it, teamsWithLogos, downloadLogo, configurationService)
                         },
                         finishedEvents = resultSourceList?.mapNotNull {
-                            mapTeamEvent(team.team, it, teamsWithLogos, configurationService)
+                            mapTeamEvent(team.team, it, teamsWithLogos, downloadLogo, configurationService)
                         }?.sortedByDescending { it.unixTimeStamp }
                                 ?: emptyList()
                 )
@@ -52,6 +53,7 @@ object SoccerTeamScheduleMapper {
 
     private fun mapTeamEvent(myTeamAbbr: String, eventSource: SoccerTeamEventSource,
                              teamsWithLogos: List<String>,
+                             downloadLogo: Boolean,
                              configurationService: SoccerConfigurationService): SoccerTeamEvent? {
         var resultEnum: SoccerResultEnum? = null
         var winner: String? = null
@@ -111,7 +113,7 @@ object SoccerTeamScheduleMapper {
             opponent.isHome -> SoccerHomeEnum.Away
             else -> SoccerHomeEnum.Neutral
         }
-        if (!teamsWithLogos.contains(opponent.abbrev)) {
+        if (downloadLogo && !teamsWithLogos.contains(opponent.abbrev)) {
             configurationService.downloadSoccerTeamLogo(opponent.logo)
         }
         return parseDate(eventSource.date)?.time?.let { timeStamp ->

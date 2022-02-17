@@ -9,6 +9,4 @@ open class AppDataConfigurations {
     lateinit var dataPath: String
 
     lateinit var imagePath: String
-
-    lateinit var imagePathUrl: String
 }

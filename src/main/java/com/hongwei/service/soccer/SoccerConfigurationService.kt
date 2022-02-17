@@ -45,11 +45,11 @@ class SoccerConfigurationService {
         if (!downloadSuccess) {
             logger.warn("downloadSoccerTeamLogo failed, logoUrl: $logoUrl -> dest: $destPath")
         }
-        return "${appDataConfigurations.imagePathUrl}$SOCCER$imageFileName"
+        return "${Constants.LogoPath.URL_BASE}$SOCCER$imageFileName"
     }
 
     fun getAppLogoUrl(logoUrl: String?): String =
             logoUrl?.let {
-                "${appDataConfigurations.imagePathUrl}$SOCCER${FileNameUtils.getFileName(logoUrl)}"
-            } ?: "${appDataConfigurations.imagePathUrl}$LOGO_PLACEHOLDER"
+                "${Constants.LogoPath.URL_BASE}$SOCCER${FileNameUtils.getFileName(logoUrl)}"
+            } ?: "${Constants.LogoPath.URL_BASE}$LOGO_PLACEHOLDER"
 }
