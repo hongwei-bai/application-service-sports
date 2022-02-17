@@ -1,5 +1,7 @@
 # application-service-sports
 
+CI build state: [![CircleCI](https://circleci.com/gh/hongwei-bai/application-service-sports/tree/main.svg?style=svg)](https://circleci.com/gh/hongwei-bai/application-service-sports/tree/main)
+
 Sports service application are providing apis for NBA schedules, team standings, play-in tournament, playoff etc.
 
 Other than NBA, more leagues are adding to the service.
