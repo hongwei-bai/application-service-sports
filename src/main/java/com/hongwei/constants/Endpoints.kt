@@ -7,7 +7,7 @@ object Endpoints {
         const val TRANSACTIONS = "https://www.espn.com/nba/transactions"
         
         object Soccer {
-            const val SERIEA_STANDING = "https://www.espn.com.au/football/standings/_/league/ita.1"
+            const val SERIEA_STANDING = "https://www.espn.com.au/football/standings/_/league/{league}"
 
             const val SERIEA_TEAM_SCHEDILE = "https://www.espn.com.au/{path}"
         }

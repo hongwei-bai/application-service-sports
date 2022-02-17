@@ -39,27 +39,29 @@ class ScheduledTasks {
         val hour = sydTime.get(Calendar.HOUR_OF_DAY)
 
         logger.debug("scheduler - reportCurrentTime, hour: $hour")
-        val downloadLogos = !initialized || logoUpdateDayOfMonth.contains(dayOfMonth)
-        logger.debug("scheduler - downloadLogos flag: $downloadLogos")
+        val downloadLogo = !initialized || logoUpdateDayOfMonth.contains(dayOfMonth)
+        logger.debug("scheduler - downloadLogo flag: $downloadLogo")
+
+        val alwaysRunTaskWhenLoading = !initialized
 
         runBlocking(dispatcher) {
             val jobSoccer = async {
                 logger.debug("scheduler - runBlocking, contained in soccer hours: ${SoccerHoursUpdate.contains(hour)}")
-                if (SoccerHoursUpdate.contains(hour)) {
+                if (alwaysRunTaskWhenLoading || SoccerHoursUpdate.contains(hour)) {
                     if (!initialized) {
                         logger.info("scheduler - initializeOnce for soccer")
-                        initializeOnce()
+                        initializeOnce(downloadLogo)
                     } else {
                         logger.info("scheduler - soccer getQueryingLeagues")
                         soccerAnalysisService.getQueryingLeagues().forEach { league ->
-                            soccerAnalysisService.fetchStandings(league, downloadLogos)
+                            soccerAnalysisService.fetchStandings(league, downloadLogo)
                         }
                     }
                     delay(1000 * 10)
                     val teams = soccerAnalysisService.getQueryingTeams()
                     logger.debug("scheduler - soccer start fetchTeamSchedules...")
                     teams.forEach { teamDetail ->
-                        soccerAnalysisService.fetchTeamSchedules(teamDetail.id)
+                        soccerAnalysisService.fetchTeamSchedules(teamDetail.id, downloadLogo)
                     }
                     logger.info("scheduler - soccer finish fetchTeamSchedules - ${teams.size} teams")
                 }
@@ -68,7 +70,7 @@ class ScheduledTasks {
             val jobNba = async {
                 delay(1000 * 30)
                 logger.debug("scheduler - runBlocking, contained in NBA hours: ${NBAHoursUpdate.contains(hour)}")
-                if (NBAHoursUpdate.contains(hour)) {
+                if (alwaysRunTaskWhenLoading || NBAHoursUpdate.contains(hour)) {
                     logger.info("schedule for NBA, available hours")
                     val seasonStatus = nbaAnalysisService.doAnalysisSeasonStatus()
                     logger.debug("schedule for NBA, seasonStatus: $seasonStatus")
@@ -83,7 +85,7 @@ class ScheduledTasks {
 
                     delay(1000 * 30)
                     logger.debug("schedule for NBA, start generateEspnAllTeamSchedule...")
-                    nbaHubController.generateEspnAllTeamSchedule(downloadLogos)
+                    nbaHubController.generateEspnAllTeamSchedule(downloadLogo)
                     logger.debug("schedule for NBA, finish generateEspnAllTeamSchedule")
 
                     delay(1000 * 30)
@@ -112,9 +114,9 @@ class ScheduledTasks {
         }
     }
 
-    private fun initializeOnce() {
+    private fun initializeOnce(downloadLogo: Boolean) {
         initialized = true
-        soccerAnalysisService.initializeLeagues()
+        soccerAnalysisService.initializeLeagues(downloadLogo)
     }
 
     companion object {

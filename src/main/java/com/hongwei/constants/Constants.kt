@@ -20,6 +20,7 @@ object Constants {
         const val NBA = "logo/nba/"
         const val SOCCER = "logo/soccer/"
 
+        const val URL_BASE = "https://hongwei-test1.top/resize/480/sports_v2/"
         const val LOGO_PLACEHOLDER = "no_logo.png"
     }
 

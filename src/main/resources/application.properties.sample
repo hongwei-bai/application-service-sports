@@ -15,7 +15,6 @@ server.port=8081
 jwt.authorizationHeader=Authorization
 jwt.authorizationBearer=Bearer
 jwt.secretPublic={public secret}
-appdata.imagePathUrl={domain name}/appimg/sports_v2/
 
 #Debug
 #jwt.corsAllowDomain=http://localhost:3944
