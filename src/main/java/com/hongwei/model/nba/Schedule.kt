@@ -1,16 +1,17 @@
 package com.hongwei.model.nba
 
 data class Schedule(
-        val dataVersion: Long = 0,
-        val events: List<Event>
+    val dataVersion: Long = 0,
+    val events: List<Event>
 )
 
 data class Event(
-        val unixTimeStamp: Long,
-        val eventType: String,
-        val homeTeam: Team,
-        val guestTeam: Team,
-        val result: Result? = null
+    val unixTimeStamp: Long,
+    val eventType: String,
+    val homeTeam: Team,
+    val guestTeam: Team,
+    val eventStatus: String,
+    val result: Result? = null
 ) {
     override fun equals(other: Any?): Boolean {
         if (this === other) return true
@@ -34,7 +35,11 @@ data class Event(
 }
 
 data class Result(
-        val isHomeTeamWin: Boolean,
-        val homeTeamScore: Int,
-        val guestTeamScore: Int
+    val isHomeTeamWin: Boolean,
+    val homeTeamScore: Int,
+    val guestTeamScore: Int
 )
+
+enum class EventStatus {
+    Default, Cancelled
+}

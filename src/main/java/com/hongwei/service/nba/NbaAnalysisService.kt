@@ -3,6 +3,7 @@ package com.hongwei.service.nba
 import com.google.gson.Gson
 import com.google.gson.reflect.TypeToken
 import com.hongwei.model.jpa.nba.*
+import com.hongwei.model.nba.EventStatus
 import com.hongwei.model.nba.EventType
 import com.hongwei.model.nba.PostSeason
 import com.hongwei.model.nba.espn.TransactionSource
@@ -43,8 +44,10 @@ class NbaAnalysisService {
     fun saveTransactions(): NbaTransactionsEntity? {
         val transactionsDb = nbaTransactionsRepository.findTransactions()
         val jsonString = espnCurlService.getTransactionsJson(espnCurlService.getTransactions().toString())
-        val transactionsSource = Gson().fromJson<List<TransactionSource>>(jsonString,
-                object : TypeToken<List<TransactionSource>?>() {}.type)
+        val transactionsSource = Gson().fromJson<List<TransactionSource>>(
+            jsonString,
+            object : TypeToken<List<TransactionSource>?>() {}.type
+        )
         val transactionsEntity = NbaTransactionsMapper.map(transactionsSource, nbaDetailService.getAllTeamDetail())
         if (transactionsEntity == transactionsDb) {
             return transactionsDb
@@ -74,14 +77,14 @@ class NbaAnalysisService {
     @Throws(IOException::class)
     fun doAnalysisSeasonStatus(): EventType? {
         val standingDataDb: NbaStandingEntity = nbaStandingRepository.findLatestStandings()?.firstOrNull()
-                ?: return null
+            ?: return null
         val playOffTeams = listOf(
-                standingDataDb.western.filter { it.rank <= 6 }.map { it.teamAbbr },
-                standingDataDb.eastern.filter { it.rank <= 6 }.map { it.teamAbbr }
+            standingDataDb.western.filter { it.rank <= 6 }.map { it.teamAbbr },
+            standingDataDb.eastern.filter { it.rank <= 6 }.map { it.teamAbbr }
         ).flatten()
         val playInTeams = listOf(
-                standingDataDb.western.filter { it.rank in 7..10 }.map { it.teamAbbr },
-                standingDataDb.eastern.filter { it.rank in 7..10 }.map { it.teamAbbr }
+            standingDataDb.western.filter { it.rank in 7..10 }.map { it.teamAbbr },
+            standingDataDb.eastern.filter { it.rank in 7..10 }.map { it.teamAbbr }
         ).flatten()
         val tails = listOf(standingDataDb.western.last().teamAbbr, standingDataDb.eastern.last().teamAbbr)
 
@@ -107,35 +110,37 @@ class NbaAnalysisService {
     }
 
     private fun numberOfTailTeamsHasIncomingPreMatch(tailTeamSchedules: List<NbaTeamScheduleEntity?>) = tailTeamSchedules.filter { it ->
-        it?.events?.any { it.result == null && it.eventType == EventType.PreSeason.name } == true
+        it?.events?.any { it.eventStatus == EventStatus.Default && it.result == null && it.eventType == EventType.PreSeason.name } == true
     }.size
 
     private fun numberOfTailTeamsHasIncomingSeasonMatch(tailTeamSchedules: List<NbaTeamScheduleEntity?>) = tailTeamSchedules.filter { it ->
-        it?.events?.any { it.result == null && it.eventType == EventType.Season.name } == true
+        it?.events?.any {
+            it.eventStatus == EventStatus.Default && it.result == null && it.eventType == EventType.Season.name
+        } == true
     }.size
 
     private fun numberOfPlayInTeamsHasIncomingPlayInMatch(playInTeamSchedules: List<NbaTeamScheduleEntity?>) = playInTeamSchedules.filter { it ->
-        it?.events?.any { it.result == null && it.eventType == EventType.PlayIn.name } == true
+        it?.events?.any { it.eventStatus == EventStatus.Default && it.result == null && it.eventType == EventType.PlayIn.name } == true
     }.size
 
     private fun numberOfPlayOffTeamsHasIncomingPlayOffMatch(playOffTeamSchedules: List<NbaTeamScheduleEntity?>) = playOffTeamSchedules.filter { it ->
-        it?.events?.any { it.result == null && EventType.isPlayOff(it.eventType) } == true
+        it?.events?.any { it.eventStatus == EventStatus.Default && it.result == null && EventType.isPlayOff(it.eventType) } == true
     }.size
 
     private fun numberOfTeamsPlayGrandFinal(playOffTeamSchedules: List<NbaTeamScheduleEntity?>) = playOffTeamSchedules.filter { it ->
-        it?.events?.any { it.eventType == EventType.PlayOffGrandFinal.name } == true
+        it?.events?.any { it.eventStatus == EventStatus.Default && it.eventType == EventType.PlayOffGrandFinal.name } == true
     }.size
 
     private fun numberOfTeamsPlayConferenceFinal(playOffTeamSchedules: List<NbaTeamScheduleEntity?>) = playOffTeamSchedules.filter { it ->
-        it?.events?.any { it.eventType == EventType.PlayOffConferenceFinal.name } == true
+        it?.events?.any { it.eventStatus == EventStatus.Default && it.eventType == EventType.PlayOffConferenceFinal.name } == true
     }.size
 
     private fun numberOfTeamsPlayRound2(playOffTeamSchedules: List<NbaTeamScheduleEntity?>) = playOffTeamSchedules.filter { it ->
-        it?.events?.any { it.eventType == EventType.PlayOffRound2.name } == true
+        it?.events?.any { it.eventStatus == EventStatus.Default && it.eventType == EventType.PlayOffRound2.name } == true
     }.size
 
     private fun numberOfTeamsPlayRound1(playOffTeamSchedules: List<NbaTeamScheduleEntity?>) = playOffTeamSchedules.filter { it ->
-        it?.events?.any { it.eventType == EventType.PlayOffRound1.name } == true
+        it?.events?.any { it.eventStatus == EventStatus.Default && it.eventType == EventType.PlayOffRound1.name } == true
     }.size
 
 }
